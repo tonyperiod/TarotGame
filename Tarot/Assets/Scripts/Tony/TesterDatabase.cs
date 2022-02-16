@@ -6,7 +6,7 @@ public class TesterDatabase : MonoBehaviour
 {
     public void FixedUpdate()
     {
-        Printing(PlayerDatabase.GetRandomCard());
+     // Printing(PlayerDatabase.GetRandomCard());
 
     }
 
