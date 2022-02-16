@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MinorFire1
   m_EditorClassIdentifier: 
   Cardname: MinorFire1
-  artWork: {fileID: 0}
+  artWork: {fileID: 21300000, guid: c05c4067ab958634194ecfbd45da6ccf, type: 3}
   id: 1
   symbol: fire
   value: 1
