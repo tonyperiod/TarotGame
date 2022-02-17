@@ -7,11 +7,11 @@ public class CardScriptReference : MonoBehaviour
 {
     public ScriptableCard cardData;
 
-    private string Cardname;
-    private Sprite artWork;    
-    private int id;
-    private string symbol;
-    private int value;
+    public string Cardname;
+    public Sprite artWork;
+    public int id;
+    public string symbol;
+    public int value;
 
     private SpriteRenderer spRend;
 
@@ -19,12 +19,22 @@ public class CardScriptReference : MonoBehaviour
 
     private void Start()
     {
-        //sprite
-        spRend = GetComponent<SpriteRenderer>();
-        spRend.sprite = artWork;
-
-        //data
-        Cardname = cardData.Cardname;
-        Debug.Log(Cardname);
+        FirstCard(PlayerDatabase.GetRandomCard());//now make this the first one
+               
+               
+       
     }
+
+    private void FirstCard(ScriptableCard s)
+    {
+        //data
+        spRend = GetComponent<SpriteRenderer>();
+        spRend.sprite = s.artWork;                
+        Cardname = cardData.Cardname;
+        id = cardData.id;
+        symbol = cardData.symbol;
+        value = cardData.value;
+    }
+
+
 }

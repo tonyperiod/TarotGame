@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-//this script is to create the database in game, and have only 1 of it
+//this script is to create the database in game, and have only 1 of it. This is basically the Deck
 
 public class PlayerDatabase : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class PlayerDatabase : MonoBehaviour
 
     }
 
-    public static ScriptableCard GetRandomCard() // get random card
+    public static ScriptableCard GetRandomCard() // get random card, this needs to be fixed to reduce the card pool every time
     {
         return instance.playerDatabase.allCards[Random.Range(0, instance.playerDatabase.allCards.Count())]; 
         

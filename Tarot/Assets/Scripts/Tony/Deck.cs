@@ -36,6 +36,7 @@ public class Deck : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Deck") )
                 {
                     ClickDeck();
+                    Debug.Log("click");
                 }
             }
         }
@@ -50,11 +51,11 @@ public class Deck : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             posRef = i;
-            SpawnCard(PlayerDatabase.GetRandomCard()); 
+            SpawnCard();
         }
     }
 
-    private void SpawnCard(ScriptableCard s)
+    private void SpawnCard()
     {
         //get position of cards to spawn
         if (posRef == 0)
