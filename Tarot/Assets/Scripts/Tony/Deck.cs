@@ -36,7 +36,7 @@ public class Deck : MonoBehaviour
                 if (hitInfo.collider.CompareTag("Deck") )
                 {
                     ClickDeck();
-                    Debug.Log("click");
+                  
                 }
             }
         }

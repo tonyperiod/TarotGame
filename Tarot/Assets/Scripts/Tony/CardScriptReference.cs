@@ -19,7 +19,7 @@ public class CardScriptReference : MonoBehaviour
 
     private void Start()
     {
-        FirstCard(PlayerInGameDeck.GetRandomCard()); //it's ok to use random as long as the value is removed
+        FirstCard(PlayerInGameDeck.PickCard()); //it's ok to use random as long as the value is removed
                
                
        
@@ -29,7 +29,7 @@ public class CardScriptReference : MonoBehaviour
     {
         //data
         spRend = GetComponent<SpriteRenderer>();
-        spRend.sprite = s.artWork;                
+        spRend.sprite = s.artWork;
         Cardname = cardData.Cardname;
         id = cardData.id;
         symbol = cardData.symbol;

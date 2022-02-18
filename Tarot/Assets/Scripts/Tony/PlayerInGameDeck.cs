@@ -9,6 +9,7 @@ using System.Linq;
 public class PlayerInGameDeck : MonoBehaviour
 {
     public ScriptableCardDatabase playerDatabase; //to slot in player database
+
     private static PlayerInGameDeck instance; //this database 
 
     private float cardTot;
@@ -27,30 +28,65 @@ public class PlayerInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-
-        //get card tot and cur
         cardTot = instance.playerDatabase.allCards.Count;
-        cardCur = cardTot;
 
-        currentDeckList = instance.playerDatabase.allCards;
+        NewDeck();
+
+    
+        
+
     }
 
-    public static ScriptableCard GetCardByID (int ID) // get in all the cards
+    public void NewDeck() //this pure jank is to load in all the cards to the in game deck
+    {
+        instance.currentDeckList.Clear(); //empty out deck
+        
+
+        for(int i = 1; i < instance.playerDatabase.allCards.Count+1; i++) //add back in all the cards from the player owned database one by one
+        {
+           
+            instance.currentDeckList.Add(GetCardByID(i));
+            
+        }
+
+        cardCur = cardTot; 
+    }
+
+    public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {
         return instance.playerDatabase.allCards.FirstOrDefault(i => i.id == ID); //returns first instance that matches true, or default (null)
-       
-
+        
     }
 
-    public static ScriptableCard GetRandomCard() // get random card
+    public static ScriptableCard PickCard() // get random card
         //TODO this needs to be fixed to reduce the card pool every time
     {
         
-        return instance.playerDatabase.allCards[Random.Range(0, instance.playerDatabase.allCards.Count())]; 
-        
+        if (instance.cardCur < 3) //draw cards then do the normal stuff
+        {
+            instance.NewDeck();
+
+            ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+
+            instance.currentDeckList.Remove(pickedCard);
+
+            instance.cardCur -= 1;
+
+            return pickedCard;
+        }
+        else
+        {
+            ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+
+            instance.currentDeckList.Remove(pickedCard);
+
+            instance.cardCur -= 1;
+
+            return pickedCard;
+        }
     }
 
-
+  
 
 
 }
