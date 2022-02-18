@@ -19,7 +19,7 @@ public class CardScriptReference : MonoBehaviour
 
     private void Start()
     {
-        FirstCard(PlayerDatabase.GetRandomCard());//now make this the first one
+        FirstCard(PlayerInGameDeck.GetRandomCard()); //it's ok to use random as long as the value is removed
                
                
        
