@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 6991896551902907055}
   - component: {fileID: 6991896551902907054}
   - component: {fileID: 1977402069930942082}
-  - component: {fileID: 3944151219312442363}
   - component: {fileID: 1163948061980110993}
+  - component: {fileID: 6022669156165626291}
+  - component: {fileID: 3944151219312442363}
+  - component: {fileID: 6431802663658331729}
   m_Layer: 0
   m_Name: CardPrefabA
   m_TagString: Untagged
@@ -96,25 +98,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3944151219312442363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6991896551902907048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1011717dc144f8e43ab79fbc0a27654c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 64de31656359e434e9a3d97033ff0bc8, type: 2}
 --- !u!65 &1163948061980110993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,3 +117,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9, y: 15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6022669156165626291
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991896551902907048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 15, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3944151219312442363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991896551902907048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1011717dc144f8e43ab79fbc0a27654c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 11400000, guid: 64de31656359e434e9a3d97033ff0bc8, type: 2}
+  Cardname: 
+  artWork: {fileID: 0}
+  id: 0
+  symbol: 
+  value: 0
+--- !u!114 &6431802663658331729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6991896551902907048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cd6b9d90b0ff74a83c1dba474f00d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Table: {fileID: 8954781720273963848, guid: c9d615c216710824487cef473a52b920, type: 3}
+  dragTableProjection: {fileID: 0}
