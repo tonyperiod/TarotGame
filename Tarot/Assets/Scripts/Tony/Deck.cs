@@ -4,32 +4,40 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
-    public Camera camera;
+    public Camera _camera;
 
-    public GameObject spawnedCard;
+    public GameObject cardPrefab;
 
-    //getting positioning right, will put all into one with maybe a table prefab ???
+
+    //getting positioning right
     public GameObject pos1;
     public GameObject pos2;
     public GameObject pos3;
 
-    private float posRef;
+    private int posRef;
     private Transform posTra;
 
+    // card parameter work
+    private CardScriptReference cardReference;
+
+    //private GameObject spawnedCard;
+
+    // slots taken work
+    public GameObject Table;
+    private SlotsTaken slotsTaken;
 
     private void Start()
     {
-    //should make new list of current cards in collection
-
+        slotsTaken = Table.GetComponent<SlotsTaken>();
+        //cardReference = cardPrefab.GetComponent<CardScriptReference>();
     }
-
 
     void Update()
     {
         //click deck
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray,out RaycastHit hitInfo))
             {
@@ -60,12 +68,18 @@ public class Deck : MonoBehaviour
         //get position of cards to spawn
         if (posRef == 0)
             posTra = pos1.transform;
+
         if (posRef == 1)
             posTra = pos2.transform;
         if (posRef == 2)
             posTra = pos3.transform;
+
+        //set slots
+
+        cardReference = cardPrefab.GetComponent<CardScriptReference>();
+        cardReference.slot = posRef;
         
-        Instantiate(spawnedCard, posTra.position, posTra.rotation);
+        Instantiate(cardPrefab, posTra.position, posTra.rotation);
         
     }
 
