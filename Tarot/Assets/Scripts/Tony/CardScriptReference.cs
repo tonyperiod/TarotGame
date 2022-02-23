@@ -12,6 +12,7 @@ public class CardScriptReference : MonoBehaviour
     public int id;
     public string symbol;
     public int value;
+    public int slot;
 
     private SpriteRenderer spRend;
 
@@ -34,6 +35,7 @@ public class CardScriptReference : MonoBehaviour
         id = cardData.id;
         symbol = cardData.symbol;
         value = cardData.value;
+        
     }
 
 

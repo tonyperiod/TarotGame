@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8954781720273963850}
   - component: {fileID: 8954781720273963851}
   - component: {fileID: 8954781720273963855}
+  - component: {fileID: 924422635727544015}
   m_Layer: 6
   m_Name: table
   m_TagString: Untagged
@@ -115,6 +116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMousePosition: {x: 0, y: 0, z: 0}
+--- !u!114 &924422635727544015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954781720273963848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 375633edcd3f3f34c8ec5b679e025145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapPointTaken: 
 --- !u!1 &8954781720486190724
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +450,8 @@ MonoBehaviour:
   pos1: {fileID: 8954781721066942764}
   pos2: {fileID: 8954781720883290854}
   pos3: {fileID: 8954781720750633500}
+  Table: {fileID: 8954781720273963848}
+  slotsTaken: {fileID: 0}
 --- !u!114 &8954781721174428370
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -59,10 +59,10 @@ public class PlayerInGameDeck : MonoBehaviour
     }
 
     public static ScriptableCard PickCard() // get random card
-        //TODO this needs to be fixed to reduce the card pool every time
+       
     {
         
-        if (instance.cardCur < 3) //draw cards then do the normal stuff
+        if (instance.cardCur < 1) //draw cards then do the normal stuff
         {
             instance.NewDeck();
 
@@ -74,7 +74,7 @@ public class PlayerInGameDeck : MonoBehaviour
 
             return pickedCard;
         }
-        else
+        else //just pick card and delete from list
         {
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
 

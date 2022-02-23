@@ -15,7 +15,7 @@ public class ScriptableCard : ScriptableObject
     public string symbol;
     public int value;
 
-
+    public int slot;
     
 
 }
