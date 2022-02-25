@@ -17,3 +17,5 @@ MonoBehaviour:
   id: 2
   symbol: fire
   value: 2
+  slot: 0
+  isPlayer: 1

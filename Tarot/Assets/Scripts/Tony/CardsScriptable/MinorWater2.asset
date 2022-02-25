@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: MinorWater2
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
-  id: 0
-  symbol: 
-  value: 0
+  artWork: {fileID: 21300000, guid: 5fc8292b3fb2aa346a289f3a9b1844ee, type: 3}
+  id: 12
+  symbol: water
+  value: 2
   slot: 0
   isPlayer: 0
