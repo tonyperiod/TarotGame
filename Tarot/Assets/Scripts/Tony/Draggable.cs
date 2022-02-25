@@ -16,11 +16,15 @@ public class Draggable : MonoBehaviour
 
     //snappoints
     public GameObject[] snapPoints;
-    private float snapSensitivity = 5;
+    
+
+    private int closestSnap = 100;
+    private float closestTemp = 1000;
 
     // see if card slot taken
     private SlotsTaken slotsTaken;
 
+    private bool isFalling;
 
     private void Start()
     {
@@ -37,20 +41,7 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDown()
     {
-        //set the snappoint to false
 
-        //cardTransform = GetComponent<Transform>();
-        //{
-
-        //    for (int i = 0; i < snapPoints.Length; i++)
-        //    {
-        //        if (Vector3.Distance(snapPoints[i].transform.position, cardTransform.position) < snapSensitivity)
-        //        {
-        //            slotsTaken.snapPointTaken[i] = false;
-
-        //        }
-        //    }
-        //}
         int cardNumber = cardScriptReference.slot;
         slotsTaken.snapPointTaken[cardNumber] = false;
 
@@ -68,28 +59,17 @@ public class Draggable : MonoBehaviour
         //floaty effect 
         _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 0, 90 - _rigidbody.velocity.x));
 
-
+        
     }
 
     void OnMouseUp() //snappoints
     {
         cardTransform = GetComponent<Transform>();
-        int closestSnap = 100;
-        float closestTemp = 1000;
+
 
         //find closest
         for (int i = 0; i < snapPoints.Length; i++)
         {
-
-            //if (Vector3.Distance(snapPoints[i].transform.position, cardTransform.position) < snapSensitivity)
-            //{
-            //// move card to position
-            //cardTransform.position = snapPoints[i].transform.position;
-
-            //// set slot value
-            //cardScriptReference.slot = i; //on card   
-            //}
-
             float cardDistance;
             cardDistance = Vector3.Distance(snapPoints[i].transform.position, cardTransform.position);
             if (cardDistance < closestTemp)
@@ -101,7 +81,8 @@ public class Draggable : MonoBehaviour
         }
 
         cardTransform.position = snapPoints[closestSnap].transform.position;
-        cardScriptReference.slot = closestSnap;
+        //cardScriptReference.slot = closestSnap;
+        isFalling = true;
     }
 
 
@@ -127,7 +108,15 @@ public class Draggable : MonoBehaviour
                     // fix parameters
                     cardScriptReference.slot = i;
                     slotsTaken.snapPointTaken[i] = true;
+
                 }
+                else
+                    if (isFalling == true)
+                {
+                    cardScriptReference.slot = closestSnap;
+                    isFalling = false;
+                }
+
             }
 
         }

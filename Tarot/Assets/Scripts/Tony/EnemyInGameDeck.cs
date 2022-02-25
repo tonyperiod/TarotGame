@@ -6,11 +6,11 @@ using System.Linq;
 
 //this script is to create the database in game, and have only 1 of it. This is basically the Deck
 
-public class PlayerInGameDeck : MonoBehaviour
+public class EnemyInGameDeck : MonoBehaviour
 {
-    public ScriptableCardDatabase playerDatabase; //to slot in player database
+    public ScriptableCardDatabase enemyDatabase; //to slot in player database
 
-    private static PlayerInGameDeck instance; //this database 
+    private static EnemyInGameDeck instance; //this database 
 
     private float cardTot;
     private float cardCur;
@@ -28,46 +28,47 @@ public class PlayerInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-        cardTot = instance.playerDatabase.allCards.Count;
+        cardTot = instance.enemyDatabase.allCards.Count;
 
         NewDeck();
 
-    
-        
+
+
 
     }
+    //TODO add in procedural deck building-----------------
 
     public void NewDeck() //this pure jank is to load in all the cards to the in game deck
     {
         instance.currentDeckList.Clear(); //empty out deck
-        
 
-        for(int i = 1; i < instance.playerDatabase.allCards.Count+1; i++) //add back in all the cards from the player owned database one by one
+        
+        for (int i = 1; i < instance.enemyDatabase.allCards.Count + 1; i++) //add back in all the cards from the enemy owned database one by one
         {
-            
-            instance.currentDeckList.Add(GetCardByID(i));           
-            
+
+            instance.currentDeckList.Add(GetCardByID(i));
+
         }
 
         cardCur = cardTot;
-        
-        //set all cards to is player
+
+        //set all cards to is enemy
         foreach (var Card in instance.currentDeckList)
         {
-            Card.isPlayer = true;
+            Card.isPlayer = false;
         }
     }
 
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {
-        return instance.playerDatabase.allCards.FirstOrDefault(i => i.id == ID); //returns first instance that matches true, or default (null)
-        
+        return instance.enemyDatabase.allCards.FirstOrDefault(i => i.id == ID); //returns first instance that matches true, or default (null)
+
     }
 
     public static ScriptableCard PickCard() // get random card
-       
+
     {
-        
+
         if (instance.cardCur < 1) //draw cards then do the normal stuff
         {
             instance.NewDeck();
@@ -75,7 +76,6 @@ public class PlayerInGameDeck : MonoBehaviour
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
 
             instance.currentDeckList.Remove(pickedCard);
-            Debug.Log(pickedCard);
 
             instance.cardCur -= 1;
 
@@ -93,7 +93,7 @@ public class PlayerInGameDeck : MonoBehaviour
         }
     }
 
-  
+
 
 
 }

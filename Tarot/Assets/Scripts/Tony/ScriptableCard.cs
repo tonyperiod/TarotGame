@@ -16,6 +16,6 @@ public class ScriptableCard : ScriptableObject
     public int value;
 
     public int slot;
-    
 
+    public bool isPlayer;
 }

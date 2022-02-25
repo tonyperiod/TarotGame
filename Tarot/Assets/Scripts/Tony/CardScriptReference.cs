@@ -13,17 +13,22 @@ public class CardScriptReference : MonoBehaviour
     public string symbol;
     public int value;
     public int slot;
+    public bool isplayer;
+
 
     private SpriteRenderer spRend;
 
 
-
     private void Start()
     {
-        FirstCard(PlayerInGameDeck.PickCard()); //it's ok to use random as long as the value is removed
-               
-               
-       
+        //choice between is player and is enemy
+        if (isplayer == true)
+            FirstCard(PlayerInGameDeck.PickCard()); //it's ok to use random as long as the value is removed
+        else
+            EnFirstCard(EnemyInGameDeck.PickCard());
+
+
+
     }
 
     private void FirstCard(ScriptableCard s)
@@ -31,12 +36,24 @@ public class CardScriptReference : MonoBehaviour
         //data
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = s.artWork;
-        Cardname = cardData.Cardname;
-        id = cardData.id;
-        symbol = cardData.symbol;
-        value = cardData.value;
-        
+        Cardname = s.Cardname;
+        id = s.id;
+        symbol = s.symbol;
+        value = s.value;
+        isplayer = true;
+
     }
 
+    private void EnFirstCard(ScriptableCard e)
+    {
+        //data
+        spRend = GetComponent<SpriteRenderer>();
+        spRend.sprite = e.artWork;
+        Cardname = e.Cardname;
+        id = e.id;
+        symbol = e.symbol;
+        value = e.value;
+        isplayer = false;
 
+    }
 }
