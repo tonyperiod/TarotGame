@@ -41,48 +41,54 @@ public class Draggable : MonoBehaviour
 
     void OnMouseDown()
     {
-
-        int cardNumber = cardScriptReference.slot;
-        slotsTaken.snapPointTaken[cardNumber] = false;
+        if (cardScriptReference.isplayer == true)
+        {
+            int cardNumber = cardScriptReference.slot;
+            slotsTaken.snapPointTaken[cardNumber] = false;
+        }
 
 
     }
     void OnMouseDrag()
     {
+        if (cardScriptReference.isplayer == true)
+        {
+            Vector3 newWorldPostion = new Vector3(dragTableProjection.currentMousePosition.x, startYpos + 1, dragTableProjection.currentMousePosition.z);
 
-        Vector3 newWorldPostion = new Vector3(dragTableProjection.currentMousePosition.x, startYpos + 1, dragTableProjection.currentMousePosition.z);
+            var difference = newWorldPostion - transform.position;
 
-        var difference = newWorldPostion - transform.position;
+            _rigidbody.velocity = 10 * difference;
 
-        _rigidbody.velocity = 10 * difference;
-
-        //floaty effect 
-        _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 0, 90 - _rigidbody.velocity.x));
-
+            //floaty effect 
+            _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 0, 90 - _rigidbody.velocity.x));
+        }
         
     }
 
     void OnMouseUp() //snappoints
     {
-        cardTransform = GetComponent<Transform>();
-
-
-        //find closest
-        for (int i = 0; i < snapPoints.Length; i++)
+        if (cardScriptReference.isplayer == true)
         {
-            float cardDistance;
-            cardDistance = Vector3.Distance(snapPoints[i].transform.position, cardTransform.position);
-            if (cardDistance < closestTemp)
-            {
-                closestSnap = i;
-                closestTemp = cardDistance;
-            }
-            Debug.Log(closestSnap);
-        }
+            cardTransform = GetComponent<Transform>();
 
-        cardTransform.position = snapPoints[closestSnap].transform.position;
-        //cardScriptReference.slot = closestSnap;
-        isFalling = true;
+
+            //find closest
+            for (int i = 0; i < snapPoints.Length; i++)
+            {
+                float cardDistance;
+                cardDistance = Vector3.Distance(snapPoints[i].transform.position, cardTransform.position);
+                if (cardDistance < closestTemp)
+                {
+                    closestSnap = i;
+                    closestTemp = cardDistance;
+                }
+               
+            }
+
+            cardTransform.position = snapPoints[closestSnap].transform.position;
+            //cardScriptReference.slot = closestSnap;
+            isFalling = true;
+        }
     }
 
 
@@ -98,7 +104,7 @@ public class Draggable : MonoBehaviour
                 //compare free slot to this slot, double check that this is the card getting fallen on
                 if (slotsTaken.snapPointTaken[i] == false && i != cardScriptReference.slot)
                 {
-                    Debug.Log("dropped");
+                    
                     //to optimize run little
                     cardTransform = GetComponent<Transform>();
 

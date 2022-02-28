@@ -148,6 +148,8 @@ MonoBehaviour:
   id: 0
   symbol: 
   value: 0
+  slot: 5
+  isplayer: 0
 --- !u!114 &6431802663658331729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +164,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Table: {fileID: 8954781720273963848, guid: c9d615c216710824487cef473a52b920, type: 3}
   dragTableProjection: {fileID: 0}
+  snapPoints: []

@@ -32,25 +32,25 @@ public class PlayerInGameDeck : MonoBehaviour
 
         NewDeck();
 
-    
-        
+
+
 
     }
 
     public void NewDeck() //this pure jank is to load in all the cards to the in game deck
     {
         instance.currentDeckList.Clear(); //empty out deck
-        
 
-        for(int i = 1; i < instance.playerDatabase.allCards.Count+1; i++) //add back in all the cards from the player owned database one by one
+
+        for (int i = 1; i < instance.playerDatabase.allCards.Count + 1; i++) //add back in all the cards from the player owned database one by one
         {
-            
-            instance.currentDeckList.Add(GetCardByID(i));           
-            
+
+            instance.currentDeckList.Add(GetCardByID(i));
+
         }
 
         cardCur = cardTot;
-        
+
         //set all cards to is player
         foreach (var Card in instance.currentDeckList)
         {
@@ -61,13 +61,13 @@ public class PlayerInGameDeck : MonoBehaviour
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {
         return instance.playerDatabase.allCards.FirstOrDefault(i => i.id == ID); //returns first instance that matches true, or default (null)
-        
+
     }
 
     public static ScriptableCard PickCard() // get random card
-       
+
     {
-        
+
         if (instance.cardCur < 1) //draw cards then do the normal stuff
         {
             instance.NewDeck();
@@ -75,7 +75,7 @@ public class PlayerInGameDeck : MonoBehaviour
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
 
             instance.currentDeckList.Remove(pickedCard);
-            Debug.Log(pickedCard);
+
 
             instance.cardCur -= 1;
 
@@ -93,7 +93,7 @@ public class PlayerInGameDeck : MonoBehaviour
         }
     }
 
-  
+
 
 
 }
