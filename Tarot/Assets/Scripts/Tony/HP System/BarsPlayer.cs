@@ -26,7 +26,6 @@ public class BarsPlayer : MonoBehaviour
     //same thing with shields ------------------------------------------
     public void SetupSh(SHSystem shsystem)
     {
-
         this.shsystem = shsystem;
         shsystem.onSHChanged += shsystem_OnShieldChanged;
     }

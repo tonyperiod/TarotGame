@@ -6,7 +6,9 @@ public class HPSystem
     private int hpMax;
 
     public event EventHandler onHPChanged;
-             
+
+
+
     public HPSystem(int hpMax)
     {
         this.hpMax = hpMax;
@@ -46,5 +48,5 @@ public class HPSystem
         if (onHPChanged != null)
             onHPChanged(this, EventArgs.Empty);
     }
-
+ 
 }

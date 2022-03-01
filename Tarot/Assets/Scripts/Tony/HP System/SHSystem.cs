@@ -7,10 +7,11 @@ public class SHSystem
 
     public event EventHandler onSHChanged;
 
+
     public SHSystem(int shMax)
     {
         this.shMax = shMax;
-        sh = shMax;
+        sh = 0;
     }
 
     public int getSH()
@@ -28,8 +29,7 @@ public class SHSystem
 
         sh -= dAmount;
         if (sh < 0)
-        {
-            damageSpillOver(-sh); //damage spills over to hp
+        {                               
             sh = 0;
         }
 
@@ -48,12 +48,6 @@ public class SHSystem
         if (onSHChanged != null)
             onSHChanged(this, EventArgs.Empty);
     }
-
-    public void damageSpillOver(int dmg)
-    {
-
-    }
+    
 
 }
-
-

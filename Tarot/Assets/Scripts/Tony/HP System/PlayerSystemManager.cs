@@ -14,24 +14,40 @@ public class PlayerSystemManager : MonoBehaviour
 
     //to do GET ALL THE DATA
 
+    public HPSystem hpsyst;
+    public SHSystem shsystem;
 
     void Start()
     {
-        
+
         //set max values
-        refHpMax = reference.GetComponent<PlayerReference>().maxHP;        
-        HPSystem hpsyst = new HPSystem(refHpMax);
+        refHpMax = reference.GetComponent<PlayerReference>().maxHP;
+        hpsyst = new HPSystem(refHpMax);
 
         refShMax = reference.GetComponent<PlayerReference>().maxSH;
-        SHSystem shsyst = new SHSystem(refShMax);
- 
-        //set up bars
-        Bar.SetupHp(hpsyst);
-        hpsyst.dmghp(10);//TESTING
+        shsystem = new SHSystem(refShMax);
 
-        Bar.SetupSh(shsyst);
-        shsyst.dmgSh(5);        
+        //set up bars
+        Bar.SetupHp(hpsyst);        
+        Bar.SetupSh(shsystem);
+
     }
 
+    public void TakeDamage(int dmg)
+    {
+        int remainingSh;
+        remainingSh = shsystem.getSH() - dmg;
 
+        if (remainingSh>0)
+        {
+            shsystem.dmgSh(dmg);
+        }
+        //this way I get the damage pass in
+        else
+        {
+            shsystem.dmgSh(dmg);
+            hpsyst.dmghp(-remainingSh);
+        }
+
+    }
 }
