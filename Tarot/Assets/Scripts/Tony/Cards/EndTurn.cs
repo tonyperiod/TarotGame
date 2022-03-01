@@ -6,7 +6,7 @@ public class EndTurn : MonoBehaviour
 {
     //don't know if this is needed
     //public Camera _camera;
-  
+
 
     //getting positioning right
     public GameObject[] pos;
@@ -27,7 +27,7 @@ public class EndTurn : MonoBehaviour
     private void Start()
     {
         slotsTaken = Table.GetComponent<SlotsTaken>();
-    
+
         //get cards onto table
         PlaceCards();
 
@@ -44,9 +44,9 @@ public class EndTurn : MonoBehaviour
 
     private void CardEffects()
     {
-       
-       GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
-        printArray(lastTurnCards);
+
+        GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
+
 
         SelectionSort(lastTurnCards);
 
@@ -81,7 +81,7 @@ public class EndTurn : MonoBehaviour
     {
         switch (c.GetComponent<CardScriptReference>().slot)
         {
-            case 2:                
+            case 2:
                 slotsTaken.snapPointTaken[2] = false;
                 c.GetComponent<Draggable>().enabled = false;
 
