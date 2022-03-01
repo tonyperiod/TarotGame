@@ -18,15 +18,7 @@ public class EndTurn : MonoBehaviour
     public GameObject Table;
     private SlotsTaken slotsTaken;
 
-    //getting the effects to act in order
-    //public List<GameObject> pastCards;
-    //public List<GameObject> presentCards;
-    //public List<GameObject> futureCards;
-    //public List<GameObject> pastFutureCards;
-
     public GameObject[] lastTurnCards;
-
-    //public List<GameObject> lastTurnCards;
 
 
     private void Start()
@@ -49,42 +41,46 @@ public class EndTurn : MonoBehaviour
     private void CardEffects()//HERE IS WIP ---------------------------------------
     {
 
-        GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card");
-
-        foreach (GameObject target in lastTurnCards)
-        {
-            CardScriptReference targetReference = target.GetComponent<CardScriptReference>();
-            
-
-
-        }
-
-
-        Past();
-        Present();
-        Future();
-        PastFuture();
-    }
-
-    private void Past()
-    {
+        GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
         
+ 
+        SelectionSort(lastTurnCards);
+
+        //get in the correct order
+
+        Past(lastTurnCards[0]);
+        Past(lastTurnCards[3]);
+
+        Present(lastTurnCards[1]);
+        Present(lastTurnCards[4]);
+
+        Future(lastTurnCards[2]);
+        Future(lastTurnCards[5]);
+
+        //PastFuture(lastTurnCards[6]);
+        //PastFuture(lastTurnCards[7]);
     }
 
-    private void Present()
+
+    private void Past(GameObject c)
     {
-
+        Debug.Log(c.GetComponent<CardScriptReference>().Cardname);
     }
 
-    private void Future()
+    private void Present(GameObject c)
     {
-
+        Debug.Log(c.GetComponent<CardScriptReference>().Cardname);
     }
 
-    private void PastFuture()
+    private void Future(GameObject c)
     {
-
+        Debug.Log(c.GetComponent<CardScriptReference>().Cardname);
     }
+
+    //private void PastFuture(GameObject c)
+    //{
+
+    //}
 
 
     private void DestroyCards()
@@ -123,13 +119,44 @@ public class EndTurn : MonoBehaviour
 
             //finally instantiate
             Instantiate(cardPrefab, pos[i].transform.position, pos[i].transform.rotation);
-
         }
         cardPrefab.tag = "Untagged"; //reset to untagged so the script doesn't delete it
-
-
-
     }
 
+    //with this the array sorts itself basd
+    void SelectionSort(GameObject[] unsortedList)
+    {
+        int min;
+        GameObject temp; //temporary swapping place
 
+        for (int i = 0; i < unsortedList.Length; i++)
+        {
+            min = i;
+
+            for (int j = i + 1; j < unsortedList.Length; j++)
+            {
+                if (unsortedList[j].gameObject.GetComponent<CardScriptReference>().slot < unsortedList[min].gameObject.GetComponent<CardScriptReference>().slot)
+                {
+                    min = j;
+                }
+            }
+            if (min != i)
+            {
+                temp = unsortedList[i];
+                unsortedList[i] = unsortedList[min];
+                unsortedList[min] = temp;
+            }
+        }
+    }
+
+    //this is literally only for testing out arrays
+    //void printArray(GameObject[] a)
+    //{
+    //    string resultString = "";
+    //    for (int i = 0; i < a.Length; i++)
+    //    {
+    //        resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
+    //    }
+    //    print(resultString);
+    //}
 }
