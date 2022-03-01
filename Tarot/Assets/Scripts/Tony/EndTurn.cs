@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class EndTurn : MonoBehaviour
 {
-    public Camera _camera;
-    public GameObject cardPrefab;
+    //don't know if this is needed
+    //public Camera _camera;
+  
 
     //getting positioning right
     public GameObject[] pos;
     private int posRef;
 
-    // card parameter work
+    // card spawning
+    public GameObject cardPrefab;
     private CardScriptReference cardReference;
 
-    // slots taken work
+    // slots taken
     public GameObject Table;
     private SlotsTaken slotsTaken;
 
-    public GameObject[] lastTurnCards;
+    //card effects
+    //GameObject[] lastTurnCards;
 
 
     private void Start()
     {
         slotsTaken = Table.GetComponent<SlotsTaken>();
-
+    
         //get cards onto table
         PlaceCards();
 
@@ -34,19 +37,20 @@ public class EndTurn : MonoBehaviour
     {
 
         CardEffects();
-        DestroyCards();
+        //DestroyCards();
         PlaceCards();
+
     }
 
-    private void CardEffects()//HERE IS WIP ---------------------------------------
+    private void CardEffects()
     {
+       
+       GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
+        printArray(lastTurnCards);
 
-        GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
-        
- 
         SelectionSort(lastTurnCards);
 
-        //get in the correct order
+        //get in the correct order, player than enemy
 
         Past(lastTurnCards[0]);
         Past(lastTurnCards[3]);
@@ -57,40 +61,58 @@ public class EndTurn : MonoBehaviour
         Future(lastTurnCards[2]);
         Future(lastTurnCards[5]);
 
-        //PastFuture(lastTurnCards[6]);
-        //PastFuture(lastTurnCards[7]);
+        PastFuture(lastTurnCards[6]);
+        PastFuture(lastTurnCards[7]);
+
     }
 
 
     private void Past(GameObject c)
     {
-        Debug.Log(c.GetComponent<CardScriptReference>().Cardname);
+        GameObject.Destroy(c);
     }
 
     private void Present(GameObject c)
     {
-        Debug.Log(c.GetComponent<CardScriptReference>().Cardname);
+        GameObject.Destroy(c);
     }
 
     private void Future(GameObject c)
     {
-        Debug.Log(c.GetComponent<CardScriptReference>().Cardname);
+        switch (c.GetComponent<CardScriptReference>().slot)
+        {
+            case 2:                
+                slotsTaken.snapPointTaken[2] = false;
+                c.GetComponent<Draggable>().enabled = false;
+
+                c.transform.position = pos[6].transform.position;
+                c.GetComponent<CardScriptReference>().slot = 6;
+                break;
+
+            case 5:
+                c.transform.position = pos[7].transform.position;
+                c.GetComponent<CardScriptReference>().slot = 7;
+                break;
+        }
+        c.GetComponent<Draggable>().enabled = false;
+
+
     }
 
-    //private void PastFuture(GameObject c)
+    private void PastFuture(GameObject c)
+    {
+        GameObject.Destroy(c);
+    }
+
+
+    //private void DestroyCards()
     //{
+    //    GameObject[] destroy = GameObject.FindGameObjectsWithTag("Card");
+
+    //    foreach (GameObject target in destroy)
+    //        GameObject.Destroy(target);
 
     //}
-
-
-    private void DestroyCards()
-    {
-        GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card");
-
-        foreach (GameObject target in lastTurnCards)
-            GameObject.Destroy(target);
-
-    }
 
 
     private void PlaceCards()// had to combine all scripts so don't have to call getcomponent too many times
@@ -103,8 +125,8 @@ public class EndTurn : MonoBehaviour
         //for loop to place in the 6 slots
         for (int i = 0; i < 6; i++)
         {
-            //get pos ref
-            posRef = i;
+            ////get pos ref
+            //posRef = i;
 
 
             // get card ref to know if it enemy or player
@@ -123,7 +145,9 @@ public class EndTurn : MonoBehaviour
         cardPrefab.tag = "Untagged"; //reset to untagged so the script doesn't delete it
     }
 
-    //with this the array sorts itself basd
+
+
+    //with this the array sorts itself ----------------------------------------------------------------------------------------------------------------
     void SelectionSort(GameObject[] unsortedList)
     {
         int min;
@@ -150,13 +174,13 @@ public class EndTurn : MonoBehaviour
     }
 
     //this is literally only for testing out arrays
-    //void printArray(GameObject[] a)
-    //{
-    //    string resultString = "";
-    //    for (int i = 0; i < a.Length; i++)
-    //    {
-    //        resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
-    //    }
-    //    print(resultString);
-    //}
+    void printArray(GameObject[] a)
+    {
+        string resultString = "";
+        for (int i = 0; i < a.Length; i++)
+        {
+            resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
+        }
+        print(resultString);
+    }
 }

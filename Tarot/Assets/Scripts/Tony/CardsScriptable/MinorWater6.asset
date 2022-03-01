@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: MinorWater6
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: MinorWater6
   artWork: {fileID: 21300000, guid: 782a036e5233fe843be16a66aab7c87c, type: 3}
   id: 16
   symbol: water
