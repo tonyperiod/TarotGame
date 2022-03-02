@@ -40,11 +40,15 @@ public class EndTurn : MonoBehaviour
     private PlayerSystemManager PSysMng;
     private EnemySystemManager EsysMng;
 
-
+    //fix bug of the two placeholder cards in slot activating
+    private bool gameStart;
 
     private void Start()
     {
         slotsTaken = Table.GetComponent<SlotsTaken>();
+
+        //fix bug of the two placeholder cards in slot activating
+        gameStart = true;
 
         //get cards onto table
         PlaceCards();
@@ -89,10 +93,19 @@ public class EndTurn : MonoBehaviour
 
         Present(lastTurnCards[1]);
         Present(lastTurnCards[4]);
-               
-        PastFuture(lastTurnCards[6]);
-        PastFuture(lastTurnCards[7]);
 
+        if (gameStart != true)
+        {
+            PastFuture(lastTurnCards[6]);
+            PastFuture(lastTurnCards[7]);
+        }
+
+        else
+        {
+            GameObject.Destroy(lastTurnCards[6]);
+            GameObject.Destroy(lastTurnCards[7]);
+            gameStart = false;
+        }
         Future(lastTurnCards[2]);
         Future(lastTurnCards[5]);
 
@@ -104,7 +117,7 @@ public class EndTurn : MonoBehaviour
     {
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
-          
+
 
         switch (c.GetComponent<CardScriptReference>().symbol)
         {
@@ -117,7 +130,7 @@ public class EndTurn : MonoBehaviour
                 else
                 {
                     lastTurnCards[4].GetComponent<CardScriptReference>().value += value;
-                    isPonFirePa = true;                    
+                    isPonFirePa = true;
                 }
 
                 break;
@@ -145,7 +158,7 @@ public class EndTurn : MonoBehaviour
                     if (passingDmg < 0)
                     {
                         lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
-                        EsysMng.TakeAirDmg(value - futdmg);
+                        EsysMng.TakeAirDmg(-passingDmg);
                     }
                 }
 
@@ -170,7 +183,7 @@ public class EndTurn : MonoBehaviour
                     if (passingDmg < 0)
                     {
                         lastTurnCards[6].GetComponent<CardScriptReference>().value = 0;
-                        PSysMng.TakeAirDmg(value - futdmg);
+                        PSysMng.TakeAirDmg(-passingDmg);
                     }
                 }
 
@@ -180,7 +193,7 @@ public class EndTurn : MonoBehaviour
             case "earth":
                 if (isplayer == true)
                 {
-                    PSysMng.HealSH(value);
+                    PSysMng.HealSH(value);                    
                 }
                 else
                 {
@@ -200,7 +213,7 @@ public class EndTurn : MonoBehaviour
                     //dmg bigger than value, most common one. here just using value works fine
                     if (passingDmg > 0)
                     {
-                        lastTurnCards[4].GetComponent<CardScriptReference>().value -= value / 2;
+                        lastTurnCards[4].GetComponent<CardScriptReference>().value = passingDmg;
                         EsysMng.TakeDamage(finalDmg);
                     }
 
@@ -231,7 +244,7 @@ public class EndTurn : MonoBehaviour
                     //dmg bigger than value, most common one. here just using value works fine
                     if (passingDmg > 0)
                     {
-                        lastTurnCards[1].GetComponent<CardScriptReference>().value -= value / 2;
+                        lastTurnCards[1].GetComponent<CardScriptReference>().value = passingDmg;
                         PSysMng.TakeDamage(finalDmg);
                     }
 
@@ -249,7 +262,7 @@ public class EndTurn : MonoBehaviour
                     }
 
                     if (isEonFirePa == false)
-                        EsysMng.HealHP(passingDmg / 2);
+                        EsysMng.HealHP(finalDmg/2);
                 }
                 break;
         }
@@ -330,7 +343,7 @@ public class EndTurn : MonoBehaviour
 
         GameObject.Destroy(c);
     }
-          
+
 
     private void PastFuture(GameObject c)
     {
@@ -339,7 +352,7 @@ public class EndTurn : MonoBehaviour
 
         //counter element
 
-        string PElem = lastTurnCards[2].GetComponent<CardScriptReference>().symbol;
+        string PElem = lastTurnCards[0].GetComponent<CardScriptReference>().symbol;
         string EElem = lastTurnCards[3].GetComponent<CardScriptReference>().symbol;
 
         switch (c.GetComponent<CardScriptReference>().symbol)
@@ -392,16 +405,15 @@ public class EndTurn : MonoBehaviour
             case "water":
                 if (isplayer == true && isPonFireFu == false && EElem != "fire")
                 {
-                    PSysMng.HealSH(2 * value);
+                    PSysMng.HealHP(2 * value);
                 }
                 if (isplayer == false && isEonFireFu == false && PElem != "fire")
                 {
-                    EsysMng.HealSH(2 * value);
+                    EsysMng.HealHP(2 * value);
                 }
                 break;
 
         }
-
 
 
         GameObject.Destroy(c);
