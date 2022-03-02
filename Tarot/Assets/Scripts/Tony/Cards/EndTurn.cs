@@ -21,7 +21,25 @@ public class EndTurn : MonoBehaviour
     private SlotsTaken slotsTaken;
 
     //card effects
-    //GameObject[] lastTurnCards;
+    private bool isEonFirePa;
+    private bool isPonFirePa;
+
+    private bool isEonFirePr;
+    private bool isPonFirePr;
+
+    private bool isEonFireFu;
+    private bool isPonFireFu;
+
+
+
+    //hp system managers
+
+    GameObject[] lastTurnCards;
+
+    public GameObject Gamehandler;
+    private PlayerSystemManager PSysMng;
+    private EnemySystemManager EsysMng;
+
 
 
     private void Start()
@@ -31,12 +49,26 @@ public class EndTurn : MonoBehaviour
         //get cards onto table
         PlaceCards();
 
+        //fire stuff
+        isEonFirePa = false;
+        isPonFirePa = false;
+
+        isEonFirePr = false;
+        isPonFirePr = false;
+
+        isEonFireFu = false;
+        isPonFireFu = false;
+
+        //get syst managers for hp
+        PSysMng = Gamehandler.GetComponent<PlayerSystemManager>();
+        EsysMng = Gamehandler.GetComponent<EnemySystemManager>();
     }
 
     private void OnMouseDown()
     {
 
         CardEffects();
+        RemoveCardEffects();
         //DestroyCards();
         PlaceCards();
 
@@ -45,8 +77,8 @@ public class EndTurn : MonoBehaviour
     private void CardEffects()
     {
 
-        GameObject[] lastTurnCards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
-
+        GameObject[] totalcards = GameObject.FindGameObjectsWithTag("Card"); //this finds all cards
+        lastTurnCards = totalcards;
 
         SelectionSort(lastTurnCards);
 
@@ -67,15 +99,240 @@ public class EndTurn : MonoBehaviour
     }
 
 
+
     private void Past(GameObject c)
     {
+        bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
+        int value = c.GetComponent<CardScriptReference>().value;
+          
+
+        switch (c.GetComponent<CardScriptReference>().symbol)
+        {
+            case "fire":
+                if (isplayer == true)
+                {
+                    lastTurnCards[1].GetComponent<CardScriptReference>().value += value;
+                    isEonFirePa = true;
+                }
+                else
+                {
+                    lastTurnCards[4].GetComponent<CardScriptReference>().value += value;
+                    isPonFirePa = true;
+                }
+
+                break;
+
+
+            case "air":
+                if (isplayer == true)
+                {//comparing
+                    int futdmg = FutureDamage(lastTurnCards[7]);
+                    int passingDmg = futdmg - value;
+
+                    //dmg bigger than value, most common one. here just using value works fine
+                    if (passingDmg > 0)
+                    {
+                        lastTurnCards[7].GetComponent<CardScriptReference>().value -= value / 2;
+                        EsysMng.TakeAirDmg(value);
+                    }
+
+                    if (passingDmg == 0)
+                    {
+                        lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
+                        EsysMng.TakeAirDmg(value);
+                    }
+
+                    if (passingDmg < 0)
+                    {
+                        lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
+                        EsysMng.TakeAirDmg(value - futdmg);
+                    }
+                }
+
+                else
+                {
+                    int futdmg = FutureDamage(lastTurnCards[6]);
+                    int passingDmg = futdmg - value;
+
+                    //dmg bigger than value, most common one. here just using value works fine
+                    if (passingDmg > 0)
+                    {
+                        lastTurnCards[6].GetComponent<CardScriptReference>().value -= value / 2;
+                        PSysMng.TakeAirDmg(value);
+                    }
+
+                    if (passingDmg == 0)
+                    {
+                        lastTurnCards[6].GetComponent<CardScriptReference>().value = 0;
+                        PSysMng.TakeAirDmg(value);
+                    }
+
+                    if (passingDmg < 0)
+                    {
+                        lastTurnCards[6].GetComponent<CardScriptReference>().value = 0;
+                        PSysMng.TakeAirDmg(value - futdmg);
+                    }
+                }
+
+                break;
+
+
+            case "earth":
+                if (isplayer == true)
+                {
+                    PSysMng.HealSH(value);
+                }
+                else
+                {
+                    EsysMng.HealSH(value);
+                }
+
+                break;
+
+
+            case "water":
+                if (isplayer == true)
+                {
+                    int predmg = lastTurnCards[4].GetComponent<CardScriptReference>().value;
+                    int passingDmg = predmg - value;
+                    int finalDmg = value; // this is for the heal to happen even on passingdmg <0
+
+                    //dmg bigger than value, most common one. here just using value works fine
+                    if (passingDmg > 0)
+                    {
+                        lastTurnCards[4].GetComponent<CardScriptReference>().value -= value / 2;
+                        EsysMng.TakeDamage(finalDmg);
+                    }
+
+                    if (passingDmg == 0)
+                    {
+                        lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
+                        EsysMng.TakeDamage(finalDmg);
+                    }
+
+                    if (passingDmg < 0)
+                    {
+                        lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
+                        finalDmg = value - predmg;
+                        EsysMng.TakeDamage(finalDmg);
+                    }
+
+                    if (isPonFirePa == false)
+                        PSysMng.HealHP(finalDmg / 2);
+
+                }
+
+                else
+                {
+                    int predmg = lastTurnCards[1].GetComponent<CardScriptReference>().value;
+                    int passingDmg = predmg - value;
+                    int finalDmg = value; // this is for the heal to happen even on passingdmg <0
+
+                    //dmg bigger than value, most common one. here just using value works fine
+                    if (passingDmg > 0)
+                    {
+                        lastTurnCards[1].GetComponent<CardScriptReference>().value -= value / 2;
+                        PSysMng.TakeDamage(finalDmg);
+                    }
+
+                    if (passingDmg == 0)
+                    {
+                        lastTurnCards[1].GetComponent<CardScriptReference>().value = 0;
+                        PSysMng.TakeDamage(finalDmg);
+                    }
+
+                    if (passingDmg < 0)
+                    {
+                        lastTurnCards[1].GetComponent<CardScriptReference>().value = 0;
+                        finalDmg = value - predmg;
+                        PSysMng.TakeDamage(finalDmg);
+                    }
+
+                    if (isEonFirePa == false)
+                        EsysMng.HealHP(passingDmg / 2);
+                }
+                break;
+        }
+
         GameObject.Destroy(c);
     }
 
+
+
+
     private void Present(GameObject c)
     {
+        bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
+        int value = c.GetComponent<CardScriptReference>().value;
+
+
+        switch (c.GetComponent<CardScriptReference>().symbol)
+        {
+            case "fire":
+                if (isplayer == true)
+                {
+                    EsysMng.TakeDamage(value);
+                    isEonFirePr = true;
+                }
+                else
+                {
+                    PSysMng.TakeDamage(value);
+                    isPonFirePr = true;
+                }
+
+                break;
+
+
+            case "air":
+
+                if (isplayer == true)
+                    EsysMng.TakeAirDmg(value);
+                else
+                    PSysMng.TakeAirDmg(value);
+
+                break;
+
+
+            case "earth":
+                if (isplayer == true)
+                {
+                    EsysMng.TakeDamage(value);
+                    PSysMng.HealSH(value / 2);
+                }
+                else
+                {
+                    PSysMng.TakeDamage(value);
+                    EsysMng.HealSH(value / 2);
+                }
+
+                break;
+
+
+            case "water":
+                if (isplayer == true)
+                {
+                    EsysMng.TakeDamage(value);
+                    if (isPonFirePr == false)
+                        PSysMng.HealSH(value / 2);
+
+                }
+                else
+                {
+                    PSysMng.TakeDamage(value);
+                    if (isEonFirePr == false)
+                        EsysMng.HealSH(value / 2);
+                }
+                break;
+
+        }
+
+
+
         GameObject.Destroy(c);
     }
+
+
+
 
     private void Future(GameObject c)
     {
@@ -83,7 +340,7 @@ public class EndTurn : MonoBehaviour
         {
             case 2:
                 slotsTaken.snapPointTaken[2] = false;
-                c.GetComponent<Draggable>().enabled = false;
+
 
                 c.transform.position = pos[6].transform.position;
                 c.GetComponent<CardScriptReference>().slot = 6;
@@ -94,16 +351,123 @@ public class EndTurn : MonoBehaviour
                 c.GetComponent<CardScriptReference>().slot = 7;
                 break;
         }
-        c.GetComponent<Draggable>().enabled = false;
 
 
     }
+
+
 
     private void PastFuture(GameObject c)
     {
+        bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
+        int value = c.GetComponent<CardScriptReference>().value;
+
+        //counter element
+
+        string PElem = lastTurnCards[2].GetComponent<CardScriptReference>().symbol;
+        string EElem = lastTurnCards[3].GetComponent<CardScriptReference>().symbol;
+
+        switch (c.GetComponent<CardScriptReference>().symbol)
+        {
+            case "fire":
+
+                if (isplayer == true && EElem != "water")
+                {
+                    EsysMng.TakeDamage(2 * value);
+                    isEonFireFu = true;
+                }
+
+                if (isplayer == false && PElem != "water")
+                {
+                    PSysMng.TakeDamage(2 * value);
+                    isEonFireFu = true;
+                }
+
+                break;
+
+
+            case "air":
+
+                if (isplayer == true && EElem != "earth")
+                {
+                    EsysMng.TakeAirDmg(2 * value);
+                }
+
+                if (isplayer == false && PElem != "earth")
+                {
+                    PSysMng.TakeAirDmg(2 * value);
+                }
+                break;
+
+
+            case "earth":
+                if (isplayer == true && EElem != "air")
+                {
+                    PSysMng.HealSH(2 * value);
+                }
+
+                if (isplayer == false && PElem != "air")
+                {
+                    EsysMng.HealSH(2 * value);
+                }
+
+                break;
+
+
+            case "water":
+                if (isplayer == true && isPonFireFu == false && EElem != "fire")
+                {
+                    PSysMng.HealSH(2 * value);
+                }
+                if (isplayer == false && isEonFireFu == false && PElem != "fire")
+                {
+                    EsysMng.HealSH(2 * value);
+                }
+                break;
+
+        }
+
+
+
         GameObject.Destroy(c);
     }
 
+    private int FutureDamage(GameObject c)
+    {
+        int damage;
+        int value = c.GetComponent<CardScriptReference>().value;
+
+        switch (c.GetComponent<CardScriptReference>().symbol)
+        {
+            case "fire":
+                damage = 2 * value;
+                break;
+
+
+            case "air":
+                damage = 2 * value;
+                break;
+
+            default:
+                damage = 0;
+                break;
+        }
+
+        return damage;
+    }
+
+    private void RemoveCardEffects()
+    {
+        //removing the fire from everything
+        isEonFirePa = false;
+        isPonFirePa = false;
+
+        isEonFirePr = false;
+        isPonFirePr = false;
+
+        isEonFireFu = false;
+        isPonFireFu = false;
+    }
 
     //private void DestroyCards()
     //{
@@ -113,6 +477,11 @@ public class EndTurn : MonoBehaviour
     //        GameObject.Destroy(target);
 
     //}
+
+
+
+
+
 
 
     private void PlaceCards()// had to combine all scripts so don't have to call getcomponent too many times

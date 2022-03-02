@@ -38,20 +38,23 @@ public class Draggable : MonoBehaviour
 
 
     }
-
+    // the whole && cardScriptReference.slot != 6 is so that past future things don't activate
     void OnMouseDown()
     {
-        if (cardScriptReference.isplayer == true)
+        if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
         {
-            int cardNumber = cardScriptReference.slot;
-            slotsTaken.snapPointTaken[cardNumber] = false;
+            if (cardScriptReference.slot != 6)
+            {
+                int cardNumber = cardScriptReference.slot;
+                slotsTaken.snapPointTaken[cardNumber] = false;
+            }
         }
 
 
     }
     void OnMouseDrag()
     {
-        if (cardScriptReference.isplayer == true)
+        if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
         {
             Vector3 newWorldPostion = new Vector3(dragTableProjection.currentMousePosition.x, startYpos + 1, dragTableProjection.currentMousePosition.z);
 
@@ -67,7 +70,7 @@ public class Draggable : MonoBehaviour
 
     void OnMouseUp() //snappoints
     {
-        if (cardScriptReference.isplayer == true)
+        if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
         {
             cardTransform = GetComponent<Transform>();
 

@@ -27,6 +27,7 @@ public class BarsPlayer : MonoBehaviour
     public void SetupSh(SHSystem shsystem)
     {
         this.shsystem = shsystem;
+        shbar.transform.localScale = new Vector3(shsystem.getSHPercent(), 1); //so it displays correctly at start of game
         shsystem.onSHChanged += shsystem_OnShieldChanged;
     }
 

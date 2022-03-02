@@ -28,7 +28,7 @@ public class PlayerSystemManager : MonoBehaviour
         shsystem = new SHSystem(refShMax);
 
         //set up bars
-        Bar.SetupHp(hpsyst);        
+        Bar.SetupHp(hpsyst);
         Bar.SetupSh(shsystem);
 
     }
@@ -38,7 +38,7 @@ public class PlayerSystemManager : MonoBehaviour
         int remainingSh;
         remainingSh = shsystem.getSH() - dmg;
 
-        if (remainingSh>0)
+        if (remainingSh > 0)
         {
             shsystem.dmgSh(dmg);
         }
@@ -48,6 +48,20 @@ public class PlayerSystemManager : MonoBehaviour
             shsystem.dmgSh(dmg);
             hpsyst.dmghp(-remainingSh);
         }
+    }
 
+    public void TakeAirDmg(int dmg)
+    {
+        hpsyst.dmghp(dmg);
+    }
+
+    public void HealHP(int heal)
+    {
+        hpsyst.healhp(heal);
+    }
+
+    public void HealSH (int shield)
+    {
+        shsystem.healSh(shield);
     }
 }
