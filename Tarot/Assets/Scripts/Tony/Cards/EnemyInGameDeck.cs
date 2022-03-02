@@ -31,10 +31,6 @@ public class EnemyInGameDeck : MonoBehaviour
         cardTot = instance.enemyDatabase.allCards.Count;
 
         NewDeck();
-
-
-
-
     }
     //TODO add in procedural deck building-----------------
 
@@ -42,7 +38,7 @@ public class EnemyInGameDeck : MonoBehaviour
     {
         instance.currentDeckList.Clear(); //empty out deck
 
-        
+
         for (int i = 1; i < instance.enemyDatabase.allCards.Count + 1; i++) //add back in all the cards from the enemy owned database one by one
         {
 

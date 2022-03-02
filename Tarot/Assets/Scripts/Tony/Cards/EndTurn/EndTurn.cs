@@ -89,12 +89,12 @@ public class EndTurn : MonoBehaviour
 
         Present(lastTurnCards[1]);
         Present(lastTurnCards[4]);
+               
+        PastFuture(lastTurnCards[6]);
+        PastFuture(lastTurnCards[7]);
 
         Future(lastTurnCards[2]);
         Future(lastTurnCards[5]);
-
-        PastFuture(lastTurnCards[6]);
-        PastFuture(lastTurnCards[7]);
 
     }
 
@@ -117,7 +117,7 @@ public class EndTurn : MonoBehaviour
                 else
                 {
                     lastTurnCards[4].GetComponent<CardScriptReference>().value += value;
-                    isPonFirePa = true;
+                    isPonFirePa = true;                    
                 }
 
                 break;
@@ -313,14 +313,14 @@ public class EndTurn : MonoBehaviour
                 {
                     EsysMng.TakeDamage(value);
                     if (isPonFirePr == false)
-                        PSysMng.HealSH(value / 2);
+                        PSysMng.HealHP(value / 2);
 
                 }
                 else
                 {
                     PSysMng.TakeDamage(value);
                     if (isEonFirePr == false)
-                        EsysMng.HealSH(value / 2);
+                        EsysMng.HealHP(value / 2);
                 }
                 break;
 
@@ -330,32 +330,7 @@ public class EndTurn : MonoBehaviour
 
         GameObject.Destroy(c);
     }
-
-
-
-
-    private void Future(GameObject c)
-    {
-        switch (c.GetComponent<CardScriptReference>().slot)
-        {
-            case 2:
-                slotsTaken.snapPointTaken[2] = false;
-
-
-                c.transform.position = pos[6].transform.position;
-                c.GetComponent<CardScriptReference>().slot = 6;
-                break;
-
-            case 5:
-                c.transform.position = pos[7].transform.position;
-                c.GetComponent<CardScriptReference>().slot = 7;
-                break;
-        }
-
-
-    }
-
-
+          
 
     private void PastFuture(GameObject c)
     {
@@ -455,6 +430,31 @@ public class EndTurn : MonoBehaviour
 
         return damage;
     }
+
+
+
+    private void Future(GameObject c)
+    {
+        switch (c.GetComponent<CardScriptReference>().slot)
+        {
+            case 2:
+                slotsTaken.snapPointTaken[2] = false;
+
+
+                c.transform.position = pos[6].transform.position;
+                c.GetComponent<CardScriptReference>().slot = 6;
+                break;
+
+            case 5:
+                c.transform.position = pos[7].transform.position;
+                c.GetComponent<CardScriptReference>().slot = 7;
+                break;
+        }
+
+
+    }
+
+
 
     private void RemoveCardEffects()
     {
