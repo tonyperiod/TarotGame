@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class EndTurn : MonoBehaviour
 {
-    //don't know if this is needed
-    //public Camera _camera;
-
-
     //getting positioning right
     public GameObject[] pos;
     private int posRef;
+
 
     // card spawning
     public GameObject cardPrefab;
     private CardScriptReference cardReference;
 
+
     // slots taken
     public GameObject Table;
     private SlotsTaken slotsTaken;
+
 
     //card effects
     private bool isEonFirePa;
@@ -29,8 +28,7 @@ public class EndTurn : MonoBehaviour
 
     private bool isEonFireFu;
     private bool isPonFireFu;
-
-
+    
 
     //hp system managers
 
@@ -39,6 +37,7 @@ public class EndTurn : MonoBehaviour
     public GameObject Gamehandler;
     private PlayerSystemManager PSysMng;
     private EnemySystemManager EsysMng;
+
 
     //fix bug of the two placeholder cards in slot activating
     private bool gameStart;

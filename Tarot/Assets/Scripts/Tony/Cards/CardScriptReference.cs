@@ -26,9 +26,6 @@ public class CardScriptReference : MonoBehaviour
             FirstCard(PlayerInGameDeck.PickCard()); //it's ok to use random as long as the value is removed
         else
             EnFirstCard(EnemyInGameDeck.PickCard());
-
-
-
     }
 
     private void FirstCard(ScriptableCard s)

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class AwakeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //getting reference to ALL scripts with an awake
+    public EndTurnManager endTurnManager;
+
+
+    private void Awake()
     {
-        
+        endTurnManager.CustomAwake();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
