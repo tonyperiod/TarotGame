@@ -25,7 +25,7 @@ public class EndTurnManager : MonoBehaviour
 
     // slots taken
     public GameObject Table;
-    private SlotsTaken slotsTaken;
+    public SlotsTaken slotsTaken;
 
     //card effects
 
@@ -39,7 +39,7 @@ public class EndTurnManager : MonoBehaviour
     public PlayerSystemManager PSysMng;
     public EnemySystemManager EsysMng;
 
-    //************************************************************
+    //-------------------------------------------------------------------------------------
     public void CustomAwake()
     {
         slotsTaken = Table.GetComponent<SlotsTaken>();
@@ -62,14 +62,15 @@ public class EndTurnManager : MonoBehaviour
         EsysMng = HPSHSystemManager.GetComponent<EnemySystemManager>();
     }
 
-    //************************************************************
+    //-------------------------------------------------------------------------------------
 
     //other script only triggers this
     public void turnClick()
     {
-        placeCards.yes();
+        
         cardsorter.StartIt();
         cardEffects.SwitchBoard(lastTurnCards);
+        placeCards.yes();
     }
 
 

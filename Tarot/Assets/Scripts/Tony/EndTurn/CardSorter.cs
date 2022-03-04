@@ -6,10 +6,12 @@ public class CardSorter : MonoBehaviour
 {
     [SerializeField] EndTurnManager manager;
 
+    //THE ISSUES ARE SOMEWHERE HERE I THINK ****************************************
+    //********************************************************************************
     public void StartIt()
     {
-        SortedList();
         manager.lastTurnCards = SortedList();
+
     }
 
     public GameObject[] SortedList()

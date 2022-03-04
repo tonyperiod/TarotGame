@@ -17,7 +17,7 @@ public class EnemyInGameDeck : MonoBehaviour
 
     public List<ScriptableCard> currentDeckList; //this Deck list
 
-    private void Awake()
+    public void CustomAwake()
     {
         if (instance == null)
         {
@@ -39,7 +39,7 @@ public class EnemyInGameDeck : MonoBehaviour
         instance.currentDeckList.Clear(); //empty out deck
 
 
-        for (int i = 1; i < instance.enemyDatabase.allCards.Count + 1; i++) //add back in all the cards from the enemy owned database one by one
+        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
         {
 
             instance.currentDeckList.Add(GetCardByID(i));

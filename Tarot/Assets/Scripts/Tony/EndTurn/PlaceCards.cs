@@ -21,7 +21,7 @@ public class PlaceCards : MonoBehaviour
         //for loop to place in the 6 slots
         for (int i = 0; i < 6; i++)
         {
-            // get card ref to know if it enemy or player
+            // set card ref to know if it enemy or player
             if (i < 3)
                 cardReference.isplayer = true;
             else

@@ -1624,6 +1624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bc9f14d3220cb4a9f6b6095b468aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playeringamedeck: {fileID: 52016856}
+  enemyingamedeck: {fileID: 52016855}
   endTurnManager: {fileID: 1699681482}
 --- !u!1001 &1459819896
 PrefabInstance:
@@ -2189,6 +2191,7 @@ MonoBehaviour:
   cardPrefab: {fileID: 910023614}
   cardReference: {fileID: 0}
   Table: {fileID: 1260398121}
+  slotsTaken: {fileID: 0}
   isEonFirePa: 0
   isPonFirePa: 0
   isEonFirePr: 0
