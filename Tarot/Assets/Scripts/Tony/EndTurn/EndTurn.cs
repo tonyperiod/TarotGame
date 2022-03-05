@@ -21,14 +21,8 @@ public class EndTurn : MonoBehaviour
     private SlotsTaken slotsTaken;
 
     //card effects
-    private bool isEonFirePa;
-    private bool isPonFirePa;
-
-    private bool isEonFirePr;
-    private bool isPonFirePr;
-
-    private bool isEonFireFu;
-    private bool isPonFireFu;
+    private bool isEonFirePa, isPonFirePa, isEonFirePr, isPonFirePr, isEonFireFu, isPonFireFu;
+ 
 
 
 
@@ -43,7 +37,7 @@ public class EndTurn : MonoBehaviour
     //fix bug of the two placeholder cards in slot activating
     private bool gameStart;
 
-    private void Start()
+    public void CustomAwake()
     {
         slotsTaken = Table.GetComponent<SlotsTaken>();
 

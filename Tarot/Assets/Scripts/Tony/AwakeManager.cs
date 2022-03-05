@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class AwakeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public PlayerInGameDeck playeringamedeck;
+    public EnemyInGameDeck enemyingamedeck;
+    public EndTurn endTurn;
+
+    private void Awake()
     {
-        
+        playeringamedeck.CustomAwake();
+        enemyingamedeck.CustomAwake();
+
+        endTurn.CustomAwake();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
