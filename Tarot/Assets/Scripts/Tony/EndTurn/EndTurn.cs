@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EndTurn : MonoBehaviour
 {
-    //don't know if this is needed
-    //public Camera _camera;
+    //ref to secondary scripts
+    public EndTurnPlaceCards placeCardsScript;
+    public EndTurnGetAndSort getAndSort;
 
 
     //getting positioning right
@@ -22,20 +23,18 @@ public class EndTurn : MonoBehaviour
 
     //card effects
     private bool isEonFirePa, isPonFirePa, isEonFirePr, isPonFirePr, isEonFireFu, isPonFireFu;
- 
-
-
 
     //hp system managers
 
-    GameObject[] lastTurnCards;
+    public GameObject[] lastTurnCards;
 
     public GameObject Gamehandler;
     private PlayerSystemManager PSysMng;
     private EnemySystemManager EsysMng;
 
     //fix bug of the two placeholder cards in slot activating
-    private bool gameStart;
+    public bool gameStart;
+
 
     public void CustomAwake()
     {
@@ -45,30 +44,25 @@ public class EndTurn : MonoBehaviour
         gameStart = true;
 
         //get cards onto table
-        PlaceCards();
+        placeCardsScript.place();
 
         //fire stuff
-        isEonFirePa = false;
-        isPonFirePa = false;
-
-        isEonFirePr = false;
-        isPonFirePr = false;
-
-        isEonFireFu = false;
-        isPonFireFu = false;
+        isEonFirePa = false; isPonFirePa = false; isEonFirePr = false; isPonFirePr = false; isEonFireFu = false; isPonFireFu = false;
 
         //get syst managers for hp
         PSysMng = Gamehandler.GetComponent<PlayerSystemManager>();
         EsysMng = Gamehandler.GetComponent<EnemySystemManager>();
     }
 
-    private void OnMouseDown()
+    public void OnClick()
     {
 
-        CardEffects();
+        //CardEffects();
+        getAndSort.get();
+
         RemoveCardEffects();
         //DestroyCards();
-        PlaceCards();
+        placeCardsScript.place();
 
     }
 
@@ -107,7 +101,7 @@ public class EndTurn : MonoBehaviour
 
 
 
-    private void Past(GameObject c)
+    public void Past(GameObject c)
     {
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
@@ -187,7 +181,7 @@ public class EndTurn : MonoBehaviour
             case "earth":
                 if (isplayer == true)
                 {
-                    PSysMng.HealSH(value);                    
+                    PSysMng.HealSH(value);
                 }
                 else
                 {
@@ -256,7 +250,7 @@ public class EndTurn : MonoBehaviour
                     }
 
                     if (isEonFirePa == false)
-                        EsysMng.HealHP(finalDmg/2);
+                        EsysMng.HealHP(finalDmg / 2);
                 }
                 break;
         }
@@ -267,7 +261,7 @@ public class EndTurn : MonoBehaviour
 
 
 
-    private void Present(GameObject c)
+    public void Present(GameObject c)
     {
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
@@ -339,7 +333,7 @@ public class EndTurn : MonoBehaviour
     }
 
 
-    private void PastFuture(GameObject c)
+    public void PastFuture(GameObject c)
     {
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
@@ -439,7 +433,7 @@ public class EndTurn : MonoBehaviour
 
 
 
-    private void Future(GameObject c)
+    public void Future(GameObject c)
     {
         switch (c.GetComponent<CardScriptReference>().slot)
         {
@@ -490,35 +484,35 @@ public class EndTurn : MonoBehaviour
 
 
 
-    private void PlaceCards()// had to combine all scripts so don't have to call getcomponent too many times
-    {
-        //setup        
-        cardReference = cardPrefab.GetComponent<CardScriptReference>();
+    //private void PlaceCards()// had to combine all scripts so don't have to call getcomponent too many times
+    //{
+    //    //setup        
+    //    cardReference = cardPrefab.GetComponent<CardScriptReference>();
 
-        cardPrefab.tag = "Card"; // set to card so that the instances get this tag
+    //    cardPrefab.tag = "Card"; // set to card so that the instances get this tag
 
-        //for loop to place in the 6 slots
-        for (int i = 0; i < 6; i++)
-        {
-            ////get pos ref
-            //posRef = i;
+    //    //for loop to place in the 6 slots
+    //    for (int i = 0; i < 6; i++)
+    //    {
+    //        ////get pos ref
+    //        //posRef = i;
 
 
-            // get card ref to know if it enemy or player
-            if (i < 3)
-                cardReference.isplayer = true;
-            else
-                cardReference.isplayer = false;
+    //        // get card ref to know if it enemy or player
+    //        if (i < 3)
+    //            cardReference.isplayer = true;
+    //        else
+    //            cardReference.isplayer = false;
 
-            //connect local change to global
-            cardReference.isplayer = cardPrefab.GetComponent<CardScriptReference>().isplayer;
-            cardPrefab.GetComponent<CardScriptReference>().slot = i;
+    //        //connect local change to global
+    //        cardReference.isplayer = cardPrefab.GetComponent<CardScriptReference>().isplayer;
+    //        cardPrefab.GetComponent<CardScriptReference>().slot = i;
 
-            //finally instantiate
-            Instantiate(cardPrefab, pos[i].transform.position, pos[i].transform.rotation);
-        }
-        cardPrefab.tag = "Untagged"; //reset to untagged so the script doesn't delete it
-    }
+    //        //finally instantiate
+    //        Instantiate(cardPrefab, pos[i].transform.position, pos[i].transform.rotation);
+    //    }
+    //    cardPrefab.tag = "Untagged"; //reset to untagged so the script doesn't delete it
+    //}
 
 
 
