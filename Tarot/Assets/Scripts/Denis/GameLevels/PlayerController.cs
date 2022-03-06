@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded &&!PauseMenu.isPaused)
+        if(Input.GetButtonDown("Jump") && isGrounded &&!SingleLevel.isPaused)
         {
             rb.velocity += new Vector3(0f, jumpForce, 0f);
         }

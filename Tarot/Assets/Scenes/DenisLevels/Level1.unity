@@ -402,8 +402,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892249290}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1892249291}
+        m_TargetAssemblyTypeName: SingleLevel, Assembly-CSharp
         m_MethodName: GoToWorldMap
         m_Mode: 1
         m_Arguments:
@@ -1209,7 +1209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1892249289}
   - component: {fileID: 1892249291}
-  - component: {fileID: 1892249290}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1236,19 +1235,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1892249290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892249288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0490d6d24999c6f44a4279658afe9ed9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1511345973}
 --- !u!114 &1892249291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,6 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd941906d5362745abf8d25e2acf30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1511345973}
 --- !u!1 &2014749575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,8 +1465,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1892249290}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1892249291}
+        m_TargetAssemblyTypeName: SingleLevel, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
