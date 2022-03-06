@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/DenisWorldMap.unity
+    guid: fbdad7d664660094aa8318e045171ac3
+  - enabled: 1
     path: Assets/Scenes/DenisLevels/Level1.unity
     guid: c11b25db3d2320f45acb6e55b4a11ef6
   - enabled: 1
