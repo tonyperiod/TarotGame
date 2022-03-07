@@ -19,7 +19,6 @@ public class PlayerSystemManager : MonoBehaviour
 
     void Start()
     {
-
         //set max values
         refHpMax = reference.GetComponent<PlayerReference>().maxHP;
         hpsyst = new HPSystem(refHpMax);
@@ -30,18 +29,19 @@ public class PlayerSystemManager : MonoBehaviour
         //set up bars
         Bar.SetupHp(hpsyst);
         Bar.SetupSh(shsystem);
-
     }
 
     public void TakeDamage(int dmg)
     {
         int remainingSh;
         remainingSh = shsystem.getSH() - dmg;
+        Debug.Log("dmg" + dmg);
 
         if (remainingSh > 0)
         {
             shsystem.dmgSh(dmg);
         }
+
         //this way I get the damage pass in
         else
         {
@@ -53,15 +53,18 @@ public class PlayerSystemManager : MonoBehaviour
     public void TakeAirDmg(int dmg)
     {
         hpsyst.dmghp(dmg);
+        Debug.Log("air" + dmg);
     }
 
     public void HealHP(int heal)
     {
         hpsyst.healhp(heal);
+        Debug.Log("heal" + heal);
     }
 
     public void HealSH (int shield)
     {
         shsystem.healSh(shield);
+        Debug.Log("healshield" + shield);
     }
 }

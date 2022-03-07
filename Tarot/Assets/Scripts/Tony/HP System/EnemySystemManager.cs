@@ -37,6 +37,7 @@ public class EnemySystemManager : MonoBehaviour
     {
         int remainingSh;
         remainingSh = shsystem.getSH() - dmg;
+        Debug.Log("dmg" + dmg);
 
         if (remainingSh > 0)
         {
@@ -53,15 +54,18 @@ public class EnemySystemManager : MonoBehaviour
     public void TakeAirDmg (int dmg)
     {
         hpsyst.dmghp(dmg);
+        Debug.Log("air" + dmg);
     }
 
     public void HealHP(int heal)
     {
         hpsyst.healhp(heal);
+        Debug.Log("heal" + heal);
     }
 
     public void HealSH(int shield)
     {
         shsystem.healSh(shield);
+        Debug.Log("shield" + shield);
     }
 }
