@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndTurnGetAndSort : MonoBehaviour
+public class EndTurnCardEffects : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
 
@@ -19,17 +19,17 @@ public class EndTurnGetAndSort : MonoBehaviour
         SelectionSort(lastTurnCards);
 
         manager.lastTurnCards = lastTurnCards;
-        
-        manager.Past(lastTurnCards[0]);
-        manager.Past(lastTurnCards[3]);
 
-        manager.Present(lastTurnCards[1]);
-        manager.Present(lastTurnCards[4]);
+        manager.Past.past(lastTurnCards[0]);
+        manager.Past.past(lastTurnCards[3]);
+
+        manager.Present.present(lastTurnCards[1]);
+        manager.Present.present(lastTurnCards[4]);
 
         if (manager.gameStart == false)
         {
-            manager.PastFuture(lastTurnCards[6]);
-            manager.PastFuture(lastTurnCards[7]);
+            manager.PastFuture.pastfuture(lastTurnCards[6]);
+            manager.PastFuture.pastfuture(lastTurnCards[7]);
         }
 
         else
@@ -38,9 +38,8 @@ public class EndTurnGetAndSort : MonoBehaviour
             GameObject.Destroy(lastTurnCards[7]);
             manager.gameStart = false;
         }
-        manager.Future(lastTurnCards[2]);
-        manager.Future(lastTurnCards[5]);
-
+        manager.Future.future(lastTurnCards[2]);
+        manager.Future.future(lastTurnCards[5]);
     }
 
 

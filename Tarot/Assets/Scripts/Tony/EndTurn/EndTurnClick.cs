@@ -8,6 +8,8 @@ public class EndTurnClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        manager.OnClick();
+        manager.cardeffects.get();
+        manager.removecardeffects.remove();
+        manager.placeCardsScript.place();
     }
 }

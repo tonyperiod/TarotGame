@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playeringamedeck: {fileID: 1894156067}
   enemyingamedeck: {fileID: 1894156068}
-  endTurn: {fileID: 1920384259}
+  endturn: {fileID: 1920384262}
 --- !u!4 &863414331
 Transform:
   m_ObjectHideFlags: 0
@@ -2473,6 +2473,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1920384263}
   - component: {fileID: 1920384259}
+  - component: {fileID: 1920384267}
+  - component: {fileID: 1920384266}
+  - component: {fileID: 1920384265}
+  - component: {fileID: 1920384264}
+  - component: {fileID: 1920384262}
+  - component: {fileID: 1920384261}
   - component: {fileID: 1920384260}
   - component: {fileID: 1920384258}
   m_Layer: 0
@@ -2508,7 +2514,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeCardsScript: {fileID: 1920384258}
-  getAndSort: {fileID: 1920384260}
+  cardeffects: {fileID: 1920384260}
+  removecardeffects: {fileID: 1920384261}
+  Past: {fileID: 1920384264}
+  Present: {fileID: 1920384265}
+  Future: {fileID: 1920384266}
+  PastFuture: {fileID: 1920384267}
   pos:
   - {fileID: 409754701}
   - {fileID: 660574087}
@@ -2520,8 +2531,17 @@ MonoBehaviour:
   - {fileID: 1927093022}
   cardPrefab: {fileID: 910023614}
   Table: {fileID: 1260398121}
+  slotsTaken: {fileID: 0}
   lastTurnCards: []
+  isEonFirePa: 0
+  isPonFirePa: 0
+  isEonFirePr: 0
+  isPonFirePr: 0
+  isEonFireFu: 0
+  isPonFireFu: 0
   Gamehandler: {fileID: 361368398}
+  PSysMng: {fileID: 0}
+  EsysMng: {fileID: 0}
   gameStart: 0
 --- !u!114 &1920384260
 MonoBehaviour:
@@ -2536,6 +2556,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+--- !u!114 &1920384261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a93aa44f3311849a98b60b57535bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
+--- !u!114 &1920384262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 994ed79759950a54fb68b51b17edfcc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  et: {fileID: 1920384259}
 --- !u!4 &1920384263
 Transform:
   m_ObjectHideFlags: 0
@@ -2550,6 +2596,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920384264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8511f2e1beebdc3428dc580eaa18c42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
+--- !u!114 &1920384265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7d3f74e24cc76488b8578205d64158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
+--- !u!114 &1920384266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1bafb00c0d28c47a0419d3bec8f431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
+--- !u!114 &1920384267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c047a8bf43c3e14ca121b4c0b81b5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
 --- !u!1 &1927093022
 GameObject:
   m_ObjectHideFlags: 0
