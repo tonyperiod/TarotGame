@@ -5,7 +5,7 @@ using UnityEngine;
 public class EndTurn : MonoBehaviour
 {
     //ref to secondary scripts
-    [Header ("Ref To Scripts")]
+    [Header ("ref To Scripts")]
     public EndTurnPlaceCards placeCardsScript;
     public EndTurnCardEffects cardeffects;
     public EndTurnRemoveCardEffects removecardeffects;
@@ -14,7 +14,7 @@ public class EndTurn : MonoBehaviour
     public Future Future;
     public PastFuture PastFuture;
 
-    [Space]
+    [Header ("card functioning")]
 
     //getting positioning right
     public GameObject[] pos;
@@ -35,6 +35,11 @@ public class EndTurn : MonoBehaviour
     [HideInInspector]
     public bool isEonFirePa, isPonFirePa, isEonFirePr, isPonFirePr, isEonFireFu, isPonFireFu;
 
+    //fix bug of the two placeholder cards in slot activating
+    [HideInInspector]
+    public bool gameStart;
+
+    [Header ("game characters")]
     //hp system managers
     public GameObject Gamehandler;
     [HideInInspector]
@@ -42,7 +47,12 @@ public class EndTurn : MonoBehaviour
     [HideInInspector]
     public EnemySystemManager EsysMng;
 
-    //fix bug of the two placeholder cards in slot activating
-    [HideInInspector]
-    public bool gameStart;
+    [Header ("elemental buffs")]
+    //player/enemy elemental reference
+    public PlayerReference PRef;
+    public EnemyReference ERef;
+
+    public int elemBuff = 2;
+
+    public CourtBuff courtbuff;
 }

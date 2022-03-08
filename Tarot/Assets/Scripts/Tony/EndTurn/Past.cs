@@ -210,13 +210,24 @@ public class Past : MonoBehaviour
     //if court card play this, runs through past function twice. will call double counter later.
     private void court(GameObject court)
     {
+
+        int originalValue = court.GetComponent<CardScriptReference>().value;
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
 
-        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;
-        past(court);
-        
+        //element 1
+        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;//temp edit to symbol
+        manager.courtbuff.buff(court);//check for elemental buffing
+        past(court);//activate script as usual
+        manager.courtbuff.debuff(court);//remove elemental buff if it happened
 
+        //element 2
         court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court2;
+        manager.courtbuff.buff(court);
         past(court);
+        //here no need to run debuff, returning the val to original is more than enough
+
+        //return stuff to original
+        court.GetComponent<CardScriptReference>().value = originalValue;
+        court.GetComponent<CardScriptReference>().symbol = "court";
     }
 }

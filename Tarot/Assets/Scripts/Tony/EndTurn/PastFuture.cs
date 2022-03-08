@@ -102,6 +102,7 @@ public class PastFuture : MonoBehaviour
 
             case "court":
                 {
+                    Debug.Log("court");
                     court(c);
                     break;
                 }
@@ -112,13 +113,23 @@ public class PastFuture : MonoBehaviour
     //they activate seperately, for now one of the two will always pass.
     private void court(GameObject court)
     {
+        int originalValue = court.GetComponent<CardScriptReference>().value;
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
+        
+        //element 1
+        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;//temp edit to symbol
+        manager.courtbuff.buff(court);//check for elemental buffing
+        pastfuture(court);//activate script as usual
+        manager.courtbuff.debuff(court);//remove elemental buff if it happened
 
-        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;
-        pastfuture(court);
-
-
+        //element 2
         court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court2;
+        manager.courtbuff.buff(court);
         pastfuture(court);
+        //here no need to run debuff, returning the val to original is more than enough
+
+        //return stuff to original
+        court.GetComponent<CardScriptReference>().value = originalValue;
+        court.GetComponent<CardScriptReference>().symbol = "court";
     }
 }

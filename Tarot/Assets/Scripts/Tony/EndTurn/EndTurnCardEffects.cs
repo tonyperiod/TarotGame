@@ -20,6 +20,8 @@ public class EndTurnCardEffects : MonoBehaviour
 
         manager.lastTurnCards = lastTurnCards;
 
+        BuffElement(lastTurnCards);
+
         manager.Past.past(lastTurnCards[0]);
         manager.Past.past(lastTurnCards[3]);
 
@@ -66,17 +68,57 @@ public class EndTurnCardEffects : MonoBehaviour
                 unsortedList[min] = temp;
             }
         }
-
-        printArray(unsortedList);
     }
 
-    void printArray(GameObject[] a)
+    //increase value of cards with the same element
+    //court cards will refer to their own version of the script.
+    private void BuffElement(GameObject[] list)
     {
-        string resultString = "";
-        for (int i = 0; i < a.Length; i++)
+
+        //player part
+        string element = manager.PRef.element;
+        //these are slots 0-2
+        for (int i = 0; i < 3; i++)
         {
-            resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
+            if(list[i].gameObject.GetComponent<CardScriptReference>().symbol == element)
+            {
+                list[i].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
+            }
         }
-        print(resultString);
+
+        //slot 6 for past future
+        if (list[6].gameObject.GetComponent<CardScriptReference>().symbol == element)
+        {
+            list[6].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
+        }
+
+        //enemy part
+        element = manager.ERef.element;
+
+        //slots 3-5
+        for (int i = 3; i < 6; i++)
+        {
+            if (list[i].gameObject.GetComponent<CardScriptReference>().symbol == element)
+            {
+                list[i].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
+            }
+        }
+
+        //slot 7 for past future
+        if (list[7].gameObject.GetComponent<CardScriptReference>().symbol == element)
+        {
+            list[7].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
+        }
     }
+
+    //this is for testing purposes
+    //void printArray(GameObject[] a)
+    //{
+    //    string resultString = "";
+    //    for (int i = 0; i < a.Length; i++)
+    //    {
+    //        resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
+    //    }
+    //    print(resultString);
+    //}
 }
