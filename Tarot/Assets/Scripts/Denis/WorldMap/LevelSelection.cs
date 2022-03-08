@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 public class LevelSelection : MonoBehaviour
 {
     [SerializeField] private bool unlocked;//default is false
-    public Image unlockImage;
-    public Image footstepsImage;
+    public GameObject unlockImage;
+    public GameObject footstepsImage;
     public GameObject[] stars;
     private void Update()
     {
