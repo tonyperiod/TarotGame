@@ -23,7 +23,7 @@ public class EnemyReference : MonoBehaviour
     private SpriteRenderer spRend;
 
     //for now only random opponent, here can add logic for modifying the parameters randomly, and a lot will depend on Dennis for this
-    void Awake()
+    public void CustomAwake()
     {
         wantElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
         getOpponent(wantElement);

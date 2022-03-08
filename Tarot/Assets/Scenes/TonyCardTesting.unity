@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 361368400}
   - component: {fileID: 361368401}
   m_Layer: 0
-  m_Name: GameHandler
+  m_Name: HPHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1007,6 +1007,8 @@ MonoBehaviour:
   playeringamedeck: {fileID: 1894156067}
   enemyingamedeck: {fileID: 1894156068}
   endturn: {fileID: 1920384262}
+  enemyreference: {fileID: 1253074338}
+  playerreference: {fileID: 1587274736}
 --- !u!4 &863414331
 Transform:
   m_ObjectHideFlags: 0
@@ -1950,8 +1952,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5413ac686c4af1844a2016a1d70e9c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charRef: {fileID: 11400000, guid: 87b2ebc11df613a4caa4feaf9865430d, type: 2}
-  _name: 
+  charList:
+  - {fileID: 11400000, guid: 52f80055b6e32694b8c37ed64f760869, type: 2}
+  - {fileID: 11400000, guid: 0cc87da6400d20e45bf5cf5affcf6e2e, type: 2}
+  - {fileID: 11400000, guid: 87b2ebc11df613a4caa4feaf9865430d, type: 2}
+  - {fileID: 11400000, guid: 9397e1e939c876e42a1563f3a12032a4, type: 2}
+  _name: PlayerAir
   maxHP: 0
   maxSH: 0
   element: 
