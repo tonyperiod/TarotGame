@@ -15,6 +15,9 @@ public class CardScriptReference : MonoBehaviour
     public int slot;
     public bool isplayer;
 
+    public string court1;
+    public string court2;
+
 
     private SpriteRenderer spRend;
 
@@ -42,6 +45,9 @@ public class CardScriptReference : MonoBehaviour
         value = s.value;
         isplayer = true;
 
+        court1 = s.court1;
+        court2 = s.court2;
+
     }
 
     private void EnFirstCard(ScriptableCard e)
@@ -54,6 +60,9 @@ public class CardScriptReference : MonoBehaviour
         symbol = e.symbol;
         value = e.value;
         isplayer = false;
+
+        court1 = e.court1;
+        court2 = e.court2;
 
     }
 }

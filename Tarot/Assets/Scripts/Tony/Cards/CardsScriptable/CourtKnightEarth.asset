@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e41c61314fd87a84e91d63b887896727, type: 3}
-  m_Name: PlayerFire
+  m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
+  m_Name: CourtKnightEarth
   m_EditorClassIdentifier: 
-  Name: PlayerFire
-  MaxHP: 30
-  MaxSH: 15
-  Element: fire
-  ID: 0
-  Artwork: {fileID: 21300000, guid: dff5647378701db45a62ab4d5eeaff45, type: 3}
+  Cardname: 
+  artWork: {fileID: 21300000, guid: f06295508324b524a9f0204cf74ac2ca, type: 3}
+  id: 45
+  symbol: court
+  value: 10
+  court1: fire
+  court2: earth
+  slot: 0
+  isPlayer: 1

@@ -2473,6 +2473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920384263}
   - component: {fileID: 1920384259}
+  - component: {fileID: 1920384268}
   - component: {fileID: 1920384267}
   - component: {fileID: 1920384266}
   - component: {fileID: 1920384265}
@@ -2539,10 +2540,14 @@ MonoBehaviour:
   isPonFirePr: 0
   isEonFireFu: 0
   isPonFireFu: 0
+  gameStart: 0
   Gamehandler: {fileID: 361368398}
   PSysMng: {fileID: 0}
   EsysMng: {fileID: 0}
-  gameStart: 0
+  PRef: {fileID: 1587274736}
+  ERef: {fileID: 1253074338}
+  elemBuff: 2
+  courtbuff: {fileID: 1920384268}
 --- !u!114 &1920384260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,6 +2650,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c047a8bf43c3e14ca121b4c0b81b5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
+--- !u!114 &1920384268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac8311c71afd8e46ae83a24f06679fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
