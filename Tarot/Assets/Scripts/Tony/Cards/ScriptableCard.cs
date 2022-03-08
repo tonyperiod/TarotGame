@@ -15,6 +15,9 @@ public class ScriptableCard : ScriptableObject
     public string symbol;
     public int value;
 
+    public string court1;
+    public string court2;
+
     public int slot;
 
     public bool isPlayer;

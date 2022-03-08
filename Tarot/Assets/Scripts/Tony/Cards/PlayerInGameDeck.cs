@@ -15,9 +15,9 @@ public class PlayerInGameDeck : MonoBehaviour
     private float cardTot;
     private float cardCur;
 
-    public List<ScriptableCard> currentDeckList; //this Deck list
+    public List<ScriptableCard> currentPlayerDeckList; //this Deck list
 
-    private void Awake()
+    public void CustomAwake()
     {
         if (instance == null)
         {
@@ -31,28 +31,24 @@ public class PlayerInGameDeck : MonoBehaviour
         cardTot = instance.playerDatabase.allCards.Count;
 
         NewDeck();
-
-
-
-
     }
 
     public void NewDeck() //this pure jank is to load in all the cards to the in game deck
     {
-        instance.currentDeckList.Clear(); //empty out deck
+        instance.currentPlayerDeckList.Clear(); //empty out deck
 
 
-        for (int i = 1; i < instance.playerDatabase.allCards.Count + 1; i++) //add back in all the cards from the player owned database one by one
+        for (int i = 0; i < instance.playerDatabase.allCards.Count; i++) //add back in all the cards from the player owned database one by one
         {
 
-            instance.currentDeckList.Add(GetCardByID(i));
+            instance.currentPlayerDeckList.Add(GetCardByID(i));
 
         }
-
+        
         cardCur = cardTot;
 
         //set all cards to is player
-        foreach (var Card in instance.currentDeckList)
+        foreach (var Card in instance.currentPlayerDeckList)
         {
             Card.isPlayer = true;
         }
@@ -72,9 +68,9 @@ public class PlayerInGameDeck : MonoBehaviour
         {
             instance.NewDeck();
 
-            ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+            ScriptableCard pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
 
-            instance.currentDeckList.Remove(pickedCard);
+            instance.currentPlayerDeckList.Remove(pickedCard);
 
 
             instance.cardCur -= 1;
@@ -83,9 +79,9 @@ public class PlayerInGameDeck : MonoBehaviour
         }
         else //just pick card and delete from list
         {
-            ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+            ScriptableCard pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
 
-            instance.currentDeckList.Remove(pickedCard);
+            instance.currentPlayerDeckList.Remove(pickedCard);
 
             instance.cardCur -= 1;
 
