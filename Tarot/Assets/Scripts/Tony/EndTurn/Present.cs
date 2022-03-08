@@ -79,8 +79,26 @@ public class Present : MonoBehaviour
                         EsysMng.HealHP(value / 2);
                 }
                 break;
+            case "court":
+                {
+                    Debug.Log("court");
+                    court(c);
+                    break;
+                }
         }
         GameObject.Destroy(c);
     }
 
+
+    private void court(GameObject court)
+    {
+        court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
+
+        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;
+        present(court);
+
+
+        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court2;
+        present(court);
+    }
 }

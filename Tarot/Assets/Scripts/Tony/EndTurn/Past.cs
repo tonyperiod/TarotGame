@@ -20,6 +20,10 @@ public class Past : MonoBehaviour
         bool isEonFirePa = manager.isEonFirePa;
         bool isPonFirePa = manager.isPonFirePa;
 
+        //get the reference from card (necessary for court to work)
+
+
+
 
         switch (c.GetComponent<CardScriptReference>().symbol)
         {
@@ -167,6 +171,13 @@ public class Past : MonoBehaviour
                         EsysMng.HealHP(finalDmg / 2);
                 }
                 break;
+
+            case "court":
+                {
+
+                    court(c);
+                    break;
+                }
         }
 
         GameObject.Destroy(c);
@@ -194,5 +205,18 @@ public class Past : MonoBehaviour
         }
 
         return damage;
+    }
+
+    //if court card play this, runs through past function twice. will call double counter later.
+    private void court(GameObject court)
+    {
+        court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
+
+        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;
+        past(court);
+        
+
+        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court2;
+        past(court);
     }
 }
