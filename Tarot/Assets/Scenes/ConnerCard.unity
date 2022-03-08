@@ -2045,7 +2045,6 @@ GameObject:
   - component: {fileID: 1260398122}
   - component: {fileID: 1260398126}
   - component: {fileID: 8111532661990339502}
-  - component: {fileID: 1260398127}
   m_Layer: 6
   m_Name: table
   m_TagString: Untagged
@@ -2151,18 +2150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMousePosition: {x: 0, y: 0, z: 0}
---- !u!114 &1260398127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260398121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358991f258f2fdf4087822e450bc2cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1265840535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,7 +3286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDatabase: {fileID: 11400000, guid: 6936a3e4a453c67438812ee07226af65, type: 2}
-  currentDeckList: []
+  currentPlayerDeckList: []
 --- !u!114 &1920384260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3312,6 +3299,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d11ba6f99d82544c92e30c445604e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placeCardsScript: {fileID: 0}
+  cardeffects: {fileID: 0}
+  removecardeffects: {fileID: 0}
+  Past: {fileID: 0}
+  Present: {fileID: 0}
+  Future: {fileID: 0}
+  PastFuture: {fileID: 0}
   pos:
   - {fileID: 409754701}
   - {fileID: 660574087}
@@ -3323,7 +3317,22 @@ MonoBehaviour:
   - {fileID: 1927093022}
   cardPrefab: {fileID: 910023614}
   Table: {fileID: 1260398121}
+  slotsTaken: {fileID: 0}
+  lastTurnCards: []
+  isEonFirePa: 0
+  isPonFirePa: 0
+  isEonFirePr: 0
+  isPonFirePr: 0
+  isEonFireFu: 0
+  isPonFireFu: 0
+  gameStart: 0
   Gamehandler: {fileID: 361368398}
+  PSysMng: {fileID: 0}
+  EsysMng: {fileID: 0}
+  PRef: {fileID: 0}
+  ERef: {fileID: 0}
+  elemBuff: 2
+  courtbuff: {fileID: 0}
 --- !u!23 &1920384261
 MeshRenderer:
   m_ObjectHideFlags: 0
