@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &18198816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+  m_PrefabInstance: {fileID: 2619687342233164115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &18198819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18198816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc74e141b8a77468751234af6c6bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &41839636
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +775,10 @@ PrefabInstance:
     - target: {fileID: 3981024879148541809, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: enemyType
+      value: normal
       objectReference: {fileID: 0}
     - target: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: m_Name
@@ -1501,6 +1522,10 @@ PrefabInstance:
     - target: {fileID: 3981024879148541809, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: enemyType
+      value: miniboss
       objectReference: {fileID: 0}
     - target: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: m_Name
@@ -2402,6 +2427,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: enemyType
+      value: normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: interactKey
       value: 101
       objectReference: {fileID: 0}
@@ -2441,5 +2470,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactions
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1201084732569755328, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
