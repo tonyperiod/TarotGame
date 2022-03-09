@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OnDeath : MonoBehaviour
 {
@@ -11,5 +12,10 @@ public class OnDeath : MonoBehaviour
     public void dead() //just don't change this name of the public void
     {
         Debug.Log("player dead");
+        {
+            SceneManager.LoadScene("DenisWorldMap");
+        }
+        
+
     }
 }
