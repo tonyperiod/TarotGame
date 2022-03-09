@@ -155,6 +155,104 @@ Transform:
   m_Father: {fileID: 323874501}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &162521112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162521117}
+  - component: {fileID: 162521116}
+  - component: {fileID: 162521115}
+  - component: {fileID: 162521114}
+  - component: {fileID: 162521113}
+  m_Layer: 0
+  m_Name: VFX Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &162521113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162521112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9912962db5da41f44a2973a8d8ebb09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCardPosition: {fileID: 993949028}
+  EnemyCardPosition: {fileID: 1927093023}
+  PlayerSpritePosition: {fileID: 1587274735}
+  EnemySpritePosition: {fileID: 1253074340}
+--- !u!114 &162521114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162521112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2023dfadd431384498441d723d411c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCardPosition: {fileID: 800579454}
+  EnemyCardPosition: {fileID: 1727705415}
+  PlayerSpritePosition: {fileID: 1587274735}
+  EnemySpritePosition: {fileID: 1253074340}
+--- !u!114 &162521115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162521112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5615d8ed592db5c478edeabe6a18cf6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCardPosition: {fileID: 660574088}
+  EnemyCardPosition: {fileID: 1685940893}
+  PlayerSpritePosition: {fileID: 1587274735}
+  EnemySpritePosition: {fileID: 1253074340}
+--- !u!114 &162521116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162521112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69891ebe82e27034f939f5d679596601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCardPosition: {fileID: 409754702}
+  EnemyCardPosition: {fileID: 1903532164}
+  PlayerSpritePosition: {fileID: 1587274735}
+  EnemySpritePosition: {fileID: 1253074340}
+--- !u!4 &162521117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162521112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0519495, y: 1.0895104, z: -0.6584096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &209357019
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,8 +342,10 @@ GameObject:
   - component: {fileID: 361368399}
   - component: {fileID: 361368400}
   - component: {fileID: 361368401}
+  - component: {fileID: 361368403}
+  - component: {fileID: 361368402}
   m_Layer: 0
-  m_Name: GameHandler
+  m_Name: HPHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reference: {fileID: 1587274733}
   Bar: {fileID: 375811051}
+  dead: {fileID: 361368402}
 --- !u!114 &361368401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +394,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reference: {fileID: 1253074337}
   Bar: {fileID: 323874502}
+  win: {fileID: 361368403}
+--- !u!114 &361368402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361368398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e69def4dd650447bd0c8b8447c8b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &361368403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361368398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc74e141b8a77468751234af6c6bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &375811049
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1112,7 @@ GameObject:
   - component: {fileID: 863414331}
   - component: {fileID: 863414330}
   m_Layer: 0
-  m_Name: AwakeManager
+  m_Name: AwakeHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1007,6 +1133,8 @@ MonoBehaviour:
   playeringamedeck: {fileID: 1894156067}
   enemyingamedeck: {fileID: 1894156068}
   endturn: {fileID: 1920384262}
+  enemyreference: {fileID: 1253074338}
+  playerreference: {fileID: 1587274736}
 --- !u!4 &863414331
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,7 +1502,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ce7eb200a020964b8289c67d7b119ae, type: 2}
   - {fileID: 11400000, guid: 646ca54560fdfe949b8379b812eefd5b, type: 2}
   - {fileID: 11400000, guid: 97dbe7b30ad9f504fad27e61ffe16ac0, type: 2}
-  wantElement: 
   _name: 
   maxHP: 0
   maxSH: 0
@@ -1950,8 +2077,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5413ac686c4af1844a2016a1d70e9c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charRef: {fileID: 11400000, guid: 87b2ebc11df613a4caa4feaf9865430d, type: 2}
-  _name: 
+  charList:
+  - {fileID: 11400000, guid: 52f80055b6e32694b8c37ed64f760869, type: 2}
+  - {fileID: 11400000, guid: 0cc87da6400d20e45bf5cf5affcf6e2e, type: 2}
+  - {fileID: 11400000, guid: 87b2ebc11df613a4caa4feaf9865430d, type: 2}
+  - {fileID: 11400000, guid: 9397e1e939c876e42a1563f3a12032a4, type: 2}
+  _name: PlayerAir
   maxHP: 0
   maxSH: 0
   element: 
@@ -2561,6 +2692,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  vfxPa: {fileID: 162521116}
+  vfxPre: {fileID: 162521115}
+  vfxFut: {fileID: 162521114}
+  vfxpastFut: {fileID: 162521113}
 --- !u!114 &1920384261
 MonoBehaviour:
   m_ObjectHideFlags: 0
