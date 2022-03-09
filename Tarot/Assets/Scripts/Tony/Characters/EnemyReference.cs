@@ -10,7 +10,7 @@ public class EnemyReference : MonoBehaviour
     private ScriptableChar chosenEnemy;
 
     //for external generation
-    public string wantElement;
+    public static string wantEnemyElement;
 
     //references
     public string _name;
@@ -25,8 +25,8 @@ public class EnemyReference : MonoBehaviour
     //for now only random opponent, here can add logic for modifying the parameters randomly, and a lot will depend on Dennis for this
     public void CustomAwake()
     {
-        wantElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
-        getOpponent(wantElement);
+        wantEnemyElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
+        getOpponent(wantEnemyElement);
 
         //get all stats
         _name = chosenEnemy.Name;

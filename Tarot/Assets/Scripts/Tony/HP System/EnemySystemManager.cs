@@ -16,9 +16,11 @@ public class EnemySystemManager : MonoBehaviour
     public HPSystem hpsyst;
     public SHSystem shsystem;
 
+    //trigger win
+    public OnWin win;
+
     void Start()
     {
-
         //set max values
         refHpMax = reference.GetComponent<EnemyReference>().maxHP;
         hpsyst = new HPSystem(refHpMax);
@@ -49,12 +51,15 @@ public class EnemySystemManager : MonoBehaviour
             shsystem.dmgSh(dmg);
             hpsyst.dmghp(-remainingSh);
         }
+
+        checkIfDead();
     }
 
     public void TakeAirDmg (int dmg)
     {
         hpsyst.dmghp(dmg);
         Debug.Log("air" + dmg);
+        checkIfDead();
     }
 
     public void HealHP(int heal)
@@ -67,5 +72,11 @@ public class EnemySystemManager : MonoBehaviour
     {
         shsystem.healSh(shield);
         Debug.Log("shield" + shield);
+    }
+
+    public void checkIfDead()
+    {
+        if (hpsyst.getHP() == 0)
+            win.win();
     }
 }
