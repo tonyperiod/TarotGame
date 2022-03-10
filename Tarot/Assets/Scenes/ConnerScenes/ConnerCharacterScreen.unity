@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 716005710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8decad8316727454998b17096e069186, type: 3}
+  m_Script: {fileID: 11500000, guid: 285596d1b32b83a4597e4e976e87bb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &782517095
@@ -1576,8 +1576,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 716005712}
-        m_TargetAssemblyTypeName: CharacterSelection, Assembly-CSharp
-        m_MethodName: ReturnToMenu
+        m_TargetAssemblyTypeName: CharacterScreen, Assembly-CSharp
+        m_MethodName: BackToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
