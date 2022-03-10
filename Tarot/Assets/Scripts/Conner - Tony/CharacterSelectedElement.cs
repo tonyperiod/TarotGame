@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class CharacterSelectedElement : MonoBehaviour
 {
-    PlayerReference playerRef;
+    public PlayerReference playerRef;
 
-    //element selected can be: fire, water, air, earth (no caps, string)
+    void Start()
+    {
+      
+    }
+
+    void Update()
+    {
+
+    }
+     
 
     //in player reference, there is public static string called playerSelectedElem.
     //Based on that, the element for the enemy is chosen
