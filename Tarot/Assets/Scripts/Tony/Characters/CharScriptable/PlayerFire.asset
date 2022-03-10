@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerFire
   m_EditorClassIdentifier: 
   Name: PlayerFire
-  MaxHP: 30
-  MaxSH: 15
+  MaxHP: 42
+  MaxSH: 18
   Element: fire
   ID: 0
   Artwork: {fileID: 21300000, guid: dff5647378701db45a62ab4d5eeaff45, type: 3}

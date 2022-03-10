@@ -17,6 +17,8 @@ public class PlayerSystemManager : MonoBehaviour
     public HPSystem hpsyst;
     public SHSystem shsystem;
 
+    public OnDeath dead;
+
     void Start()
     {
         //set max values
@@ -48,12 +50,15 @@ public class PlayerSystemManager : MonoBehaviour
             shsystem.dmgSh(dmg);
             hpsyst.dmghp(-remainingSh);
         }
+
+        checkIfDead();
     }
 
     public void TakeAirDmg(int dmg)
     {
         hpsyst.dmghp(dmg);
         Debug.Log("air" + dmg);
+        checkIfDead();
     }
 
     public void HealHP(int heal)
@@ -66,5 +71,11 @@ public class PlayerSystemManager : MonoBehaviour
     {
         shsystem.healSh(shield);
         Debug.Log("healshield" + shield);
+    }
+
+    public void checkIfDead()
+    {
+        if (hpsyst.getHP() == 0)
+            dead.dead();
     }
 }
