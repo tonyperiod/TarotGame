@@ -9,4 +9,9 @@ public class CharacterScreen : MonoBehaviour
     {
         SceneManager.LoadScene("ConnerMainMenu");
     }
+
+    public void PlayGame()
+    {
+       SceneManager.LoadScene("DenisWorldMap");
+    }
 }

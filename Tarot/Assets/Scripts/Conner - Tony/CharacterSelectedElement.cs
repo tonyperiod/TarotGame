@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class CharacterSelectedElement : MonoBehaviour
 {
-    PlayerReference playerRef;
+    public PlayerReference playerRef;
+    public string element;
 
-    //element selected can be: fire, water, air, earth (no caps, string)
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        element = PlayerReference.playerSelectedElem;
+
+        this.transform.GetComponent<TextMesh>().text = element;
+    }
+     
 
     //in player reference, there is public static string called playerSelectedElem.
     //Based on that, the element for the enemy is chosen
