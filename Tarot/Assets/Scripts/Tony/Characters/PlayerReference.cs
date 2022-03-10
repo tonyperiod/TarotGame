@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerReference : MonoBehaviour
 {
-    public ScriptableChar charRef;
+    public ScriptableChar[] charList;
+    public static string playerSelectedElem;
+    private ScriptableChar charRef;
 
     public string _name;
     public int maxHP;
@@ -15,8 +17,21 @@ public class PlayerReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
-    void Awake()
+    public void CustomAwake()
     {
+        //FOR DEBUG, THIS WILL BE CHANGED IN GAME -----------------------------------------------------------------------------------------------------------------------------
+        playerSelectedElem = "water";
+
+        //select character using what we got
+        for (int i = 0; i < charList.Length; i++)
+        {
+            if (charList[i].Element == playerSelectedElem)
+            {
+                charRef = charList[i];
+                break;
+            }
+        }
+
         //set all references
         _name = charRef.Name;
         maxHP = charRef.MaxHP;
@@ -27,6 +42,5 @@ public class PlayerReference : MonoBehaviour
 
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;
-
     }
 }

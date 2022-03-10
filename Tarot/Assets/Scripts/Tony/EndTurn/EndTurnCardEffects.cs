@@ -6,7 +6,11 @@ public class EndTurnCardEffects : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
 
-    
+    //vfx activation get references
+    public VFXPast vfxPa;
+    public VFXPresent vfxPre;
+    public VFXFuture vfxFut;
+    public VFXPastFuture vfxpastFut;
 
     public void get()
     {
@@ -22,25 +26,34 @@ public class EndTurnCardEffects : MonoBehaviour
 
         BuffElement(lastTurnCards);
 
+        vfxPa.activate(lastTurnCards[0]);
         manager.Past.past(lastTurnCards[0]);
+        vfxPa.activate(lastTurnCards[3]);
         manager.Past.past(lastTurnCards[3]);
 
+        vfxPre.activate(lastTurnCards[1]);
         manager.Present.present(lastTurnCards[1]);
+        vfxPre.activate(lastTurnCards[4]);
         manager.Present.present(lastTurnCards[4]);
 
         if (manager.gameStart == false)
         {
+            vfxpastFut.activate(lastTurnCards[6]);
             manager.PastFuture.pastfuture(lastTurnCards[6]);
+            vfxpastFut.activate(lastTurnCards[7]);
             manager.PastFuture.pastfuture(lastTurnCards[7]);
         }
-
+        //destroy placeholders if turn one
         else
         {
             GameObject.Destroy(lastTurnCards[6]);
             GameObject.Destroy(lastTurnCards[7]);
             manager.gameStart = false;
         }
+
+        vfxFut.activate(lastTurnCards[2]);
         manager.Future.future(lastTurnCards[2]);
+        vfxFut.activate(lastTurnCards[5]);
         manager.Future.future(lastTurnCards[5]);
     }
 

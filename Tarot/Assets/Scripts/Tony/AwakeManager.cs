@@ -9,13 +9,18 @@ public class AwakeManager : MonoBehaviour
     //public EndTurn endTurn;
     public EndTurnCustomAwake endturn;
 
+    public EnemyReference enemyreference;
+    public PlayerReference playerreference;
+
     private void Awake()
     {
+        enemyreference.CustomAwake();
+        playerreference.CustomAwake();
+
+
         playeringamedeck.CustomAwake();
         enemyingamedeck.CustomAwake();
 
         endturn.CA();
-
     }
-
 }
