@@ -5,15 +5,18 @@ using UnityEngine;
 public class CharacterSelectedElement : MonoBehaviour
 {
     public PlayerReference playerRef;
+    public string element;
 
     void Start()
     {
-      
+        
     }
 
     void Update()
     {
+        element = PlayerReference.playerSelectedElem;
 
+        this.transform.GetComponent<TextMesh>().text = element;
     }
      
 
