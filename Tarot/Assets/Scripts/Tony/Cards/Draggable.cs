@@ -16,7 +16,7 @@ public class Draggable : MonoBehaviour
 
     //snappoints
     public GameObject[] snapPoints;
-    
+
 
     private int closestSnap = 100;
     private float closestTemp = 1000;
@@ -24,7 +24,7 @@ public class Draggable : MonoBehaviour
     // see if card slot taken
     private SlotsTaken slotsTaken;
 
-    private bool isFalling;
+    public bool isFalling;
 
     private void Start()
     {
@@ -41,15 +41,14 @@ public class Draggable : MonoBehaviour
     // the whole && cardScriptReference.slot != 6 is so that past future things don't activate
     void OnMouseDown()
     {
+        closestSnap = 100;
+        closestTemp = 1000;
         if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
         {
-            if (cardScriptReference.slot != 6)
-            {
-                int cardNumber = cardScriptReference.slot;
-                slotsTaken.snapPointTaken[cardNumber] = false;
-            }
+            int cardNumber = cardScriptReference.slot;
+            slotsTaken.snapPointTaken[cardNumber] = false;
         }
-
+        isFalling = true;
 
     }
     void OnMouseDrag()
@@ -65,7 +64,7 @@ public class Draggable : MonoBehaviour
             //floaty effect 
             _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 0, 90 - _rigidbody.velocity.x));
         }
-        
+
     }
 
     void OnMouseUp() //snappoints
@@ -85,12 +84,12 @@ public class Draggable : MonoBehaviour
                     closestSnap = i;
                     closestTemp = cardDistance;
                 }
-               
+
             }
 
             cardTransform.position = snapPoints[closestSnap].transform.position;
-            //cardScriptReference.slot = closestSnap;
-            isFalling = true;
+            cardScriptReference.slot = closestSnap;
+
         }
     }
 
@@ -98,16 +97,17 @@ public class Draggable : MonoBehaviour
     //move card if another card placed on top 
     private void OnCollisionEnter(Collision collision)
     {
-        // if this is the card getting fallen on
-        if (collision.collider.tag == "Card")
-        {
 
+        // if this is the card getting fallen on
+        if (collision.collider.tag == "Card" && isFalling == false)
+        {
+            int otherID = collision.gameObject.GetComponent<CardScriptReference>().id;
             for (int i = 0; i < snapPoints.Length; i++)
             {
                 //compare free slot to this slot, double check that this is the card getting fallen on
-                if (slotsTaken.snapPointTaken[i] == false && i != cardScriptReference.slot)
+                if (slotsTaken.snapPointTaken[i] == false /*&& i != cardScriptReference.slot*/)
                 {
-                    
+
                     //to optimize run little
                     cardTransform = GetComponent<Transform>();
 
@@ -119,18 +119,36 @@ public class Draggable : MonoBehaviour
                     slotsTaken.snapPointTaken[i] = true;
 
                 }
-                else
-                    if (isFalling == true)
-                {
-                    cardScriptReference.slot = closestSnap;
-                    isFalling = false;
-                }
-
             }
-
         }
 
+        if (collision.collider.tag == "Card" && isFalling == true)
+        {
+            //cardTransform.position = snapPoints[closestSnap].transform.position;
+            //cardScriptReference.slot = closestSnap;
+            isFalling = false;
+        }
+    }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.tag == "Card")
+        {
+            int otherID = collision.collider.GetComponent<CardScriptReference>().id;
+
+
+            if (isFalling == false && otherID < cardScriptReference.id)
+            {
+                cardTransform = GetComponent<Transform>();
+                for (int i = 0; i < 4; i++)
+                {
+                    if (slotsTaken.snapPointTaken[i] == false)
+                    {
+                        cardTransform.position = snapPoints[i].transform.position;
+                        cardScriptReference.slot = i;
+                    }
+                }
+            }
+        }
     }
 }
-

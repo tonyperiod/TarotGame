@@ -14,8 +14,7 @@ public class SlotsTaken : MonoBehaviour
         {
             snapPointTaken[i] = true;
             
-        }
-       
+        }       
     }
 
 }
