@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
        gameObject = GameObject.Find("Tooltip");
-        text.SetActive(false); 
+       text.SetActive(false); 
     }
 
     // Update is called once per frame
