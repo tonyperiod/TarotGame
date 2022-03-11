@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ConnerMainMenu.unity
+    guid: b684abeca2a40a140955bd1d18593836
+  - enabled: 1
+    path: Assets/Scenes/ConnerCharacterScreen.unity
+    guid: 11b058bc58d363442a35ed02d9671893
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
