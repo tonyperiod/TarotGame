@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
 
     GameObject gameObject;
+    public GameObject text; 
 
     int cardDamage;
     int cardShield;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
        gameObject = GameObject.Find("Tooltip");
+       text.SetActive(false); 
     }
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ public class UIManager : MonoBehaviour
     private void OnMouseEnter()
     {
         gameObject.SetActive(true);
-        gameObject.transform.position = this.transform.position + new Vector3(0, 0.2f, 0);
-        gameObject.transform.GetChild(0).gameObject.GetComponent<TextMesh>().text = "Shield: 5";
+        gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 2);
+        text.SetActive(true); 
 
   
     }
@@ -42,7 +44,7 @@ public class UIManager : MonoBehaviour
     private void OnMouseExit()
     {
         gameObject.SetActive(false);
-
+        text.SetActive(false);
     }
 
 }
