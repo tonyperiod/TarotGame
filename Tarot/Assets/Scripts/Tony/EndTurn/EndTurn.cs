@@ -51,8 +51,6 @@ public class EndTurn : MonoBehaviour
     //player/enemy elemental reference
     public PlayerReference PRef;
     public EnemyReference ERef;
-
     public int elemBuff = 2;
-
     public CourtBuff courtbuff;
 }

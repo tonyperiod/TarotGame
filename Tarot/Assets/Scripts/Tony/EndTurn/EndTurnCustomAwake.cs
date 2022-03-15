@@ -23,5 +23,8 @@ public class EndTurnCustomAwake : MonoBehaviour
         et.PSysMng = et.Gamehandler.GetComponent<PlayerSystemManager>();
         et.EsysMng = et.Gamehandler.GetComponent<EnemySystemManager>();
 
+        //set the lastturncards database, for draggable
+        et.cardeffects.get(); 
+
     }
 }

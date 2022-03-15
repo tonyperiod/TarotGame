@@ -12,17 +12,18 @@ public class EndTurnCardEffects : MonoBehaviour
     public VFXFuture vfxFut;
     public VFXPastFuture vfxpastFut;
 
-    public void get()
+    GameObject[] lastTurnCards;
+
+    public void get() //just get the cards -> used in draggable now as well
     {
-        GameObject[] lastTurnCards = manager.lastTurnCards;
-
+        lastTurnCards = manager.lastTurnCards;
         GameObject[] totalCards = GameObject.FindGameObjectsWithTag("Card"); //all cards
-
         lastTurnCards = totalCards;
-
         SelectionSort(lastTurnCards);
-
         manager.lastTurnCards = lastTurnCards;
+    }
+    public void activate()
+    {
 
         BuffElement(lastTurnCards);
 
@@ -125,13 +126,13 @@ public class EndTurnCardEffects : MonoBehaviour
     }
 
     //this is for testing purposes
-    //void printArray(GameObject[] a)
-    //{
-    //    string resultString = "";
-    //    for (int i = 0; i < a.Length; i++)
-    //    {
-    //        resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
-    //    }
-    //    print(resultString);
-    //}
+    void printArray(GameObject[] a)
+    {
+        string resultString = "";
+        for (int i = 0; i < a.Length; i++)
+        {
+            resultString = resultString + a[i].GetComponent<CardScriptReference>().Cardname + ",";
+        }
+        print(resultString);
+    }
 }

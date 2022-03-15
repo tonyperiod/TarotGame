@@ -8,8 +8,10 @@ public class EndTurnClick : MonoBehaviour
 
     private void OnMouseDown()
     {
-        manager.cardeffects.get();
+        manager.cardeffects.get(); //for card effects to play in order
+        manager.cardeffects.activate();
         manager.removecardeffects.remove();
         manager.placeCardsScript.place();
+        manager.cardeffects.get(); //for draggable
     }
 }
