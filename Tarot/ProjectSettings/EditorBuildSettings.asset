@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConnerScenes/ConnerCharacterScreen.unity
     guid: 11b058bc58d363442a35ed02d9671893
+  - enabled: 1
+    path: Assets/Scenes/ConnerScenes/CharacterLoad.unity
+    guid: 9098089e0045898479c8b939623b231b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
