@@ -7057,7 +7057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5126c81b54847d4295a002c632fe4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unlocked: 1
+  unlocked: 0
   unlockImage: {fileID: 0}
   footstepsImage: {fileID: 0}
 --- !u!1 &1253038848
