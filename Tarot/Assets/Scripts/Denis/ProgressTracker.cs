@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ProgressTracker : MonoBehaviour
 {
     public GameObject player;
-    public bool posSaved;
+    //public bool posSaved;
     public static bool SceneWasLoaded;
     public static bool miniBoss1Dead;
 
@@ -28,7 +28,7 @@ public class ProgressTracker : MonoBehaviour
         PlayerPrefs.SetFloat("Y", yPos);
         PlayerPrefs.SetFloat("Z", zPos);
         PlayerPrefs.Save();
-        posSaved = true;
+       // posSaved = true;
         Debug.Log("player position saved");
     }
 
@@ -53,16 +53,23 @@ public class ProgressTracker : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.T))
         {
-            SceneManager.LoadScene("LevelMechanics");
+            //SceneManager.LoadScene("LevelMechanics");
+            Scene scene = SceneManager.GetActiveScene(); 
+            SceneManager.LoadScene(scene.name);
             SceneWasLoaded = true;
             
            
         }
 
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            miniBoss1Dead = true;
+      //  if(Input.GetKeyDown(KeyCode.Y))
+       // {
+          //  miniBoss1Dead = true;
            
+      //  }
+
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            PlayerPrefs.DeleteAll();
         }
 
         

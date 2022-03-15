@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Deck
   - Card
+  - Boss
   layers:
   - Default
   - TransparentFX

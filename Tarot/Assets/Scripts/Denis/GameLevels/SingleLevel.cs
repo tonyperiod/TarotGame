@@ -9,8 +9,7 @@ public class SingleLevel : MonoBehaviour
 
     public GameObject pauseMenu;
     public static bool isPaused;
-    public int levelIndex;
-    private int currentWinNum = 0;
+   
 
 
     // Start is called before the first frame update
@@ -19,14 +18,7 @@ public class SingleLevel : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
-    public void WinTest(int winNum)
-    {
-        currentWinNum = winNum;
-        if(currentWinNum > PlayerPrefs.GetInt("Lv" + levelIndex))
-        {
-            PlayerPrefs.SetInt("Lv" + levelIndex, winNum);
-        }
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -44,12 +36,7 @@ public class SingleLevel : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            WinTest(1);
-
-
-        }
+       
     }
 
     public void PauseGame()

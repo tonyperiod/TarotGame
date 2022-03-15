@@ -325,9 +325,10 @@ GameObject:
   - component: {fileID: 495627671}
   - component: {fileID: 495627670}
   - component: {fileID: 495627669}
+  - component: {fileID: 495627673}
   m_Layer: 0
   m_Name: MiniBoss1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -411,6 +412,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &495627673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495627668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff6862f1257d094c88083dba5a19f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleScene:
+    m_Handle: 0
+  winScene:
+    m_Handle: 0
+  loseScene:
+    m_Handle: 0
 --- !u!1 &522504997
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +752,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bc74e141b8a77468751234af6c6bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 1448788048}
+  levelIndex: 1
+--- !u!114 &726319577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726319574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e69def4dd650447bd0c8b8447c8b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2068790020}
 --- !u!1 &750157495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1088,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 588471681}
-  levelIndex: 1
 --- !u!4 &903999584
 Transform:
   m_ObjectHideFlags: 0
@@ -1082,7 +1115,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2068790020}
-  posSaved: 0
 --- !u!1001 &919982327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1138,11 +1170,48 @@ PrefabInstance:
       propertyPath: enemyType
       value: normal
       objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1128379398}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: startBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StartBattle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TonyCardTesting
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: m_Name
       value: Interactions 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1201084732569755328, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
 --- !u!1 &1128379393
 GameObject:
@@ -1156,6 +1225,7 @@ GameObject:
   - component: {fileID: 1128379396}
   - component: {fileID: 1128379395}
   - component: {fileID: 1128379394}
+  - component: {fileID: 1128379398}
   m_Layer: 0
   m_Name: EnemyEasy2
   m_TagString: Untagged
@@ -1242,6 +1312,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1128379398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128379393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff6862f1257d094c88083dba5a19f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleScene:
+    m_Handle: 0
+  winScene:
+    m_Handle: 0
+  loseScene:
+    m_Handle: 0
 --- !u!1 &1175044868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1508,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1222599291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+  m_PrefabInstance: {fileID: 1512702317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1222599294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222599291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e69def4dd650447bd0c8b8447c8b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2068790020}
+--- !u!114 &1222599295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222599291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc74e141b8a77468751234af6c6bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 495627668}
+  levelIndex: 1
 --- !u!1 &1298298953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,11 +2004,52 @@ PrefabInstance:
       propertyPath: enemyType
       value: miniboss
       objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactKey
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 495627673}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: startBattle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StartBattle, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TonyCardTesting
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: m_Name
       value: Interactions 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1201084732569755328, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
 --- !u!1 &1545309152
 GameObject:
@@ -2148,6 +2309,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909586861}
   m_CullTransparentMesh: 1
+--- !u!1 &2033402293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6233665092637434615, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+  m_PrefabInstance: {fileID: 919982327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2033402294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033402293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e69def4dd650447bd0c8b8447c8b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2068790020}
+--- !u!114 &2033402296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033402293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc74e141b8a77468751234af6c6bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 1128379393}
+  levelIndex: 1
 --- !u!1 &2068790020
 GameObject:
   m_ObjectHideFlags: 0
