@@ -26,13 +26,17 @@ public class UIManager : MonoBehaviour
         
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        gameObject.SetActive(true);
-        gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 2);
-        text.SetActive(true); 
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            Debug.Log("Right Mouse Clicked");
+            gameObject.SetActive(true);
+            gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 2);
+            text.SetActive(true);
+        }
 
-  
+
     }
     
     public void UpdateCard(int damage, int shield)
@@ -43,8 +47,8 @@ public class UIManager : MonoBehaviour
 
     private void OnMouseExit()
     {
-        gameObject.SetActive(false);
-        text.SetActive(false);
+         gameObject.SetActive(false);
+         text.SetActive(false);
     }
 
 }
