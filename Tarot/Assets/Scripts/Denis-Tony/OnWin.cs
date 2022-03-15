@@ -43,6 +43,7 @@ public class OnWin : MonoBehaviour
         }
         else if (Enemy.CompareTag("Boss"))
         {
+            Enemy.SetActive(false);
             WinLevel(1);
             SceneManager.LoadScene("DenisWorldMap");
         }
