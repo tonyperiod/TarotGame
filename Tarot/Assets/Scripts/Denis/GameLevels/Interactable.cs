@@ -19,14 +19,18 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(interactKey))
+        if (isInRange)
         {
-            interactAction.Invoke();
+            if (Input.GetKeyDown(interactKey))
+            {
+                interactAction.Invoke();
 
+            }
         }
     }
     private void OnTriggerEnter(Collider collision)
     {
+
         if(collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;

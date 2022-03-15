@@ -47,10 +47,12 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(groundPoint.position, Vector3.down, out hit, .3f, isGround))
         {
             isGrounded = true;
+            
         }
         else
         {
             isGrounded = false;
+            
         }
 
         if(Input.GetButtonDown("Jump") && isGrounded &&!SingleLevel.isPaused)
