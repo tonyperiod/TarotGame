@@ -7,7 +7,6 @@ public class LoadCharacter : MonoBehaviour
 {
     public GameObject[] characterPrefabs;
     public Transform spawnPoint;
-    public TMP_Text label;
 
 
     // Start is called before the first frame update
@@ -16,7 +15,9 @@ public class LoadCharacter : MonoBehaviour
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
         GameObject prefab = characterPrefabs[selectedCharacter];
         GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
-        label.text = prefab.name;
+        clone.transform.position = new Vector3(0, 1, 1);
+        clone.transform.localScale = new Vector3(1, 1, 1);
+
     }
 
    
