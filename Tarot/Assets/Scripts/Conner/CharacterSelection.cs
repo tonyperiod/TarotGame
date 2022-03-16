@@ -7,13 +7,18 @@ using UnityEngine.UI;
 public class CharacterSelection : MonoBehaviour
 {
     public GameObject[] characters;
-    public int selectedCharacter = 0; 
+    public int selectedCharacter = 0;
+
+    void start()
+    {
+
+    }
 
     public void NextCharacter()
     {
         characters[selectedCharacter].SetActive(false);
         selectedCharacter = (selectedCharacter + 1) % characters.Length;
-        characters[selectedCharacter].SetActive(true); 
+        characters[selectedCharacter].SetActive(true);
     }
 
     public void PreviousCharacter()
@@ -32,6 +37,6 @@ public class CharacterSelection : MonoBehaviour
     public void PlayGame()
     {
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-        SceneManager.LoadScene("CharacterLoad");
+        SceneManager.LoadScene("DenisWorldMap");
     }
 }
