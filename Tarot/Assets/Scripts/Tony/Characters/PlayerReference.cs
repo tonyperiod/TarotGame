@@ -17,10 +17,15 @@ public class PlayerReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
+
+
     public void CustomAwake()
     {
-        //FOR DEBUG, THIS WILL BE CHANGED IN GAME -----------------------------------------------------------------------------------------------------------------------------
-        playerSelectedElem = "water";
+        if (playerSelectedElem == null)
+        {
+            playerSelectedElem = "fire";
+        }
+
 
         //select character using what we got
         for (int i = 0; i < charList.Length; i++)

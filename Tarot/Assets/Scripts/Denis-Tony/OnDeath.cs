@@ -15,7 +15,7 @@ public class OnDeath : MonoBehaviour
         {
             SceneManager.LoadScene("DenisWorldMap");
         }
-        
 
+        StopAllCoroutines();//there was a bug on death (from tony)
     }
 }
