@@ -207,10 +207,9 @@ public class Past : MonoBehaviour
         return damage;
     }
 
-    //if court card play this, runs through past function twice. will call double counter later.
+    //if court card play this, runs through past function twice. Will call double counter later.
     private void court(GameObject court)
     {
-
         int originalValue = court.GetComponent<CardScriptReference>().value;
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
 

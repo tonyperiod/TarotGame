@@ -6,5 +6,4 @@ using UnityEngine;
 public class ScriptableCardDatabase : ScriptableObject
 {
     public List<ScriptableCard> allCards;
-
 }

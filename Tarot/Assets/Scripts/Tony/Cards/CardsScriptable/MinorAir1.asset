@@ -16,6 +16,8 @@ MonoBehaviour:
   artWork: {fileID: 21300000, guid: bde557e65da1e8041b8f6bfade05db18, type: 3}
   id: 0
   symbol: air
-  value: 11
+  value: 12
+  court1: 
+  court2: 
   slot: 0
   isPlayer: 0

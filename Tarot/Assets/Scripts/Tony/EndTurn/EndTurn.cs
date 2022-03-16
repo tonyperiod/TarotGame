@@ -13,6 +13,7 @@ public class EndTurn : MonoBehaviour
     public Present Present;
     public Future Future;
     public PastFuture PastFuture;
+    public Draggable draggable;
 
     [Header ("card functioning")]
 

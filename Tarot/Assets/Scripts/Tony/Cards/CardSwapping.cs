@@ -5,7 +5,6 @@ using UnityEngine;
 public class CardSwapping : MonoBehaviour
 {    
     public SlotsTaken slotstaken;
-    public EndTurn manager;
     public Transform[] snapPoints;
 
     //doing this externally so each instance doesn't run the code randomly, and all values stay fixed

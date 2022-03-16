@@ -22,6 +22,8 @@ public class EndTurnCardEffects : MonoBehaviour
         SelectionSort(lastTurnCards);
         manager.lastTurnCards = lastTurnCards;
     }
+
+
     public void activate()
     {
 

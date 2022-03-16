@@ -26,13 +26,11 @@ public class CardScriptReference : MonoBehaviour
     {
         //choice between is player and is enemy
         if (isplayer == true)
-            FirstCard(PlayerInGameDeck.PickCard()); //it's ok to use random as long as the value is removed
+            FirstCard(PlayerInGameDeck.PickCard()); //playeringamedeck.pick card gives variables and instances, this will then reference
         else
             EnFirstCard(EnemyInGameDeck.PickCard());
-
-
-
     }
+
 
     private void FirstCard(ScriptableCard s)
     {
@@ -47,7 +45,6 @@ public class CardScriptReference : MonoBehaviour
 
         court1 = s.court1;
         court2 = s.court2;
-
     }
 
     private void EnFirstCard(ScriptableCard e)
@@ -63,6 +60,5 @@ public class CardScriptReference : MonoBehaviour
 
         court1 = e.court1;
         court2 = e.court2;
-
     }
 }
