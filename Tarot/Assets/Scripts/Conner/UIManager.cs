@@ -12,18 +12,20 @@ public class UIManager : MonoBehaviour
     int cardDamage;
     int cardShield;
 
+    GameObject symbol;
+
 
     // Start is called before the first frame update
     void Start()
     {
        gameObject = GameObject.Find("Tooltip");
-       text.SetActive(false); 
+       text.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnMouseOver()
