@@ -6,24 +6,19 @@ public class Past : MonoBehaviour
 {
     public EndTurn manager;
 
+
     public void past(GameObject c)
     {
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
 
         //from endTurn:
-
         GameObject[] lastTurnCards = manager.lastTurnCards;
         PlayerSystemManager PSysMng = manager.PSysMng;
         EnemySystemManager EsysMng = manager.EsysMng;
 
         bool isEonFirePa = manager.isEonFirePa;
         bool isPonFirePa = manager.isPonFirePa;
-
-        //get the reference from card (necessary for court to work)
-
-
-
 
         switch (c.GetComponent<CardScriptReference>().symbol)
         {
@@ -207,10 +202,9 @@ public class Past : MonoBehaviour
         return damage;
     }
 
-    //if court card play this, runs through past function twice. will call double counter later.
+    //if court card play this, runs through past function twice. Will call double counter later.
     private void court(GameObject court)
     {
-
         int originalValue = court.GetComponent<CardScriptReference>().value;
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
 

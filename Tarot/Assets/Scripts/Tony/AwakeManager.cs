@@ -21,6 +21,6 @@ public class AwakeManager : MonoBehaviour
         playeringamedeck.CustomAwake();
         enemyingamedeck.CustomAwake();
 
-        endturn.CA();
+        endturn.CA();        
     }
 }

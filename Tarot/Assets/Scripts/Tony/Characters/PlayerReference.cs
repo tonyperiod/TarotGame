@@ -21,6 +21,11 @@ public class PlayerReference : MonoBehaviour
 
     public void CustomAwake()
     {
+        if (playerSelectedElem == null)
+        {
+            playerSelectedElem = "fire";
+        }
+
 
         //select character using what we got
         for (int i = 0; i < charList.Length; i++)
