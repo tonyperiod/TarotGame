@@ -48,10 +48,20 @@ public class EndTurn : MonoBehaviour
     [HideInInspector]
     public EnemySystemManager EsysMng;
 
-    [Header ("elemental buffs")]
+    [Header ("elemental stuff")]
     //player/enemy elemental reference
     public PlayerReference PRef;
     public EnemyReference ERef;
     public int elemBuff = 2;
     public CourtBuff courtbuff;
+
+    [HideInInspector]
+    public string PElem, EElem, PElemC, EElemC;
+
+    [Header("delays")]
+
+    //everything to control the delays (delays done in endturnclick and endturncard effects
+
+    public float dySingle;
+    public float dyTot;
 }

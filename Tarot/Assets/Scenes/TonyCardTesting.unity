@@ -3696,6 +3696,12 @@ MonoBehaviour:
   ERef: {fileID: 1253074338}
   elemBuff: 2
   courtbuff: {fileID: 1920384268}
+  PElem: 
+  EElem: 
+  PElemC: 
+  EElemC: 
+  dySingle: 0.5
+  dyTot: 0
 --- !u!114 &1920384260
 MonoBehaviour:
   m_ObjectHideFlags: 0

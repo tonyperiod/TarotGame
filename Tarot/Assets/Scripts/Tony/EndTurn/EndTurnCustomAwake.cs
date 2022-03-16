@@ -19,6 +19,10 @@ public class EndTurnCustomAwake : MonoBehaviour
         et.PSysMng = et.Gamehandler.GetComponent<PlayerSystemManager>();
         et.EsysMng = et.Gamehandler.GetComponent<EnemySystemManager>();
         //set the lastturncards database, for draggable
-        et.cardeffects.get(); 
+        et.cardeffects.get();
+
+        //EDIT HERE AFTER TAROT CARDS
+        et.dyTot = et.dySingle*8;//all delays play twice
+
     }
 }

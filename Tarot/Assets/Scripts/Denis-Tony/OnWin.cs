@@ -13,15 +13,16 @@ public class OnWin : MonoBehaviour
     {
         Debug.Log("player win");
         SceneManager.LoadScene("Level1");
-       // if (Interactable.enemyType == "normal")
+        // if (Interactable.enemyType == "normal")
         //{
-            
-           // SceneManager.LoadScene("Level1");
-       // }
-        //else if (Interactable.enemyType == "boss")
-       // {
-        //    SceneManager.LoadScene("DenisWorldMap");
-       // }
 
+        // SceneManager.LoadScene("Level1");
+        // }
+        //else if (Interactable.enemyType == "boss")
+        // {
+        //    SceneManager.LoadScene("DenisWorldMap");
+        // }
+
+        StopAllCoroutines();//there was a bug on death (from tony)
     }
 }

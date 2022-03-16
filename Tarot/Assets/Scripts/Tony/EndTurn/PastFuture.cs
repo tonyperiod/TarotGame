@@ -21,25 +21,31 @@ public class PastFuture : MonoBehaviour
         bool isPonFireFu = manager.isPonFireFu;
 
         //counter element
-        string PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().symbol;
-        string EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().symbol;
+        string PElem = manager.PElem;
+        string EElem = manager.EElem;
+        string PElemC = manager.PElemC;
+        string EElemC = manager.EElemC;
 
-        //court second element for countering elements
-        string PElemC = "null";
-        string EElemC = "null";
 
-        //court card double elemental
-        if (PElem == "court")
-        {
-            PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court1;
-            PElemC = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court2;
-        }
+        //string PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().symbol;
+        //string EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().symbol;
 
-        if (EElem == "court")
-        {
-            EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court1;
-            EElemC = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court2;
-        }
+        ////court second element for countering elements
+        //string PElemC = "null";
+        //string EElemC = "null";
+
+        ////court card double elemental
+        //if (PElem == "court")
+        //{
+        //    PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court1;
+        //    PElemC = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court2;
+        //}
+
+        //if (EElem == "court")
+        //{
+        //    EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court1;
+        //    EElemC = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court2;
+        //}
 
 
         switch (c.GetComponent<CardScriptReference>().symbol)
