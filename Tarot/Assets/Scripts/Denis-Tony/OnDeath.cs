@@ -18,10 +18,13 @@ public class OnDeath : MonoBehaviour
     public void dead() //just don't change this name of the public void
     {
 
+
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         SceneWasLoaded = true;
 
+
+        StopAllCoroutines();//there was a bug on death (from tony)
     }
    
 }

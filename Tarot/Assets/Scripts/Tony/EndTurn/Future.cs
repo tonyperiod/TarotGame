@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//most straightforward effect -> only responsible for moving stuff
 public class Future : MonoBehaviour
 {
     public EndTurn manager;
@@ -12,8 +13,6 @@ public class Future : MonoBehaviour
         {
             case 2:
                 manager.slotsTaken.snapPointTaken[2] = false;
-
-
                 c.transform.position = manager.pos[6].transform.position;
                 c.GetComponent<CardScriptReference>().slot = 6;
                 break;

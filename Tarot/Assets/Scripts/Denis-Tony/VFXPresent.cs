@@ -39,6 +39,7 @@ public class VFXPresent : MonoBehaviour
     private void actualEffectActivation()//put what ya want in here, I'd suggest to look at how I did the actual past, present... scripts
     {
 
-        //if you could insert a delay even when there is no effect that would be good, just to separate out things a sec.
     }
+
+
 }

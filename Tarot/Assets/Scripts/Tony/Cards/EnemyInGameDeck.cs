@@ -9,13 +9,12 @@ using System.Linq;
 public class EnemyInGameDeck : MonoBehaviour
 {
     public ScriptableCardDatabase enemyDatabase; //to slot in player database
-
     private static EnemyInGameDeck instance; //this database 
+    public List<ScriptableCard> currentDeckList; //this Deck list
 
     private float cardTot;
     private float cardCur;
 
-    public List<ScriptableCard> currentDeckList; //this Deck list
 
     public void CustomAwake()
     {
@@ -38,12 +37,9 @@ public class EnemyInGameDeck : MonoBehaviour
     {
         instance.currentDeckList.Clear(); //empty out deck
 
-
         for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
         {
-
             instance.currentDeckList.Add(GetCardByID(i));
-
         }
 
         cardCur = cardTot;
@@ -55,41 +51,31 @@ public class EnemyInGameDeck : MonoBehaviour
         }
     }
 
+
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {
         return instance.enemyDatabase.allCards.FirstOrDefault(i => i.id == ID); //returns first instance that matches true, or default (null)
-
     }
+
 
     public static ScriptableCard PickCard() // get random card
 
     {
-
         if (instance.cardCur < 1) //draw cards then do the normal stuff
         {
             instance.NewDeck();
-
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
-
             instance.currentDeckList.Remove(pickedCard);
-
             instance.cardCur -= 1;
-
             return pickedCard;
         }
+
         else //just pick card and delete from list
         {
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
-
             instance.currentDeckList.Remove(pickedCard);
-
             instance.cardCur -= 1;
-
             return pickedCard;
         }
     }
-
-
-
-
 }

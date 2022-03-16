@@ -24,7 +24,9 @@ public class OnWin : MonoBehaviour
     public void win() //just don't change this name of the public void
     {
         Debug.Log("player win");
+
         // SceneManager.LoadScene("Level1");
+
         // if (Interactable.enemyType == "normal")
         //{
 
@@ -34,6 +36,7 @@ public class OnWin : MonoBehaviour
         // {
         //    SceneManager.LoadScene("DenisWorldMap");
         // }
+
         if (!Enemy.CompareTag("Boss"))
         {
             Enemy.SetActive(false);
@@ -51,5 +54,7 @@ public class OnWin : MonoBehaviour
         
 
 
+
+        StopAllCoroutines();//there was a bug on death (from tony)
     }
 }

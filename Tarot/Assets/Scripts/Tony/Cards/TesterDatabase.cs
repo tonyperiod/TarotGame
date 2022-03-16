@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class TesterDatabase : MonoBehaviour
 {
-    public void FixedUpdate()
-    {
-     // Printing(PlayerDatabase.GetRandomCard());
+    //public void FixedUpdate()
+    //{
+    //    Printing(PlayerDatabase.GetRandomCard());
+    //}
 
-    }
-
-    private void Printing(ScriptableCard s)
+    public void Printing(GameObject[] list)
     {
-        Debug.Log(s.name);
+        for (int i = 0; i < list.Length; i++)
+        {
+            Debug.Log(list[i].GetComponent<CardScriptReference>().Cardname);
+        }
     }
 }

@@ -12,36 +12,54 @@ public class EndTurnCardEffects : MonoBehaviour
     public VFXFuture vfxFut;
     public VFXPastFuture vfxpastFut;
 
-    public void get()
+    GameObject[] lastTurnCards;
+
+    public void get() //just get the cards -> used in draggable now as well
     {
-        GameObject[] lastTurnCards = manager.lastTurnCards;
-
+        lastTurnCards = manager.lastTurnCards;
         GameObject[] totalCards = GameObject.FindGameObjectsWithTag("Card"); //all cards
-
         lastTurnCards = totalCards;
-
         SelectionSort(lastTurnCards);
+        manager.lastTurnCards = lastTurnCards;                
+    }
 
-        manager.lastTurnCards = lastTurnCards;
+    public void activate()
+    {
+        StartCoroutine("playEffects");
+    }
+
+  IEnumerator playEffects()//to give delays between things
+    {
 
         BuffElement(lastTurnCards);
+        CounterElement(lastTurnCards);
 
         vfxPa.activate(lastTurnCards[0]);
         manager.Past.past(lastTurnCards[0]);
+        yield return new WaitForSeconds(manager.dySingle);
+
         vfxPa.activate(lastTurnCards[3]);
         manager.Past.past(lastTurnCards[3]);
-
+        yield return new WaitForSeconds(manager.dySingle);
+        
         vfxPre.activate(lastTurnCards[1]);
         manager.Present.present(lastTurnCards[1]);
+        yield return new WaitForSeconds(manager.dySingle);
+
         vfxPre.activate(lastTurnCards[4]);
         manager.Present.present(lastTurnCards[4]);
+        yield return new WaitForSeconds(manager.dySingle);
+
 
         if (manager.gameStart == false)
         {
             vfxpastFut.activate(lastTurnCards[6]);
             manager.PastFuture.pastfuture(lastTurnCards[6]);
+            yield return new WaitForSeconds(manager.dySingle);
+        
             vfxpastFut.activate(lastTurnCards[7]);
             manager.PastFuture.pastfuture(lastTurnCards[7]);
+            yield return new WaitForSeconds(manager.dySingle);
         }
         //destroy placeholders if turn one
         else
@@ -53,6 +71,8 @@ public class EndTurnCardEffects : MonoBehaviour
 
         vfxFut.activate(lastTurnCards[2]);
         manager.Future.future(lastTurnCards[2]);
+        yield return new WaitForSeconds(manager.dySingle);
+
         vfxFut.activate(lastTurnCards[5]);
         manager.Future.future(lastTurnCards[5]);
     }
@@ -82,6 +102,7 @@ public class EndTurnCardEffects : MonoBehaviour
             }
         }
     }
+
 
     //increase value of cards with the same element
     //court cards will refer to their own version of the script.
@@ -121,6 +142,26 @@ public class EndTurnCardEffects : MonoBehaviour
         if (list[7].gameObject.GetComponent<CardScriptReference>().symbol == element)
         {
             list[7].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
+        }
+    }
+
+    private void CounterElement(GameObject[] list)
+    {
+        //set the normal counter
+        manager.PElem = list[0].GetComponent<CardScriptReference>().symbol;
+        manager.EElem = list[3].GetComponent<CardScriptReference>().symbol;
+
+        //check for court
+        if (manager.PElem == "court")
+        {
+            manager.PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court1;
+            manager.PElemC = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court2;
+        }
+
+        if (manager.EElem == "court")
+        {
+            manager.EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court1;
+            manager.EElemC = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court2;
         }
     }
 
