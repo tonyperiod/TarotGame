@@ -5,17 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class OnDeath : MonoBehaviour
 {
+
+
     //general rules:
     //do what ya want here, literally just triggering it
     //if you're curious, this script is in the HPHandler
 
+    public GameObject player;
+   // public bool posSaved;
+    public static bool SceneWasLoaded;
+
     public void dead() //just don't change this name of the public void
     {
-        Debug.Log("player dead");
-        {
-            SceneManager.LoadScene("DenisWorldMap");
-        }
+
+
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        SceneWasLoaded = true;
+
 
         StopAllCoroutines();//there was a bug on death (from tony)
     }
+   
 }

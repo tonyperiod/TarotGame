@@ -9,6 +9,7 @@ public class SingleLevel : MonoBehaviour
 
     public GameObject pauseMenu;
     public static bool isPaused;
+   
 
 
     // Start is called before the first frame update
@@ -16,6 +17,8 @@ public class SingleLevel : MonoBehaviour
     {
         pauseMenu.SetActive(false);
     }
+
+   
 
     // Update is called once per frame
     void Update()
@@ -32,6 +35,8 @@ public class SingleLevel : MonoBehaviour
                 PauseGame();
             }
         }
+
+       
     }
 
     public void PauseGame()

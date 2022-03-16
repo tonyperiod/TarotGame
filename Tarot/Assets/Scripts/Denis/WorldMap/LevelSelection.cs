@@ -15,6 +15,16 @@ public class LevelSelection : MonoBehaviour
     private void Update()
     {
         UpdateLevelImage();
+        UpdateLevelStatus();
+    }
+
+    private void UpdateLevelStatus()
+    {
+        int previousLevelNum = int.Parse(gameObject.name) - 1;
+        if (PlayerPrefs.GetInt("Lv" + previousLevelNum.ToString()) > 0)
+        {
+            unlocked = true;
+        }
     }
     public void UpdateLevelImage()
     {
@@ -51,6 +61,7 @@ public class LevelSelection : MonoBehaviour
         //        stars[i].gameObject.SetActive(false);
 
          //   }
+         
 
 
         }
