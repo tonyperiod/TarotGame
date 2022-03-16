@@ -12,8 +12,6 @@ public class UIManager : MonoBehaviour
     int cardDamage;
     int cardShield;
 
-    GameObject symbol;
-
 
     // Start is called before the first frame update
     void Start()
