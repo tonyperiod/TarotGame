@@ -43,7 +43,7 @@ public class OnWin : MonoBehaviour
       //  s.enemy2 = 
         SceneManager.LoadScene("LevelMechanics");
         SceneWasLoaded = true;//change to always load the previously loaded scene
-        Enemy.SetActive(false);
+        //Enemy.SetActive(false);
 
         //if (!Enemy.CompareTag("Boss"))
        // {

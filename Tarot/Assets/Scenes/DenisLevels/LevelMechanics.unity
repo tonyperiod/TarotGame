@@ -2009,6 +2009,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 495627668}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: enemyType
       value: miniboss
       objectReference: {fileID: 0}

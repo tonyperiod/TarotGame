@@ -19,8 +19,8 @@ public class OnDeath : MonoBehaviour
     {
 
 
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        
+        SceneManager.LoadScene("LevelMechanics");
         SceneWasLoaded = true;
         //OnWin.enemyDead = false;
 
