@@ -63,5 +63,18 @@ public class PositionLoader : MonoBehaviour
                 
             }
         }
+
+        if (OnDeath.SceneWasLoaded)
+        {
+            OnDeath.SceneWasLoaded = false;
+            Enemy1.SetActive(true);
+            en1Dead = false;
+
+            Enemy2.SetActive(true);
+            en2Dead = false;
+
+            Enemy3.SetActive(true);
+            en3Dead = false;
+        }
     }
 }
