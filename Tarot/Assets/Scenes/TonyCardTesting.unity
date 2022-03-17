@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e69def4dd650447bd0c8b8447c8b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &361368403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bc74e141b8a77468751234af6c6bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 0}
+  levelIndex: 0
 --- !u!1 &375811049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2386,6 +2389,8 @@ MonoBehaviour:
   element: 
   iD: 0
   artWork: {fileID: 0}
+  level: 0
+  type: 
 --- !u!212 &1253074339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3513,6 +3518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDatabase: {fileID: 11400000, guid: 4686c29926b2ff84d99de73eea9c3eca, type: 2}
   currentDeckList: []
+  eRef: {fileID: 1253074338}
 --- !u!4 &1894156069
 Transform:
   m_ObjectHideFlags: 0

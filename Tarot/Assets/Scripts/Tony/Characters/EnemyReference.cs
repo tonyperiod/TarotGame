@@ -22,6 +22,9 @@ public class EnemyReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
+    public int level;
+    public string type;
+
     //for now only random opponent, here can add logic for modifying the parameters randomly, and a lot will depend on Dennis for this
     public void CustomAwake()
     {
@@ -38,6 +41,9 @@ public class EnemyReference : MonoBehaviour
 
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;
+
+        level = chosenEnemy.level;
+        type = chosenEnemy.type;
     }
 
 

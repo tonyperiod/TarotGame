@@ -8,13 +8,19 @@ using System.Linq;
 
 public class EnemyInGameDeck : MonoBehaviour
 {
-    public ScriptableCardDatabase enemyDatabase; //to slot in player database
+    public ScriptableCardDatabase enemyDatabase; //to slot in all card database
     private static EnemyInGameDeck instance; //this database 
     public List<ScriptableCard> currentDeckList; //this Deck list
 
     private float cardTot;
     private float cardCur;
 
+    [Header("External Imputs")]
+    public EnemyReference eRef;
+
+    private string element;
+    private string type;
+    private int level;
 
     public void CustomAwake()
     {
@@ -27,22 +33,35 @@ public class EnemyInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-        cardTot = instance.enemyDatabase.allCards.Count;
+        cardTot = instance.enemyDatabase.allCards.Count; //have to change this
 
+
+        setParameters();
         NewDeck();
     }
     //TODO add in procedural deck building-----------------
+
+    private void setParameters()
+    {
+        element = eRef.element;
+        level = eRef.level;
+        type = eRef.type;
+    }
+
 
     public void NewDeck() //this pure jank is to load in all the cards to the in game deck
     {
         instance.currentDeckList.Clear(); //empty out deck
 
-        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
-        {
-            instance.currentDeckList.Add(GetCardByID(i));
-        }
 
-        cardCur = cardTot;
+
+
+        //for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
+        //{
+        //    instance.currentDeckList.Add(GetCardByID(i));
+        //}
+
+        //cardCur = cardTot;
 
         //set all cards to is enemy
         foreach (var Card in instance.currentDeckList)
