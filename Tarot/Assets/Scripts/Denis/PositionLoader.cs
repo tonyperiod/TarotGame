@@ -8,6 +8,10 @@ public class PositionLoader : MonoBehaviour
 
     public GameObject player;
     public bool posSaved;
+    public GameObject Enemy1;
+    public GameObject Enemy2;
+    public GameObject Enemy3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +27,22 @@ public class PositionLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ProgressTracker.SceneWasLoaded)
+        if (OnWin.SceneWasLoaded)
         {
             LoadPosition();
-            ProgressTracker.SceneWasLoaded = false;
+            OnWin.SceneWasLoaded = false;
+            if (PlayerPrefs.GetInt("enemyNo") == 1)
+            {
+                Enemy1.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("enemyNo") == 2)
+            {
+                Enemy2.SetActive(false);
+            }
+            if (PlayerPrefs.GetInt("enemyNo") == 3)
+            {
+                Enemy3.SetActive(false);
+            }
         }
     }
 }

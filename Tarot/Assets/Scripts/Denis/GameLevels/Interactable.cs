@@ -9,6 +9,9 @@ public class Interactable : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public GameObject Enemy;
+    
+    
     //public static string enemyType;
     // Start is called before the first frame update
     void Start()
@@ -24,9 +27,17 @@ public class Interactable : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
-
+                if (Enemy.name == "EnemyEasy1")
+                {
+                    PlayerPrefs.SetInt ("enemyNo", 1);
+                }
+                
+                
             }
         }
+
+       
+
     }
     private void OnTriggerEnter(Collider collision)
     {
