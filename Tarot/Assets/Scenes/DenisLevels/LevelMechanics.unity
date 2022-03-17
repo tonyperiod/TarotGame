@@ -1167,6 +1167,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1128379393}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: enemyType
       value: normal
       objectReference: {fileID: 0}
@@ -1903,6 +1907,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 1448788048}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: enemyType
       value: normal
       objectReference: {fileID: 0}
@@ -2000,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 495627668}
     - target: {fileID: 5165309582413004818, guid: b047f9f475e74664e9c0c15781fdfc60, type: 3}
       propertyPath: enemyType
       value: miniboss
@@ -2684,6 +2696,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6109615060668074982, guid: 9bb51626588981a4f8b04f2cf70ac13e, type: 3}
+      propertyPath: Enemy1
+      value: 
+      objectReference: {fileID: 1448788048}
+    - target: {fileID: 6109615060668074982, guid: 9bb51626588981a4f8b04f2cf70ac13e, type: 3}
+      propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1128379393}
+    - target: {fileID: 6109615060668074982, guid: 9bb51626588981a4f8b04f2cf70ac13e, type: 3}
+      propertyPath: Enemy3
+      value: 
+      objectReference: {fileID: 495627668}
     - target: {fileID: 6109615060668074982, guid: 9bb51626588981a4f8b04f2cf70ac13e, type: 3}
       propertyPath: player
       value: 
