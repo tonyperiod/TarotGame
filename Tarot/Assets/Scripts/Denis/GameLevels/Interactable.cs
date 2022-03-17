@@ -9,6 +9,9 @@ public class Interactable : MonoBehaviour
     public bool isInRange;
     public KeyCode interactKey;
     public UnityEvent interactAction;
+    public GameObject Enemy;
+    
+    
     //public static string enemyType;
     // Start is called before the first frame update
     void Start()
@@ -24,9 +27,25 @@ public class Interactable : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
+                if (Enemy.name == "EnemyEasy1")
+                {
+                    PlayerPrefs.SetInt ("enemyNo", 1);
+                }
+                if (Enemy.name == "EnemyEasy2")
+                {
+                    PlayerPrefs.SetInt("enemyNo", 2);                  //stores the enemy that was interacted with last, accessed when scene is reloaded by position loader to deactivate them.
+                }
+                if (Enemy.name == "MiniBoss1")
+                {
+                    PlayerPrefs.SetInt("enemyNo", 3);
+                }
+
 
             }
         }
+
+       
+
     }
     private void OnTriggerEnter(Collider collision)
     {
