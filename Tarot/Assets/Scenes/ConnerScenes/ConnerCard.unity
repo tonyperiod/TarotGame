@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5413ac686c4af1844a2016a1d70e9c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charRef: {fileID: 11400000, guid: 87b2ebc11df613a4caa4feaf9865430d, type: 2}
+  charList: []
   _name: 
   maxHP: 0
   maxSH: 0
@@ -603,7 +603,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ce7eb200a020964b8289c67d7b119ae, type: 2}
   - {fileID: 11400000, guid: 646ca54560fdfe949b8379b812eefd5b, type: 2}
   - {fileID: 11400000, guid: 97dbe7b30ad9f504fad27e61ffe16ac0, type: 2}
-  wantElement: 
   _name: 
   maxHP: 0
   maxSH: 0
@@ -1164,6 +1163,7 @@ MonoBehaviour:
   Present: {fileID: 487428885}
   Future: {fileID: 487428884}
   PastFuture: {fileID: 487428883}
+  draggable: {fileID: 0}
   pos:
   - {fileID: 1025283313}
   - {fileID: 1596232327}
@@ -1191,6 +1191,12 @@ MonoBehaviour:
   ERef: {fileID: 340136982}
   elemBuff: 2
   courtbuff: {fileID: 487428882}
+  PElem: 
+  EElem: 
+  PElemC: 
+  EElemC: 
+  dySingle: 0
+  dyTot: 0
 --- !u!114 &487428882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 487428881}
+  vfxPa: {fileID: 0}
+  vfxPre: {fileID: 0}
+  vfxFut: {fileID: 0}
+  vfxpastFut: {fileID: 0}
 --- !u!114 &487428889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2311,6 +2321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reference: {fileID: 340136981}
   Bar: {fileID: 278648255}
+  win: {fileID: 0}
 --- !u!114 &1148865162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2325,6 +2336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reference: {fileID: 212563222}
   Bar: {fileID: 1851383536}
+  dead: {fileID: 0}
 --- !u!4 &1148865163
 Transform:
   m_ObjectHideFlags: 0
@@ -2679,6 +2691,8 @@ MonoBehaviour:
   playeringamedeck: {fileID: 1037216736}
   enemyingamedeck: {fileID: 1037216735}
   endturn: {fileID: 487428880}
+  enemyreference: {fileID: 0}
+  playerreference: {fileID: 0}
 --- !u!4 &1453028554
 Transform:
   m_ObjectHideFlags: 0
