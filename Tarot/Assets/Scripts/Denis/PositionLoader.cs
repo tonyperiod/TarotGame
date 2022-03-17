@@ -66,15 +66,25 @@ public class PositionLoader : MonoBehaviour
 
         if (OnDeath.SceneWasLoaded)
         {
-            OnDeath.SceneWasLoaded = false;
-            Enemy1.SetActive(true);
-            en1Dead = false;
+            if (en1Dead == true)
+            {
+                Enemy1.SetActive(false);
+                en1Dead = true;
+            }
+            if (en2Dead == true)
+            {
+                Enemy2.SetActive(false);
+                en2Dead = true;
+            }
+            if (en3Dead == true)
+            {
+                Enemy3.SetActive(false);
+                en3Dead = true;
 
-            Enemy2.SetActive(true);
-            en2Dead = false;
+                WinLevel(1);
+                SceneManager.LoadScene("DenisWorldMap");
 
-            Enemy3.SetActive(true);
-            en3Dead = false;
+            }
         }
     }
 }
