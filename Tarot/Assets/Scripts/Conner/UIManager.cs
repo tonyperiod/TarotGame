@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject = GameObject.Find("Tooltip");
+        gameObject = GameObject.Find("Tooltip (Battle Board)");
         text.SetActive(false);
     }
 
@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Right Mouse Clicked");
             gameObject.SetActive(true);
-            gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 2);
+            gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 1.5f);
             text.SetActive(true);
         }
 
