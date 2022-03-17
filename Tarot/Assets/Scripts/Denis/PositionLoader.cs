@@ -60,6 +60,8 @@ public class PositionLoader : MonoBehaviour
                 en3Dead = true;
                 WinLevel(1);
                 SceneManager.LoadScene("DenisWorldMap");
+                Debug.Log("miniBossDead");
+               // PlayerPrefs.SetInt("enemyNo") = 4; // to save that the miniboss has been defeated 
                 
             }
         }

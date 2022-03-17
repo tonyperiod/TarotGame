@@ -20,7 +20,7 @@ public class OnDeath : MonoBehaviour
 
 
         
-        SceneManager.LoadScene("LevelMechanics");
+        SceneManager.LoadScene("Level1");
         SceneWasLoaded = true;
         //OnWin.enemyDead = false;
 
