@@ -46,20 +46,8 @@ public class ProgressTracker : MonoBehaviour
             save();
         }
 
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            LoadPosition();
-        }
+    
 
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            //SceneManager.LoadScene("LevelMechanics");
-            Scene scene = SceneManager.GetActiveScene(); 
-            SceneManager.LoadScene(scene.name);
-            SceneWasLoaded = true;
-            
-           
-        }
 
       //  if(Input.GetKeyDown(KeyCode.Y))
        // {
