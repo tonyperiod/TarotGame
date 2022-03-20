@@ -49,6 +49,6 @@ Material:
     - BaseColor: {r: 1, g: 0.3180478, b: 0, a: 0}
     - FresnelColor: {r: 85.445015, g: 10.736546, b: 4.0262046, a: 0}
     - NoiseSpeed: {r: -0.1, g: 0.1, b: 0, a: 0}
-    - VoronoiColor: {r: 198.61763, g: 47.834614, b: 6.2392974, a: 0}
+    - VoronoiColor: {r: 397.23526, g: 95.66923, b: 12.478595, a: 0}
     - VoronoiSpeed: {r: 0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
