@@ -41,7 +41,8 @@ public class OnWin : MonoBehaviour
        //  EnemyStates s = new EnemyStates();
       //  s.enemy1 = Enemy.SetActive(false);
       //  s.enemy2 = 
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(ProgressTracker.levelName);
+
         SceneWasLoaded = true;//change to always load the previously loaded scene
         //Enemy.SetActive(false);
 
