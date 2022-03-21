@@ -76,41 +76,79 @@ public class PositionLoader : MonoBehaviour
             LoadPosition();
             OnWin.SceneWasLoaded = false;
 
-            if (PlayerPrefs.GetInt("enemyNo") == 1 || (PlayerPrefs.GetInt("en1Dead") == 1))
+            if (PlayerPrefs.GetInt("enemyNo") == 1)
+            {
+                PlayerPrefs.SetInt("en1Dead", 1);
+                PlayerPrefs.SetInt("gold", (PlayerPrefs.GetInt("gold") +1));
+            }
+            if (PlayerPrefs.GetInt("en1Dead") == 1)
             {
                 Enemy1.SetActive(false);
                 
-                PlayerPrefs.SetInt("en1Dead", 1);
             }
-            if (PlayerPrefs.GetInt("enemyNo") == 2 || (PlayerPrefs.GetInt("en2Dead") == 1))
+
+
+            if (PlayerPrefs.GetInt("enemyNo") == 2)
+            {
+                PlayerPrefs.SetInt("en2Dead", 1);
+                PlayerPrefs.SetInt("gold", (PlayerPrefs.GetInt("gold") + 1));
+            }
+
+             if   (PlayerPrefs.GetInt("en2Dead") == 1)
+                    
             {
                 Enemy2.SetActive(false);
-                PlayerPrefs.SetInt("en2Dead", 1);
+                
             }
-            if (PlayerPrefs.GetInt("enemyNo") == 3 || (PlayerPrefs.GetInt("en3Dead") == 1))
+
+
+            if (PlayerPrefs.GetInt("enemyNo") == 3)
+                {
+                PlayerPrefs.SetInt("en3Dead", 1);
+                PlayerPrefs.SetInt("gold", (PlayerPrefs.GetInt("gold") + 1));
+            }
+
+             if   (PlayerPrefs.GetInt("en3Dead") == 1)
             {
                 Enemy3.SetActive(false);
-                PlayerPrefs.SetInt("en3Dead", 1);
+                
                 WinLevel(1);
             }
             //^for level 1
             //level 2 bellow:
 
-            if (PlayerPrefs.GetInt("enemyNo") == 4 || (PlayerPrefs.GetInt("en4Dead") == 1))
+            if (PlayerPrefs.GetInt("enemyNo") == 4)
+            {
+                PlayerPrefs.SetInt("en4Dead", 1);
+                PlayerPrefs.SetInt("gold", (PlayerPrefs.GetInt("gold") + 1));
+            }
+                
+             if   (PlayerPrefs.GetInt("en4Dead") == 1)
             {
                  Enemy4.SetActive(false);
-
-                 PlayerPrefs.SetInt("en4Dead", 1);
             }
-            if (PlayerPrefs.GetInt("enemyNo") == 5 || (PlayerPrefs.GetInt("en5Dead") == 1))
+
+            if (PlayerPrefs.GetInt("enemyNo") == 5)
+
+            {
+                PlayerPrefs.SetInt("en5Dead", 1);
+                PlayerPrefs.SetInt("gold", (PlayerPrefs.GetInt("gold") + 1));
+
+            }
+            if (PlayerPrefs.GetInt("en5Dead") == 1)
             {
                     Enemy5.SetActive(false);
-                    PlayerPrefs.SetInt("en5Dead", 1);
+                   
             }
-            if (PlayerPrefs.GetInt("enemyNo") == 6 || (PlayerPrefs.GetInt("en6Dead") == 1))
+            if (PlayerPrefs.GetInt("enemyNo") == 6)
+            {
+                PlayerPrefs.SetInt("en6Dead", 1);
+                PlayerPrefs.SetInt("gold", (PlayerPrefs.GetInt("gold") + 1));
+            }
+            if (PlayerPrefs.GetInt("en6Dead") == 1)
             {
                     Enemy6.SetActive(false);
-                    PlayerPrefs.SetInt("en6Dead", 1);
+                    
                     WinLevel(2);
 
                     // PlayerPrefs.SetInt("enemyNo") = 4; // to save that the miniboss has been defeated 
