@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class EnemyReference : MonoBehaviour
 {
+    //these only for random enemies
     //get enemy out of all of them
-    public ScriptableChar[] charRef;
-    private List<ScriptableChar> potentialEnemies;
-    private ScriptableChar chosenEnemy;
+    //public ScriptableChar[] charRef;
+    //private List<ScriptableChar> potentialEnemies;
+
+
+    public ScriptableChar chosenEnemy;
 
     //for external generation
     public static string wantEnemyElement;
@@ -25,8 +28,8 @@ public class EnemyReference : MonoBehaviour
     //for now only random opponent, here can add logic for modifying the parameters randomly, and a lot will depend on Dennis for this
     public void CustomAwake()
     {
-        wantEnemyElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
-        getOpponent(wantEnemyElement);
+        //wantEnemyElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
+        //getOpponent(wantEnemyElement);
 
         //get all stats
         _name = chosenEnemy.Name;
@@ -40,24 +43,24 @@ public class EnemyReference : MonoBehaviour
         spRend.sprite = artWork;
     }
 
+    //this was for random enemies of type, no longer needed
+    //private void getOpponent(string e)
+    //{
+    //    potentialEnemies = new List<ScriptableChar>();// only need it here
 
-    private void getOpponent(string e)
-    {
-        potentialEnemies = new List<ScriptableChar>();// only need it here
+    //    foreach (var item in charRef)
+    //    {
+    //        if (item.Element == e)
+    //        {
+    //            potentialEnemies.Add(item);
+    //        }
+    //    }
 
-        foreach (var item in charRef)
-        {
-            if (item.Element == e)
-            {
-                potentialEnemies.Add(item);
-            }
-        }
+    //    //random enemy out of selection
 
-        //random enemy out of selection
+    //    int random = Random.Range(0, potentialEnemies.Count);
 
-        int random = Random.Range(0, potentialEnemies.Count);
-
-        chosenEnemy = potentialEnemies[random];
-    }
+    //    chosenEnemy = potentialEnemies[random];
+    //}
 }
 
