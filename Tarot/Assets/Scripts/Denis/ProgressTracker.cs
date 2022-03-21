@@ -63,6 +63,10 @@ public class ProgressTracker : MonoBehaviour
             PlayerPrefs.DeleteAll();
         }
 
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log("your number of gold coins is" + PlayerPrefs.GetInt("gold"));
+        }
         
     }
     
