@@ -9,7 +9,8 @@ public class ProgressTracker : MonoBehaviour
     //public bool posSaved;
     public static bool SceneWasLoaded;
     public static bool miniBoss1Dead;
-
+    Scene currentLevel;
+    public static string levelName;
    
 
     // Start is called before the first frame update
@@ -44,6 +45,8 @@ public class ProgressTracker : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             save();
+            currentLevel = SceneManager.GetActiveScene();
+            levelName = currentLevel.name;
         }
 
     
