@@ -39,6 +39,19 @@ public class Interactable : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("enemyNo", 3);
                 }
+                if (Enemy.name == "Enemy4")
+                {
+                    PlayerPrefs.SetInt("enemyNo", 4);
+                    Debug.Log("enemy4 fight");
+                }
+                if (Enemy.name == "Enemy5")
+                {
+                    PlayerPrefs.SetInt("enemyNo", 5);                  //stores the enemy that was interacted with last, accessed when scene is reloaded by position loader to deactivate them.
+                }
+                if (Enemy.name == "MiniBoss2")
+                {
+                    PlayerPrefs.SetInt("enemyNo", 6);
+                }
 
 
             }
