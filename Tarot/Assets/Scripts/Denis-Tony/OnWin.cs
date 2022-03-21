@@ -26,43 +26,11 @@ public class OnWin : MonoBehaviour
     {
         Debug.Log("player win");
 
-        // SceneManager.LoadScene("Level1");
-
-        // if (Interactable.enemyType == "normal")
-        //{
-
-        // SceneManager.LoadScene("Level1");
-        // }
-        //else if (Interactable.enemyType == "boss")
-        // {
-        //    SceneManager.LoadScene("DenisWorldMap");
-        // }
-
-       //  EnemyStates s = new EnemyStates();
-      //  s.enemy1 = Enemy.SetActive(false);
-      //  s.enemy2 = 
+        
         SceneManager.LoadScene(ProgressTracker.levelName);
 
-        SceneWasLoaded = true;//change to always load the previously loaded scene
-        //Enemy.SetActive(false);
-
-        //if (!Enemy.CompareTag("Boss"))
-       // {
-
-           
-
-
-         //   SceneManager.LoadScene("LevelMechanics");
-          //  SceneWasLoaded = true;
-            
-       // }
-      //  else if (Enemy.CompareTag("Boss"))
-       // {
-            
-       //     WinLevel(1);
-      //      SceneManager.LoadScene("DenisWorldMap");
-          
-      //  }
+        SceneWasLoaded = true;
+        
 
         
 

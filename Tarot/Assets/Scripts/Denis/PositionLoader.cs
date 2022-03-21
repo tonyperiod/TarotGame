@@ -11,6 +11,9 @@ public class PositionLoader : MonoBehaviour
     public GameObject Enemy1;
     public GameObject Enemy2;
     public GameObject Enemy3;
+    public GameObject Enemy4;
+    public GameObject Enemy5;
+    public GameObject Enemy6;
     public static bool en1Dead;
     public static bool en2Dead;
     public static bool en3Dead;            //these bools are to check if each enemy is already dead so they don't respawn upon killing another enemy
@@ -28,7 +31,35 @@ public class PositionLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       if(PlayerPrefs.GetInt("en1Dead") == 1)
+        {
+            Enemy1.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("en2Dead") == 1)
+        {
+            Enemy2.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("en3Dead") == 1)
+        {
+            Enemy3.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("en4Dead") == 1)
+        {
+            Enemy4.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("en5Dead") == 1)
+        {
+            Enemy5.SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("en6Dead") == 1)
+        {
+            Enemy6.SetActive(false);
+        }
     }
 
     public void LoadPosition()
@@ -44,25 +75,46 @@ public class PositionLoader : MonoBehaviour
         {
             LoadPosition();
             OnWin.SceneWasLoaded = false;
-            if (PlayerPrefs.GetInt("enemyNo") == 1 || en1Dead == true)
+
+            if (PlayerPrefs.GetInt("enemyNo") == 1 || (PlayerPrefs.GetInt("en1Dead") == 1))
             {
                 Enemy1.SetActive(false);
-                en1Dead = true;
+                
+                PlayerPrefs.SetInt("en1Dead", 1);
             }
-            if (PlayerPrefs.GetInt("enemyNo") == 2 || en2Dead == true)
+            if (PlayerPrefs.GetInt("enemyNo") == 2 || (PlayerPrefs.GetInt("en2Dead") == 1))
             {
                 Enemy2.SetActive(false);
-                en2Dead = true;
+                PlayerPrefs.SetInt("en2Dead", 1);
             }
-            if (PlayerPrefs.GetInt("enemyNo") == 3 || en3Dead == true)
+            if (PlayerPrefs.GetInt("enemyNo") == 3 || (PlayerPrefs.GetInt("en3Dead") == 1))
             {
                 Enemy3.SetActive(false);
-                en3Dead = true;
+                PlayerPrefs.SetInt("en3Dead", 1);
                 WinLevel(1);
-               
-                
-               // PlayerPrefs.SetInt("enemyNo") = 4; // to save that the miniboss has been defeated 
-                
+            }
+            //^for level 1
+            //level 2 bellow:
+
+            if (PlayerPrefs.GetInt("enemyNo") == 4 || (PlayerPrefs.GetInt("en4Dead") == 1))
+            {
+                 Enemy4.SetActive(false);
+
+                 PlayerPrefs.SetInt("en4Dead", 1);
+            }
+            if (PlayerPrefs.GetInt("enemyNo") == 5 || (PlayerPrefs.GetInt("en5Dead") == 1))
+            {
+                    Enemy5.SetActive(false);
+                    PlayerPrefs.SetInt("en5Dead", 1);
+            }
+            if (PlayerPrefs.GetInt("enemyNo") == 6 || (PlayerPrefs.GetInt("en6Dead") == 1))
+            {
+                    Enemy6.SetActive(false);
+                    PlayerPrefs.SetInt("en6Dead", 1);
+                    WinLevel(2);
+
+                    // PlayerPrefs.SetInt("enemyNo") = 4; // to save that the miniboss has been defeated 
+
             }
         }
 
