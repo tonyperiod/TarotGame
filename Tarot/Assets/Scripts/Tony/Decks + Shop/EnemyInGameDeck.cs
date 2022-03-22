@@ -27,8 +27,8 @@ public class EnemyInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-        cardTot = instance.enemyDatabase.allCards.Count;
-
+        cardTot = instance.enemyDatabase.allCards.Count; //have to edit directly the enemydatabase
+        ReorderDeck();
         NewDeck();
     }
     //TODO add in procedural deck building-----------------
@@ -51,6 +51,16 @@ public class EnemyInGameDeck : MonoBehaviour
         }
     }
 
+    //this is to re-assign all id values
+    private void ReorderDeck()
+    {
+        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++)
+        {
+            instance.enemyDatabase.allCards[i].id = i;
+        }      
+    }
+
+    
 
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {

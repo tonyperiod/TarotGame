@@ -7,15 +7,34 @@ public class LevelEnemy : MonoBehaviour
 {
     public ScriptableChar thisEnemy;
 
+    private void Start()
+    {
+        //destroy if on list
+        if (InterScene.deadEnemies.Contains(this.gameObject.name))
+            {
+            Destroy(this.gameObject);
+        }
+        //this is to turn on collider if alive
+        else
+        {
+            this.GetComponent<CapsuleCollider>().enabled = true;
+            this.GetComponent<SphereCollider>().enabled = true;
+        }
+    }
+
     public void OnCollisionEnter(Collision collision)
     {
         GameObject thisObj = this.gameObject;
+        InterScene.deadEnemies.Add(thisObj.name);
+        Debug.Log(InterScene.deadEnemies.Count);
 
         InterScene.currentEnemy = thisEnemy;
-        Debug.Log(thisObj);
-        InterScene.deadEnemies.Add(thisObj);
-        Debug.Log(InterScene.deadEnemies);
+
+        InterScene.lastLoc = thisObj.transform.position;
+        Debug.Log(InterScene.lastLoc);
+        InterScene.currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log(InterScene.currentScene);
+
         SceneManager.LoadScene("TonyCardTesting");
     }
-
 }

@@ -14,4 +14,6 @@ public class ScriptableChar : ScriptableObject
     public int ID;
 
     public Sprite Artwork;
+
+    public int goldVal;
 }

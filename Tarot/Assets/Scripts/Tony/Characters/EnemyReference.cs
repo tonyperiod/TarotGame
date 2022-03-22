@@ -12,8 +12,8 @@ public class EnemyReference : MonoBehaviour
 
     public ScriptableChar chosenEnemy;
 
-    //for external generation
-    public static string wantEnemyElement;
+    ////for external generation
+    //public static string wantEnemyElement;
 
     //references
     public string _name;
@@ -30,6 +30,10 @@ public class EnemyReference : MonoBehaviour
     {
         //wantEnemyElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
         //getOpponent(wantEnemyElement);
+
+        //get from interscript
+        chosenEnemy = InterScene.currentEnemy;
+  
 
         //get all stats
         _name = chosenEnemy.Name;
