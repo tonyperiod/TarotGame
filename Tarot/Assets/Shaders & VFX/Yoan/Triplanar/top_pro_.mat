@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo:
-        m_Texture: {fileID: 2800000, guid: 628a0885d711ad94188f06d4b7804d08, type: 3}
+        m_Texture: {fileID: 2800000, guid: eff6b01aee4731f4a8c1ac8c81a5cafb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Noral_top:
@@ -51,5 +51,5 @@ Material:
     m_Floats:
     - Top_blend: 1
     m_Colors:
-    - Tiling: {r: 0.22, g: 0.34, b: 1, a: 0}
+    - Tiling: {r: 0.37, g: 0.46, b: 1, a: 0}
   m_BuildTextureStacks: []
