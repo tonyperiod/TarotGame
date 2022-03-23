@@ -1032,7 +1032,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48ad40fa8bb805149abcb33cda19c44e, type: 2}
   shopAllDataInGame: {fileID: 11400000, guid: e4639c065bf6a2d40b906c48ea5b198d, type: 2}
   shopAllData: {fileID: 11400000, guid: e27a12d1511cbb8499f90520d327aa19, type: 2}
-  currentArea: 
+  currentArea: 0
   enemyStre: 
   splitter: {fileID: 1849098557}
 --- !u!4 &1849098554
@@ -1062,6 +1062,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1849098553}
+  cardToSpawn:
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
 --- !u!114 &1849098556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,7 +1414,7 @@ MonoBehaviour:
   Cardname: 
   artWork: {fileID: 0}
   id: 0
-  symbol: 
+  elem: 
   value: 0
   slot: 0
   isplayer: 0

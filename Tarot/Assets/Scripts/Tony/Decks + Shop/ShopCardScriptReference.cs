@@ -10,7 +10,7 @@ public class ShopCardScriptReference : MonoBehaviour
     public string Cardname;
     public Sprite artWork;
     public int id;
-    public string symbol;
+    public string elem;
     public int value;
     public int slot;
     public bool isplayer;
@@ -37,7 +37,7 @@ public class ShopCardScriptReference : MonoBehaviour
         spRend.sprite = s.artWork;
         Cardname = s.Cardname;
         id = s.id;
-        symbol = s.elem;
+        elem = s.elem;
         value = s.value;
         isplayer = true;
 

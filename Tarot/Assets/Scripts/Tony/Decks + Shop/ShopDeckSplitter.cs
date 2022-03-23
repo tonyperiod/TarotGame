@@ -17,7 +17,6 @@ public class ShopDeckSplitter : MonoBehaviour
             manager.byElemData[i].allCards.Clear();
         }
         chooseElem();
-
     }
 
     //separate all cards into their scriptable databases
@@ -38,7 +37,6 @@ public class ShopDeckSplitter : MonoBehaviour
     private void Switchboard(ScriptableCard c)
     {
         string cardelem = c.elem;
-        Debug.Log(c.elem);
 
         switch (cardelem)
         {

@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DenisLevels/Level15.unity
     guid: 521d2181966814b4ba2c5b7422bfaf86
   - enabled: 1
+    path: Assets/Scenes/DenisLevels/Level16.unity
+    guid: 9e19a8549fb96b94e8a7cab931357785
+  - enabled: 1
     path: Assets/Scenes/TonyCardTesting.unity
     guid: 63744ba29e362e44e8a8b3899a45cf10
   m_configObjects: {}

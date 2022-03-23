@@ -114,14 +114,14 @@ public class EndTurnCardEffects : MonoBehaviour
         //these are slots 0-2
         for (int i = 0; i < 3; i++)
         {
-            if(list[i].gameObject.GetComponent<CardScriptReference>().wlwm == element)
+            if(list[i].gameObject.GetComponent<CardScriptReference>().elem == element)
             {
                 list[i].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
             }
         }
 
         //slot 6 for past future
-        if (list[6].gameObject.GetComponent<CardScriptReference>().wlwm == element)
+        if (list[6].gameObject.GetComponent<CardScriptReference>().elem == element)
         {
             list[6].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
         }
@@ -132,14 +132,14 @@ public class EndTurnCardEffects : MonoBehaviour
         //slots 3-5
         for (int i = 3; i < 6; i++)
         {
-            if (list[i].gameObject.GetComponent<CardScriptReference>().wlwm == element)
+            if (list[i].gameObject.GetComponent<CardScriptReference>().elem == element)
             {
                 list[i].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
             }
         }
 
         //slot 7 for past future
-        if (list[7].gameObject.GetComponent<CardScriptReference>().wlwm == element)
+        if (list[7].gameObject.GetComponent<CardScriptReference>().elem == element)
         {
             list[7].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
         }
@@ -148,8 +148,8 @@ public class EndTurnCardEffects : MonoBehaviour
     private void CounterElement(GameObject[] list)
     {
         //set the normal counter
-        manager.PElem = list[0].GetComponent<CardScriptReference>().wlwm;
-        manager.EElem = list[3].GetComponent<CardScriptReference>().wlwm;
+        manager.PElem = list[0].GetComponent<CardScriptReference>().elem;
+        manager.EElem = list[3].GetComponent<CardScriptReference>().elem;
 
         //check for court
         if (manager.PElem == "court")

@@ -26,7 +26,7 @@ public class VFXFuture : MonoBehaviour
     public void activate(GameObject card) //don't touch the starting line, the rest do what ya want
     {
         //getting the references that are necessary per every card played
-        cardElement = card.GetComponent<CardScriptReference>().wlwm;
+        cardElement = card.GetComponent<CardScriptReference>().elem;
         cardValue = card.GetComponent<CardScriptReference>().value;
         cardIsPlayer = card.GetComponent<CardScriptReference>().isplayer;
 

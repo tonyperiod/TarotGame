@@ -16,7 +16,8 @@ public class InterScene : MonoBehaviour
     //set by enemies------------------
     public static ScriptableChar currentEnemy;//for enemy scriptable objct  
     public static Vector3 lastLoc;
-    public static string currentScene;
+    public static string currentScene; 
+    public static int currentSceneNumber; //int to make it easiser for the shopRNGManager
 
     public static int goldPlayer;
 

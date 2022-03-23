@@ -33,6 +33,7 @@ public class LevelEnemy : MonoBehaviour
         InterScene.lastLoc = thisObj.transform.position;
         Debug.Log(InterScene.lastLoc);
         InterScene.currentScene = SceneManager.GetActiveScene().name;
+        InterScene.currentSceneNumber = SceneManager.GetActiveScene().buildIndex; // for shop rng manager
         Debug.Log(InterScene.currentScene);
 
         SceneManager.LoadScene("TonyCardTesting");
