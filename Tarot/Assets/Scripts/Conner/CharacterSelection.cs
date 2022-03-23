@@ -37,7 +37,7 @@ public class CharacterSelection : MonoBehaviour
     public void PlayGame()
     {
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
-        SceneManager.LoadScene("DenisWorldMap");
+        SceneManager.LoadScene("Test");
     }
 
     public void BackToMenu()
