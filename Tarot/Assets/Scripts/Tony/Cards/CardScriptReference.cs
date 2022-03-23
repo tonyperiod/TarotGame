@@ -10,7 +10,7 @@ public class CardScriptReference : MonoBehaviour
     public string Cardname;
     public Sprite artWork;
     public int id;
-    public string symbol;
+    public string wlwm;
     public int value;
     public int slot;
     public bool isplayer;
@@ -18,8 +18,10 @@ public class CardScriptReference : MonoBehaviour
     public string court1;
     public string court2;
 
+    public int goldVal;
 
     private SpriteRenderer spRend;
+
 
 
     private void Start()
@@ -39,7 +41,7 @@ public class CardScriptReference : MonoBehaviour
         spRend.sprite = s.artWork;
         Cardname = s.Cardname;
         id = s.id;
-        symbol = s.symbol;
+        wlwm = s.elem;
         value = s.value;
         isplayer = true;
 
@@ -54,7 +56,7 @@ public class CardScriptReference : MonoBehaviour
         spRend.sprite = e.artWork;
         Cardname = e.Cardname;
         id = e.id;
-        symbol = e.symbol;
+        wlwm = e.elem;
         value = e.value;
         isplayer = false;
 

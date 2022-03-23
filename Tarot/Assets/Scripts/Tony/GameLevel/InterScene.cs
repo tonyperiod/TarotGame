@@ -11,7 +11,7 @@ public class InterScene : MonoBehaviour
     // to reset at end of gamelevel-----------------
     
     public static List<string> deadEnemies; //create new list on starting from the char selection
-    public static bool isnotfirst;
+    public static bool isFirst = true;
 
     //set by enemies------------------
     public static ScriptableChar currentEnemy;//for enemy scriptable objct  

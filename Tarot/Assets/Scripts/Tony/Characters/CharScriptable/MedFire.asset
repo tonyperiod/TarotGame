@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: MedFire
   m_EditorClassIdentifier: 
   Name: FireMed
+  Strength: med
   MaxHP: 30
   MaxSH: 15
   Element: fire

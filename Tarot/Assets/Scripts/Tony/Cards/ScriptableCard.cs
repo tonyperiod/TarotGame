@@ -11,7 +11,7 @@ public class ScriptableCard : ScriptableObject
 
     //variables
     public int id;
-    public string symbol;
+    public string elem;
     public int value;
 
     public string court1;
@@ -20,4 +20,6 @@ public class ScriptableCard : ScriptableObject
     public int slot;
 
     public bool isPlayer;
+
+    public int goldVal;
 }

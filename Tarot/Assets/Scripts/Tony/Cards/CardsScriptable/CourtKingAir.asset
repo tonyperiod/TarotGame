@@ -15,9 +15,10 @@ MonoBehaviour:
   Cardname: king
   artWork: {fileID: 21300000, guid: 2bdb4fd86fdc6f44ca4af42c6d34ad7c, type: 3}
   id: 40
-  symbol: court
+  elem: court
   value: 12
   court1: air
   court2: air
   slot: 0
   isPlayer: 1
+  goldVal: 55

@@ -15,7 +15,10 @@ MonoBehaviour:
   Cardname: MinorFire2
   artWork: {fileID: 21300000, guid: 61b5b3b4ec2421d41a67b210525fb391, type: 3}
   id: 21
-  symbol: fire
+  elem: fire
   value: 2
+  court1: 
+  court2: 
   slot: 0
   isPlayer: 1
+  goldVal: 0

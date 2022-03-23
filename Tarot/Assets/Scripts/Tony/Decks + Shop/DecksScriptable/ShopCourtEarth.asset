@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97446169d4d2464eb2695e145adc508, type: 3}
+  m_Name: ShopCourtEarth
+  m_EditorClassIdentifier: 
+  allCards:
+  - {fileID: 11400000, guid: 3612ab22d55442042aaa234522b014d4, type: 2}
+  - {fileID: 11400000, guid: ca6fbc5ebc47d584a9d0ca10ce633721, type: 2}
+  - {fileID: 11400000, guid: b74de537cc1756e4489eeb3f94335149, type: 2}
+  - {fileID: 11400000, guid: 74d67b1935be2ee41ae41a2888cb921d, type: 2}

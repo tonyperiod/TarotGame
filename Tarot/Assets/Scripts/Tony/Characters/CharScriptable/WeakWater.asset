@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeakWater
   m_EditorClassIdentifier: 
   Name: 
+  Strength: weak
   MaxHP: 15
   MaxSH: 10
   Element: water

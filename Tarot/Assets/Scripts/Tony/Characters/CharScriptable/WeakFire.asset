@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeakFire
   m_EditorClassIdentifier: 
   Name: EnemyWeak
+  Strength: weak
   MaxHP: 15
   MaxSH: 10
   Element: fire

@@ -2644,11 +2644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b80e09c9313124e822a6fe9efbd908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charRef:
-  - {fileID: 11400000, guid: 0488bce2c6d2a9a4e9c07e439325549f, type: 2}
-  - {fileID: 11400000, guid: 9ce7eb200a020964b8289c67d7b119ae, type: 2}
-  - {fileID: 11400000, guid: 646ca54560fdfe949b8379b812eefd5b, type: 2}
-  - {fileID: 11400000, guid: 97dbe7b30ad9f504fad27e61ffe16ac0, type: 2}
+  chosenEnemy: {fileID: 11400000, guid: 97dbe7b30ad9f504fad27e61ffe16ac0, type: 2}
   _name: 
   maxHP: 0
   maxSH: 0

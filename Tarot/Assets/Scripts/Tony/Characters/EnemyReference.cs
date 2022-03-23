@@ -32,8 +32,9 @@ public class EnemyReference : MonoBehaviour
         //getOpponent(wantEnemyElement);
 
         //get from interscript
-        chosenEnemy = InterScene.currentEnemy;
-  
+        if (InterScene.currentEnemy != null)
+            chosenEnemy = InterScene.currentEnemy;
+
 
         //get all stats
         _name = chosenEnemy.Name;

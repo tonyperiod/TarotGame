@@ -15,7 +15,10 @@ MonoBehaviour:
   Cardname: MinorWater3
   artWork: {fileID: 21300000, guid: 9ee7c1cd70dd54749b94c2161236ed94, type: 3}
   id: 32
-  symbol: water
+  elem: water
   value: 3
+  court1: 
+  court2: 
   slot: 0
   isPlayer: 0
+  goldVal: 0

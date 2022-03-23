@@ -6,6 +6,7 @@ using UnityEngine;
 public class ScriptableChar : ScriptableObject
 {
     public string Name;
+    public string Strength;
 
     public int MaxHP;
     public int MaxSH;

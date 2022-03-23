@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: StrongFire
   m_EditorClassIdentifier: 
   Name: EnemyStrong
+  Strength: strong
   MaxHP: 30
   MaxSH: 20
   Element: fire

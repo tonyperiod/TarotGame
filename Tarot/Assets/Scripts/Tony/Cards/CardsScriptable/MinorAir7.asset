@@ -15,7 +15,10 @@ MonoBehaviour:
   Cardname: MinorAir7
   artWork: {fileID: 21300000, guid: 008e5ec61a05e9241b6fe990908002fc, type: 3}
   id: 6
-  symbol: air
+  elem: air
   value: 7
+  court1: 
+  court2: 
   slot: 0
   isPlayer: 0
+  goldVal: 0

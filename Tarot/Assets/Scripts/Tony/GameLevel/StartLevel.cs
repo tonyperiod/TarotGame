@@ -17,11 +17,11 @@ public class StartLevel : MonoBehaviour
         }
 
         //load location
-        if (InterScene.isnotfirst == false)
+        if (InterScene.isFirst == true)
         {
             Debug.Log("lets go");
             InterScene.lastLoc = respawn.transform.position;
-            InterScene.isnotfirst = true;
+            InterScene.isFirst = false;
         }
 
         Debug.Log("loading position");

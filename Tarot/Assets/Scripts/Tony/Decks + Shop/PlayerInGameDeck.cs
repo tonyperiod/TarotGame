@@ -29,6 +29,7 @@ public class PlayerInGameDeck : MonoBehaviour
         }
         cardTot = instance.playerDatabase.allCards.Count;
 
+        ReorderDeck();
         NewDeck();
     }
 

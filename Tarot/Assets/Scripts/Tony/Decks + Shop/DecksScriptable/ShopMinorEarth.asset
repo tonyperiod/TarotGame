@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97446169d4d2464eb2695e145adc508, type: 3}
+  m_Name: ShopMinorEarth
+  m_EditorClassIdentifier: 
+  allCards:
+  - {fileID: 11400000, guid: 2437d121a2afce043937033b95e4369a, type: 2}
+  - {fileID: 11400000, guid: a9ca4f226f3d9e242a97f1aee2f98658, type: 2}
+  - {fileID: 11400000, guid: a5db42bd09b926e43a47a6a8e43295aa, type: 2}
+  - {fileID: 11400000, guid: 7d8fc5dc6a0536a4f968941bd7062f8e, type: 2}

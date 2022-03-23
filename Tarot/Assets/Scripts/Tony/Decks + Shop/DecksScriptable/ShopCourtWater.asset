@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97446169d4d2464eb2695e145adc508, type: 3}
+  m_Name: ShopCourtWater
+  m_EditorClassIdentifier: 
+  allCards:
+  - {fileID: 11400000, guid: ad8ce844a7239ee4299c8ee11c2f0c1b, type: 2}
+  - {fileID: 11400000, guid: b6eff5145b412eb4e99c33dab3fc97a1, type: 2}
+  - {fileID: 11400000, guid: fa69f83d803a92b43b7ec7158246d6ab, type: 2}
+  - {fileID: 11400000, guid: 4af5bd6af8b19bc42a30db425b7ef7fa, type: 2}

@@ -27,8 +27,8 @@ public class PastFuture : MonoBehaviour
         string EElemC = manager.EElemC;
 
 
-        //string PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().symbol;
-        //string EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().symbol;
+        //string PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().wlwm;
+        //string EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().wlwm;
 
         ////court second element for countering elements
         //string PElemC = "null";
@@ -48,7 +48,7 @@ public class PastFuture : MonoBehaviour
         //}
 
 
-        switch (c.GetComponent<CardScriptReference>().symbol)
+        switch (c.GetComponent<CardScriptReference>().wlwm)
         {
             case "fire":
 
@@ -123,19 +123,19 @@ public class PastFuture : MonoBehaviour
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
         
         //element 1
-        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;//temp edit to symbol
+        court.GetComponent<CardScriptReference>().wlwm = court.GetComponent<CardScriptReference>().court1;//temp edit to wlwm
         manager.courtbuff.buff(court);//check for elemental buffing
         pastfuture(court);//activate script as usual
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
 
         //element 2
-        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court2;
+        court.GetComponent<CardScriptReference>().wlwm = court.GetComponent<CardScriptReference>().court2;
         manager.courtbuff.buff(court);
         pastfuture(court);
         //here no need to run debuff, returning the val to original is more than enough
 
         //return stuff to original
         court.GetComponent<CardScriptReference>().value = originalValue;
-        court.GetComponent<CardScriptReference>().symbol = "court";
+        court.GetComponent<CardScriptReference>().wlwm = "court";
     }
 }
