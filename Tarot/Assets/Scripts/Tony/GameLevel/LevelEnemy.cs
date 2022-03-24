@@ -26,15 +26,15 @@ public class LevelEnemy : MonoBehaviour
     {
         GameObject thisObj = this.gameObject;
         InterScene.deadEnemies.Add(thisObj.name);
-        Debug.Log(InterScene.deadEnemies.Count);
+        //Debug.Log(InterScene.deadEnemies.Count);
 
         InterScene.currentEnemy = thisEnemy;
 
         InterScene.lastLoc = thisObj.transform.position;
-        Debug.Log(InterScene.lastLoc);
+        //Debug.Log(InterScene.lastLoc);
         InterScene.currentScene = SceneManager.GetActiveScene().name;
         InterScene.currentSceneNumber = SceneManager.GetActiveScene().buildIndex; // for shop rng manager
-        Debug.Log(InterScene.currentScene);
+        //Debug.Log(InterScene.currentScene);
 
         SceneManager.LoadScene("TonyCardTesting");
     }

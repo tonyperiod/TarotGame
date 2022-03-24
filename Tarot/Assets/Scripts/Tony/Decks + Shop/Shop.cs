@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
-{
-
-    
-
+{  
+    [Header ("parameters")]
 
     //spawning in correct location
     public GameObject[] pos;
 
     public ScriptableCardDatabase[] byElemData;
-
     public ScriptableCardDatabase shopAllDataInGame; //to have list in game
     public ScriptableCardDatabase shopAllData; //to save permanently
-
+    public ScriptableCardDatabase playerCurrentDatabase;
 
     public int currentArea;//this is for ufficial shop spawning
     public string enemyStre = "mid";//here I put shop
 
+    public GameObject[] buyableCards;    
+
     [Header("script references")]
 
     public ShopDeckSplitter splitter;
+    public GameObject cardPrefab;
+    private ShopCardScriptReference cardReference;
+    public ShopBuy shopBuy;
 
     // Start is called before the first frame update
     void Awake()
@@ -38,15 +40,14 @@ public class Shop : MonoBehaviour
         //}
         //I set ALL parameters in this script, only have to reference
 
-        //TESTING ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //InterScene.isFirst = true;
-        //InterScene.currentEnemy.Strength = "mid";
-        //InterScene.currentSceneNumber = 10;
-        enemyStre = "mid";
-        currentArea = 7;
-        if (shopAllDataInGame != null)
-            shopAllDataInGame.allCards.Clear();
-        shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
+
+
+        //TESTING ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //enemyStre = "mid";
+        //currentArea = 7;
+        //if (shopAllDataInGame != null)
+        //    shopAllDataInGame.allCards.Clear();
+        //shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
 
 
 
@@ -55,19 +56,17 @@ public class Shop : MonoBehaviour
 
 
         //get all cards and put into deck
-        //if (InterScene.isFirst == true)
-        //{
-        //    if (shopAllDataInGame != null)
-        //        shopAllDataInGame.allCards.Clear();
-        //    shopAllDataInGame.allCards = new List<ScriptableCard> (shopAllData.allCards);
+        if (InterScene.isFirst == false)
+        {
+            if (shopAllDataInGame != null)
+                shopAllDataInGame.allCards.Clear();
+            shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
+            Debug.Log(InterScene.isFirst + " is first");
+        }
 
-
-        //    splitter.setoff(); //NEED TO DO ONLY ONCE
-        //}
-
-
-        //enemyStre = InterScene.currentEnemy.Strength;
-        //currentArea = InterScene.currentSceneNumber;
+        Debug.Log(InterScene.isFirst + " is first");
+        enemyStre = InterScene.currentEnemy.Strength;
+        currentArea = InterScene.currentSceneNumber;
     }
 
     public void SplitterActivate()
@@ -75,29 +74,29 @@ public class Shop : MonoBehaviour
         splitter.setoff();
     }
 
-    //TESTING ONLY
-    private void Update()
-    {
+    ////TESTING ONLY
+    //private void Update()
+    //{
         
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("pressed e");
-            testerPicker();
-        }
-    }
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        Debug.Log("pressed e");
+    //        testerPicker();
+    //    }
+    //}
 
-    private void testerPicker()
-    {
-        ScriptableCard chosen;
-        chosen = ShopDeck.PickCard();
-        if (chosen == null)
-        {
-            Debug.Log("stop early");
+    //private void testerPicker()
+    //{
+    //    ScriptableCard chosen;
+    //    chosen = ShopDeck.PickCard();
+    //    if (chosen == null)
+    //    {
+    //        Debug.Log("stop early");
 
-            testerPicker();
+    //        testerPicker();
 
-        }
-        Debug.Log(ShopDeck.PickCard());
-    }
+    //    }
+    //    Debug.Log(ShopDeck.PickCard());
+    //}
 
 }

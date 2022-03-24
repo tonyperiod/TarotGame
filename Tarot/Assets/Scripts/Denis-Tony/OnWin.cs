@@ -32,8 +32,8 @@ public class OnWin : MonoBehaviour
         //SceneWasLoaded = true;
 
         InterScene.goldPlayer += InterScene.currentEnemy.goldVal;
-        Debug.Log(InterScene.goldPlayer);
-        SceneManager.LoadScene(InterScene.currentScene);
+        //Debug.Log(InterScene.goldPlayer);
+        SceneManager.LoadScene("TonyShop");
 
         StopAllCoroutines();//there was a bug on death (from tony)
     }

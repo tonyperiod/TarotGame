@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ShopCardScriptReference : MonoBehaviour
 {
+    [SerializeField] Shop manager;
+
     public ScriptableCard cardData;
 
     public string Cardname;
@@ -26,13 +28,14 @@ public class ShopCardScriptReference : MonoBehaviour
 
     private void Start()
     {
-        /*FirstCard(Shop.PickCard());*/ //playeringamedeck.pick card gives variables and instances, this will then reference
+        FirstCard(ShopDeck.PickCard()); // gives variables and instances, this will then reference
     }
 
 
     private void FirstCard(ScriptableCard s)
     {
         //data
+        cardData = s;
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = s.artWork;
         Cardname = s.Cardname;

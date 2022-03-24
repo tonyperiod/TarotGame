@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DraggableShop : MonoBehaviour
 {
-    [SerializeField] Shop shop; //define lastturncards -> on moving cards
+    [SerializeField] Shop manager; //define lastturncards -> on moving cards
 
     //draggin object floatily
     private Rigidbody _rigidbody;
@@ -23,9 +23,9 @@ public class DraggableShop : MonoBehaviour
     private float closestTemp = 1000;
 
     // swapping cards
-    private SlotsTaken slotsTaken;
+    private ShopSlotsTaken slotsTaken;
     private int movedSlot;
-    public CardSwapping cardSwap;
+    public ShopCardSwapping cardSwap;
     GameObject chosenCard;
     GameObject[] buyable;
     private Quaternion standardRot;
@@ -35,13 +35,19 @@ public class DraggableShop : MonoBehaviour
         dragTableProjection = Table.GetComponent<DragTableProjection>();
         _rigidbody = GetComponent<Rigidbody>();
         cardScriptReference = GetComponent<ShopCardScriptReference>();
-        slotsTaken = Table.GetComponent<SlotsTaken>();
+        slotsTaken = Table.GetComponent<ShopSlotsTaken>();
 
         //to reset to inital rotation every mousedown
         standardRot = _rigidbody.rotation;
 
         //going to put slots on shop instead
-        snapPoints = shop.pos;
+        snapPoints = manager.pos;
+
+        //define buyable
+        GameObject[] helper = GameObject.FindGameObjectsWithTag("Card");
+        buyable = helper;
+        manager.buyableCards = buyable; //to set in the manager
+        //Debug.Log(buyable.Length + " buyable");
     }
 
     void OnMouseDown()
@@ -81,21 +87,22 @@ public class DraggableShop : MonoBehaviour
             }
         }
 
-        //HERE NEED TO DO ACTUAL IF SLOT = AND GOT CASH THEN BUY THING
-        if (closestSnap == 5) //if you want to buy
-        {
-            if (InterScene.goldPlayer > cardScriptReference.goldVal)
-            {
-                //do the shop stuff
-            }
-            else
-            {
-                closestSnap = cardScriptReference.slot; //move back
-            }
-        }
-        else // if you want to shift shit around
-            //move other card to other slot
-            moveCard(closestSnap);
+        //HERE NEED TO DO ACTUAL IF SLOT = AND GOT CASH THEN BUY THING -> WILL DO ON CLICK INSTEAD
+        //if (closestSnap == 4) //if you want to buy
+        //{
+        //    moveCard(closestSnap);
+        //    if (InterScene.goldPlayer > cardScriptReference.goldVal)
+        //    {
+        //        //do the shop stuff
+        //    }
+        //    else
+        //    {
+        //        closestSnap = cardScriptReference.slot; //move back
+        //    }
+        //}
+        //else // if you want to shift shit around
+        //    //move other card to other slot
+        //    moveCard(closestSnap);
 
         //move this card to position
         cardTransform.position = snapPoints[closestSnap].transform.position;
@@ -117,7 +124,7 @@ public class DraggableShop : MonoBehaviour
         {
 
             //see what card was in the position the new card is going to
-            if (buyable[i].GetComponent<CardScriptReference>().slot == slotMoving)
+            if (buyable[i].GetComponent<ShopCardScriptReference>().slot == slotMoving)
             {
                 chosenCard = buyable[i];
             }

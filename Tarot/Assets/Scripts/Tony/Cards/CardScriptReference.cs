@@ -37,6 +37,7 @@ public class CardScriptReference : MonoBehaviour
     private void FirstCard(ScriptableCard s)
     {
         //data
+        cardData = s;
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = s.artWork;
         Cardname = s.Cardname;

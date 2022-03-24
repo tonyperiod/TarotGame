@@ -65,4 +65,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TonyCardTesting.unity
     guid: 63744ba29e362e44e8a8b3899a45cf10
+  - enabled: 1
+    path: Assets/Scenes/TonyShop.unity
+    guid: 7c9c0cfa7e1930c44893933f8fff325f
   m_configObjects: {}
