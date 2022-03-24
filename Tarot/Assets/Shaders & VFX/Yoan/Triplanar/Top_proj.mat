@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Albedo:
-        m_Texture: {fileID: 2800000, guid: d795e4a300ebd1b47ae12bb8723ded6f, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6d9806973cf2c348987fff090d4b1c2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Noral_top:
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Top_diffuse:
-        m_Texture: {fileID: 2800000, guid: 7aa2dba55c51de741aef8cdaf583f9d0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4372ac5481fabea4cb387cc525238668, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -51,5 +51,5 @@ Material:
     m_Floats:
     - Top_blend: 1
     m_Colors:
-    - Tiling: {r: 0.4, g: 0.55, b: 1, a: 0}
+    - Tiling: {r: 0.46, g: 0.79, b: 1, a: 0}
   m_BuildTextureStacks: []
