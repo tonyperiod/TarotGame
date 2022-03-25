@@ -53,13 +53,13 @@ public class ShopRNGManager : MonoBehaviour
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
 
-        //give values to cardtospawn elements = the order for byelemdata AND project panel
-        for (int i = 0; i < cardToSpawn.Length; i++)
-        {
-            cardToSpawn[i].databaseNumber = i;
-        }
+        ////give values to cardtospawn elements = the order for byelemdata AND project panel
+        //for (int i = 0; i < cardToSpawn.Length; i++)
+        //{
+        //    cardToSpawn[i].databaseNumber = i;
+        //}
 
-        GetCardRNG();//resets every start
+        
     }
 
     ////TESTING ONLY

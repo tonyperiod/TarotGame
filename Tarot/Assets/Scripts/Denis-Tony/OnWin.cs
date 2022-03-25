@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class OnWin : MonoBehaviour
-//{
-//    public GameObject Enemy;
-    public static bool SceneWasLoaded;
-    public int levelIndex;
-    private int currentWinNum = 0;
+{
+    //    public GameObject Enemy;
+    //public static bool SceneWasLoaded;
+    //public int levelIndex;
+    //private int currentWinNum = 0;
 
     //general rules:
     //do what ya want here, literally just triggering it
@@ -33,8 +33,9 @@ public class OnWin : MonoBehaviour
 
         InterScene.goldPlayer += InterScene.currentEnemy.goldVal;
         //Debug.Log(InterScene.goldPlayer);
-        SceneManager.LoadScene("TonyShop");
+        
 
         StopAllCoroutines();//there was a bug on death (from tony)
+        SceneManager.LoadScene("TonyShop");
     }
 }

@@ -14,6 +14,8 @@ public class ShopAwakeManager : MonoBehaviour
         shop.CustomAwake();
         deck.CustomAwake();
         rNGManager.CustomAwake();
+        rNGManager.GetCardRNG();
+
     }
 
     private void Start()
