@@ -13,7 +13,7 @@ public class ShopDeck : MonoBehaviour
     [HideInInspector] public int chosenDatabase;
 
 
-    private void Start()
+    public void CustomAwake()
     {
         //getting a new instance of all things
         if (instance == null)

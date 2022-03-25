@@ -41,7 +41,7 @@ public class ShopRNGManager : MonoBehaviour
     //these are corrisponding values for elements, so can do if =i (useful for definespawnrate)
     private int elementalChecker;
 
-    void Start()
+    public void CustomAwake()
     {        //getting a new instance of all things
         if (instance == null)
         {

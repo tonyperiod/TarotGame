@@ -108,7 +108,7 @@ public class PastFuture : MonoBehaviour
 
             case "court":
                 {
-                    Debug.Log("court");
+                    //Debug.Log("court");
                     court(c);
                     break;
                 }

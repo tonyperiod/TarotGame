@@ -123,6 +123,161 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10895114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10895115}
+  - component: {fileID: 10895116}
+  - component: {fileID: 10895117}
+  m_Layer: 0
+  m_Name: DeckManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &10895115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10895114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -102.40042, y: -44.560604, z: 110.88089}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &10895116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10895114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0433c946895628b48a3236c8e024435f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1849098553}
+  chosenDatabase: 0
+--- !u!114 &10895117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10895114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21269fc701064740a9d01bbec938f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1849098553}
+  cardToSpawn:
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+  - databaseNumber: 0
+    spawnRate: 0
+    minSpawnProb: 0
+    maxSpawnProb: 0
+--- !u!1 &179904039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179904040}
+  - component: {fileID: 179904041}
+  m_Layer: 0
+  m_Name: AwakeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &179904040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179904039}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -173.6575, y: -49.825176, z: 74.77467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &179904041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179904039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbab506ec2888cb48aeab45fb0a4bd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 1849098553}
+  deck: {fileID: 10895116}
+  rNGManager: {fileID: 10895117}
+  placeCards: {fileID: 1849098558}
 --- !u!1 &409754701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,8 +1174,6 @@ GameObject:
   - component: {fileID: 1849098554}
   - component: {fileID: 1849098553}
   - component: {fileID: 1849098557}
-  - component: {fileID: 1849098556}
-  - component: {fileID: 1849098555}
   - component: {fileID: 1849098558}
   - component: {fileID: 1849098559}
   m_Layer: 0
@@ -1085,82 +1238,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1849098555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849098552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d21269fc701064740a9d01bbec938f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 1849098553}
-  cardToSpawn:
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
-  - databaseNumber: 0
-    spawnRate: 0
-    minSpawnProb: 0
-    maxSpawnProb: 0
---- !u!114 &1849098556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849098552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0433c946895628b48a3236c8e024435f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 1849098553}
-  chosenDatabase: 0
 --- !u!114 &1849098557
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class ShopPlaceCards : MonoBehaviour
 
     [SerializeField] Shop manager;
 
-    private void Start()
+    public void CustomStart()
     {
         ShopCardScriptReference cardReference = manager.cardPrefab.GetComponent<ShopCardScriptReference>();
 

@@ -12,13 +12,13 @@ public class Draggable : MonoBehaviour
     private float startYpos;
     public GameObject Table;
     public DragTableProjection dragTableProjection;
-    
+
     //card reference
     private CardScriptReference cardScriptReference;
     Transform cardTransform;
 
     //snappoints
-    public GameObject[] snapPoints;    
+    public GameObject[] snapPoints;
     private int closestSnap = 100;
     private float closestTemp = 1000;
 
@@ -29,6 +29,7 @@ public class Draggable : MonoBehaviour
     GameObject chosenCard;
     GameObject[] lastTurnCards;
     private Quaternion standardRot;
+
 
     private void Start()
     {
@@ -72,7 +73,7 @@ public class Draggable : MonoBehaviour
 
     void OnMouseUp() //snappoints
     {
-        if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
+        if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)//just to make sure past future doesn't get interacted with
 
         {
             cardTransform = GetComponent<Transform>();
@@ -90,7 +91,7 @@ public class Draggable : MonoBehaviour
                     closestTemp = cardDistance;
                 }
             }
-            manager.cardeffects.get(); //reorganize the array
+            //manager.cardeffects.get(); //reorganize the array
             //move other card to other slot
             moveCard(closestSnap);
 
@@ -105,25 +106,26 @@ public class Draggable : MonoBehaviour
             cardScriptReference.slot = closestSnap;
 
             manager.cardeffects.get(); //reorganize the array
+
+
         }
     }
 
 
     private void moveCard(int slotMoving)
     {
+        Debug.Log("movedcard");
         lastTurnCards = manager.lastTurnCards;
 
         for (int i = 0; i < lastTurnCards.Length; i++)
         {
 
             //see what card was in the position the new card is going to
-            if (lastTurnCards[i].GetComponent<CardScriptReference>().slot == slotMoving) 
+            if (lastTurnCards[i].GetComponent<CardScriptReference>().slot == slotMoving)
             {
                 chosenCard = lastTurnCards[i];
             }
         }
         cardSwap.moveCard(chosenCard);
-
     }
-
 }

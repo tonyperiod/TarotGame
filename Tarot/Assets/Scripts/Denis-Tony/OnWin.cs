@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class OnWin : MonoBehaviour
-{
-    public GameObject Enemy;
+//{
+//    public GameObject Enemy;
     public static bool SceneWasLoaded;
     public int levelIndex;
     private int currentWinNum = 0;

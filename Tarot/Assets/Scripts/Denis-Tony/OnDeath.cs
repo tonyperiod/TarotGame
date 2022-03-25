@@ -11,7 +11,7 @@ public class OnDeath : MonoBehaviour
     //do what ya want here, literally just triggering it
     //if you're curious, this script is in the HPHandler
 
-    public GameObject player;
+    //public GameObject player;
    // public bool posSaved;
     public static bool SceneWasLoaded;
 

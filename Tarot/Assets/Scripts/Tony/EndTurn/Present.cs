@@ -81,7 +81,7 @@ public class Present : MonoBehaviour
                 break;
             case "court":
                 {
-                    Debug.Log("court");
+                    //Debug.Log("court");
                     court(c);
                     break;
                 }
