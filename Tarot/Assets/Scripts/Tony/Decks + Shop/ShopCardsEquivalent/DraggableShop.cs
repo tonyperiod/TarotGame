@@ -43,11 +43,15 @@ public class DraggableShop : MonoBehaviour
         //going to put slots on shop instead
         snapPoints = manager.pos;
 
-        //define buyable
-        GameObject[] helper = GameObject.FindGameObjectsWithTag("Card");
-        buyable = helper;
-        manager.buyableCards = buyable; //to set in the manager
-        //Debug.Log(buyable.Length + " buyable");
+
+        //DO IN ANOTHER FUNCTION FFS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+        //////define buyable
+        //GameObject[] helper = GameObject.FindGameObjectsWithTag("Card");
+        //buyable = helper;
+        //manager.buyableCards = buyable; //to set in the manager
+        ////Debug.Log(buyable.Length + " buyable");
     }
 
     void OnMouseDown()

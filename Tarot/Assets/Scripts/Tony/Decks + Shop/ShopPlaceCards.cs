@@ -13,12 +13,13 @@ public class ShopPlaceCards : MonoBehaviour
 
         manager.cardPrefab.tag = "Card";
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i <5; i++)
         {
             Debug.Log("place");
             manager.cardPrefab.GetComponent<ShopCardScriptReference>().slot = i;
+            Debug.Log(manager.cardPrefab.GetComponent<ShopCardScriptReference>().slot + " round " +i);
 
-            //finally instantiate
+            ////finally instantiate
             Instantiate(manager.cardPrefab, manager.pos[i].transform.position, manager.pos[i].transform.rotation);
         }
 

@@ -10,7 +10,6 @@ public class ShopDeck : MonoBehaviour
 
     //only used here
     private int cardTot;
-    [HideInInspector] public int chosenDatabase;
 
 
     public void CustomAwake()
@@ -30,24 +29,25 @@ public class ShopDeck : MonoBehaviour
 
 
 
-
+    //this runs per game instance
     public static ScriptableCard PickCard()
     {
-        instance.chosenDatabase = ShopRNGManager.chooseData();
+        int chosenDatabase;
+        chosenDatabase = ShopRNGManager.chooseData();
 
         //this is in case that the list runs out
-        while (instance.manager.byElemData[instance.chosenDatabase].allCards.Count == 0)
+        while (instance.manager.byElemData[chosenDatabase].allCards.Count == 0)
         {
             Debug.Log("iz out");
-            instance.chosenDatabase = ShopRNGManager.chooseData();            
+            chosenDatabase = ShopRNGManager.chooseData();            
         }
 
+        //WHY IS BYELEM DATA BEING THE ONE THAT'S TOUCHED, ALSO ALLDATAIN GAME IN PICK CARD?, MAYBE ONLY ON BUY
+        ScriptableCard pickedCard = instance.manager.byElemData[chosenDatabase].allCards[Random.Range(0, instance.manager.byElemData[chosenDatabase].allCards.Count)];
 
-        ScriptableCard pickedCard = instance.manager.byElemData[instance.chosenDatabase].allCards[Random.Range(0, instance.manager.byElemData[instance.chosenDatabase].allCards.Count)];
 
-
-        instance.manager.shopAllDataInGame.allCards.Remove(pickedCard);
-        instance.manager.SplitterActivate();//to remove card in the single elemdata thing       
+        //instance.manager.shopAllDataInGame.allCards.Remove(pickedCard);
+        //instance.manager.SplitterActivate();//to remove card in the single elemdata thing       
         return pickedCard;
     }
 

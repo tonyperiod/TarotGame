@@ -31,9 +31,10 @@ public class Shop : MonoBehaviour
     {
         splitter.setoff(); //NEED TO DO EVERY TIME CARD PICKED               
 
-
-        enemyStre = InterScene.currentEnemy.Strength;
-        currentArea = InterScene.currentSceneNumber;
+        enemyStre = "mid";
+        currentArea = 7;
+        //enemyStre = InterScene.currentEnemy.Strength;
+        //currentArea = InterScene.currentSceneNumber;
 
         if (InterScene.isNotNewGame == false)
         {
@@ -62,8 +63,7 @@ public class Shop : MonoBehaviour
 
 
         //TESTING ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //enemyStre = "mid";
-        //currentArea = 7;
+
         //if (shopAllDataInGame != null)
         //    shopAllDataInGame.allCards.Clear();
         //shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
