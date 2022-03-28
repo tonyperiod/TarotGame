@@ -9,6 +9,7 @@ public class ShopBuy : MonoBehaviour
     private GameObject buyedCard;
     public void Buy()
     {
+        getAllCardsInGame();
         for (int i = 0; i < manager.buyableCards.Length; i++)
         {
             if (manager.buyableCards[i].GetComponent<ShopCardScriptReference>().slot == 5)
@@ -22,5 +23,11 @@ public class ShopBuy : MonoBehaviour
         //remove from alldataingame
         manager.shopAllDataInGame.allCards.Remove(buyedCard.GetComponent<ShopCardScriptReference>().cardData);
         manager.SplitterActivate();
+    }
+
+    public void getAllCardsInGame()
+    {
+        GameObject[] inGame = GameObject.FindGameObjectsWithTag("Card");
+        manager.buyableCards = inGame;
     }
 }

@@ -34,6 +34,7 @@ public class Shop : MonoBehaviour
 
         enemyStre = InterScene.currentEnemy.Strength;
         currentArea = InterScene.currentSceneNumber;
+        buyableCards = new GameObject[5];
 
         if (InterScene.isNotNewGame == false)
         {
@@ -41,11 +42,12 @@ public class Shop : MonoBehaviour
                 shopAllDataInGame.allCards.Clear();
             shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
 
+
             Debug.Log(InterScene.isNotNewGame + " is notnew");
             InterScene.isNotNewGame = true;
         }
 
-        splitter.setoff(); //NEED TO DO EVERY TIME CARD PICKED               
+        splitter.setoff(); //NEED TO DO ONLY ONCE             
 
 
 
@@ -91,10 +93,8 @@ public class Shop : MonoBehaviour
                 chosen = ShopDeck.PickCard();
             }
             while (buyableCardsScriptableCards.Contains(chosen));
-            
 
             buyableCardsScriptableCards.Add(chosen);
-            //byElemData[chosen.databaseId].allCards.Remove(chosen); THIS BREAKS ALL
 
             Debug.Log(chosen.name);
         }
@@ -123,5 +123,5 @@ public class Shop : MonoBehaviour
     //    }
     //    Debug.Log(ShopDeck.PickCard());
     //}
-
+  
 }

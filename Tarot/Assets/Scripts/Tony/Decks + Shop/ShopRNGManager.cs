@@ -46,7 +46,7 @@ public class ShopRNGManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
+            //DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
         }
         else
         {
