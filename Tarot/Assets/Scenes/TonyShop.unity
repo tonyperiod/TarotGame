@@ -168,7 +168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1849098553}
-  chosenDatabase: 0
 --- !u!114 &10895117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1849098553}
-  cardToSpawn:
+  cardToSpawnArray:
   - databaseNumber: 0
     spawnRate: 0
     minSpawnProb: 0
@@ -1221,6 +1220,7 @@ MonoBehaviour:
   currentArea: 0
   enemyStre: 
   buyableCards: []
+  buyableCardsScriptableCards: []
   splitter: {fileID: 1849098557}
   cardPrefab: {fileID: 6991896553652719782}
   shopBuy: {fileID: 1849098559}

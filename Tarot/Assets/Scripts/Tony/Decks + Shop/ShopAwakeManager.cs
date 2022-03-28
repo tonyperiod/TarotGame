@@ -14,12 +14,13 @@ public class ShopAwakeManager : MonoBehaviour
         shop.CustomAwake();
         deck.CustomAwake();
         rNGManager.CustomAwake();
-        rNGManager.GetCardRNG();
+        rNGManager.GetCardRNG(); 
 
     }
 
     private void Start()
     {
+        shop.chooseCards();
         placeCards.CustomStart();
     }
 

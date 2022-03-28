@@ -28,14 +28,16 @@ public class ShopCardScriptReference : MonoBehaviour
 
     private void Start()
     {
-        FirstCard(ShopDeck.PickCard()); // gives variables and instances, this will then reference
+        FirstCard(); // gives variables and instances, this will then reference
+                                        //to remove card in the single elemdata thing       
     }
 
 
-    private void FirstCard(ScriptableCard s)
+    private void FirstCard()
     {
+        ScriptableCard s;
         //data
-        cardData = s;
+        s = cardData; // I'm setting the card data from the main shop script
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = s.artWork;
         Cardname = s.Cardname;
@@ -48,6 +50,15 @@ public class ShopCardScriptReference : MonoBehaviour
         court2 = s.court2;
 
         goldVal = s.goldVal;
+
+
+        //removecard
+        //manager.byElemData[s.databaseId].allCards.Remove(s);
+
+       
+
+        //manager.SplitterActivate();
     }
+
 
 }

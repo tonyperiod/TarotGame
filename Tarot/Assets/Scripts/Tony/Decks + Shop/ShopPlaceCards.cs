@@ -15,9 +15,9 @@ public class ShopPlaceCards : MonoBehaviour
 
         for (int i = 0; i <5; i++)
         {
-            Debug.Log("place");
+            manager.cardPrefab.GetComponent<ShopCardScriptReference>().cardData = manager.buyableCardsScriptableCards[i];
             manager.cardPrefab.GetComponent<ShopCardScriptReference>().slot = i;
-            Debug.Log(manager.cardPrefab.GetComponent<ShopCardScriptReference>().slot + " round " +i);
+
 
             ////finally instantiate
             Instantiate(manager.cardPrefab, manager.pos[i].transform.position, manager.pos[i].transform.rotation);

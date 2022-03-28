@@ -42,12 +42,10 @@ public class ShopDeck : MonoBehaviour
             chosenDatabase = ShopRNGManager.chooseData();            
         }
 
-        //WHY IS BYELEM DATA BEING THE ONE THAT'S TOUCHED, ALSO ALLDATAIN GAME IN PICK CARD?, MAYBE ONLY ON BUY
         ScriptableCard pickedCard = instance.manager.byElemData[chosenDatabase].allCards[Random.Range(0, instance.manager.byElemData[chosenDatabase].allCards.Count)];
 
-
-        //instance.manager.shopAllDataInGame.allCards.Remove(pickedCard);
-        //instance.manager.SplitterActivate();//to remove card in the single elemdata thing       
+        //this is jank to pass to cardscriptreference
+        pickedCard.databaseId = chosenDatabase;
         return pickedCard;
     }
 

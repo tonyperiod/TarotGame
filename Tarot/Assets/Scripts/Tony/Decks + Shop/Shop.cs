@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
     public GameObject[] pos;
 
     public ScriptableCardDatabase[] byElemData;
+
     public ScriptableCardDatabase shopAllDataInGame; //to have list in game
     public ScriptableCardDatabase shopAllData; //to save permanently
     public ScriptableCardDatabase playerCurrentDatabase;
@@ -18,6 +19,7 @@ public class Shop : MonoBehaviour
     public string enemyStre = "mid";//here I put shop
 
     public GameObject[] buyableCards;
+    public List<ScriptableCard> buyableCardsScriptableCards; //LETS TRY for bug fix
 
     [Header("script references")]
 
@@ -29,12 +31,9 @@ public class Shop : MonoBehaviour
 
     public void CustomAwake()
     {
-        splitter.setoff(); //NEED TO DO EVERY TIME CARD PICKED               
 
-        enemyStre = "mid";
-        currentArea = 7;
-        //enemyStre = InterScene.currentEnemy.Strength;
-        //currentArea = InterScene.currentSceneNumber;
+        enemyStre = InterScene.currentEnemy.Strength;
+        currentArea = InterScene.currentSceneNumber;
 
         if (InterScene.isNotNewGame == false)
         {
@@ -46,6 +45,7 @@ public class Shop : MonoBehaviour
             InterScene.isNotNewGame = true;
         }
 
+        splitter.setoff(); //NEED TO DO EVERY TIME CARD PICKED               
 
 
 
@@ -58,16 +58,16 @@ public class Shop : MonoBehaviour
         //{
         //    Destroy(gameObject); //if there is already a playerdatabase in game
         //}
+
         //I set ALL parameters in this script, only have to reference
-
-
 
         //TESTING ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         //if (shopAllDataInGame != null)
         //    shopAllDataInGame.allCards.Clear();
         //shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
-
+        //enemyStre = "mid";
+        //currentArea = 7;
 
 
 
@@ -78,6 +78,27 @@ public class Shop : MonoBehaviour
         splitter.setoff();
     }
 
+
+
+
+    public void chooseCards()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            ScriptableCard chosen;
+            do
+            {
+                chosen = ShopDeck.PickCard();
+            }
+            while (buyableCardsScriptableCards.Contains(chosen));
+            
+
+            buyableCardsScriptableCards.Add(chosen);
+            //byElemData[chosen.databaseId].allCards.Remove(chosen); THIS BREAKS ALL
+
+            Debug.Log(chosen.name);
+        }
+    }
     ////TESTING ONLY
     //private void Update()
     //{

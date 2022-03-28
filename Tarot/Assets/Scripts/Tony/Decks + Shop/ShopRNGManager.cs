@@ -17,7 +17,7 @@ public class CardToSpawn
 public class ShopRNGManager : MonoBehaviour
 {
     [SerializeField] Shop manager;
-    public CardToSpawn[] cardToSpawn; //same order as project panel
+    public CardToSpawn[] cardToSpawnArray; //same order as project panel
     public static ShopRNGManager instance; //this insctance
 
     //got from manager
@@ -53,13 +53,13 @@ public class ShopRNGManager : MonoBehaviour
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
 
-        ////give values to cardtospawn elements = the order for byelemdata AND project panel
-        //for (int i = 0; i < cardToSpawn.Length; i++)
-        //{
-        //    cardToSpawn[i].databaseNumber = i;
-        //}
+        //give values to cardtospawn elements = the order for byelemdata AND project panel
+        for (int i = 0; i < cardToSpawnArray.Length; i++)
+        {
+           cardToSpawnArray[i].databaseNumber = i;
+        }
 
-        
+
     }
 
     ////TESTING ONLY
@@ -93,17 +93,17 @@ public class ShopRNGManager : MonoBehaviour
     //here I define what the probabilities are based on the enemy
     private void defineLevelElem()
     {
-        if (currentArea < 5)        
+        if (currentArea < 5)
             AreaElem = 0;
-        
-        if (4 < currentArea && currentArea < 9)        
+
+        if (4 < currentArea && currentArea < 9)
             AreaElem = 1;
-        
-        if (8 < currentArea && currentArea < 13)        
+
+        if (8 < currentArea && currentArea < 13)
             AreaElem = 2;
-       
-        if (12 < currentArea)        
-            AreaElem = 3;       
+
+        if (12 < currentArea)
+            AreaElem = 3;
     }
 
     //based on the enemy strenghth, I get a value to add/remove
@@ -180,36 +180,36 @@ public class ShopRNGManager : MonoBehaviour
     //a lot of switches based on the areaelem
     private void defineSpawnRate()
     {
-        for (int i = 0; i < cardToSpawn.Length; i++)
+        for (int i = 0; i < cardToSpawnArray.Length; i++)
         {
             if (i < 4) //court cards
             {
                 if (i == elementalChecker) //here == because court are at the top of the array
                 {
-                    cardToSpawn[i].spawnRate = probCourt / 2; //same elem -> higher probability
+                    cardToSpawnArray[i].spawnRate = probCourt / 2; //same elem -> higher probability
                 }
                 else
-                    cardToSpawn[i].spawnRate = probCourt / 6;
+                    cardToSpawnArray[i].spawnRate = probCourt / 6;
             }
 
-            if (3<i && i < 8) //major cards
+            if (3 < i && i < 8) //major cards
             {
-                if (i == elementalChecker+4)
+                if (i == elementalChecker + 4)
                 {
-                    cardToSpawn[i].spawnRate = probMajor / 2; //same elem -> higher probability
+                    cardToSpawnArray[i].spawnRate = probMajor / 2; //same elem -> higher probability
                 }
                 else
-                    cardToSpawn[i].spawnRate = probMajor / 6;
+                    cardToSpawnArray[i].spawnRate = probMajor / 6;
             }
 
-            if (7 < i ) //minor cards
+            if (7 < i) //minor cards
             {
                 if (i == elementalChecker + 8)
                 {
-                    cardToSpawn[i].spawnRate = probMinor / 2; //same elem -> higher probability
+                    cardToSpawnArray[i].spawnRate = probMinor / 2; //same elem -> higher probability
                 }
                 else
-                    cardToSpawn[i].spawnRate = probMinor / 6;
+                    cardToSpawnArray[i].spawnRate = probMinor / 6;
             }
 
         }
@@ -218,17 +218,17 @@ public class ShopRNGManager : MonoBehaviour
     //some math, basically gives more values between minspawnprob and maxspawnprob to items that are found more often, until all 360 numbers have a corrispondence
     private void defineMinMaxSpawnRate()
     {
-        for (int i = 0; i < cardToSpawn.Length; i++)
+        for (int i = 0; i < cardToSpawnArray.Length; i++)
         {
             if (i == 0)
             {
-                cardToSpawn[i].minSpawnProb = 0;
-                cardToSpawn[i].maxSpawnProb = cardToSpawn[i].spawnRate - 1;
+                cardToSpawnArray[i].minSpawnProb = 0;
+                cardToSpawnArray[i].maxSpawnProb = cardToSpawnArray[i].spawnRate - 1;
             }
             else
             {
-                cardToSpawn[i].minSpawnProb = cardToSpawn[i-1].maxSpawnProb +1  ;
-                cardToSpawn[i].maxSpawnProb = cardToSpawn[i].minSpawnProb +cardToSpawn[i].spawnRate - 1;
+                cardToSpawnArray[i].minSpawnProb = cardToSpawnArray[i - 1].maxSpawnProb + 1;
+                cardToSpawnArray[i].maxSpawnProb = cardToSpawnArray[i].minSpawnProb + cardToSpawnArray[i].spawnRate - 1;
             }
         }
     }
@@ -238,16 +238,16 @@ public class ShopRNGManager : MonoBehaviour
     {
         int dataBaseNumber = 0;
         float randomNum = Random.Range(0, 360);
+        
 
-        for (int i = 0; i < instance.cardToSpawn.Length; i++)
+        for (int i = 0; i < instance.cardToSpawnArray.Length; i++)
         {
-            if(randomNum >= instance.cardToSpawn[i].minSpawnProb && randomNum<= instance.cardToSpawn[i].maxSpawnProb)// if is within the range of the card to spawn
+            if (randomNum >= instance.cardToSpawnArray[i].minSpawnProb && randomNum <= instance.cardToSpawnArray[i].maxSpawnProb)// if is within the range of the card to spawn
             {
-                dataBaseNumber = instance.cardToSpawn[i].databaseNumber;               
+                dataBaseNumber = instance.cardToSpawnArray[i].databaseNumber;
                 break;
             }
         }
-
         return dataBaseNumber;
     }
 }

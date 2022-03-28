@@ -11,6 +11,7 @@ public class ScriptableCard : ScriptableObject
 
     //variables
     public int id;
+    public int databaseId;
     public string elem;
     public int value;
 
