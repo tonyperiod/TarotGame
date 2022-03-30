@@ -15,7 +15,10 @@ MonoBehaviour:
   Cardname: MinorEarth5
   artWork: {fileID: 21300000, guid: c40cb5c185c19c14482f83570edf3032, type: 3}
   id: 14
-  symbol: earth
+  elem: earth
   value: 5
+  court1: 
+  court2: 
   slot: 0
   isPlayer: 0
+  goldVal: 0

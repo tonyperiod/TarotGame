@@ -13,5 +13,4 @@ public class ExitPoint : MonoBehaviour
             SceneManager.LoadScene("DenisWorldMap");
         }
     }
-
 }

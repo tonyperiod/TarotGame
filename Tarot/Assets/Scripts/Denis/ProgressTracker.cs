@@ -13,13 +13,7 @@ public class ProgressTracker : MonoBehaviour
     public static string levelName;
    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
+  
     public void save()
     {
         var xPos = player.transform.position.x;

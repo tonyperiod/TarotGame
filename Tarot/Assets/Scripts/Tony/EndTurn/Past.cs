@@ -20,7 +20,7 @@ public class Past : MonoBehaviour
         bool isEonFirePa = manager.isEonFirePa;
         bool isPonFirePa = manager.isPonFirePa;
 
-        switch (c.GetComponent<CardScriptReference>().symbol)
+        switch (c.GetComponent<CardScriptReference>().elem)
         {
             case "fire":
                 if (isplayer == true)
@@ -183,7 +183,7 @@ public class Past : MonoBehaviour
         int damage;
         int value = c.GetComponent<CardScriptReference>().value;
 
-        switch (c.GetComponent<CardScriptReference>().symbol)
+        switch (c.GetComponent<CardScriptReference>().elem)
         {
             case "fire":
                 damage = 2 * value;
@@ -209,19 +209,19 @@ public class Past : MonoBehaviour
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
 
         //element 1
-        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court1;//temp edit to symbol
+        court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to wlwm
         manager.courtbuff.buff(court);//check for elemental buffing
         past(court);//activate script as usual
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
 
         //element 2
-        court.GetComponent<CardScriptReference>().symbol = court.GetComponent<CardScriptReference>().court2;
+        court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
         manager.courtbuff.buff(court);
         past(court);
         //here no need to run debuff, returning the val to original is more than enough
 
         //return stuff to original
         court.GetComponent<CardScriptReference>().value = originalValue;
-        court.GetComponent<CardScriptReference>().symbol = "court";
+        court.GetComponent<CardScriptReference>().elem = "court";
     }
 }

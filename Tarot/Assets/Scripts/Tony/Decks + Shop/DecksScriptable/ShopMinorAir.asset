@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97446169d4d2464eb2695e145adc508, type: 3}
+  m_Name: ShopMinorAir
+  m_EditorClassIdentifier: 
+  allCards:
+  - {fileID: 11400000, guid: bb650860c28479a4ea912ad725dbb633, type: 2}
+  - {fileID: 11400000, guid: 7a53c541e7b22cc459063f4160d45677, type: 2}
+  - {fileID: 11400000, guid: 7febbdf056fc11347bd31e018ab06a22, type: 2}
+  - {fileID: 11400000, guid: d7c8d0188e0c8724caab0ea3861fb59a, type: 2}

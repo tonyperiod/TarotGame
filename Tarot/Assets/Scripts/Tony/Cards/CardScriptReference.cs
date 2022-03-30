@@ -10,7 +10,7 @@ public class CardScriptReference : MonoBehaviour
     public string Cardname;
     public Sprite artWork;
     public int id;
-    public string symbol;
+    public string elem;
     public int value;
     public int slot;
     public bool isplayer;
@@ -18,8 +18,10 @@ public class CardScriptReference : MonoBehaviour
     public string court1;
     public string court2;
 
+    public int goldVal;
 
     private SpriteRenderer spRend;
+
 
 
     private void Start()
@@ -35,11 +37,12 @@ public class CardScriptReference : MonoBehaviour
     private void FirstCard(ScriptableCard s)
     {
         //data
+        cardData = s;
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = s.artWork;
         Cardname = s.Cardname;
         id = s.id;
-        symbol = s.symbol;
+        elem = s.elem;
         value = s.value;
         isplayer = true;
 
@@ -54,7 +57,7 @@ public class CardScriptReference : MonoBehaviour
         spRend.sprite = e.artWork;
         Cardname = e.Cardname;
         id = e.id;
-        symbol = e.symbol;
+        elem = e.elem;
         value = e.value;
         isplayer = false;
 

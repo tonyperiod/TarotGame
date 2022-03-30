@@ -29,9 +29,18 @@ public class PlayerInGameDeck : MonoBehaviour
         }
         cardTot = instance.playerDatabase.allCards.Count;
 
+        ReorderDeck();
         NewDeck();
     }
 
+    //to make sure everything works after buying and all
+    private void ReorderDeck()
+    {
+        for (int i = 0; i < instance.playerDatabase.allCards.Count; i++)
+        {
+            instance.playerDatabase.allCards[i].id = i;
+        }
+    }
 
     public void NewDeck() //this pure jank is to load in all the cards to the in game deck
     {

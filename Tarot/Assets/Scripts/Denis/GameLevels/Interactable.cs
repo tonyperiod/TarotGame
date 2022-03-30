@@ -60,22 +60,22 @@ public class Interactable : MonoBehaviour
        
 
     }
-    private void OnTriggerEnter(Collider collision)
-    {
+    //private void OnTriggerEnter(Collider collision)
+    //{
 
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            isInRange = true;
-            Debug.Log("Player now in range");
-        }
-    }
+    //    if(collision.gameObject.CompareTag("Player"))
+    //    {
+    //        isInRange = true;
+    //        Debug.Log("Player now in range");
+    //    }
+    //}
 
-    private void OnTriggerExit(Collider collision)
-    {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            isInRange = false;
-            Debug.Log("Player now out of range");
-        }
-    }
+    //private void OnTriggerExit(Collider collision)
+    //{
+    //    if(collision.gameObject.CompareTag("Player"))
+    //    {
+    //        isInRange = false;
+    //        Debug.Log("Player now out of range");
+    //    }
+    //}
 }

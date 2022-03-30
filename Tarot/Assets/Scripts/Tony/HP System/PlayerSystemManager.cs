@@ -37,7 +37,7 @@ public class PlayerSystemManager : MonoBehaviour
     {
         int remainingSh;
         remainingSh = shsystem.getSH() - dmg;
-        Debug.Log("dmg" + dmg);
+        //Debug.Log("dmg" + dmg);
 
         if (remainingSh > 0)
         {
@@ -57,20 +57,20 @@ public class PlayerSystemManager : MonoBehaviour
     public void TakeAirDmg(int dmg)
     {
         hpsyst.dmghp(dmg);
-        Debug.Log("air" + dmg);
+        //Debug.Log("air" + dmg);
         checkIfDead();
     }
 
     public void HealHP(int heal)
     {
         hpsyst.healhp(heal);
-        Debug.Log("heal" + heal);
+        //Debug.Log("heal" + heal);
     }
 
     public void HealSH (int shield)
     {
         shsystem.healSh(shield);
-        Debug.Log("healshield" + shield);
+        //Debug.Log("healshield" + shield);
     }
 
     public void checkIfDead()

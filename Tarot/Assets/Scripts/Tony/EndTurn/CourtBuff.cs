@@ -12,7 +12,7 @@ public class CourtBuff : MonoBehaviour
         //player side
         if (court.GetComponent<CardScriptReference>().isplayer == true)
         {
-            if (court.GetComponent<CardScriptReference>().symbol == manager.PRef.element)//compare player elem to this
+            if (court.GetComponent<CardScriptReference>().elem == manager.PRef.element)//compare player elem to this
             {
                 court.GetComponent<CardScriptReference>().value += manager.elemBuff/2; // /2, look at court code within past pres future if in doubt
             }
@@ -21,7 +21,7 @@ public class CourtBuff : MonoBehaviour
         //enemy side
         else
         {
-            if (court.GetComponent<CardScriptReference>().symbol == manager.ERef.element)
+            if (court.GetComponent<CardScriptReference>().elem == manager.ERef.element)
             {
                 court.GetComponent<CardScriptReference>().value += manager.elemBuff/2; 
             }
@@ -34,7 +34,7 @@ public class CourtBuff : MonoBehaviour
         //player side
         if (court.GetComponent<CardScriptReference>().isplayer == true)
         {
-            if (court.GetComponent<CardScriptReference>().symbol == manager.PRef.element)
+            if (court.GetComponent<CardScriptReference>().elem == manager.PRef.element)
             {
                 court.GetComponent<CardScriptReference>().value -= manager.elemBuff / 2; 
             }
@@ -43,7 +43,7 @@ public class CourtBuff : MonoBehaviour
         //enemy side
         else
         {
-            if (court.GetComponent<CardScriptReference>().symbol == manager.ERef.element)
+            if (court.GetComponent<CardScriptReference>().elem == manager.ERef.element)
             {
                 court.GetComponent<CardScriptReference>().value -= manager.elemBuff / 2;
             }

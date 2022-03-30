@@ -15,9 +15,10 @@ MonoBehaviour:
   Cardname: 
   artWork: {fileID: 21300000, guid: a330692452c21f348bb63bd9eccf6f7c, type: 3}
   id: 48
-  symbol: court
+  elem: court
   value: 10
   court1: earth
   court2: air
   slot: 0
   isPlayer: 1
+  goldVal: 35
