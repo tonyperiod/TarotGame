@@ -7,16 +7,16 @@ public class UIManager : MonoBehaviour
 
     GameObject gameObject;
     public GameObject text;
-
-    int cardDamage;
-    int cardShield;
+    public string text2;
 
 
     // Start is called before the first frame update
     void Start()
     {
         gameObject = GameObject.Find("Tooltip (Battle Board)");
+
         text.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -33,21 +33,19 @@ public class UIManager : MonoBehaviour
             gameObject.SetActive(true);
             gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 1.5f);
             text.SetActive(true);
+            
         }
 
-
     }
-
-    public void UpdateCard(int damage, int shield)
-    {
-        cardDamage = damage;
-        cardShield = shield;
-    }
-
     private void OnMouseExit()
     {
         gameObject.SetActive(false);
         text.SetActive(false);
+    }
+
+    public void ShowValue()
+    {
+        
     }
 
 }
