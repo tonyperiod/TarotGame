@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class UIManager : MonoBehaviour
 {
 
-    GameObject gameObject;
-    public GameObject text;
-    public string text2;
+    public GameObject gameObject;
+    public GameObject text; 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        gameObject = GameObject.Find("Tooltip (Battle Board)");
+        //gameObject = GameObject.Find("Tooltip (Battle Board)");
 
-        text.SetActive(false);
 
+        //cardPrefab = GameObject.Find("CardPrefabA");
+
+        //cardScriptReference = cardPrefab.transform.GetComponent<CardScriptReference>();
     }
 
     // Update is called once per frame
@@ -31,9 +33,12 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Right Mouse Clicked");
             gameObject.SetActive(true);
-            gameObject.transform.position = this.transform.position + new Vector3(-1, 1f, 1.5f);
+            gameObject.transform.position = this.transform.position + new Vector3(0.0f, 2f, 0f);
+
+            gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().symbol;
+            gameObject.transform.GetChild(5).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().value.ToString();
+
             text.SetActive(true);
-            
         }
 
     }
@@ -41,11 +46,6 @@ public class UIManager : MonoBehaviour
     {
         gameObject.SetActive(false);
         text.SetActive(false);
-    }
-
-    public void ShowValue()
-    {
-        
     }
 
 }
