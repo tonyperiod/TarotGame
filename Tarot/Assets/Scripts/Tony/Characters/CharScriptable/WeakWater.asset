@@ -18,5 +18,5 @@ MonoBehaviour:
   MaxSH: 10
   Element: water
   ID: 0
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 21300000, guid: 11b88485c4248c14eba4ec609357749b, type: 3}
   goldVal: 30
