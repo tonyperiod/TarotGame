@@ -10,8 +10,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask isGround;
     public Transform groundPoint;
     private bool isGrounded;
+
+
     private bool movingRight;
     private bool movingLeft;
+    private bool idling;
+    private bool movingUp;
+    private bool movingDown;
     public Animator anim;
 
     void Update()
@@ -39,10 +44,32 @@ public class PlayerController : MonoBehaviour
             movingLeft = false;
         }
 
+        //vertical movement
+
+        if (moveInput.y < 0)
+        {
+            movingDown = true;
+        }
+        else
+        {
+            movingDown = false;
+        }
+
+        if (moveInput.y > 0)
+        {
+            movingUp = true;
+        }
+        else
+        {
+            movingUp = false;
+        }
+
+
         anim.SetBool("movingRight", movingRight);
         anim.SetBool("movingLeft", movingLeft);
+        anim.SetBool("movingDown", movingDown);
+        anim.SetBool("movingUp", movingUp);
 
-        
         RaycastHit hit;
         if (Physics.Raycast(groundPoint.position, Vector3.down, out hit, .3f, isGround))
         {

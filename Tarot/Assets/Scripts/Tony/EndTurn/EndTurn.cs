@@ -14,6 +14,7 @@ public class EndTurn : MonoBehaviour
     public Future Future;
     public PastFuture PastFuture;
     public Draggable draggable;
+    public VFXManager vfxManager;
 
     [Header ("card functioning")]
 
