@@ -51,5 +51,5 @@ Material:
     m_Floats:
     - Top_blend: 1
     m_Colors:
-    - Tiling: {r: 0.37, g: 0.46, b: 1, a: 0}
+    - Tiling: {r: 0.94, g: 0.77, b: 1, a: 0}
   m_BuildTextureStacks: []
