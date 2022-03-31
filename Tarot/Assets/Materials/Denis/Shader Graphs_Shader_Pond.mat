@@ -38,7 +38,7 @@ Material:
     - NormalStrength: 1.5
     - Ripple_Dissolve: 5
     - Ripple_Scale: 20
-    - Ripple_Speed: 3
+    - Ripple_Speed: 4
     m_Colors:
     - Base_Color: {r: 0, g: 0.2784314, b: 1, a: 0}
     - NormalSpeed: {r: 0.1, g: -0.1, b: 0, a: 0}
