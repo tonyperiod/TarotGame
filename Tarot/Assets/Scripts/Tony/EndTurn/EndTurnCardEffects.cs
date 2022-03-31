@@ -5,13 +5,6 @@ using UnityEngine;
 public class EndTurnCardEffects : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
-
-    //vfx activation get references
-    public VFXPast vfxPa;
-    public VFXPresent vfxPre;
-    public VFXFuture vfxFut;
-    public VFXPastFuture vfxpastFut;
-
     GameObject[] lastTurnCards;
 
     public void get() //just get the cards -> used in draggable now as well
@@ -34,30 +27,30 @@ public class EndTurnCardEffects : MonoBehaviour
         BuffElement(lastTurnCards);
         CounterElement(lastTurnCards);
 
-        vfxPa.activate(lastTurnCards[0]);
+        manager.vfxManager.Activate(lastTurnCards[0]);
         manager.Past.past(lastTurnCards[0]);
         yield return new WaitForSeconds(manager.dySingle);
 
-        vfxPa.activate(lastTurnCards[3]);
+        manager.vfxManager.Activate(lastTurnCards[3]);
         manager.Past.past(lastTurnCards[3]);
         yield return new WaitForSeconds(manager.dySingle);
-        
-        vfxPre.activate(lastTurnCards[1]);
+
+        manager.vfxManager.Activate(lastTurnCards[1]);
         manager.Present.present(lastTurnCards[1]);
         yield return new WaitForSeconds(manager.dySingle);
 
-        vfxPre.activate(lastTurnCards[4]);
+        manager.vfxManager.Activate(lastTurnCards[4]);
         manager.Present.present(lastTurnCards[4]);
         yield return new WaitForSeconds(manager.dySingle);
 
 
         if (manager.gameStart == false)
         {
-            vfxpastFut.activate(lastTurnCards[6]);
+            manager.vfxManager.Activate(lastTurnCards[6]);
             manager.PastFuture.pastfuture(lastTurnCards[6]);
             yield return new WaitForSeconds(manager.dySingle);
-        
-            vfxpastFut.activate(lastTurnCards[7]);
+
+            manager.vfxManager.Activate(lastTurnCards[7]);
             manager.PastFuture.pastfuture(lastTurnCards[7]);
             yield return new WaitForSeconds(manager.dySingle);
         }
@@ -69,11 +62,11 @@ public class EndTurnCardEffects : MonoBehaviour
             manager.gameStart = false;
         }
 
-        vfxFut.activate(lastTurnCards[2]);
+        manager.vfxManager.Activate(lastTurnCards[2]);
         manager.Future.future(lastTurnCards[2]);
         yield return new WaitForSeconds(manager.dySingle);
 
-        vfxFut.activate(lastTurnCards[5]);
+        manager.vfxManager.Activate(lastTurnCards[5]);
         manager.Future.future(lastTurnCards[5]);
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 
 public class CardScriptReference : MonoBehaviour
@@ -22,7 +23,8 @@ public class CardScriptReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
-
+    public VisualEffect[] visualEffects;
+    public ParticleSystem[] particleSystems;
 
     private void Start()
     {
