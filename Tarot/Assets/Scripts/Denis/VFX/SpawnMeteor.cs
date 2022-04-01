@@ -10,12 +10,14 @@ public class SpawnMeteor : MonoBehaviour
 
     public void Activate()
     {
-        GameObject objVFX = Instantiate(vfx, startPoint) as GameObject;
-        RotateTo (objVFX, endPoint.position);
+        var startPos = startPoint.position;
+        GameObject objVFX = Instantiate(vfx, startPos, Quaternion.identity) as GameObject;
+        var endPos = endPoint.position;
+        RotateTo(objVFX, endPos);
 
     }
 
-    void RotateTo (GameObject obj, Vector3 destination)
+    void RotateTo(GameObject obj, Vector3 destination)
     {
         var direction = destination - obj.transform.position;
         var rotation = Quaternion.LookRotation(direction);
