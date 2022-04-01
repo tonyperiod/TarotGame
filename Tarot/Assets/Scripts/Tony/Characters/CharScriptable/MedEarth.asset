@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: MedEarth
   m_EditorClassIdentifier: 
   Name: 
-  Strength: 
-  MaxHP: 0
-  MaxSH: 0
-  Element: 
+  Strength: med
+  MaxHP: 25
+  MaxSH: 20
+  Element: earth
   ID: 0
-  Artwork: {fileID: 0}
-  goldVal: 0
+  Artwork: {fileID: 21300000, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+  goldVal: 40

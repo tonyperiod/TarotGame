@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28190655, g: 0.36770174, b: 0.50013995, a: 1}
+  m_IndirectSpecularColor: {r: 0.2819051, g: 0.36770004, b: 0.50013804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5612,6 +5612,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1956016516789117821, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+    - target: {fileID: 7847605911474638590, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
 --- !u!1 &592349352
@@ -6012,6 +6020,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1731359780275955191, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263205201206104599, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_Size.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263205201206104599, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263205201206104599, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: df7ed1276a9ccfb4bac013f9d15247dd, type: 3}
+    - target: {fileID: 4263205201206104599, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

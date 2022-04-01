@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Strength: 
-  MaxHP: 0
-  MaxSH: 0
-  Element: 
+  MaxHP: 15
+  MaxSH: 10
+  Element: earth
   ID: 0
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 21300000, guid: df7ed1276a9ccfb4bac013f9d15247dd, type: 3}
   goldVal: 0
