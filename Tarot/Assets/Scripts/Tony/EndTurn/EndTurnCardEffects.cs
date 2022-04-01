@@ -27,32 +27,37 @@ public class EndTurnCardEffects : MonoBehaviour
         BuffElement(lastTurnCards);
         CounterElement(lastTurnCards);
 
-        manager.vfxManager.Activate(lastTurnCards[0]);
+        manager.vfxManager.Activate(lastTurnCards[0],0);
+        yield return new WaitForSeconds(manager.dySingle);
         manager.Past.past(lastTurnCards[0]);
-        yield return new WaitForSeconds(manager.dySingle);
 
-        manager.vfxManager.Activate(lastTurnCards[3]);
+        manager.vfxManager.Activate(lastTurnCards[3],0);
+        yield return new WaitForSeconds(manager.dySingle);
         manager.Past.past(lastTurnCards[3]);
-        yield return new WaitForSeconds(manager.dySingle);
+       
 
-        manager.vfxManager.Activate(lastTurnCards[1]);
+        manager.vfxManager.Activate(lastTurnCards[1],1);
+        yield return new WaitForSeconds(manager.dySingle);
         manager.Present.present(lastTurnCards[1]);
-        yield return new WaitForSeconds(manager.dySingle);
+     
 
-        manager.vfxManager.Activate(lastTurnCards[4]);
-        manager.Present.present(lastTurnCards[4]);
+        manager.vfxManager.Activate(lastTurnCards[4],1);
         yield return new WaitForSeconds(manager.dySingle);
+        manager.Present.present(lastTurnCards[4]);
+     
 
 
         if (manager.gameStart == false)
         {
-            manager.vfxManager.Activate(lastTurnCards[6]);
+            manager.vfxManager.Activate(lastTurnCards[6],2);
+            yield return new WaitForSeconds(manager.dySingle);
             manager.PastFuture.pastfuture(lastTurnCards[6]);
-            yield return new WaitForSeconds(manager.dySingle);
 
-            manager.vfxManager.Activate(lastTurnCards[7]);
-            manager.PastFuture.pastfuture(lastTurnCards[7]);
+
+            manager.vfxManager.Activate(lastTurnCards[7],2);
             yield return new WaitForSeconds(manager.dySingle);
+            manager.PastFuture.pastfuture(lastTurnCards[7]);
+
         }
         //destroy placeholders if turn one
         else
@@ -62,11 +67,13 @@ public class EndTurnCardEffects : MonoBehaviour
             manager.gameStart = false;
         }
 
-        manager.vfxManager.Activate(lastTurnCards[2]);
-        manager.Future.future(lastTurnCards[2]);
+        manager.vfxManager.Activate(lastTurnCards[2],3);
         yield return new WaitForSeconds(manager.dySingle);
+        manager.Future.future(lastTurnCards[2]);
 
-        manager.vfxManager.Activate(lastTurnCards[5]);
+
+        manager.vfxManager.Activate(lastTurnCards[5],3);
+        yield return new WaitForSeconds(manager.dySingle);
         manager.Future.future(lastTurnCards[5]);
     }
 
