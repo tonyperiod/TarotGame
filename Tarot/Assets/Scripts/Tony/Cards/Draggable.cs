@@ -105,6 +105,8 @@ public class Draggable : MonoBehaviour
             //fix it's slot
             cardScriptReference.slot = closestSnap;
 
+            doubleCheck();
+
             manager.cardeffects.get(); //reorganize the array
 
 
@@ -116,10 +118,9 @@ public class Draggable : MonoBehaviour
     {
         Debug.Log("movedcard");
         lastTurnCards = manager.lastTurnCards;
-
-        for (int i = 0; i < lastTurnCards.Length; i++)
+        //this changed from lasturncards.lenght to 3, do not care about the others cause they can't move
+        for (int i = 0; i < 3; i++)
         {
-
             //see what card was in the position the new card is going to
             if (lastTurnCards[i].GetComponent<CardScriptReference>().slot == slotMoving)
             {
@@ -127,5 +128,64 @@ public class Draggable : MonoBehaviour
             }
         }
         cardSwap.moveCard(chosenCard);
+    }
+
+
+
+    //to fix draggable bug, and have duplicate cards just move to separate slots
+    private void doubleCheck()
+    {
+        List<int> slotsUsed = new List<int>();
+        int thisSlot;
+
+        for (int i = 0; i < 3; i++)
+        {
+            thisSlot = lastTurnCards[i].GetComponent<CardScriptReference>().slot;
+            if (slotsUsed.Contains(thisSlot))
+            {
+                dragBroke(i);
+                break;
+            }
+
+            else
+            {
+                slotsUsed.Add(thisSlot);
+            }
+        }
+        slotsUsed.Clear();
+    }
+
+    //this runs if the draggable script is broken
+    private void dragBroke(int cardWithSlotBroken)
+    {
+        List<int> slotsUsed = new List<int>();  //this is used differently from doubleCheck;
+        List<int> allSlots = new List<int>();
+        allSlots.Add(0);
+        allSlots.Add(1);
+        allSlots.Add(2);
+        int emptySlot;
+
+        //fill up slotsUsed (there will be a duplicate for SURE)
+        for (int i = 0; i < 3; i++)
+        {
+            slotsUsed.Add(lastTurnCards[i].GetComponent<CardScriptReference>().slot);
+        }
+
+        for (int i = 0; i < slotsUsed.Count; i++)
+        {
+            //remove the values, will end up with 1 value left in theory
+            if (allSlots.Contains(slotsUsed[i]))
+                allSlots.Remove(slotsUsed[i]);                
+        }
+        emptySlot = allSlots[0]; //the only value left in the list
+
+        //here I run smth similar to CardSwapping
+        lastTurnCards[cardWithSlotBroken].transform.position = cardSwap.snapPoints[emptySlot].transform.position;
+        lastTurnCards[cardWithSlotBroken].GetComponent<CardScriptReference>().slot = emptySlot;
+
+        Debug.Log("fixed");
+
+        slotsUsed.Clear();
+        allSlots.Clear();
     }
 }
