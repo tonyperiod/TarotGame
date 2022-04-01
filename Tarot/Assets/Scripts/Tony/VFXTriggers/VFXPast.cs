@@ -31,19 +31,15 @@ public class VFXPast : MonoBehaviour
         switch (cardElement)
         {
             case "air":
-                card.transform.GetChild(0).gameObject.SetActive(true);
                 cRef.particleSystems[0].Play();
                 break;
             case "earth":
-                card.transform.GetChild(1).gameObject.SetActive(true);
                 cRef.particleSystems[1].Play();
                 break;
             case "fire":
-                card.transform.GetChild(2).gameObject.SetActive(true);
                 cRef.particleSystems[2].Play();
                 break;
             case "water":
-                card.transform.GetChild(3).gameObject.SetActive(true);
                 cRef.visualEffects[0].Play();
                 break;
 

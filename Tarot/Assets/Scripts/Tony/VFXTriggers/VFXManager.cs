@@ -17,24 +17,16 @@ public class VFXManager : MonoBehaviour
 
     int slot;
 
-    [Header("SCRIPTS")]
     public VFXPast past;
     public VFXPresent pre;
     public VFXFuture fut;
     public VFXPastFuture pfut;
 
-    [Header("COMPLEX VFX")]
-    public GameObject[] presentVFX;
-    public float addHeight;
-    public Transform playerStTransf;
-    public Transform enemyStTransf;
-    public Transform playerEndTransf;
-    public Transform enemyEndTransf;
-  
 
-    public void Activate(GameObject card, int time) // time is to see if past, pre, fut
+    public void Activate(GameObject card)
     {
-        switch (time)
+        slot = card.GetComponent<CardScriptReference>().slot;
+        switch (slot)
         {
             case 0:
                 past.activate(card);
@@ -43,11 +35,24 @@ public class VFXManager : MonoBehaviour
                 pre.activate(card);
                 break;
             case 2:
-                pfut.activate(card);
-                break;
-            case 3:
                 fut.activate(card);
                 break;
+            case 3:
+                pfut.activate(card);
+                break;
+            case 4:
+                past.activate(card);
+                break;
+            case 5:
+                pre.activate(card);
+                break;
+            case 6:
+                fut.activate(card);
+                break;
+            case 7:
+                pfut.activate(card);
+                break;
+
         }
     }
 
