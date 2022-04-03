@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("Right Mouse Clicked");
             gameObject.SetActive(true);
-            gameObject.transform.position = this.transform.position + new Vector3(0.0f, 2f, 0f);
+            gameObject.transform.position = this.transform.position + new Vector3(-2f, 2f, 0f);
 
             gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
             gameObject.transform.GetChild(5).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().value.ToString();
