@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DraggableShop : MonoBehaviour
 {
-    [SerializeField] Shop manager; //define lastturncards -> on moving cards
+    [SerializeField] Shop manager; //define buyable -> on moving cards
 
     //draggin object floatily
     private Rigidbody _rigidbody;
@@ -90,11 +90,11 @@ public class DraggableShop : MonoBehaviour
                 closestTemp = cardDistance;
             }
         }
-
+        moveCard(closestSnap);
         //HERE NEED TO DO ACTUAL IF SLOT = AND GOT CASH THEN BUY THING -> WILL DO ON CLICK INSTEAD
         //if (closestSnap == 4) //if you want to buy
         //{
-        //    moveCard(closestSnap);
+        //    
         //    if (InterScene.goldPlayer > cardScriptReference.goldVal)
         //    {
         //        //do the shop stuff
@@ -117,16 +117,19 @@ public class DraggableShop : MonoBehaviour
 
         //fix it's slot
         cardScriptReference.slot = closestSnap;
+
+        if (closestSnap != 6)
+            doubleCheck();
+
     }
 
 
     private void moveCard(int slotMoving)
     {
-        //buyable = shop.buyable;
+        buyable = manager.buyableCards;
 
         for (int i = 0; i < buyable.Length; i++)
         {
-
             //see what card was in the position the new card is going to
             if (buyable[i].GetComponent<ShopCardScriptReference>().slot == slotMoving)
             {
@@ -134,5 +137,63 @@ public class DraggableShop : MonoBehaviour
             }
         }
         cardSwap.moveCard(chosenCard);
+    }
+
+    private void doubleCheck()
+    {
+        List<int> slotsUsed = new List<int>();
+        int thisSlot;
+
+        for (int i = 0; i < 5; i++)
+        {
+            thisSlot = buyable[i].GetComponent<ShopCardScriptReference>().slot;
+            if (slotsUsed.Contains(thisSlot))
+            {
+                dragBroke(i);
+                break;
+            }
+
+            else
+            {
+                slotsUsed.Add(thisSlot);
+            }
+        }
+        slotsUsed.Clear();
+    }
+
+    //this runs if the draggable script is broken
+    private void dragBroke(int cardWithSlotBroken)
+    {
+        List<int> slotsUsed = new List<int>();  //this is used differently from doubleCheck;
+        List<int> allSlots = new List<int>();
+        allSlots.Add(0);
+        allSlots.Add(1);
+        allSlots.Add(2);
+        allSlots.Add(3);
+        allSlots.Add(4); //didn't put shop one counted in cause it won't run for that
+        int emptySlot;
+
+        //fill up slotsUsed (there will be a duplicate for SURE)
+        for (int i = 0; i < 5; i++)
+        {
+            slotsUsed.Add(buyable[i].GetComponent<ShopCardScriptReference>().slot);
+        }
+
+        for (int i = 0; i < slotsUsed.Count; i++)
+        {
+            //remove the values, will end up with 1 value left in theory
+            if (allSlots.Contains(slotsUsed[i]))
+                allSlots.Remove(slotsUsed[i]);
+        }
+        emptySlot = allSlots[0]; //the only value left in the list
+
+        //here I run smth similar to CardSwapping
+        buyable[cardWithSlotBroken].transform.position = cardSwap.snapPoints[emptySlot].transform.position;
+        buyable[cardWithSlotBroken].GetComponent<ShopCardScriptReference>().slot = emptySlot;
+
+        Debug.Log("fixed");
+
+        slotsUsed.Clear();
+        allSlots.Clear();
     }
 }

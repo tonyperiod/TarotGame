@@ -1224,6 +1224,8 @@ MonoBehaviour:
   splitter: {fileID: 1849098557}
   cardPrefab: {fileID: 6991896553652719782}
   shopBuy: {fileID: 1849098559}
+  defChar: {fileID: 11400000, guid: 5b1816f3aba5302419ccdcd832455785, type: 2}
+  defSceneNumber: 3
 --- !u!4 &1849098554
 Transform:
   m_ObjectHideFlags: 0

@@ -93,16 +93,16 @@ public class ShopRNGManager : MonoBehaviour
     //here I define what the probabilities are based on the enemy
     private void defineLevelElem()
     {
-        if (currentArea < 5)
+        if (currentArea < 7)
             AreaElem = 0;
 
-        if (4 < currentArea && currentArea < 9)
+        if (6 < currentArea && currentArea < 11)
             AreaElem = 1;
 
-        if (8 < currentArea && currentArea < 13)
+        if (10 < currentArea && currentArea < 15)
             AreaElem = 2;
 
-        if (12 < currentArea)
+        if (14 < currentArea)
             AreaElem = 3;
     }
 

@@ -28,12 +28,23 @@ public class Shop : MonoBehaviour
     private ShopCardScriptReference cardReference;
     public ShopBuy shopBuy;
 
+    [Header("defaults for testing")]
+
+    [SerializeField] ScriptableChar defChar;
+    [SerializeField] int defSceneNumber;
+
 
     public void CustomAwake()
     {
+        //nulls for testing
+        if (InterScene.currentEnemy == null)
+            InterScene.currentEnemy = defChar;
+        if (InterScene.currentSceneNumber == 0)
+            InterScene.currentSceneNumber = defSceneNumber;
 
         enemyStre = InterScene.currentEnemy.Strength;
         currentArea = InterScene.currentSceneNumber;
+
         buyableCards = new GameObject[5];
 
         if (InterScene.isNotNewGame == false)
@@ -42,15 +53,10 @@ public class Shop : MonoBehaviour
                 shopAllDataInGame.allCards.Clear();
             shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
 
-
-            Debug.Log(InterScene.isNotNewGame + " is notnew");
             InterScene.isNotNewGame = true;
         }
-
         splitter.setoff(); //NEED TO DO ONLY ONCE             
-
-
-
+               
         //if (instance == null)
         //{
         //    instance = this;
@@ -70,17 +76,12 @@ public class Shop : MonoBehaviour
         //shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
         //enemyStre = "mid";
         //currentArea = 7;
-
-
-
     }
 
     public void SplitterActivate()
     {
         splitter.setoff();
     }
-
-
 
 
     public void chooseCards()
@@ -123,5 +124,5 @@ public class Shop : MonoBehaviour
     //    }
     //    Debug.Log(ShopDeck.PickCard());
     //}
-  
+
 }
