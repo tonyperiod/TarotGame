@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSelectedElement : MonoBehaviour
 {
-    public PlayerReference playerRef;
-    public string element;
+    PlayerReference playerRef;
+    GameObject gameObject;
+    GameObject text;
 
     void Start()
     {
+        //gameObject.SetActive(true);
         
     }
 
     void Update()
     {
-        element = PlayerReference.playerSelectedElem;
-
-        this.transform.GetComponent<TextMesh>().text = element;
+        //gameObject.transform.position = this.transform.position + new Vector3(0f, 0f, 0f);
+        //gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<PlayerReference>().element;
     }
      
 

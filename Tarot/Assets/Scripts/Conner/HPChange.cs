@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class HPChange : MonoBehaviour
 {
-    GameObject hptotaltext; 
+    HPSystem hpSystem;
+    public GameObject text;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        GameObject hpsystem = GameObject.Find("PlayerHPText");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //GameObject hptotaltext = GameObject.Find("PlayerHPText");
-
-        //hptotaltext.transform.GetComponent<Text>().text = "/" + hpsystem.getHP().ToString();
+       
+        //hpsystem.transform.GetComponent<Text>().text = "/" + hpsystem.getHP().ToString();
     }
 }
