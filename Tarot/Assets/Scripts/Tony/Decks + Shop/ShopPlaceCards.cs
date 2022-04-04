@@ -22,8 +22,11 @@ public class ShopPlaceCards : MonoBehaviour
             ////finally instantiate
             Instantiate(manager.cardPrefab, manager.pos[i].transform.position, manager.pos[i].transform.rotation);
         }
-
+             
         manager.cardPrefab.tag = "Untagged";
+
+        //set manager deck 
+        manager.buyableCards = GameObject.FindGameObjectsWithTag("Card");
     }
 
 }
