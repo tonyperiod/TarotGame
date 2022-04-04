@@ -58,6 +58,8 @@ public class DraggableShop : MonoBehaviour
     {
         movedSlot = cardScriptReference.slot;
         slotsTaken.snapPointTaken[movedSlot] = false;
+
+
     }
 
 
@@ -90,23 +92,8 @@ public class DraggableShop : MonoBehaviour
                 closestTemp = cardDistance;
             }
         }
+        //move card that was there
         moveCard(closestSnap);
-        //HERE NEED TO DO ACTUAL IF SLOT = AND GOT CASH THEN BUY THING -> WILL DO ON CLICK INSTEAD
-        //if (closestSnap == 4) //if you want to buy
-        //{
-        //    
-        //    if (InterScene.goldPlayer > cardScriptReference.goldVal)
-        //    {
-        //        //do the shop stuff
-        //    }
-        //    else
-        //    {
-        //        closestSnap = cardScriptReference.slot; //move back
-        //    }
-        //}
-        //else // if you want to shift shit around
-        //    //move other card to other slot
-        //    moveCard(closestSnap);
 
         //move this card to position
         cardTransform.position = snapPoints[closestSnap].transform.position;
@@ -118,9 +105,7 @@ public class DraggableShop : MonoBehaviour
         //fix it's slot
         cardScriptReference.slot = closestSnap;
 
-        if (closestSnap != 6)
-            doubleCheck();
-
+        doubleCheck();
     }
 
 
@@ -134,10 +119,17 @@ public class DraggableShop : MonoBehaviour
             if (buyable[i].GetComponent<ShopCardScriptReference>().slot == slotMoving)
             {
                 chosenCard = buyable[i];
+                break;
             }
         }
-        cardSwap.moveCard(chosenCard);
+        //seeing that it's null often here
+        if (chosenCard != null)
+            cardSwap.moveCard(chosenCard);
+
+        //remove past chosenCard to fix rando swapping
+        chosenCard = null;
     }
+
 
     private void doubleCheck()
     {
@@ -161,6 +153,7 @@ public class DraggableShop : MonoBehaviour
         slotsUsed.Clear();
     }
 
+
     //this runs if the draggable script is broken
     private void dragBroke(int cardWithSlotBroken)
     {
@@ -170,7 +163,8 @@ public class DraggableShop : MonoBehaviour
         allSlots.Add(1);
         allSlots.Add(2);
         allSlots.Add(3);
-        allSlots.Add(4); //didn't put shop one counted in cause it won't run for that
+        allSlots.Add(4);
+        allSlots.Add(5); //shop one counted in cause it won't run for that
         int emptySlot;
 
         //fill up slotsUsed (there will be a duplicate for SURE)
@@ -185,7 +179,14 @@ public class DraggableShop : MonoBehaviour
             if (allSlots.Contains(slotsUsed[i]))
                 allSlots.Remove(slotsUsed[i]);
         }
-        emptySlot = allSlots[0]; //the only value left in the list
+        emptySlot = allSlots[0]; //just top define for the next spot
+
+        //to check that it doesn't always snap up to shop
+        for (int i = 0; i < 2; i++)
+        {
+            if (allSlots[i] != 5)
+                emptySlot = allSlots[i];
+        }
 
         //here I run smth similar to CardSwapping
         buyable[cardWithSlotBroken].transform.position = cardSwap.snapPoints[emptySlot].transform.position;
