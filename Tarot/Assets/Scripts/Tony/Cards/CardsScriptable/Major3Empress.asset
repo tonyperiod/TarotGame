@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Major3Empress
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
-  id: 0
+  artWork: {fileID: 21300000, guid: 02769087b3cc66e43945abe69dfadd42, type: 3}
+  id: 18
   databaseId: 0
   elem: earth
   value: 3
   court1: major
   court2: 
   slot: 0
-  isPlayer: 0
+  isPlayer: 1
   goldVal: 100

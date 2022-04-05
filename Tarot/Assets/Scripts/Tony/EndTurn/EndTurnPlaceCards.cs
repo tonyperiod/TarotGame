@@ -15,36 +15,37 @@ public class EndTurnPlaceCards : MonoBehaviour
 
         for (int i = 0; i < 6; i++)
         {
-          
-
- 
             //get data from here
             if (i < 3)
             {
                 cardReference.isplayer = true;
                 thisCard = PlayerInGameDeck.PickCard();
-                
+
             }
             else
             {
                 cardReference.isplayer = false;
                 thisCard = EnemyInGameDeck.PickCard();
             }
-            cardReference.cardData = thisCard;
+
+            //connect local change to global, before checking to maintain data on card
+            cardReference.isplayer = manager.cardPrefab.GetComponent<CardScriptReference>().isplayer;
 
             //checking for major arcana
             if (thisCard.court1 == "major")
+            {
                 ItMajor(cardReference.isplayer);
+            }
 
             //connect local change to global
-            cardReference.isplayer = manager.cardPrefab.GetComponent<CardScriptReference>().isplayer;
+            manager.cardPrefab.GetComponent<CardScriptReference>().cardData = thisCard;
             manager.cardPrefab.GetComponent<CardScriptReference>().slot = i;
 
             //finally instantiate
             Instantiate(manager.cardPrefab, manager.pos[i].transform.position, manager.pos[i].transform.rotation);
 
             //just to make sure it doesn't carry over
-            thisCard = null; 
+            thisCard = null;
         }
 
         manager.cardPrefab.tag = "Untagged";
@@ -64,13 +65,17 @@ public class EndTurnPlaceCards : MonoBehaviour
         }
         else
         {
+            cardReference.isplayer = false;
             slot = 10;
             manager.enemyMajorActivation = manager.playerMajorActivationMax;
         }
 
         //connect local change to global
-        cardReference.isplayer = manager.cardPrefab.GetComponent<CardScriptReference>().isplayer;
+        manager.cardPrefab.GetComponent<CardScriptReference>().cardData = thisCard;
         manager.cardPrefab.GetComponent<CardScriptReference>().slot = slot;
+
+        //deactivate draggable
+        manager.cardPrefab.GetComponent<Draggable>().enabled = false;
 
         //finally instantiate
         Instantiate(manager.cardPrefab, manager.pos[slot].transform.position, manager.pos[slot].transform.rotation);
@@ -84,5 +89,7 @@ public class EndTurnPlaceCards : MonoBehaviour
         {
             thisCard = EnemyInGameDeck.PickCard();
         }
+        Debug.Log("thisCardIs" + thisCard);       
+
     }
 }

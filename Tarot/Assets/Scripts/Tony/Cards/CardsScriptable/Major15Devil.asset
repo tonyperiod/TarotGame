@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Major15Devil
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
-  id: 0
+  artWork: {fileID: 21300000, guid: c4ea95d03fc43bd4fa58449a705d1154, type: 3}
+  id: 6
   databaseId: 0
   elem: earth
   value: 15
   court1: major
   court2: 
   slot: 0
-  isPlayer: 0
+  isPlayer: 1
   goldVal: 100

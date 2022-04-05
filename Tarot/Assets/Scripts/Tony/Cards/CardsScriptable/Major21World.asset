@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Major21World
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
+  artWork: {fileID: 21300000, guid: 0672738d045fa0146828712cb8936f8c, type: 3}
   id: 0
   databaseId: 0
   elem: earth
@@ -21,5 +21,5 @@ MonoBehaviour:
   court1: major
   court2: 
   slot: 0
-  isPlayer: 0
+  isPlayer: 1
   goldVal: 100

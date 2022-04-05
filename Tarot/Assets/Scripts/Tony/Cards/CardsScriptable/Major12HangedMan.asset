@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Major12HangedMan
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
-  id: 0
+  artWork: {fileID: 21300000, guid: a5d5aafdf04ea9b49b646671f7417644, type: 3}
+  id: 9
   databaseId: 0
   elem: water
   value: 12
   court1: major
   court2: 
   slot: 0
-  isPlayer: 0
+  isPlayer: 1
   goldVal: 100

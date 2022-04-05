@@ -6239,7 +6239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59b2e787c7d3cc40bdb5433aa9dcb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDatabase: {fileID: 11400000, guid: 6936a3e4a453c67438812ee07226af65, type: 2}
+  manager: {fileID: 1920384259}
+  playerDatabase: {fileID: 11400000, guid: 1a5323f0e67238a42bd6893ccba81f04, type: 2}
   currentPlayerDeckList: []
 --- !u!114 &1894156068
 MonoBehaviour:
@@ -6409,6 +6410,7 @@ MonoBehaviour:
   Past: {fileID: 1920384264}
   Present: {fileID: 1920384265}
   Future: {fileID: 1920384266}
+  Major: {fileID: 0}
   PastFuture: {fileID: 1920384267}
   draggable: {fileID: 910023615}
   vfxManager: {fileID: 162521118}
@@ -6421,6 +6423,10 @@ MonoBehaviour:
   - {fileID: 1903532163}
   - {fileID: 993949027}
   - {fileID: 1927093022}
+  - {fileID: 1863791086}
+  - {fileID: 1331042035}
+  - {fileID: 1244016584}
+  - {fileID: 1810727749}
   cardPrefab: {fileID: 910023614}
   Table: {fileID: 1260398121}
   slotsTaken: {fileID: 0}
@@ -6432,6 +6438,10 @@ MonoBehaviour:
   isEonFireFu: 0
   isPonFireFu: 0
   gameStart: 0
+  playerMajorActivation: 0
+  enemyMajorActivation: 0
+  playerMajorActivationMax: 4
+  enemyMajorActivationMax: 4
   Gamehandler: {fileID: 361368398}
   PSysMng: {fileID: 0}
   EsysMng: {fileID: 0}

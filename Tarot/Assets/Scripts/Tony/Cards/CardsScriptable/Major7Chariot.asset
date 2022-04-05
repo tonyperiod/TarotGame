@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Major7Chariot
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
-  id: 0
+  artWork: {fileID: 21300000, guid: 0f1256d99ec5eb043b1b6dcbbb520a31, type: 3}
+  id: 14
   databaseId: 0
   elem: water
   value: 7
   court1: major
   court2: 
   slot: 0
-  isPlayer: 0
+  isPlayer: 1
   goldVal: 100

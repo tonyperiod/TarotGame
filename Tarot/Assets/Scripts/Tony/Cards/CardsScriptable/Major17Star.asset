@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Major17Star
   m_EditorClassIdentifier: 
   Cardname: 
-  artWork: {fileID: 0}
-  id: 0
+  artWork: {fileID: 21300000, guid: 7d67953d3253a7c4a810e052ea9d39d7, type: 3}
+  id: 4
   databaseId: 0
   elem: water
   value: 17
   court1: major
   court2: 
   slot: 0
-  isPlayer: 0
+  isPlayer: 1
   goldVal: 100

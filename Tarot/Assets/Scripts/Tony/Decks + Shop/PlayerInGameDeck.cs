@@ -96,10 +96,22 @@ public class PlayerInGameDeck : MonoBehaviour
         else //just pick card and delete from list
         {
             ScriptableCard pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+
+            //check for major arcana when needed, and try to get another card in that case
+            if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
+            {
+                do
+                {
+                    pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+                }
+                while (pickedCard.court1 == "major");
+            }
+
+
             instance.currentPlayerDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
 
-            //check for major arcana
+            
 
 
             return pickedCard;
