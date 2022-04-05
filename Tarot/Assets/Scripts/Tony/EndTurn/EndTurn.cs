@@ -12,6 +12,7 @@ public class EndTurn : MonoBehaviour
     public Past Past;
     public Present Present;
     public Future Future;
+    public MajorArcana Major;
     public PastFuture PastFuture;
     public Draggable draggable;
     public VFXManager vfxManager;
@@ -40,6 +41,12 @@ public class EndTurn : MonoBehaviour
     //fix bug of the two placeholder cards in slot activating
     [HideInInspector]
     public bool gameStart;
+
+    //major arcana min turns between activations
+   /*[HideInInspector]*/ public int playerMajorActivation;
+    /*[HideInInspector]*/ public int enemyMajorActivation;
+    public int playerMajorActivationMax;
+    public int enemyMajorActivationMax;
 
     [Header ("game characters")]
     //hp system managers

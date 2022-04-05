@@ -116,7 +116,6 @@ public class Draggable : MonoBehaviour
 
     private void moveCard(int slotMoving)
     {
-        Debug.Log("movedcard");
         lastTurnCards = manager.lastTurnCards;
         //this changed from lasturncards.lenght to 3, do not care about the others cause they can't move
         for (int i = 0; i < 3; i++)
