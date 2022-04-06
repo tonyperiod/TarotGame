@@ -94,7 +94,6 @@ public class EndTurnPlaceCards : MonoBehaviour
         {
             thisCard = EnemyInGameDeck.PickCard();
         }
-        Debug.Log("thisCardIs" + thisCard);
 
     }
 }

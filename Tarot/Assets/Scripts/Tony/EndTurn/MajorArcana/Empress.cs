@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Empress : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] EndTurn manager;
+    PlayerSystemManager PSysMng;
+    EnemySystemManager EsysMng;
 
-    // Update is called once per frame
-    void Update()
+    //two different ones in case both players have it active at the same time
+    [SerializeField] int turnsActivatedP;
+    [SerializeField] int turnsActivatedE;
+
+
+    public void Activate(GameObject c, bool isPlayer)
     {
-        
+        //sys managers 
+        PlayerSystemManager PSysMng = manager.PSysMng;
+        EnemySystemManager EsysMng = manager.EsysMng;
+
+        if (isPlayer == true)
+        {
+            turnsActivatedP += 5;
+            PSysMng.HealSH(turnsActivatedP);
+        }
+        else
+        {
+            turnsActivatedE += 5;
+            EsysMng.HealSH(turnsActivatedE);
+        }
     }
 }

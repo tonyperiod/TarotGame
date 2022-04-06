@@ -1090,6 +1090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0951bcc636ea5489d0223e1bf9d818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
+  turnsActivatedP: 0
+  turnsActivatedE: 0
 --- !u!114 &273623106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7612,7 +7615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
   playerDatabase: {fileID: 11400000, guid: 1a5323f0e67238a42bd6893ccba81f04, type: 2}
-  currentPlayerDeckList: []
+  currentDeckList: []
 --- !u!114 &1894156068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7824,6 +7827,7 @@ MonoBehaviour:
   enemyMajorActivation: 0
   playerMajorActivationMax: 4
   enemyMajorActivationMax: 4
+  dummy: {fileID: 11400000, guid: 5c2ef96906d2c9b489ceb08e23b62373, type: 2}
   Gamehandler: {fileID: 361368398}
   PSysMng: {fileID: 0}
   EsysMng: {fileID: 0}
@@ -7837,7 +7841,7 @@ MonoBehaviour:
   EElemC: 
   PElemMaj: 
   EElemMaj: 
-  dySingle: 1
+  dySingle: 0.3
   dyTot: 0
 --- !u!114 &1920384260
 MonoBehaviour:

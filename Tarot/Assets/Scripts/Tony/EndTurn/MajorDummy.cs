@@ -10,9 +10,8 @@ public class MajorDummy : MonoBehaviour
     {
         manager.cardPrefab.tag = "Card";
 
-        //set to fire so that it won't trigger the card effects
-        manager.cardPrefab.GetComponent<CardScriptReference>().court1 = "dummy";
-        manager.cardPrefab.GetComponent<CardScriptReference>().elem = "dummy";
+        //set to dummy so that it won't trigger the card effects
+        manager.cardPrefab.GetComponent<CardScriptReference>().cardData = manager.dummy;
         manager.cardPrefab.GetComponent<CardScriptReference>().slot = slot;
 
         //instantiate in position slot, slot - 8 to use dummySlots effectivly

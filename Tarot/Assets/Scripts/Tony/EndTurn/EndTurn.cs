@@ -51,6 +51,9 @@ public class EndTurn : MonoBehaviour
     public int playerMajorActivationMax;
     public int enemyMajorActivationMax;
 
+    //dummy card
+    public ScriptableCard dummy;
+
     [Header ("game characters")]
     //hp system managers
     public GameObject Gamehandler;

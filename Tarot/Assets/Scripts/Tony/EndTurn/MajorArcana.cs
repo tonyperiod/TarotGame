@@ -34,8 +34,11 @@ public class MajorArcana : MonoBehaviour
         //activate subscripts
         switch (c.GetComponent<CardScriptReference>().value)
         {
-            case 0://fool
-                fool.Activate(isPlayer);
+            case 0:
+                fool.Activate(c, isPlayer);
+                break;
+            case 3:
+                empress.Activate(c, isPlayer);
                 break;
         }
     }
