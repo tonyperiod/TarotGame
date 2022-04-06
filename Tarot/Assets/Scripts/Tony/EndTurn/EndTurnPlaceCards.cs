@@ -55,6 +55,7 @@ public class EndTurnPlaceCards : MonoBehaviour
     //this runs then substitutes itself for the rest
     void ItMajor(bool isPlayer)
     {
+
         int slot;
         CardScriptReference cardReference = manager.cardPrefab.GetComponent<CardScriptReference>();
 
@@ -77,6 +78,9 @@ public class EndTurnPlaceCards : MonoBehaviour
         //deactivate draggable
         manager.cardPrefab.GetComponent<Draggable>().enabled = false;
 
+        //delete the dummy
+        manager.MajorDummy.Delete(slot);
+
         //finally instantiate
         Instantiate(manager.cardPrefab, manager.pos[slot].transform.position, manager.pos[slot].transform.rotation);
 
@@ -89,7 +93,7 @@ public class EndTurnPlaceCards : MonoBehaviour
         {
             thisCard = EnemyInGameDeck.PickCard();
         }
-        Debug.Log("thisCardIs" + thisCard);       
+        Debug.Log("thisCardIs" + thisCard);
 
     }
 }

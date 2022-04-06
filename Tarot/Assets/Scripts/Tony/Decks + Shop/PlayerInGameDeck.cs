@@ -16,7 +16,7 @@ public class PlayerInGameDeck : MonoBehaviour
 
     private float cardTot;
     private float cardCur;
-        
+
 
     public void CustomAwake()
     {
@@ -52,7 +52,7 @@ public class PlayerInGameDeck : MonoBehaviour
         {
             instance.currentPlayerDeckList.Add(GetCardByID(i));
         }
-        
+
         cardCur = cardTot;
 
         //set all cards to is player
@@ -86,13 +86,14 @@ public class PlayerInGameDeck : MonoBehaviour
                     pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
                 }
                 while (pickedCard.court1 == "major");
-            }           
+            }
 
             instance.currentPlayerDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
 
             return pickedCard;
         }
+
         else //just pick card and delete from list
         {
             ScriptableCard pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
@@ -111,12 +112,7 @@ public class PlayerInGameDeck : MonoBehaviour
             instance.currentPlayerDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
 
-            
-
-
             return pickedCard;
         }
     }
-
-
 }

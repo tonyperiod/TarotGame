@@ -28,6 +28,7 @@ public class EndTurnClick : MonoBehaviour
 
         manager.removecardeffects.remove();
         manager.placeCardsScript.place();
+        //if lastturncards is 13 all will work anyway, no worries it's only for draggable
         manager.cardeffects.get();//get all cards in array for draggable
     }
 }

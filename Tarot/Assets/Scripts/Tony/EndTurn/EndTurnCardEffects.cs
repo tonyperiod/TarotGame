@@ -13,7 +13,8 @@ public class EndTurnCardEffects : MonoBehaviour
         GameObject[] totalCards = GameObject.FindGameObjectsWithTag("Card"); //all cards
         lastTurnCards = totalCards;
         SelectionSort(lastTurnCards);
-        manager.lastTurnCards = lastTurnCards;                
+        manager.lastTurnCards = lastTurnCards;
+        Debug.Log(totalCards.Length + "totalcards");
     }
 
     public void activate()
@@ -21,40 +22,71 @@ public class EndTurnCardEffects : MonoBehaviour
         StartCoroutine("playEffects");
     }
 
-  IEnumerator playEffects()//to give delays between things
+    IEnumerator playEffects()//to give delays between things
     {
 
         BuffElement(lastTurnCards);
         CounterElement(lastTurnCards);
 
-        manager.vfxManager.Activate(lastTurnCards[0],0);
+        //MAJOR ARCANA---------------
+        if(manager.lastTurnCards[9].GetComponent<CardScriptReference>().court1 == "major") //check if there is a major arcana in play
+        {
+            //manager.vfxManager.Activate(lastTurnCards[9], 9);
+            yield return new WaitForSeconds(manager.dySingle);
+            manager.Major.major(lastTurnCards[9], true);
+        }
+
+        if (manager.lastTurnCards[8].GetComponent<CardScriptReference>().court1 == "major") //activate the card switch after to get a last activation in
+        {
+            //manager.vfxManager.Activate(lastTurnCards[8], 8);
+            yield return new WaitForSeconds(manager.dySingle);
+            manager.MajorSwitch.majorSwitch(lastTurnCards[8], true);
+        }
+
+        //repeat for enemy
+        if (manager.lastTurnCards[11].GetComponent<CardScriptReference>().court1 == "major") 
+        {
+            //manager.vfxManager.Activate(lastTurnCards[11], 11);
+            yield return new WaitForSeconds(manager.dySingle);
+            manager.Major.major(lastTurnCards[11], false);
+        }
+
+        if (manager.lastTurnCards[10].GetComponent<CardScriptReference>().court1 == "major") 
+        {
+            //manager.vfxManager.Activate(lastTurnCards[10], 10);
+            yield return new WaitForSeconds(manager.dySingle);
+            manager.MajorSwitch.majorSwitch(lastTurnCards[11], false);
+        }
+
+        //MINOR ARCANA-----------------------
+        manager.vfxManager.Activate(lastTurnCards[0], 0);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Past.past(lastTurnCards[0]);
 
-        manager.vfxManager.Activate(lastTurnCards[3],0);
+        manager.vfxManager.Activate(lastTurnCards[3], 0);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Past.past(lastTurnCards[3]);
-       
 
-        manager.vfxManager.Activate(lastTurnCards[1],1);
+
+        manager.vfxManager.Activate(lastTurnCards[1], 1);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Present.present(lastTurnCards[1]);
-     
 
-        manager.vfxManager.Activate(lastTurnCards[4],1);
+
+        manager.vfxManager.Activate(lastTurnCards[4], 1);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Present.present(lastTurnCards[4]);
-     
+
 
 
         if (manager.gameStart == false)
         {
-            manager.vfxManager.Activate(lastTurnCards[6],2);
+            manager.vfxManager.Activate(lastTurnCards[6], 2);
             yield return new WaitForSeconds(manager.dySingle);
             manager.PastFuture.pastfuture(lastTurnCards[6]);
 
 
-            manager.vfxManager.Activate(lastTurnCards[7],2);
+            manager.vfxManager.Activate(lastTurnCards[7], 2);
             yield return new WaitForSeconds(manager.dySingle);
             manager.PastFuture.pastfuture(lastTurnCards[7]);
 
@@ -67,12 +99,12 @@ public class EndTurnCardEffects : MonoBehaviour
             manager.gameStart = false;
         }
 
-        manager.vfxManager.Activate(lastTurnCards[2],3);
+        manager.vfxManager.Activate(lastTurnCards[2], 3);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Future.future(lastTurnCards[2]);
 
 
-        manager.vfxManager.Activate(lastTurnCards[5],3);
+        manager.vfxManager.Activate(lastTurnCards[5], 3);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Future.future(lastTurnCards[5]);
     }
@@ -114,7 +146,7 @@ public class EndTurnCardEffects : MonoBehaviour
         //these are slots 0-2
         for (int i = 0; i < 3; i++)
         {
-            if(list[i].gameObject.GetComponent<CardScriptReference>().elem == element)
+            if (list[i].gameObject.GetComponent<CardScriptReference>().elem == element)
             {
                 list[i].gameObject.GetComponent<CardScriptReference>().value += manager.elemBuff;
             }
@@ -163,6 +195,10 @@ public class EndTurnCardEffects : MonoBehaviour
             manager.EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court1;
             manager.EElemC = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court2;
         }
+
+        //set major counter
+        manager.PElemMaj = list[1].GetComponent<CardScriptReference>().elem;
+        manager.EElem = list[4].GetComponent<CardScriptReference>().elem;
     }
 
     //this is for testing purposes

@@ -13,6 +13,8 @@ public class EndTurn : MonoBehaviour
     public Present Present;
     public Future Future;
     public MajorArcana Major;
+    public MajorSwitch MajorSwitch;
+    public MajorDummy MajorDummy;
     public PastFuture PastFuture;
     public Draggable draggable;
     public VFXManager vfxManager;
@@ -21,6 +23,7 @@ public class EndTurn : MonoBehaviour
 
     //getting positioning right
     public GameObject[] pos;
+    public GameObject[] dummySlots;
     private int posRef;
 
     // card spawning
@@ -33,7 +36,7 @@ public class EndTurn : MonoBehaviour
     public SlotsTaken slotsTaken;
 
     //card effects
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject[] lastTurnCards;
     [HideInInspector]
     public bool isEonFirePa, isPonFirePa, isEonFirePr, isPonFirePr, isEonFireFu, isPonFireFu;
@@ -64,7 +67,7 @@ public class EndTurn : MonoBehaviour
     public CourtBuff courtbuff;
 
     [HideInInspector]
-    public string PElem, EElem, PElemC, EElemC;
+    public string PElem, EElem, PElemC, EElemC, PElemMaj, EElemMaj;
 
     [Header("delays")]
 

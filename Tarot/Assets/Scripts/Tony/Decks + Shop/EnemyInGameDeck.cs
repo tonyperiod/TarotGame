@@ -8,6 +8,8 @@ using System.Linq;
 
 public class EnemyInGameDeck : MonoBehaviour
 {
+    [SerializeField] EndTurn manager;
+
     public ScriptableCardDatabase enemyDatabase; //to slot in player database
     private static EnemyInGameDeck instance; //this database 
     public List<ScriptableCard> currentDeckList; //this Deck list
@@ -75,14 +77,37 @@ public class EnemyInGameDeck : MonoBehaviour
         {
             instance.NewDeck();
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+
+            //check for major arcana when needed, and try to get another card in that case
+            if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
+            {
+                do
+                {
+                    pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+                }
+                while (pickedCard.court1 == "major");
+            }
+
             instance.currentDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
+
             return pickedCard;
         }
 
         else //just pick card and delete from list
         {
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+
+            //check for major arcana when needed, and try to get another card in that case
+            if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
+            {
+                do
+                {
+                    pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+                }
+                while (pickedCard.court1 == "major");
+            }
+
             instance.currentDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
             return pickedCard;
