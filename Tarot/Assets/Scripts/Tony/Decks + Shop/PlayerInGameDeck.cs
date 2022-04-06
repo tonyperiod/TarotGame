@@ -12,7 +12,7 @@ public class PlayerInGameDeck : MonoBehaviour
 
     public ScriptableCardDatabase playerDatabase; //to slot in player database
     private static PlayerInGameDeck instance; //this database 
-    public List<ScriptableCard> currentPlayerDeckList; //this Deck list
+    public List<ScriptableCard> currentDeckList; //this Deck list
 
     private float cardTot;
     private float cardCur;
@@ -46,11 +46,11 @@ public class PlayerInGameDeck : MonoBehaviour
 
     public void NewDeck() //this pure jank is to load in all the cards to the in game deck
     {
-        instance.currentPlayerDeckList.Clear(); //empty out deck
+        instance.currentDeckList.Clear(); //empty out deck
 
         for (int i = 0; i < instance.playerDatabase.allCards.Count; i++) //add back in all the cards from the player owned database one by one
         {
-            instance.currentPlayerDeckList.Add(GetCardByID(i));
+            instance.currentDeckList.Add(GetCardByID(i));
         }
 
         cardCur = cardTot;
@@ -71,19 +71,19 @@ public class PlayerInGameDeck : MonoBehaviour
         {
             instance.NewDeck();
 
-            ScriptableCard pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+            ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
 
             //check for major arcana when needed, and try to get another card in that case
             if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
             {
                 do
                 {
-                    pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+                    pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
                 }
                 while (pickedCard.court1 == "major");
             }
 
-            instance.currentPlayerDeckList.Remove(pickedCard);
+            instance.currentDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
 
             return pickedCard;
@@ -91,16 +91,16 @@ public class PlayerInGameDeck : MonoBehaviour
 
         else //just pick card and delete from list
         {
-            ScriptableCard pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+            ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
             bool isThereNonMajor = false;
 
             //check for major arcana when needed, and try to get another card in that case
             if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
             {
                 //check if there are cards that aren't major in the deck, to prevent do while crash
-                for (int i = 0; i < instance.currentPlayerDeckList.Count; i++)
+                for (int i = 0; i < instance.currentDeckList.Count; i++)
                 {
-                    if (instance.currentPlayerDeckList[i].court1 != "major")
+                    if (instance.currentDeckList[i].court1 != "major")
                     {
                         isThereNonMajor = true;
                         break;
@@ -111,7 +111,7 @@ public class PlayerInGameDeck : MonoBehaviour
                 {
                     do
                     {
-                        pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+                        pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
                     }
                     while (pickedCard.court1 == "major");
                 }
@@ -120,22 +120,21 @@ public class PlayerInGameDeck : MonoBehaviour
                 else
                 {
                     instance.NewDeck();
-                    pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+                    pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
 
                     //check for major arcana when needed, and try to get another card in that case
                     if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
                     {
                         do
                         {
-                            pickedCard = instance.currentPlayerDeckList[Random.Range(0, instance.currentPlayerDeckList.Count())];
+                            pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
                         }
                         while (pickedCard.court1 == "major");
                     }
                 }
             }
 
-
-            instance.currentPlayerDeckList.Remove(pickedCard);
+            instance.currentDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
 
             return pickedCard;
