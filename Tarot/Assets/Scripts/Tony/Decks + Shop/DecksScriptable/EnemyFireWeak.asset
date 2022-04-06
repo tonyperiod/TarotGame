@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b97446169d4d2464eb2695e145adc508, type: 3}
-  m_Name: AATesterDatabase
+  m_Name: EnemyFireWeak
   m_EditorClassIdentifier: 
   allCards:
-  - {fileID: 11400000, guid: d39af464bd3ffb54cab8fb86206506f8, type: 2}
   - {fileID: 11400000, guid: c46b72a246b5071499e5a5be51fda2f9, type: 2}
   - {fileID: 11400000, guid: 43fc00794d18fba4cabae14019f211ff, type: 2}
   - {fileID: 11400000, guid: b152a7021e9de7543a4db98be6d71262, type: 2}
@@ -26,3 +25,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60251f1f66698034899ec63b6e3e1465, type: 2}
   - {fileID: 11400000, guid: 2e2fc9ce01ffc424ab146b6a27f90282, type: 2}
   - {fileID: 11400000, guid: b468c0bc006537f4d9ad272e8397f39f, type: 2}
+  - {fileID: 11400000, guid: db1fba19388e09e46912cb4cecf72466, type: 2}
+  - {fileID: 11400000, guid: 4e62b4d910917ee4bae3c4d7fe821918, type: 2}
+  - {fileID: 11400000, guid: 673eaccb7573b6e4faabf15a0c74ee81, type: 2}
+  - {fileID: 11400000, guid: eb592308d1e45ac4099bd853b0066397, type: 2}
+  - {fileID: 11400000, guid: 5d7506b5125d43c469ab1b800c3677c8, type: 2}
+  - {fileID: 11400000, guid: 08859edee1504b8488220875b772d5c8, type: 2}
+  - {fileID: 11400000, guid: 79ed8cbb3b3071c458853720d4d2e3ac, type: 2}

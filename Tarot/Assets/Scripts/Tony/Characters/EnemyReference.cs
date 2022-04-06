@@ -31,7 +31,7 @@ public class EnemyReference : MonoBehaviour
         //wantEnemyElement = "fire"; //FOR DEBUG PERPOSES ONLY---------------------
         //getOpponent(wantEnemyElement);
 
-        //get from interscript
+        //get from interscript, IF NOT USE EDITOR (for testing)
         if (InterScene.currentEnemy != null)
             chosenEnemy = InterScene.currentEnemy;
 

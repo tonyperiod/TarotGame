@@ -45,12 +45,6 @@ public class EnemyInGameDeck : MonoBehaviour
         }
 
         cardCur = cardTot;
-
-        //set all cards to is enemy
-        foreach (var Card in instance.currentDeckList)
-        {
-            Card.isPlayer = false;
-        }
     }
 
     //this is to re-assign all id values

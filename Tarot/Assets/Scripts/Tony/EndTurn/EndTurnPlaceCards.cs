@@ -85,6 +85,7 @@ public class EndTurnPlaceCards : MonoBehaviour
         Instantiate(manager.cardPrefab, manager.pos[slot].transform.position, manager.pos[slot].transform.rotation);
 
         //change the card back to something else
+        manager.cardPrefab.GetComponent<Draggable>().enabled = true;
         if (isPlayer == true)
         {
             thisCard = PlayerInGameDeck.PickCard();

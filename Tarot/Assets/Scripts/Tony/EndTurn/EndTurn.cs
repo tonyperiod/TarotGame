@@ -12,13 +12,13 @@ public class EndTurn : MonoBehaviour
     public Past Past;
     public Present Present;
     public Future Future;
-    public MajorArcana Major;
+    public MajorArcana Major;//PUT ALL THE SINGLE MAJOR ARCANA SCRIPT REFERENCES IN THIS
     public MajorSwitch MajorSwitch;
     public MajorDummy MajorDummy;
     public PastFuture PastFuture;
     public Draggable draggable;
     public VFXManager vfxManager;
-
+ 
     [Header ("card functioning")]
 
     //getting positioning right
