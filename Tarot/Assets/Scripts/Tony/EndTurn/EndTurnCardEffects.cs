@@ -30,7 +30,7 @@ public class EndTurnCardEffects : MonoBehaviour
         //MAJOR ARCANA---------------
         if (manager.lastTurnCards[9].GetComponent<CardScriptReference>().court1 == "major") //check if there is a major arcana in play
         {
-            Debug.Log("player major on");
+            //Debug.Log("player major on");
             //manager.vfxManager.Activate(lastTurnCards[9], 9);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Major.major(lastTurnCards[9], true);

@@ -39,7 +39,7 @@ public class EnemySystemManager : MonoBehaviour
     {
         int remainingSh;
         remainingSh = shsystem.getSH() - dmg;
-        Debug.Log("dmg" + dmg);
+        //Debug.Log("dmg" + dmg);
 
         if (remainingSh > 0)
         {

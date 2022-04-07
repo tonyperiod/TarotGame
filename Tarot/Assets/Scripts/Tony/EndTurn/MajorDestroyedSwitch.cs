@@ -45,7 +45,7 @@ public class MajorDestroyedSwitch : MonoBehaviour
                 break;
             case 4:
                 break;
-            case 5:
+            case 5://no saved vals on hiero
                 break;
             case 6:
                 break;
@@ -59,7 +59,7 @@ public class MajorDestroyedSwitch : MonoBehaviour
                 break;
             case 11:
                 break;
-            case 12:
+            case 12://no saved vals on hanged
                 break;
             case 13:
                 break;
