@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Empress : MonoBehaviour
+public class Temperance : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
     PlayerSystemManager PSysMng;
@@ -22,12 +22,21 @@ public class Empress : MonoBehaviour
         if (isPlayer == true)
         {
             turnsActivatedP += 5;
-            PSysMng.HealSH(turnsActivatedP);
+            EsysMng.TakeDamage(turnsActivatedP);
         }
         else
         {
             turnsActivatedE += 5;
-            EsysMng.HealSH(turnsActivatedE);
+            PSysMng.TakeDamage(turnsActivatedE);
         }
+    }
+
+    public void Destroyed(GameObject c, bool isPlayer)
+    {
+        //to make sure it works with 2 of same in scene
+        if (isPlayer == true)
+            turnsActivatedP = 0;
+        else
+            turnsActivatedE = 0;
     }
 }

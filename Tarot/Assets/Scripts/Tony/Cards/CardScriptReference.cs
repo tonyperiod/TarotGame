@@ -21,7 +21,7 @@ public class CardScriptReference : MonoBehaviour
 
     public int goldVal;
 
-    private SpriteRenderer spRend;
+    public SpriteRenderer spRend;
 
     //vfx
     public VisualEffect[] visualEffects;

@@ -23,8 +23,8 @@ public void Activate(GameObject c, bool isPlayer)
             //set array of pos
             int[] posTemp = { 3, 4, 5 };
             listPos.AddRange(posTemp);
-            slot = 9;
 
+            slot = 9;//for destroy
         }
         else
         {

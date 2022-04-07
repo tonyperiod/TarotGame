@@ -13,16 +13,11 @@ MonoBehaviour:
   m_Name: AATesterDatabase
   m_EditorClassIdentifier: 
   allCards:
-  - {fileID: 11400000, guid: d39af464bd3ffb54cab8fb86206506f8, type: 2}
-  - {fileID: 11400000, guid: c46b72a246b5071499e5a5be51fda2f9, type: 2}
   - {fileID: 11400000, guid: 43fc00794d18fba4cabae14019f211ff, type: 2}
   - {fileID: 11400000, guid: b152a7021e9de7543a4db98be6d71262, type: 2}
   - {fileID: 11400000, guid: cb0d72e987b4efe4d848950c862c39fd, type: 2}
-  - {fileID: 11400000, guid: bf02e283fd2c2c4408bd634a48e5d10b, type: 2}
-  - {fileID: 11400000, guid: 54f9bd5ed6f0a7f4e848422d8d9cd3d0, type: 2}
   - {fileID: 11400000, guid: 2b5dbcc6de1b23b468424e3664eb161a, type: 2}
   - {fileID: 11400000, guid: 59a1e45662433524c88c686393d07446, type: 2}
-  - {fileID: 11400000, guid: a6e55735956036b4db97aba9d918bac1, type: 2}
-  - {fileID: 11400000, guid: 60251f1f66698034899ec63b6e3e1465, type: 2}
   - {fileID: 11400000, guid: 2e2fc9ce01ffc424ab146b6a27f90282, type: 2}
   - {fileID: 11400000, guid: b468c0bc006537f4d9ad272e8397f39f, type: 2}
+  - {fileID: 11400000, guid: e94851f33888c904c97a16a0294d5af4, type: 2}

@@ -24,4 +24,12 @@ public class MajorDummy : MonoBehaviour
     {
         GameObject.Destroy(manager.lastTurnCards[slot]);
     }
+
+    //to deactivate a certain card
+    public void Substitute (int slot)
+    {
+        manager.lastTurnCards[slot].GetComponent<CardScriptReference>().elem = "dummy";
+        manager.lastTurnCards[slot].GetComponent<CardScriptReference>().spRend.sprite = manager.dummy.artWork;
+        manager.lastTurnCards[slot].GetComponent<CardScriptReference>().court1 = "dummy";
+    }
 }

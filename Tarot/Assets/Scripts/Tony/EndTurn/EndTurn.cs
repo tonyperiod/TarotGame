@@ -15,6 +15,7 @@ public class EndTurn : MonoBehaviour
     public MajorArcana Major;//PUT ALL THE SINGLE MAJOR ARCANA SCRIPT REFERENCES IN THIS
     public MajorSwitch MajorSwitch;
     public MajorDummy MajorDummy;
+    public MajorDestroyedSwitch MajorDestroy;
     public PastFuture PastFuture;
     public Draggable draggable;
     public VFXManager vfxManager;

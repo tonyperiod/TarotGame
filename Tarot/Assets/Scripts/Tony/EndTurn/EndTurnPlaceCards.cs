@@ -66,7 +66,6 @@ public class EndTurnPlaceCards : MonoBehaviour
         }
         else
         {
-            cardReference.isplayer = false;
             slot = 10;
             manager.enemyMajorActivation = manager.playerMajorActivationMax;
         }
@@ -74,6 +73,7 @@ public class EndTurnPlaceCards : MonoBehaviour
         //connect local change to global
         manager.cardPrefab.GetComponent<CardScriptReference>().cardData = thisCard;
         manager.cardPrefab.GetComponent<CardScriptReference>().slot = slot;
+        manager.cardPrefab.GetComponent<CardScriptReference>().isplayer = isPlayer;
 
         //deactivate draggable
         manager.cardPrefab.GetComponent<Draggable>().enabled = false;

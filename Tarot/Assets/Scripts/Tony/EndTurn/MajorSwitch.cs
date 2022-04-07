@@ -7,7 +7,7 @@ public class MajorSwitch : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
 
-public void majorSwitch(GameObject c, bool isPlayer)
+    public void majorSwitch(GameObject c, bool isPlayer)
     {
         int slot;//slot to move to
 
@@ -16,8 +16,11 @@ public void majorSwitch(GameObject c, bool isPlayer)
         else
             slot = 11;
 
-        //delete dummy in activated arcana
-        manager.MajorDummy.Delete(slot);
+
+        //destroy dummy/major arcana in that location, and trigger majordestroy if it is
+        if (manager.lastTurnCards[slot].GetComponent<CardScriptReference>().court1 == "major")
+            manager.MajorDestroy.Destroy(c, isPlayer);
+        GameObject.Destroy(manager.lastTurnCards[slot]);
 
         //move into position
         c.transform.position = manager.pos[slot].transform.position;
