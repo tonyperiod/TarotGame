@@ -27,27 +27,6 @@ public class PastFuture : MonoBehaviour
         string EElemC = manager.EElemC;
 
 
-        //string PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().wlwm;
-        //string EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().wlwm;
-
-        ////court second element for countering elements
-        //string PElemC = "null";
-        //string EElemC = "null";
-
-        ////court card double elemental
-        //if (PElem == "court")
-        //{
-        //    PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court1;
-        //    PElemC = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court2;
-        //}
-
-        //if (EElem == "court")
-        //{
-        //    EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court1;
-        //    EElemC = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court2;
-        //}
-
-
         switch (c.GetComponent<CardScriptReference>().elem)
         {
             case "fire":

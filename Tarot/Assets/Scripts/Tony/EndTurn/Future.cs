@@ -14,11 +14,15 @@ public class Future : MonoBehaviour
             case 2:
                 manager.slotsTaken.snapPointTaken[2] = false;
                 c.transform.position = manager.pos[6].transform.position;
+                c.transform.localScale = manager.pos[6].transform.localScale;
+                c.transform.rotation = manager.pos[6].transform.rotation;
                 c.GetComponent<CardScriptReference>().slot = 6;
                 break;
 
             case 5:
                 c.transform.position = manager.pos[7].transform.position;
+                c.transform.localScale = manager.pos[7].transform.localScale;
+                c.transform.rotation = manager.pos[7].transform.rotation;
                 c.GetComponent<CardScriptReference>().slot = 7;
                 break;
         }

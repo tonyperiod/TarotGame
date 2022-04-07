@@ -30,15 +30,15 @@ public class EndTurnCardEffects : MonoBehaviour
         //MAJOR ARCANA---------------
         if (manager.lastTurnCards[9].GetComponent<CardScriptReference>().court1 == "major") //check if there is a major arcana in play
         {
-            //Debug.Log("player major on");
             //manager.vfxManager.Activate(lastTurnCards[9], 9);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Major.major(lastTurnCards[9], true);
+            yield return new WaitForSeconds(manager.dyMajP);
+            //split in two to make sure spawners have time...?
         }
 
         if (manager.lastTurnCards[8].GetComponent<CardScriptReference>().court1 == "major") //activate the card switch after to get a last activation in
         {
-
             //manager.vfxManager.Activate(lastTurnCards[8], 8);
             yield return new WaitForSeconds(manager.dySingle);
             manager.MajorSwitch.majorSwitch(lastTurnCards[8], true);
@@ -47,17 +47,19 @@ public class EndTurnCardEffects : MonoBehaviour
         //repeat for enemy
         if (manager.lastTurnCards[11].GetComponent<CardScriptReference>().court1 == "major")
         {
-            Debug.Log("enemy major on");
+            manager.cardToCentre.centre(manager.lastTurnCards[11]);
             //manager.vfxManager.Activate(lastTurnCards[11], 11);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Major.major(lastTurnCards[11], false);
+            yield return new WaitForSeconds(manager.dyMajE);
         }
 
         if (manager.lastTurnCards[10].GetComponent<CardScriptReference>().court1 == "major")
         {
+            manager.cardToCentre.centre(manager.lastTurnCards[10]);
             //manager.vfxManager.Activate(lastTurnCards[10], 10);
             yield return new WaitForSeconds(manager.dySingle);
-            manager.MajorSwitch.majorSwitch(lastTurnCards[11], false);
+            manager.MajorSwitch.majorSwitch(lastTurnCards[10], false);
         }
 
 
@@ -70,8 +72,9 @@ public class EndTurnCardEffects : MonoBehaviour
         }
         else
             GameObject.Destroy(lastTurnCards[0]);//if there are dummies they can't stay
-                if (lastTurnCards[3].GetComponent<CardScriptReference>().elem != "dummy")
+        if (lastTurnCards[3].GetComponent<CardScriptReference>().elem != "dummy")
         {
+            manager.cardToCentre.centre(manager.lastTurnCards[3]);
             manager.vfxManager.Activate(lastTurnCards[3], 0);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Past.past(lastTurnCards[3]);
@@ -91,6 +94,7 @@ public class EndTurnCardEffects : MonoBehaviour
 
         if (lastTurnCards[4].GetComponent<CardScriptReference>().elem != "dummy")
         {
+            manager.cardToCentre.centre(manager.lastTurnCards[4]);
             manager.vfxManager.Activate(lastTurnCards[4], 1);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Present.present(lastTurnCards[4]);
@@ -121,6 +125,7 @@ public class EndTurnCardEffects : MonoBehaviour
         {
             if (manager.gameStart == false)
             {
+                manager.cardToCentre.centre(manager.lastTurnCards[7]);
                 manager.vfxManager.Activate(lastTurnCards[7], 2);
                 yield return new WaitForSeconds(manager.dySingle);
                 manager.PastFuture.pastfuture(lastTurnCards[7]);
@@ -146,12 +151,19 @@ public class EndTurnCardEffects : MonoBehaviour
 
         if (lastTurnCards[5].GetComponent<CardScriptReference>().elem != "dummy")
         {
+            manager.cardToCentre.centre(manager.lastTurnCards[5]);
             manager.vfxManager.Activate(lastTurnCards[5], 3);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Future.future(lastTurnCards[5]);
         }
         else
             GameObject.Destroy(lastTurnCards[5]);
+
+
+
+        //reset dyMaj to prevent issues
+        manager.dyMajP = 0;
+        manager.dyMajE = 0;
     }
 
 
@@ -242,7 +254,7 @@ public class EndTurnCardEffects : MonoBehaviour
 
         //set major counter
         manager.PElemMaj = list[1].GetComponent<CardScriptReference>().elem;
-        manager.EElem = list[4].GetComponent<CardScriptReference>().elem;
+        manager.EElemMaj = list[4].GetComponent<CardScriptReference>().elem;
     }
 
     //this is for testing purposes

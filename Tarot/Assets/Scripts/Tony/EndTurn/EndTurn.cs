@@ -9,6 +9,7 @@ public class EndTurn : MonoBehaviour
     public EndTurnPlaceCards placeCardsScript;
     public EndTurnCardEffects cardeffects;
     public EndTurnRemoveCardEffects removecardeffects;
+    public EndTurnCardToCentre cardToCentre;
     public Past Past;
     public Present Present;
     public Future Future;
@@ -26,6 +27,7 @@ public class EndTurn : MonoBehaviour
     public GameObject[] pos;
     public GameObject[] dummySlots;
     private int posRef;
+    public GameObject[] centrePos;
 
     // card spawning
     public GameObject cardPrefab;
@@ -79,4 +81,6 @@ public class EndTurn : MonoBehaviour
 
     public float dySingle;
     public float dyTot;
+    public float dyMajP;
+    public float dyMajE;
 }

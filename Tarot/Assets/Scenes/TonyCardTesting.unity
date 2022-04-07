@@ -929,6 +929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  waterSpawned: {fileID: 11400000, guid: 124a5343df359244083fa3c50f27154b, type: 2}
 --- !u!114 &273623092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,6 +1062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  waterSpawned: {fileID: 11400000, guid: f001711e115c22b44b762af41ec570f4, type: 2}
 --- !u!114 &273623102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,7 +1865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &349989341
 Transform:
   m_ObjectHideFlags: 0
@@ -1876,7 +1878,7 @@ Transform:
   m_LocalScale: {x: 0.09463202, y: 0.105022535, z: 0.4064095}
   m_Children: []
   m_Father: {fileID: 1507164722}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -45, y: 90, z: 0}
 --- !u!212 &349989342
 SpriteRenderer:
@@ -1885,7 +1887,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349989340}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3523,7 +3525,7 @@ GameObject:
   - component: {fileID: 746618553}
   - component: {fileID: 746618554}
   m_Layer: 0
-  m_Name: LeftCentre
+  m_Name: RightCentre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4453,7 +4455,7 @@ Transform:
   m_GameObject: {fileID: 993949027}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0.05012042, y: 0.671, z: 0.3629}
-  m_LocalScale: {x: 0.01, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1260398125}
   m_RootOrder: 6
@@ -5069,7 +5071,7 @@ Transform:
   m_LocalScale: {x: 0.09463202, y: 0.105022535, z: 0.4064095}
   m_Children: []
   m_Father: {fileID: 1507164722}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -45, y: 90, z: 0}
 --- !u!212 &1161978945
 SpriteRenderer:
@@ -6690,8 +6692,8 @@ Transform:
   m_LocalPosition: {x: -4.23444, y: 4.6250067, z: -2.9671192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1161978944}
   - {fileID: 349989341}
+  - {fileID: 1161978944}
   - {fileID: 746618553}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -7961,6 +7963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920384263}
   - component: {fileID: 1920384259}
+  - component: {fileID: 1920384273}
   - component: {fileID: 1920384272}
   - component: {fileID: 1920384269}
   - component: {fileID: 1920384271}
@@ -8009,6 +8012,7 @@ MonoBehaviour:
   placeCardsScript: {fileID: 1920384258}
   cardeffects: {fileID: 1920384260}
   removecardeffects: {fileID: 1920384261}
+  cardToCentre: {fileID: 1920384273}
   Past: {fileID: 1920384264}
   Present: {fileID: 1920384265}
   Future: {fileID: 1920384266}
@@ -8037,6 +8041,10 @@ MonoBehaviour:
   - {fileID: 575103544}
   - {fileID: 662806254}
   - {fileID: 415505575}
+  centrePos:
+  - {fileID: 349989340}
+  - {fileID: 1161978943}
+  - {fileID: 746618552}
   cardPrefab: {fileID: 910023614}
   Table: {fileID: 1260398121}
   slotsTaken: {fileID: 0}
@@ -8282,6 +8290,19 @@ MonoBehaviour:
   sun: {fileID: 273623089}
   judgement: {fileID: 273623088}
   world: {fileID: 273623087}
+--- !u!114 &1920384273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920384257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fc25366c29fdf4e989c8f6f16ba698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1920384259}
 --- !u!1 &1920697909
 GameObject:
   m_ObjectHideFlags: 0
@@ -8391,7 +8412,7 @@ Transform:
   m_GameObject: {fileID: 1927093022}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -0.05012042, y: 0.671, z: -0.3685}
-  m_LocalScale: {x: 0.0095999995, y: 0.019199999, z: 0.019199999}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1260398125}
   m_RootOrder: 7
