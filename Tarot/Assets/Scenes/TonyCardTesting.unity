@@ -888,6 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  judgementCards: []
 --- !u!114 &273623089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eadf67994d799f439581bd0bee0206c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 1920384259}
 --- !u!114 &273623093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,6 +1064,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
   waterSpawned: {fileID: 11400000, guid: f001711e115c22b44b762af41ec570f4, type: 2}
+  chariotCard: []
+  positionP: 0
 --- !u!114 &273623102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,6 +1146,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  choice:
+  - {fileID: 11400000, guid: 7a53c541e7b22cc459063f4160d45677, type: 2}
+  - {fileID: 11400000, guid: 7d8fc5dc6a0536a4f968941bd7062f8e, type: 2}
+  - {fileID: 11400000, guid: 3d95d2a0006cef94aa2be555491f3a0f, type: 2}
+  - {fileID: 11400000, guid: f001711e115c22b44b762af41ec570f4, type: 2}
 --- !u!114 &273623108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1981,6 +1989,8 @@ MonoBehaviour:
   reference: {fileID: 1587274733}
   Bar: {fileID: 375811051}
   dead: {fileID: 361368402}
+  isLovers: 0
+  isHermit: 0
 --- !u!114 &361368401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +2006,8 @@ MonoBehaviour:
   reference: {fileID: 1253074337}
   Bar: {fileID: 323874502}
   win: {fileID: 361368403}
+  isLovers: 0
+  isHermit: 0
 --- !u!114 &361368402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8076,6 +8088,8 @@ MonoBehaviour:
   EElemMaj: 
   dySingle: 0.1
   dyTot: 0
+  dyMajP: 0
+  dyMajE: 0
 --- !u!114 &1920384260
 MonoBehaviour:
   m_ObjectHideFlags: 0

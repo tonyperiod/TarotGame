@@ -143,8 +143,9 @@ public class EndTurnCardEffects : MonoBehaviour
         if (lastTurnCards[2].GetComponent<CardScriptReference>().elem != "dummy")
         {
             manager.vfxManager.Activate(lastTurnCards[2], 3);
-            yield return new WaitForSeconds(manager.dySingle);
+            yield return new WaitForSeconds(manager.dySingle/2);
             manager.Future.future(lastTurnCards[2]);
+            yield return new WaitForSeconds(manager.dySingle / 2);
         }
         else
             GameObject.Destroy(lastTurnCards[2]);
@@ -153,8 +154,9 @@ public class EndTurnCardEffects : MonoBehaviour
         {
             manager.cardToCentre.centre(manager.lastTurnCards[5]);
             manager.vfxManager.Activate(lastTurnCards[5], 3);
-            yield return new WaitForSeconds(manager.dySingle);
+            yield return new WaitForSeconds(manager.dySingle / 2);
             manager.Future.future(lastTurnCards[5]);
+            yield return new WaitForSeconds(manager.dySingle / 2);
         }
         else
             GameObject.Destroy(lastTurnCards[5]);

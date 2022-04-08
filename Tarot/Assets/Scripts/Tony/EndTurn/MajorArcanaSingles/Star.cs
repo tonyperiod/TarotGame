@@ -7,17 +7,21 @@ public class Star : MonoBehaviour
     [SerializeField] EndTurn manager;
 
     public ScriptableCard waterSpawned;//they're all water 8s
-    [SerializeField] GameObject[] starCards; //the cards this script generates
+    GameObject[] starCards; //the cards this script generates
+
+    bool isBuffed;
+
 
     public void Activate(GameObject c, bool isPlayer)
     {
         starCards = new GameObject[3];//set starcards as a 3 element array, clearing old one
+        isBuffed = false;
 
         if (isPlayer)
         {
             //card elemental buff
             if (manager.PRef.element == "water")
-                manager.cardPrefab.GetComponent<CardScriptReference>().value += manager.elemBuff;
+                isBuffed = true;
 
             //counter enemy elem
             if (manager.lastTurnCards[7].GetComponent<CardScriptReference>().elem == "fire")
@@ -29,7 +33,7 @@ public class Star : MonoBehaviour
         {
             //card elemental buff
             if (manager.ERef.element == "water")
-                manager.cardPrefab.GetComponent<CardScriptReference>().value += manager.elemBuff;
+                isBuffed = true;
 
             //counter player elem
             if (manager.lastTurnCards[6].GetComponent<CardScriptReference>().elem == "fire")
@@ -48,7 +52,16 @@ public class Star : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             starCards[i] = Instantiate(manager.cardPrefab, manager.centrePos[i].transform.position, manager.centrePos[i].transform.rotation);
+
+            //elem buff
+            if (isBuffed == true)
+                manager.cardPrefab.GetComponent<CardScriptReference>().value += manager.elemBuff;
         }
+
+
+
+
+        //reset scale
         manager.cardPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);//reset to normal scale
 
         //activate cards with dysing/3

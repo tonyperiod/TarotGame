@@ -48,6 +48,7 @@ public class EndTurn : MonoBehaviour
     [HideInInspector]
     public bool gameStart;
 
+    //MAJOR ARCANA STUFF--------------------------------------------------------------------------------------------------
     //major arcana min turns between activations
    /*[HideInInspector]*/ public int playerMajorActivation;
     /*[HideInInspector]*/ public int enemyMajorActivation;
@@ -56,6 +57,9 @@ public class EndTurn : MonoBehaviour
 
     //dummy card
     public ScriptableCard dummy;
+    [HideInInspector] public bool isHighP;
+    [HideInInspector] public bool isHighE;
+
 
     [Header ("game characters")]
     //hp system managers
@@ -83,4 +87,6 @@ public class EndTurn : MonoBehaviour
     public float dyTot;
     public float dyMajP;
     public float dyMajE;
+
+  
 }

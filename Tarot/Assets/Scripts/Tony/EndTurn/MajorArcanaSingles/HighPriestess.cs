@@ -10,4 +10,9 @@ public class HighPriestess : MonoBehaviour
     {
 
     }
+
+    public void Destroyed(GameObject c, bool isPlayer)
+    {
+        //remove bool of player
+    }
 }

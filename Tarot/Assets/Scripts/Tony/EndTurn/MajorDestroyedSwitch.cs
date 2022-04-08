@@ -47,13 +47,15 @@ public class MajorDestroyedSwitch : MonoBehaviour
                 break;
             case 5://no saved vals on hiero
                 break;
-            case 6:
+            case 6://lovers
+                lovers.Destroyed(c, isPlayer);
                 break;
             case 7:
                 break;
             case 8:
                 break;
             case 9:
+                hermit.Destroyed(c, isPlayer);
                 break;
             case 10:
                 break;

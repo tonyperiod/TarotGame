@@ -10,19 +10,19 @@ public class Chariot : MonoBehaviour
     [SerializeField] GameObject[] chariotCard;//the one card that it spawns
     [SerializeField] int positionP;//what position it currently is in
     int positionE;
-
+    bool isBuffed; //to buff same element
 
 
     public void Activate(GameObject c, bool isPlayer)
     {
         chariotCard = new GameObject[1];
         int posInstance = 0;
-
+        isBuffed = false;
         if (isPlayer)
         {
             //card elemental buff
             if (manager.PRef.element == "water")
-                manager.cardPrefab.GetComponent<CardScriptReference>().value += manager.elemBuff;
+                isBuffed = true;
 
             //counter enemy elem -> only if past
             if (manager.lastTurnCards[7].GetComponent<CardScriptReference>().elem == "fire" && positionP == 0)
@@ -43,7 +43,7 @@ public class Chariot : MonoBehaviour
         {
             //card elemental buff
             if (manager.ERef.element == "water")
-                manager.cardPrefab.GetComponent<CardScriptReference>().value += manager.elemBuff;
+                isBuffed = true;
 
             //counter player elem -> only if past
             if (manager.lastTurnCards[6].GetComponent<CardScriptReference>().elem == "fire" && positionE == 0)
@@ -64,15 +64,14 @@ public class Chariot : MonoBehaviour
         manager.cardPrefab.GetComponent<CardScriptReference>().cardData = waterSpawned;
         manager.cardPrefab.GetComponent<CardScriptReference>().isplayer = isPlayer;
 
-        ////move card into position, spawning was bugging        
-        //chariotCard[0] = manager.cardPrefab;
-        //chariotCard[0].transform.position = manager.centrePos[posInstance].transform.position;
-        //chariotCard[0].transform.rotation = manager.centrePos[posInstance].transform.rotation;
-        //chariotCard[0].transform.localScale = manager.centrePos[0].transform.localScale; //centre pos is scaled differently
-
         manager.cardPrefab.transform.localScale = manager.centrePos[0].transform.localScale; //centre pos is scaled differently
 
         chariotCard[0] = Instantiate(manager.cardPrefab, manager.centrePos[posInstance].transform.position, manager.centrePos[posInstance].transform.rotation);
+
+        //elem buff
+        if (isBuffed == true)
+            chariotCard[0].GetComponent<CardScriptReference>().value += manager.elemBuff;
+
         manager.cardPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);//reset to normal scale
 
         switch (posInstance)
@@ -87,22 +86,6 @@ public class Chariot : MonoBehaviour
                 StartCoroutine("pastfuture");
                 break;
         }
-
-
-        //switch (posInstance)//logic only
-        //{
-        //    case 0:
-        //        manager.Past.past(chariotCard[0]);
-        //        break;
-        //    case 1:
-        //        manager.Present.present(chariotCard[0]);
-        //        break;
-        //    case 2:
-        //        manager.PastFuture.pastfuture(chariotCard[0]);
-        //        break;
-
-        //}
-
     }
 
     IEnumerator past()
