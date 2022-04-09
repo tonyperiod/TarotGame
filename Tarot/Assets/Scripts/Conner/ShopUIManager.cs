@@ -21,16 +21,12 @@ public class ShopUIManager : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
             Debug.Log("Right Mouse Clicked");
             gameObject.SetActive(true);
             gameObject.transform.position = new Vector3(950f, 500f, 0f);
 
             gameObject.transform.GetChild(0).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().elem + " Card";
             gameObject.transform.GetChild(1).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().value.ToString();
-
-        }
 
     }
 
