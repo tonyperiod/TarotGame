@@ -14,8 +14,13 @@ public class MajorDummy : MonoBehaviour
         manager.cardPrefab.GetComponent<CardScriptReference>().cardData = manager.dummy;
         manager.cardPrefab.GetComponent<CardScriptReference>().slot = slot;
 
+        //to fix bugs when creating for non major cards
+        int instanceSlot = slot - 8;
+        if (instanceSlot < 0)
+            instanceSlot = 0;
+
         //instantiate in position slot, slot - 8 to use dummySlots effectivly
-        Instantiate(manager.cardPrefab, manager.dummySlots[slot-8].transform.position, manager.dummySlots[slot-8].transform.rotation);
+        Instantiate(manager.cardPrefab, manager.dummySlots[instanceSlot].transform.position, manager.dummySlots[instanceSlot].transform.rotation);
 
         manager.cardPrefab.tag = "Untagged";
     }

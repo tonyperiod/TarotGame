@@ -123,6 +123,7 @@ public class EndTurnCardEffects : MonoBehaviour
 
         if (lastTurnCards[7].GetComponent<CardScriptReference>().elem != "dummy")
         {
+            
             if (manager.gameStart == false)
             {
                 manager.cardToCentre.centre(manager.lastTurnCards[7]);
@@ -142,10 +143,25 @@ public class EndTurnCardEffects : MonoBehaviour
 
         if (lastTurnCards[2].GetComponent<CardScriptReference>().elem != "dummy")
         {
-            manager.vfxManager.Activate(lastTurnCards[2], 3);
-            yield return new WaitForSeconds(manager.dySingle/2);
-            manager.Future.future(lastTurnCards[2]);
-            yield return new WaitForSeconds(manager.dySingle / 2);
+            if (manager.isWorldP == false)
+            {
+                manager.vfxManager.Activate(lastTurnCards[2], 3);
+                yield return new WaitForSeconds(manager.dySingle / 2);
+                manager.Future.future(lastTurnCards[2]);
+                yield return new WaitForSeconds(manager.dySingle / 2);
+            }
+            //world activation
+            else
+            {
+
+
+                manager.vfxManager.Activate(lastTurnCards[2], 2);
+                yield return new WaitForSeconds(manager.dySingle);
+                manager.PastFuture.pastfuture(lastTurnCards[2]);
+
+                //need to create dummy to not have less cards in game
+                manager.MajorDummy.Create(6);
+            }
         }
         else
             GameObject.Destroy(lastTurnCards[2]);
@@ -153,10 +169,23 @@ public class EndTurnCardEffects : MonoBehaviour
         if (lastTurnCards[5].GetComponent<CardScriptReference>().elem != "dummy")
         {
             manager.cardToCentre.centre(manager.lastTurnCards[5]);
-            manager.vfxManager.Activate(lastTurnCards[5], 3);
-            yield return new WaitForSeconds(manager.dySingle / 2);
-            manager.Future.future(lastTurnCards[5]);
-            yield return new WaitForSeconds(manager.dySingle / 2);
+            
+            if (manager.isWorldE == false)
+            {
+                manager.vfxManager.Activate(lastTurnCards[5], 3);
+                yield return new WaitForSeconds(manager.dySingle / 2);
+                manager.Future.future(lastTurnCards[5]);
+                yield return new WaitForSeconds(manager.dySingle / 2);
+            }
+            else
+            {
+                manager.vfxManager.Activate(lastTurnCards[5], 2);
+                yield return new WaitForSeconds(manager.dySingle);
+                manager.PastFuture.pastfuture(lastTurnCards[5]);
+
+                manager.MajorDummy.Create(7);
+            }
+
         }
         else
             GameObject.Destroy(lastTurnCards[5]);

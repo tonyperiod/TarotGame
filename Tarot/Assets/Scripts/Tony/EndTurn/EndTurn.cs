@@ -59,6 +59,8 @@ public class EndTurn : MonoBehaviour
     public ScriptableCard dummy;
     [HideInInspector] public bool isHighP;
     [HideInInspector] public bool isHighE;
+    [HideInInspector] public bool isWorldP;//in cardeffects
+    [HideInInspector] public bool isWorldE;
 
 
     [Header ("game characters")]

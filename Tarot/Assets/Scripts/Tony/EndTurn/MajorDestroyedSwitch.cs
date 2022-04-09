@@ -39,6 +39,7 @@ public class MajorDestroyedSwitch : MonoBehaviour
             case 1:
                 break;
             case 2:
+                highPriestess.Destroyed(c, isPlayer);
                 break;
             case 3:
                 empress.Destroyed(c, isPlayer);
@@ -82,6 +83,7 @@ public class MajorDestroyedSwitch : MonoBehaviour
             case 20:
                 break;
             case 21:
+                world.Destroyed(c, isPlayer);
                 break;
         }
     }
