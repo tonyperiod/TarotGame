@@ -1338,7 +1338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BENEFITS\n\n\n\n\nChosing this character will add \ntwice damage to health."
+  m_Text: "BUFFS\n\n\n\n\nChosing this character will add \ntwice damage to health."
 --- !u!222 &661976619
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1964,7 +1964,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BENEFITS\n\n\n\n\nChosing this character will add \ntwice damage to health."
+  m_Text: "BUFFS\n\n\n\n\nChosing this character will add \ntwice damage to health."
 --- !u!222 &1102305027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2330,7 +2330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BENEFITS
+  m_Text: 'BUFFS
 
 
 
@@ -2756,7 +2756,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BENEFITS\n\n\n\n\nChosing this character will add \ntwice damage to health."
+  m_Text: "BUFFS\n\n\n\n\nChosing this character will add \ntwice damage to health."
 --- !u!222 &1720005430
 CanvasRenderer:
   m_ObjectHideFlags: 0
