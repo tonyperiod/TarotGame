@@ -13,7 +13,7 @@ public class ShopUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -26,11 +26,12 @@ public class ShopUIManager : MonoBehaviour
     {
             Debug.Log("Right Mouse Clicked");
             gameObject.SetActive(true);
-            gameObject.transform.position = new Vector3(100f, 200f, 0f);
+            gameObject.transform.position = new Vector3(100f, 300f, 0f);
 
             element = gameObject.transform.GetChild(1).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().elem;
             damage = gameObject.transform.GetChild(3).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().value.ToString();
             cardname = gameObject.transform.GetChild(4).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().Cardname;
+            
     }
 
     private void OnMouseExit()
