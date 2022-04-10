@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ShopUIManager : MonoBehaviour
 {
     public GameObject gameObject;
+    string element;
+    string damage;
+    string cardname;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,11 @@ public class ShopUIManager : MonoBehaviour
     {
             Debug.Log("Right Mouse Clicked");
             gameObject.SetActive(true);
-            gameObject.transform.position = new Vector3(950f, 500f, 0f);
+            gameObject.transform.position = new Vector3(100f, 200f, 0f);
 
-            gameObject.transform.GetChild(0).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().elem + " Card";
-            gameObject.transform.GetChild(1).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().value.ToString();
-
+            element = gameObject.transform.GetChild(1).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().elem;
+            damage = gameObject.transform.GetChild(3).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().value.ToString();
+            cardname = gameObject.transform.GetChild(4).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().Cardname;
     }
 
     private void OnMouseExit()
