@@ -31,15 +31,6 @@ public class HPChange : MonoBehaviour
         enemy_curr_hp.GetComponent<Text>().text = enemy.GetComponent<BarsEnemy>().hpsystem.getHP().ToString();
         enemy_curr_sh.GetComponent<Text>().text = enemy.GetComponent<BarsEnemy>().shsystem.getSH().ToString();
 
-
-        if (curr_hp.transform.parent.GetComponent<Text>().text != player.GetComponent<BarsPlayer>().hpsystem.getMaxHP().ToString())
-        {
-            curr_hp.transform.parent.GetComponent<Text>().text = "/" + player.GetComponent<BarsPlayer>().hpsystem.getMaxHP().ToString();
-        }
-        if (enemy_curr_hp.transform.parent.GetComponent<Text>().text != enemy.GetComponent<BarsEnemy>().hpsystem.getMaxHP().ToString())
-        {
-            enemy_curr_hp.transform.parent.GetComponent<Text>().text = "/" + enemy.GetComponent<BarsEnemy>().hpsystem.getMaxHP().ToString();
-        }
     }
 
 }
