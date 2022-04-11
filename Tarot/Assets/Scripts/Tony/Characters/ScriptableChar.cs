@@ -14,7 +14,10 @@ public class ScriptableChar : ScriptableObject
 
     public int ID;
 
-    public Sprite Artwork;
+    public Sprite ArtworkPortrait;
+    public Sprite ArtworkChibi;
 
     public int goldVal;
+
+    public ScriptableCardDatabase deck;
 }

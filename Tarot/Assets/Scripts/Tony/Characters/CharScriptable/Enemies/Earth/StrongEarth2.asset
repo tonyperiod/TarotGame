@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e41c61314fd87a84e91d63b887896727, type: 3}
-  m_Name: StrongEarth
+  m_Name: StrongEarth2
   m_EditorClassIdentifier: 
   Name: 
-  Strength: 
-  MaxHP: 0
-  MaxSH: 0
-  Element: 
+  Strength: strong
+  MaxHP: 50
+  MaxSH: 30
+  Element: earth
   ID: 0
-  Artwork: {fileID: 0}
+  ArtworkPortrait: {fileID: 6482593466106557149, guid: 49399f047377b764fa57d2e34b196d60, type: 3}
+  ArtworkChibi: {fileID: 6482593466106557149, guid: 49399f047377b764fa57d2e34b196d60, type: 3}
   goldVal: 0
+  deck: {fileID: 11400000, guid: ab7207b5111de314985eae7a6441cfa0, type: 2}

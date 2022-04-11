@@ -46,7 +46,17 @@ public class PlayerReference : MonoBehaviour
         maxSH = charRef.MaxSH;
         element = charRef.Element;
         iD = charRef.ID;
-        artWork = charRef.Artwork;
+
+        //implement the correct artwork
+        if (InterScene.currentScene == "TonyCardTesting")
+        {
+            artWork = charRef.ArtworkPortrait;
+        }
+        else
+        {
+            artWork = charRef.ArtworkChibi;
+        }
+
 
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;

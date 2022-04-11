@@ -5691,13 +5691,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b80e09c9313124e822a6fe9efbd908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenEnemy: {fileID: 11400000, guid: 33ad7e8ed8a490747bc999ae1852ddb6, type: 2}
+  chosenEnemy: {fileID: 11400000, guid: 199395365ee00fe45a6b9aa8f081d62d, type: 2}
   _name: 
   maxHP: 0
   maxSH: 0
   element: 
   iD: 0
   artWork: {fileID: 0}
+  artWorkChibi: {fileID: 0}
 --- !u!212 &1253074339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7877,7 +7878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
   enemyDatabaseInGame: {fileID: 11400000, guid: 00c48eb6e7934174bbd4f793ba8c898f, type: 2}
-  enemyDatabase: {fileID: 11400000, guid: 09233426f0ef1b3459fec73c46213307, type: 2}
+  enemyRef: {fileID: 1253074338}
   currentDeckList: []
 --- !u!4 &1894156069
 Transform:

@@ -22,6 +22,7 @@ public class EnemyReference : MonoBehaviour
     public string element;
     public int iD;
     public Sprite artWork;
+    public Sprite artWorkChibi;
 
     private SpriteRenderer spRend;
 
@@ -42,8 +43,16 @@ public class EnemyReference : MonoBehaviour
         maxSH = chosenEnemy.MaxSH;
         element = chosenEnemy.Element;
         iD = chosenEnemy.ID;
-        artWork = chosenEnemy.Artwork;
 
+//implement the correct artwork
+        if (InterScene.currentScene == "TonyCardTesting")
+        {
+            artWork = chosenEnemy.ArtworkPortrait;
+        }
+        else
+        {
+            artWork = chosenEnemy.ArtworkChibi;
+        }
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;
     }

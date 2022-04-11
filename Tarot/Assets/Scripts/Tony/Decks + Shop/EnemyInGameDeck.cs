@@ -12,7 +12,7 @@ public class EnemyInGameDeck : MonoBehaviour
 
 
     public ScriptableCardDatabase enemyDatabaseInGame; //to slot in enemy database
-    public ScriptableCardDatabase enemyDatabase;//to slot one of the generic 16 (WIPWIPWIPWIPWIP)
+    public EnemyReference enemyRef; //get the deck from here
     private static EnemyInGameDeck instance; //this database 
     public List<ScriptableCard> currentDeckList; //this Deck list
 
@@ -31,7 +31,7 @@ public class EnemyInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-        enemyDatabaseInGame.allCards = enemyDatabase.allCards;//will need to choose it correctly later, for now this
+        enemyDatabaseInGame.allCards =  enemyRef.chosenEnemy.deck.allCards;//get the deck connected to the enemy encountered in world
         cardTot = instance.enemyDatabaseInGame.allCards.Count; //have to edit directly the enemydatabase
         ReorderDeck();
         NewDeck();

@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e41c61314fd87a84e91d63b887896727, type: 3}
-  m_Name: BossEarth
+  m_Name: MedEarth1
   m_EditorClassIdentifier: 
   Name: 
-  Strength: 
-  MaxHP: 40
-  MaxSH: 30
-  Element: 
+  Strength: med
+  MaxHP: 35
+  MaxSH: 25
+  Element: earth
   ID: 0
-  Artwork: {fileID: 21300000, guid: bffe6096c35e74f488b928368451f924, type: 3}
-  goldVal: 0
+  ArtworkPortrait: {fileID: -9058023426608479050, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+  ArtworkChibi: {fileID: -9058023426608479050, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+  goldVal: 40
+  deck: {fileID: 11400000, guid: 40a68fee8812edc4586188abfd99b5f3, type: 2}

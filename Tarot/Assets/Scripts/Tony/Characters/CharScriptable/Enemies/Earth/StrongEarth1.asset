@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41c61314fd87a84e91d63b887896727, type: 3}
+  m_Name: StrongEarth1
+  m_EditorClassIdentifier: 
+  Name: 
+  Strength: strong
+  MaxHP: 50
+  MaxSH: 30
+  Element: earth
+  ID: 0
+  ArtworkPortrait: {fileID: -7113302976249976367, guid: 49399f047377b764fa57d2e34b196d60, type: 3}
+  ArtworkChibi: {fileID: -7113302976249976367, guid: 49399f047377b764fa57d2e34b196d60, type: 3}
+  goldVal: 0
+  deck: {fileID: 11400000, guid: ea422db67443cb946bb63872fea8a6bc, type: 2}
