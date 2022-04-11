@@ -11,7 +11,7 @@ public class Shop : MonoBehaviour
 
     public ScriptableCardDatabase[] byElemData;
 
-    public ScriptableCardDatabase shopAllDataInGame; //to have list in game
+    public ScriptableCardDatabase shopAllDataInGame; //to have list in game, resets every playthrough
     public ScriptableCardDatabase shopAllData; //to save permanently
     public ScriptableCardDatabase playerCurrentDatabase;
 

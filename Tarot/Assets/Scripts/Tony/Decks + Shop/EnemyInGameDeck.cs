@@ -10,7 +10,9 @@ public class EnemyInGameDeck : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
 
-    public ScriptableCardDatabase enemyDatabase; //to slot in player database
+
+    public ScriptableCardDatabase enemyDatabaseInGame; //to slot in enemy database
+    public ScriptableCardDatabase enemyDatabase;//to slot one of the generic 16 (WIPWIPWIPWIPWIP)
     private static EnemyInGameDeck instance; //this database 
     public List<ScriptableCard> currentDeckList; //this Deck list
 
@@ -29,7 +31,8 @@ public class EnemyInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-        cardTot = instance.enemyDatabase.allCards.Count; //have to edit directly the enemydatabase
+        enemyDatabaseInGame.allCards = enemyDatabase.allCards;//will need to choose it correctly later, for now this
+        cardTot = instance.enemyDatabaseInGame.allCards.Count; //have to edit directly the enemydatabase
         ReorderDeck();
         NewDeck();
     }
@@ -39,7 +42,7 @@ public class EnemyInGameDeck : MonoBehaviour
     {
         instance.currentDeckList.Clear(); //empty out deck
 
-        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
+        for (int i = 0; i < instance.enemyDatabaseInGame.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
         {
             instance.currentDeckList.Add(GetCardByID(i));
         }
@@ -50,9 +53,9 @@ public class EnemyInGameDeck : MonoBehaviour
     //this is to re-assign all id values
     private void ReorderDeck()
     {
-        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++)
+        for (int i = 0; i < instance.enemyDatabaseInGame.allCards.Count; i++)
         {
-            instance.enemyDatabase.allCards[i].id = i;
+            instance.enemyDatabaseInGame.allCards[i].id = i;
         }      
     }
 
@@ -60,7 +63,7 @@ public class EnemyInGameDeck : MonoBehaviour
 
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {
-        return instance.enemyDatabase.allCards[ID]; //returns first instance that matches true, or default (null)
+        return instance.enemyDatabaseInGame.allCards[ID]; //returns first instance that matches true, or default (null)
     }
 
 

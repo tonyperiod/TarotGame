@@ -957,6 +957,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  pDeck: {fileID: 1894156067}
+  eDeck: {fileID: 1894156068}
 --- !u!114 &273623094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,6 +1026,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  pDeck: {fileID: 1894156067}
+  eDeck: {fileID: 1894156068}
+  shopAllDataInGame: {fileID: 11400000, guid: e4639c065bf6a2d40b906c48ea5b198d, type: 2}
+  shopAllDataALL: {fileID: 11400000, guid: e27a12d1511cbb8499f90520d327aa19, type: 2}
 --- !u!114 &273623099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,6 +1993,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 1587274733}
+  refHpMax: 0
+  refShMax: 0
   Bar: {fileID: 375811051}
   dead: {fileID: 361368402}
   isLovers: 0
@@ -2004,6 +2012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 1253074337}
+  refHpMax: 0
+  refShMax: 0
   Bar: {fileID: 323874502}
   win: {fileID: 361368403}
   isLovers: 0
@@ -7866,6 +7876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
+  enemyDatabaseInGame: {fileID: 11400000, guid: 00c48eb6e7934174bbd4f793ba8c898f, type: 2}
   enemyDatabase: {fileID: 11400000, guid: 09233426f0ef1b3459fec73c46213307, type: 2}
   currentDeckList: []
 --- !u!4 &1894156069
@@ -8073,6 +8084,10 @@ MonoBehaviour:
   playerMajorActivationMax: 4
   enemyMajorActivationMax: 4
   dummy: {fileID: 11400000, guid: 5c2ef96906d2c9b489ceb08e23b62373, type: 2}
+  isHighP: 0
+  isHighE: 0
+  isWorldP: 0
+  isWorldE: 0
   Gamehandler: {fileID: 361368398}
   PSysMng: {fileID: 0}
   EsysMng: {fileID: 0}

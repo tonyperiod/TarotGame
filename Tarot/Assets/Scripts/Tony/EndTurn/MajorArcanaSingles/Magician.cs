@@ -10,8 +10,15 @@ public class Magician : MonoBehaviour
     int chosenCardPr;
     GameObject[] magicianCards;
 
+    //for destroy
+    GameObject card;
+    int slot;
+
     public void Activate(GameObject c, bool isPlayer)
     {
+        //for delete later
+        card = c;
+
         string vsElemPast;//the others past card element
         string vsElemPre = null; //the others present card element (only for majors)
         string ElemChar; //the element of 
@@ -27,6 +34,9 @@ public class Magician : MonoBehaviour
             ElemChar = manager.PRef.element;
 
             manager.dyMajP = manager.dySingle * 2;
+
+            //for destroy
+            slot = 9;
         }
         else
         {
@@ -36,6 +46,9 @@ public class Magician : MonoBehaviour
             ElemChar = manager.PRef.element;
 
             manager.dyMajE = manager.dySingle * 2;
+
+            //for destroy
+            slot = 11;
         }
 
         //choose the past card, by defining slot vaue
@@ -175,6 +188,15 @@ public class Magician : MonoBehaviour
         manager.vfxManager.Activate(magicianCards[1], 1);
         yield return new WaitForSeconds(manager.dySingle);
         manager.Present.present(magicianCards[1]);
+        destroyCard();
+    }
 
+    void destroyCard()
+    {
+        //destroy the card
+        GameObject.Destroy(card);
+
+        //create new dummy
+        manager.MajorDummy.Create(slot);
     }
 }
