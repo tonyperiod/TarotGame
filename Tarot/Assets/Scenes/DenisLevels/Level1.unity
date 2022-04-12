@@ -3917,7 +3917,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9058023426608479050, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bffe6096c35e74f488b928368451f924, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10084,6 +10084,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1264160009}
     m_Modifications:
+    - target: {fileID: 74373336358356577, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bffe6096c35e74f488b928368451f924, type: 3}
     - target: {fileID: 1731359780275955185, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
