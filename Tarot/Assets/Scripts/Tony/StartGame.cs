@@ -21,6 +21,8 @@ public class StartGame : MonoBehaviour
                 playerInGame.allCards.Clear();
             playerInGame.allCards = new List<ScriptableCard>(playerStarter.allCards);
 
+            InterScene.isTutorial = true;
+
             Debug.Log(InterScene.isNotNewGame + " is notnew");
             InterScene.isNotNewGame = true;
         }

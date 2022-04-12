@@ -10,7 +10,7 @@ public class InterScene : MonoBehaviour
 
     //set game start-----------------
     public static bool isNotNewGame;
-
+    public static bool isTutorial;
 
     // to reset at end of gamelevel-----------------
 
