@@ -23,5 +23,6 @@ public class InterScene : MonoBehaviour
     public static string currentScene; 
     public static int currentSceneNumber; //int to make it easiser for the shopRNGManager
     public static int goldPlayer;
+    public static bool isMinibossDead;
 
 }

@@ -6,6 +6,7 @@ public class StartLevel : MonoBehaviour
 {
     public GameObject player;
     public GameObject respawn;
+    public ScriptableChar defaultPlayer;
 
     void Awake()
     {
@@ -27,5 +28,9 @@ public class StartLevel : MonoBehaviour
         }
 
         player.transform.position = InterScene.lastLoc;
+
+        //for testing
+        if (InterScene.currentPlayer == null)
+            InterScene.currentPlayer = defaultPlayer;
     }
 }

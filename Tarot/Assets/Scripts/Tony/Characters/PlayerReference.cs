@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerReference : MonoBehaviour
 {
     public ScriptableChar[] charList;
-    public static string playerSelectedElem;
+    public string playerSelectedElem;
     private ScriptableChar charRef;
 
     public string _name;
@@ -21,7 +21,7 @@ public class PlayerReference : MonoBehaviour
 
     public void CustomAwake()
     {
-     
+        playerSelectedElem = InterScene.currentPlayer.Element;
 
         if (playerSelectedElem != null)
         {
