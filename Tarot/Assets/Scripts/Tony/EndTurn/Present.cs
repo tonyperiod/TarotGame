@@ -13,8 +13,6 @@ public class Present : MonoBehaviour
         int value = c.GetComponent<CardScriptReference>().value;
 
         //from endTurn:
-
-        GameObject[] lastTurnCards = manager.lastTurnCards;
         PlayerSystemManager PSysMng = manager.PSysMng;
         EnemySystemManager EsysMng = manager.EsysMng;
 

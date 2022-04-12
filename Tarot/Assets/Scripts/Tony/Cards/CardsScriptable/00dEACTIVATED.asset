@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
+  m_Name: 00dEACTIVATED
+  m_EditorClassIdentifier: 
+  Cardname: dummy
+  artWork: {fileID: 21300000, guid: a4521f3dcf41e7b4983b013f43292860, type: 3}
+  id: 0
+  databaseId: 0
+  elem: dummy
+  value: 0
+  court1: dummy
+  court2: dummy
+  slot: 0
+  isPlayer: 0
+  goldVal: 0

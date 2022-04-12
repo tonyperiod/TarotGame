@@ -12,6 +12,8 @@ public class AwakeManager : MonoBehaviour
     public EnemyReference enemyreference;
     public PlayerReference playerreference;
 
+    public SlotsTaken slotstaken;
+
     private void Awake()
     {
         enemyreference.CustomAwake();
@@ -21,6 +23,8 @@ public class AwakeManager : MonoBehaviour
         playeringamedeck.CustomAwake();
         enemyingamedeck.CustomAwake();
 
-        endturn.CA();        
+        slotstaken.CustomAwake();
+
+        endturn.CustomAwake();        
     }
 }

@@ -6,8 +6,8 @@ public class PlayerSystemManager : MonoBehaviour
 {
     //getting all the data
     public GameObject reference;
-    private int refHpMax;
-    private int refShMax;
+    public int refHpMax;
+    public int refShMax;
 
     //getting all the bars
     public BarsPlayer Bar;
@@ -18,6 +18,10 @@ public class PlayerSystemManager : MonoBehaviour
     public SHSystem shsystem;
 
     public OnDeath dead;
+
+    //major arcana trickery
+    public bool isLovers;
+    public bool isHermit;
 
     void Start()
     {
@@ -31,6 +35,10 @@ public class PlayerSystemManager : MonoBehaviour
         //set up bars
         Bar.SetupHp(hpsyst);
         Bar.SetupSh(shsystem);
+
+        //null out major arcana stuff (to make sure)
+        isLovers = false;
+        isHermit = false;
     }
 
     public void TakeDamage(int dmg)
@@ -48,7 +56,8 @@ public class PlayerSystemManager : MonoBehaviour
         else
         {
             shsystem.dmgSh(dmg);
-            hpsyst.dmghp(-remainingSh);
+            if (isHermit == false)//hermit blocks hp dmg
+                hpsyst.dmghp(-remainingSh);
         }
 
         checkIfDead();
@@ -56,7 +65,8 @@ public class PlayerSystemManager : MonoBehaviour
 
     public void TakeAirDmg(int dmg)
     {
-        hpsyst.dmghp(dmg);
+        if (isHermit == false)//hermit blocks hp dmg
+            hpsyst.dmghp(dmg);
         //Debug.Log("air" + dmg);
         checkIfDead();
     }
@@ -69,7 +79,8 @@ public class PlayerSystemManager : MonoBehaviour
 
     public void HealSH (int shield)
     {
-        shsystem.healSh(shield);
+        if (isLovers == false)
+            shsystem.healSh(shield);
         //Debug.Log("healshield" + shield);
     }
 

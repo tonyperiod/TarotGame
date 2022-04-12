@@ -21,21 +21,24 @@ public class PlayerReference : MonoBehaviour
 
     public void CustomAwake()
     {
-        if (playerSelectedElem == null)
-        {
-            playerSelectedElem = "fire";
-        }
+     
 
-
-        //select character using what we got
-        for (int i = 0; i < charList.Length; i++)
+        if (playerSelectedElem != null)
         {
-            if (charList[i].Element == playerSelectedElem)
+            //select character using what we got
+            for (int i = 0; i < charList.Length; i++)
             {
-                charRef = charList[i];
-                break;
+                if (charList[i].Element == playerSelectedElem)
+                {
+                    charRef = charList[i];
+                    break;
+                }
             }
         }
+
+        //this is if testing
+        else
+            charRef = charList[4];
 
         //set all references
         _name = charRef.Name;
@@ -43,7 +46,17 @@ public class PlayerReference : MonoBehaviour
         maxSH = charRef.MaxSH;
         element = charRef.Element;
         iD = charRef.ID;
-        artWork = charRef.Artwork;
+
+        //implement the correct artwork
+        if (InterScene.currentScene == "TonyCardTesting")
+        {
+            artWork = charRef.ArtworkPortrait;
+        }
+        else
+        {
+            artWork = charRef.ArtworkChibi;
+        }
+
 
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;
