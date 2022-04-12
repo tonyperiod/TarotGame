@@ -4256,7 +4256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1731359780275955189, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.073084
+      value: -5.073084
       objectReference: {fileID: 0}
     - target: {fileID: 1731359780275955189, guid: 348448d45c78d2a4dbece1e7f6ca9023, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11629,6 +11629,7 @@ GameObject:
   - component: {fileID: 2083102280}
   - component: {fileID: 2083102282}
   - component: {fileID: 2083102281}
+  - component: {fileID: 2083102283}
   m_Layer: 0
   m_Name: walker2_68
   m_TagString: Player
@@ -11803,6 +11804,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Library: []
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 9a63d1b17840f8e479617ece8b3db2fb, type: 3}
+--- !u!114 &2083102283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083102274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fbd26f2708afb4ab2f0d4944a74cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteLibraries:
+  - {fileID: 7108339969198208228, guid: 9a63d1b17840f8e479617ece8b3db2fb, type: 3}
+  - {fileID: 7108339969198208228, guid: ef623ffcfa8b91d418d73d92dfcabd7d, type: 3}
 --- !u!1 &2083133392
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class InterScene : MonoBehaviour
 {
     //constant-----------------
-    public static ScriptableChar currentPlayer;//for player element
+    public static ScriptableChar currentPlayer;//for player element, and for sprite in game
 
     //set game start-----------------
     public static bool isNotNewGame;
