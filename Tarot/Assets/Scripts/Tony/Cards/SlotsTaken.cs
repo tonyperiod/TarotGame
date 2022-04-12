@@ -6,7 +6,7 @@ public class SlotsTaken : MonoBehaviour
 {
     public bool[] snapPointTaken;
 
-    void Awake()
+    public void CustomAwake()
     {
         // create array of true values of the taken snap values
         snapPointTaken = new bool[4];

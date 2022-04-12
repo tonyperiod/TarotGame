@@ -19,6 +19,10 @@ public class HPSystem
     {
         return hp;
     }
+    public int getMaxHP()
+    {
+        return hpMax;
+    }
 
     public float getHPPercent()
     {

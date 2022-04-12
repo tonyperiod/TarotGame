@@ -6,8 +6,8 @@ public class EnemySystemManager : MonoBehaviour
 {
     //getting all the data
     public GameObject reference;
-    private int refHpMax;
-    private int refShMax;
+    public int refHpMax;
+    public int refShMax;
 
     //getting all the bars
     public BarsEnemy Bar;
@@ -18,6 +18,10 @@ public class EnemySystemManager : MonoBehaviour
 
     //trigger win
     public OnWin win;
+
+    //major arcana trickery
+    public bool isLovers;
+    public bool isHermit;
 
     void Start()
     {
@@ -31,6 +35,11 @@ public class EnemySystemManager : MonoBehaviour
         //set up bars
         Bar.SetupHp(hpsyst);
         Bar.SetupSh(shsystem);
+
+        //null out major arcana stuff (to make sure)
+        isLovers = false;
+        isHermit = false;
+
     }
 
     // ALL THE DAMAGE FUNCTIONS HERE, SO I CAN HAVE NO ISSUES WITH MULTIPLE HP SYSTEMS
@@ -49,7 +58,8 @@ public class EnemySystemManager : MonoBehaviour
         else
         {
             shsystem.dmgSh(dmg);
-            hpsyst.dmghp(-remainingSh);
+            if (isHermit == false)//hermit blocks hp dmg
+                hpsyst.dmghp(-remainingSh);
         }
 
         checkIfDead();
@@ -57,7 +67,8 @@ public class EnemySystemManager : MonoBehaviour
 
     public void TakeAirDmg (int dmg)
     {
-        hpsyst.dmghp(dmg);
+        if (isHermit == false)//hermit blocks hp dmg
+            hpsyst.dmghp(dmg);
         //Debug.Log("air" + dmg);
         checkIfDead();
     }
@@ -70,7 +81,8 @@ public class EnemySystemManager : MonoBehaviour
 
     public void HealSH(int shield)
     {
-        shsystem.healSh(shield);
+        if (isLovers == false)
+            shsystem.healSh(shield);
         //Debug.Log("shield" + shield);
     }
 

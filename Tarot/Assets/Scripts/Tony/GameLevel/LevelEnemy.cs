@@ -20,6 +20,9 @@ public class LevelEnemy : MonoBehaviour
             this.GetComponent<CapsuleCollider>().enabled = true;
             this.GetComponent<SphereCollider>().enabled = true;
         }
+
+        //set the sprite
+        GetComponent<SpriteRenderer>().sprite = thisEnemy.ArtworkChibi;
     }
 
     public void OnCollisionEnter(Collision collision)

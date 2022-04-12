@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class EndTurnCustomAwake : MonoBehaviour
 {
-    public EndTurn et;
+    public EndTurn manager;
     // Start is called before the first frame update
-   public void CA()
+   public void CustomAwake()
     {
-        et.slotsTaken = et.Table.GetComponent<SlotsTaken>();
+        manager.slotsTaken = manager.Table.GetComponent<SlotsTaken>();
         //fix bug of the two placeholder cards in slot activating
-        et.gameStart = true;
+        manager.gameStart = true;
+        //prevent major arcana in first turn
+        manager.enemyMajorActivation = 1;
+        manager.playerMajorActivation = 1;
         //get cards onto table
-        et.placeCardsScript.place();
+        manager.placeCardsScript.place();
         //fire stuff
-        et.isEonFirePa = false; et.isPonFirePa = false; et.isEonFirePr = false; et.isPonFirePr = false; et.isEonFireFu = false; et.isPonFireFu = false;
+        manager.isEonFirePa = false; manager.isPonFirePa = false; manager.isEonFirePr = false; manager.isPonFirePr = false; manager.isEonFireFu = false; manager.isPonFireFu = false;
         //get syst managers for hp
-        et.PSysMng = et.Gamehandler.GetComponent<PlayerSystemManager>();
-        et.EsysMng = et.Gamehandler.GetComponent<EnemySystemManager>();
+        manager.PSysMng = manager.Gamehandler.GetComponent<PlayerSystemManager>();
+        manager.EsysMng = manager.Gamehandler.GetComponent<EnemySystemManager>();
         //set the lastturncards database, for draggable
-        et.cardeffects.get();
+        manager.cardeffects.get();
 
         //EDIT HERE AFTER TAROT CARDS
-        et.dyTot = et.dySingle*8;//all delays play twice
+        manager.dyTot = manager.dySingle*12;//all delays play twice
 
     }
 }

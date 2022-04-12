@@ -36,11 +36,11 @@ Material:
     - Gloss: 1.3
     - Metallic: 0.1
     - NormalStrength: 1.5
-    - Ripple_Dissolve: 5
-    - Ripple_Scale: 30
-    - Ripple_Speed: 4
+    - Ripple_Dissolve: 4.1
+    - Ripple_Scale: 19.48
+    - Ripple_Speed: 7
     m_Colors:
-    - Base_Color: {r: 0, g: 0.612216, b: 2, a: 0}
+    - Base_Color: {r: 0, g: 0.6404724, b: 2, a: 0}
     - NormalSpeed: {r: 0.1, g: -0.1, b: 0, a: 0}
     - Ripple_Color: {r: 0.42997178, g: 1.0242025, b: 0.60730755, a: 0}
   m_BuildTextureStacks: []

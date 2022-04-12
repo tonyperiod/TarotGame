@@ -11,6 +11,10 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private bool unlocked;//default is false
     public GameObject unlockImage;
     public GameObject footstepsImage;
+    public GameObject lights;
+    
+
+   
     //public GameObject[] stars;
     private void Update()
     {
@@ -38,13 +42,13 @@ public class LevelSelection : MonoBehaviour
          //   }
 
             footstepsImage.gameObject.SetActive(false);
-          //  for (int i = 0; i < stars.Length; i++)
-          //  {
-          //      stars[i].gameObject.SetActive(true);
+            //  for (int i = 0; i < stars.Length; i++)
+            //  {
+            //      stars[i].gameObject.SetActive(true);
 
-        //    }
+            //    }
 
-
+            lights.gameObject.SetActive(false);
         }
         else
         {
@@ -56,12 +60,12 @@ public class LevelSelection : MonoBehaviour
        //     }
 
             footstepsImage.gameObject.SetActive(true);
-        //    for (int i = 0; i < stars.Length; i++)
-       //     {
-        //        stars[i].gameObject.SetActive(false);
+            //    for (int i = 0; i < stars.Length; i++)
+            //     {
+            //        stars[i].gameObject.SetActive(false);
 
-         //   }
-         
+            //   }
+            lights.gameObject.SetActive(true);
 
 
         }
