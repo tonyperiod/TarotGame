@@ -25,10 +25,10 @@ public class PlayerInGameDeck : MonoBehaviour
             instance = this;
             //    DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
         }
-        //else
-        //{
-        //    Destroy(gameObject); //if there is already a playerdatabase in game
-        //}
+        else
+        {
+            Destroy(gameObject); //if there is already a playerdatabase in game
+        }
         cardTot = instance.playerDatabase.allCards.Count;
 
         ReorderDeck();

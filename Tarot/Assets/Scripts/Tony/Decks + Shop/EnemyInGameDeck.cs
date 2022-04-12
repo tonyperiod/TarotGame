@@ -25,11 +25,6 @@ public class EnemyInGameDeck : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
-        }
-        else
-        {
-            Destroy(gameObject); //if there is already a playerdatabase in game
         }
         enemyDatabaseInGame.allCards =  enemyRef.chosenEnemy.deck.allCards;//get the deck connected to the enemy encountered in world
         cardTot = instance.enemyDatabaseInGame.allCards.Count; //have to edit directly the enemydatabase
