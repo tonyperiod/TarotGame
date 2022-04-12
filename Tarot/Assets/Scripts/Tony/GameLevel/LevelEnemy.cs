@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 public class LevelEnemy : MonoBehaviour
 {
     public ScriptableChar thisEnemy;
+    public bool isMiniboss;
 
     private void Start()
     {
         //destroy if on list
         if (InterScene.deadEnemies.Contains(this.gameObject.name))
             {
+            if (this.isMiniboss == true)
+                InterScene.isMinibossDead = true;//just in case
             Destroy(this.gameObject);
         }
         //this is to turn on collider if alive
@@ -38,6 +41,10 @@ public class LevelEnemy : MonoBehaviour
         InterScene.currentScene = SceneManager.GetActiveScene().name;
         InterScene.currentSceneNumber = SceneManager.GetActiveScene().buildIndex; // for shop rng manager
         //Debug.Log(InterScene.currentScene);
+
+        //isminibossDead (set it immediatly just in case you win)
+        if (InterScene.isMinibossDead == false) //put condition in case player fights minor enemies afterwords
+            InterScene.isMinibossDead = isMiniboss;
 
         SceneManager.LoadScene("TonyCardTesting");
     }

@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: PlayerFire
   m_EditorClassIdentifier: 
   Name: PlayerFire
-  MaxHP: 42
-  MaxSH: 18
+  Strength: 
+  MaxHP: 55
+  MaxSH: 20
   Element: fire
   ID: 0
-  Artwork: {fileID: 21300000, guid: dff5647378701db45a62ab4d5eeaff45, type: 3}
+  ArtworkPortrait: {fileID: 315250268274685260, guid: 918e09674f6ac0747b85b4c1deed9275, type: 3}
+  ArtworkChibi: {fileID: 315250268274685260, guid: 918e09674f6ac0747b85b4c1deed9275, type: 3}
+  goldVal: 0
+  deck: {fileID: 0}
