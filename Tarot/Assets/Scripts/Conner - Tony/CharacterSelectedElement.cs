@@ -17,8 +17,9 @@ public class CharacterSelectedElement : MonoBehaviour
 
     void Update()
     {
+        //gameObject.SetActive(true);
         //gameObject.transform.position = this.transform.position + new Vector3(0f, 0f, 0f);
-        //gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<PlayerReference>().element;
+        //gameObject.transform.GetChild(3).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
     }
      
 
