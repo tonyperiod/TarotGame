@@ -6936,6 +6936,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 87b2ebc11df613a4caa4feaf9865430d, type: 2}
   - {fileID: 11400000, guid: 9397e1e939c876e42a1563f3a12032a4, type: 2}
   - {fileID: 11400000, guid: c16f24c8cc2a1104697d34d8d18c052b, type: 2}
+  playerSelectedElem: 
   _name: PlayerAir
   maxHP: 0
   maxSH: 0
@@ -8072,7 +8073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1920384259}
-  playerDatabase: {fileID: 11400000, guid: 1a5323f0e67238a42bd6893ccba81f04, type: 2}
+  playerDatabase: {fileID: 11400000, guid: 6936a3e4a453c67438812ee07226af65, type: 2}
   currentDeckList: []
 --- !u!114 &1894156068
 MonoBehaviour:
