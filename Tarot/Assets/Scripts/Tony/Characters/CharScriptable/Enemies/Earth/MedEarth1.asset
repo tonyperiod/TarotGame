@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41c61314fd87a84e91d63b887896727, type: 3}
+  m_Name: MedEarth1
+  m_EditorClassIdentifier: 
+  Name: 
+  Strength: med
+  MaxHP: 35
+  MaxSH: 25
+  Element: earth
+  ID: 0
+  ArtworkPortrait: {fileID: -9058023426608479050, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+  ArtworkChibi: {fileID: -9058023426608479050, guid: 84cbba21255b33f46af929a6ed8b919e, type: 3}
+  goldVal: 40
+  deck: {fileID: 11400000, guid: 40a68fee8812edc4586188abfd99b5f3, type: 2}

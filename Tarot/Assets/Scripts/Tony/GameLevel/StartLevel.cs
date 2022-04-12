@@ -19,7 +19,10 @@ public class StartLevel : MonoBehaviour
         //load location
         if (InterScene.isFirstSpawn == true)
         {
-            InterScene.lastLoc = respawn.transform.position;
+            //separate to not start game in ground
+            InterScene.lastLoc.x = respawn.transform.position.x;
+            InterScene.lastLoc.z = respawn.transform.position.z;
+            InterScene.lastLoc.y = respawn.transform.position.y +1;
             InterScene.isFirstSpawn = false;
         }
 

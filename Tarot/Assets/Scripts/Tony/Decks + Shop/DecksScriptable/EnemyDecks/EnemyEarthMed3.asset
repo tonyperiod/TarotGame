@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97446169d4d2464eb2695e145adc508, type: 3}
+  m_Name: EnemyEarthMed3
+  m_EditorClassIdentifier: 
+  allCards:
+  - {fileID: 11400000, guid: c46b72a246b5071499e5a5be51fda2f9, type: 2}
+  - {fileID: 11400000, guid: 43fc00794d18fba4cabae14019f211ff, type: 2}
+  - {fileID: 11400000, guid: b152a7021e9de7543a4db98be6d71262, type: 2}
+  - {fileID: 11400000, guid: cb0d72e987b4efe4d848950c862c39fd, type: 2}
+  - {fileID: 11400000, guid: bf02e283fd2c2c4408bd634a48e5d10b, type: 2}
+  - {fileID: 11400000, guid: 54f9bd5ed6f0a7f4e848422d8d9cd3d0, type: 2}
+  - {fileID: 11400000, guid: 2b5dbcc6de1b23b468424e3664eb161a, type: 2}
+  - {fileID: 11400000, guid: 59a1e45662433524c88c686393d07446, type: 2}
+  - {fileID: 11400000, guid: b787a5c56a5a55743b7a1dc795f2933d, type: 2}
+  - {fileID: 11400000, guid: 5310189b2281c31458344bacf9b255d1, type: 2}
+  - {fileID: 11400000, guid: a6e55735956036b4db97aba9d918bac1, type: 2}
+  - {fileID: 11400000, guid: 60251f1f66698034899ec63b6e3e1465, type: 2}
+  - {fileID: 11400000, guid: 2e2fc9ce01ffc424ab146b6a27f90282, type: 2}
+  - {fileID: 11400000, guid: b468c0bc006537f4d9ad272e8397f39f, type: 2}
+  - {fileID: 11400000, guid: eb592308d1e45ac4099bd853b0066397, type: 2}
+  - {fileID: 11400000, guid: 5d7506b5125d43c469ab1b800c3677c8, type: 2}
+  - {fileID: 11400000, guid: 08859edee1504b8488220875b772d5c8, type: 2}
+  - {fileID: 11400000, guid: 79ed8cbb3b3071c458853720d4d2e3ac, type: 2}
+  - {fileID: 11400000, guid: ff6a29c382a810f4296db7983ff12510, type: 2}

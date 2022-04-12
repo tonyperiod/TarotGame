@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BarsEnemy : MonoBehaviour
 {
-    private HPSystem hpsystem;
+    public HPSystem hpsystem;
     public GameObject hpbar;
 
-    private SHSystem shsystem;
+    public SHSystem shsystem;
     public GameObject shbar;
 
 

@@ -11,7 +11,7 @@ public class Shop : MonoBehaviour
 
     public ScriptableCardDatabase[] byElemData;
 
-    public ScriptableCardDatabase shopAllDataInGame; //to have list in game
+    public ScriptableCardDatabase shopAllDataInGame; //to have list in game, resets every playthrough
     public ScriptableCardDatabase shopAllData; //to save permanently
     public ScriptableCardDatabase playerCurrentDatabase;
 
@@ -47,14 +47,6 @@ public class Shop : MonoBehaviour
 
         buyableCards = new GameObject[5];
 
-        if (InterScene.isNotNewGame == false)
-        {
-            if (shopAllDataInGame != null)
-                shopAllDataInGame.allCards.Clear();
-            shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
-
-            InterScene.isNotNewGame = true;
-        }
         splitter.setoff(); //NEED TO DO ONLY ONCE             
                
         //if (instance == null)

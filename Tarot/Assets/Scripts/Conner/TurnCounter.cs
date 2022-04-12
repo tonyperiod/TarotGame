@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 using TMPro; 
 
 public class TurnCounter : MonoBehaviour
@@ -8,6 +9,7 @@ public class TurnCounter : MonoBehaviour
     // Start is called before the first frame update
 
     public int currentTurn;
+    GameObject gameObject; 
 
     void Start()
     {
@@ -17,21 +19,16 @@ public class TurnCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Test
-
-        if (Input.GetKeyDown("space"))
-        {
-            currentTurn += 1;
-            gameObject.transform.GetComponent<TextMeshPro>().text = currentTurn.ToString();
-
-        }
+        
     }
 
-    void NextTurn()
+    void OnMouseDown()
     {
         currentTurn += 1;
 
-        gameObject.transform.GetComponent<TextMeshPro>().text = currentTurn.ToString();
+        gameObject = GameObject.Find("TurnCounter");
+        gameObject.transform.GetComponent<Text>().text = currentTurn.ToString();
+        gameObject.SetActive(true);
 
     }
 

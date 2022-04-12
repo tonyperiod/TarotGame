@@ -38,6 +38,18 @@ public class UIManager : MonoBehaviour
             gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
             gameObject.transform.GetChild(5).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().value.ToString();
 
+
+            int slot = this.GetComponent<CardScriptReference>().slot;
+
+            if (slot == 0)
+            { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past Card";   }
+            else if (slot == 1)
+            { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Present Card"; }
+            else if (slot == 2)
+            { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Future Card"; }
+            else
+            { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past-Present Card"; }
+
             text.SetActive(true);
         }
 

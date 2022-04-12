@@ -21,32 +21,33 @@ public class PastFuture : MonoBehaviour
         bool isPonFireFu = manager.isPonFireFu;
 
         //counter element
-        string PElem = manager.PElem;
-        string EElem = manager.EElem;
-        string PElemC = manager.PElemC;
-        string EElemC = manager.EElemC;
+        string PElem;
+        string EElem;
+        string PElemC;
+        string EElemC;
+        
+        //high priestess countering past future removal
+        if (manager.isHighP == false)
+        {
+            EElem = manager.EElem;
+            EElemC = manager.EElemC;
+        }
+        else
+        {
+            EElem = "nope";
+            EElemC = "nope";
+        }
 
-
-        //string PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().wlwm;
-        //string EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().wlwm;
-
-        ////court second element for countering elements
-        //string PElemC = "null";
-        //string EElemC = "null";
-
-        ////court card double elemental
-        //if (PElem == "court")
-        //{
-        //    PElem = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court1;
-        //    PElemC = manager.lastTurnCards[0].GetComponent<CardScriptReference>().court2;
-        //}
-
-        //if (EElem == "court")
-        //{
-        //    EElem = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court1;
-        //    EElemC = manager.lastTurnCards[3].GetComponent<CardScriptReference>().court2;
-        //}
-
+        if (manager.isHighE == false)
+        {
+            PElem = manager.PElem;
+            PElemC = manager.PElemC;
+        }
+        else
+        {
+            PElem = "nope";
+            PElemC = "nope";
+        }
 
         switch (c.GetComponent<CardScriptReference>().elem)
         {
@@ -121,7 +122,7 @@ public class PastFuture : MonoBehaviour
     {
         int originalValue = court.GetComponent<CardScriptReference>().value;
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
-        
+
         //element 1
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to wlwm
         manager.courtbuff.buff(court);//check for elemental buffing

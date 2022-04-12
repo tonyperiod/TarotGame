@@ -8,7 +8,11 @@ using System.Linq;
 
 public class EnemyInGameDeck : MonoBehaviour
 {
-    public ScriptableCardDatabase enemyDatabase; //to slot in player database
+    [SerializeField] EndTurn manager;
+
+
+    public ScriptableCardDatabase enemyDatabaseInGame; //to slot in enemy database
+    public EnemyReference enemyRef; //get the deck from here
     private static EnemyInGameDeck instance; //this database 
     public List<ScriptableCard> currentDeckList; //this Deck list
 
@@ -27,7 +31,8 @@ public class EnemyInGameDeck : MonoBehaviour
         {
             Destroy(gameObject); //if there is already a playerdatabase in game
         }
-        cardTot = instance.enemyDatabase.allCards.Count; //have to edit directly the enemydatabase
+        enemyDatabaseInGame.allCards =  enemyRef.chosenEnemy.deck.allCards;//get the deck connected to the enemy encountered in world
+        cardTot = instance.enemyDatabaseInGame.allCards.Count; //have to edit directly the enemydatabase
         ReorderDeck();
         NewDeck();
     }
@@ -37,26 +42,20 @@ public class EnemyInGameDeck : MonoBehaviour
     {
         instance.currentDeckList.Clear(); //empty out deck
 
-        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
+        for (int i = 0; i < instance.enemyDatabaseInGame.allCards.Count; i++) //add back in all the cards from the enemy owned database one by one
         {
             instance.currentDeckList.Add(GetCardByID(i));
         }
 
         cardCur = cardTot;
-
-        //set all cards to is enemy
-        foreach (var Card in instance.currentDeckList)
-        {
-            Card.isPlayer = false;
-        }
     }
 
     //this is to re-assign all id values
     private void ReorderDeck()
     {
-        for (int i = 0; i < instance.enemyDatabase.allCards.Count; i++)
+        for (int i = 0; i < instance.enemyDatabaseInGame.allCards.Count; i++)
         {
-            instance.enemyDatabase.allCards[i].id = i;
+            instance.enemyDatabaseInGame.allCards[i].id = i;
         }      
     }
 
@@ -64,7 +63,7 @@ public class EnemyInGameDeck : MonoBehaviour
 
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
     {
-        return instance.enemyDatabase.allCards.FirstOrDefault(i => i.id == ID); //returns first instance that matches true, or default (null)
+        return instance.enemyDatabaseInGame.allCards[ID]; //returns first instance that matches true, or default (null)
     }
 
 
@@ -74,17 +73,72 @@ public class EnemyInGameDeck : MonoBehaviour
         if (instance.cardCur < 1) //draw cards then do the normal stuff
         {
             instance.NewDeck();
+
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+
+            //check for major arcana when needed, and try to get another card in that case
+            if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
+            {
+                do
+                {
+                    pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+                }
+                while (pickedCard.court1 == "major");
+            }
+
             instance.currentDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
+
             return pickedCard;
         }
 
         else //just pick card and delete from list
         {
             ScriptableCard pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+            bool isThereNonMajor = false;
+
+            //check for major arcana when needed, and try to get another card in that case
+            if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
+            {
+                //check if there are cards that aren't major in the deck, to prevent do while crash
+                for (int i = 0; i < instance.currentDeckList.Count; i++)
+                {
+                    if (instance.currentDeckList[i].court1 != "major")
+                    {
+                        isThereNonMajor = true;
+                        break;
+                    }
+                }
+
+                if (isThereNonMajor == true)
+                {
+                    do
+                    {
+                        pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+                    }
+                    while (pickedCard.court1 == "major");
+                }
+                //basically repeat pick card with card cur <1, the script will break if not
+                else
+                {
+                    instance.NewDeck();
+                    pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+
+                    //check for major arcana when needed, and try to get another card in that case
+                    if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
+                    {
+                        do
+                        {
+                            pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];
+                        }
+                        while (pickedCard.court1 == "major");
+                    }
+                }
+            }
+
             instance.currentDeckList.Remove(pickedCard);
             instance.cardCur -= 1;
+
             return pickedCard;
         }
     }
