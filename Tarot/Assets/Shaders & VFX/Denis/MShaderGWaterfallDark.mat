@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - BottomBrightness: 7
+    - BottomBrightness: 4
     - BottomStrength: 7.6
     - Errosion: 0
     - RippleAmount: 4
@@ -41,6 +41,6 @@ Material:
     - VorinoiScale: 12
     - VorinoiSpeed: 13
     m_Colors:
-    - RippleColor: {r: 0.37021294, g: 1.658554, b: 2.8284268, a: 1}
+    - RippleColor: {r: 0.19593346, g: 2.183713, b: 3.776172, a: 1}
     - RippleSpeed: {r: 0, g: 0.4, b: 0, a: 0}
   m_BuildTextureStacks: []
