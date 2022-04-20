@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major13Death
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Death (Major)
   artWork: {fileID: 21300000, guid: a60b9259b30928d4e87f1454e5170b7f, type: 3}
   id: 8
   databaseId: 0

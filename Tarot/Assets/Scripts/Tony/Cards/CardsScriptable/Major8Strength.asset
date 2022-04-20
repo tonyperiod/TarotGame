@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major8Strength
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Strength (Major)
   artWork: {fileID: 21300000, guid: 26a4abfd6f484444f88930a30103366c, type: 3}
   id: 13
   databaseId: 0

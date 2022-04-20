@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: CourtKnightAir
   m_EditorClassIdentifier: 
-  Cardname: Air Knight
+  Cardname: Air Knight (Court)
   artWork: {fileID: 21300000, guid: 56973c1d192c6604b9a8ad063541b29f, type: 3}
   id: 44
   databaseId: 0

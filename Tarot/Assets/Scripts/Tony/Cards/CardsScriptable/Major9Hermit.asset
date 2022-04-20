@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major9Hermit
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Hermit (Major)
   artWork: {fileID: 21300000, guid: 6957fc326ebad354d9120baae9645970, type: 3}
   id: 12
   databaseId: 0
