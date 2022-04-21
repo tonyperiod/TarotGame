@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: MinorFire4
   m_EditorClassIdentifier: 
-  Cardname: MinorFire4
+  Cardname: Fire (Minor)
   artWork: {fileID: 21300000, guid: 566bb8e856d3a194a94c603f2a4853f3, type: 3}
-  id: 23
+  id: 14
+  databaseId: 0
   elem: fire
   value: 4
   court1: 

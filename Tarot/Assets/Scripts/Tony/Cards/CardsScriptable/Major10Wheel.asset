@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major10Wheel
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Wheel (Major)
   artWork: {fileID: 21300000, guid: 89bd90dec14310b47a17bc42663fa278, type: 3}
   id: 11
   databaseId: 0

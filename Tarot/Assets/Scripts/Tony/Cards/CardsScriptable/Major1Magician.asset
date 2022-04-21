@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major1Magician
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Magician (Major)
   artWork: {fileID: 21300000, guid: f0e7e6ecfb580054b9cdad7b532f612c, type: 3}
   id: 20
   databaseId: 0

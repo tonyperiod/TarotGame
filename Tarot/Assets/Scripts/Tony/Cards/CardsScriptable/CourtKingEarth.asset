@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: CourtKingEarth
   m_EditorClassIdentifier: 
-  Cardname: king
+  Cardname: Earth King (Court)
   artWork: {fileID: 21300000, guid: 3733f9da9317bdd44916a42b513bc53d, type: 3}
   id: 41
+  databaseId: 1
   elem: court
   value: 12
   court1: air

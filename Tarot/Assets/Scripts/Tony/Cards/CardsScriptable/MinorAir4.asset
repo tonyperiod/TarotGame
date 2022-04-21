@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: MinorAir4
   m_EditorClassIdentifier: 
-  Cardname: MinorAir4
+  Cardname: Air (Minor)
   artWork: {fileID: 21300000, guid: 8c124234c1c42db44b7fe56cd36d0ca3, type: 3}
-  id: 3
+  id: 2
+  databaseId: 0
   elem: air
   value: 4
   court1: 

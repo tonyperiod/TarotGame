@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: MinorWater8
   m_EditorClassIdentifier: 
-  Cardname: MinorWater8
+  Cardname: Water (Minor)
   artWork: {fileID: 21300000, guid: e4d988cf05dc117448aed1a2ac9f6241, type: 3}
   id: 37
+  databaseId: 0
   elem: water
   value: 8
   court1: 

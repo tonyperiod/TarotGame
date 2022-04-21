@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: MinorEarth10
   m_EditorClassIdentifier: 
-  Cardname: MinorEarth10
+  Cardname: Earth (Minor)
   artWork: {fileID: 21300000, guid: a7393cbb4f3233e40b604437c6d54035, type: 3}
   id: 19
+  databaseId: 9
   elem: earth
   value: 10
   court1: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major16Tower
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Tower (Major)
   artWork: {fileID: 21300000, guid: b9427020bf4e83047a57a58709374c01, type: 3}
   id: 5
   databaseId: 0

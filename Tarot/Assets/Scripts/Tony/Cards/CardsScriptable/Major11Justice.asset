@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: Major11Justice
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Justice (Major)
   artWork: {fileID: 21300000, guid: f86467839996e344887d25aa86b386c5, type: 3}
   id: 10
   databaseId: 0

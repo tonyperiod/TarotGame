@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027bbd47aee340545ad0d7ae2140af13, type: 3}
   m_Name: CourtKnightFire
   m_EditorClassIdentifier: 
-  Cardname: 
+  Cardname: Knight Fire (Court)
   artWork: {fileID: 21300000, guid: 5b9254a5ec62b364faa1df11ed79d9e7, type: 3}
   id: 46
+  databaseId: 0
   elem: court
   value: 10
   court1: fire
