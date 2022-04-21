@@ -17,6 +17,38 @@ public class PlayerReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
+   
+    public void Start()
+    {
+
+        //The selected character from the character selection scene will be displayed here
+        PlayerPrefs.GetInt("selectedCharacter");
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 0)
+        {
+            playerSelectedElem = "fire";
+            _name = "PlayerFire";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 1)
+        {
+            playerSelectedElem = "earth";
+            _name = "PlayerEarth";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 2)
+        {
+            playerSelectedElem = "air";
+            _name = "PlayerAir";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
+        {
+            playerSelectedElem = "water";
+            _name = "PlayerWater";
+        }
+    }
+
 
 
     public void CustomAwake()

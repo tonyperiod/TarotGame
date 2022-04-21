@@ -38,9 +38,10 @@ public class CharacterSelection : MonoBehaviour
 
     public void PlayGame()
     {
+
         PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
         SceneManager.LoadScene("DenisWorldMap");
-        gameObject.transform.GetChild(3).transform.GetComponent<TextMesh>().text = this.GetComponent<PlayerReference>().playerSelectedElem;
+        //gameObject.transform.GetChild(3).transform.GetComponent<TextMesh>().text = this.GetComponent<PlayerReference>().playerSelectedElem;
     }
 
     public void BackToMenu()

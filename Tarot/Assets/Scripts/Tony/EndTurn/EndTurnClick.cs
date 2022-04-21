@@ -11,6 +11,7 @@ public class EndTurnClick : MonoBehaviour
     private void Start()
     {
         isCliccked = false;
+
     }
 
     private void OnMouseDown()

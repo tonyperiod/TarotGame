@@ -1161,7 +1161,7 @@ GameObject:
   - component: {fileID: 621706790}
   - component: {fileID: 621706789}
   m_Layer: 5
-  m_Name: EarthText
+  m_Name: AirText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2199,7 +2199,7 @@ GameObject:
   - component: {fileID: 1682357573}
   - component: {fileID: 1682357572}
   m_Layer: 5
-  m_Name: EarthText
+  m_Name: WaterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

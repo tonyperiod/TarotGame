@@ -11,20 +11,16 @@ public class CharacterSelectedElement : MonoBehaviour
 
     void Start()
     {
-        
-        
+        // REFERENCE TO THE PLAYER SELECTED ELEMENT CAN BE VIEWED IN PLAYER REFERENCE SCRIPT
+        // I cant run the player reference here as this scene is run before the card scene (first time PlayerReference/element is run). 
+        // It changes the string with what I have done in Player Reference though so alls good.
+
+
     }
 
     void Update()
     {
         
-
-        gameObject.transform.GetComponent<TextMesh>().text = this.GetComponent<PlayerReference>().playerSelectedElem;
     }
 
-
-    //in player reference, there is public static string called playerSelectedElem.
-    //Based on that, the element for the player is chosen
-
-    //if you need to edit that one parameter (playerselected elem) you can, as long as it stays a string in playerreference.
 }

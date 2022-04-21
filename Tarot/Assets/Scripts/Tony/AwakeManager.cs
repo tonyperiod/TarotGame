@@ -19,12 +19,22 @@ public class AwakeManager : MonoBehaviour
         enemyreference.CustomAwake();
         playerreference.CustomAwake();
 
-
         playeringamedeck.CustomAwake();
         enemyingamedeck.CustomAwake();
 
         slotstaken.CustomAwake();
 
-        endturn.CustomAwake();        
+        InterScene.isTutorial = true;
+    }
+
+    void Update()
+    {
+
+        if (InterScene.isTutorial = false)
+        {
+
+            endturn.CustomAwake();
+
+        }
     }
 }
