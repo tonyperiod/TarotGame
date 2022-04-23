@@ -17,7 +17,45 @@ public class PlayerReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
+    public Sprite newSpriteFire;
+    public Sprite newSpriteEarth;
+    public Sprite newSpriteAir;
+    public Sprite newSpriteWater;
 
+    public void Start()
+    {
+
+        //The selected character from the character selection scene will be displayed here
+        // Cant reference it in character selection screen as that comes BEFORE and characterSelectedElem isn't run till TonyCard scene is run 
+        // This is the best way I can think of doing it that would still work fine. 
+        
+        PlayerPrefs.GetInt("selectedCharacter");
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 0)
+        {
+            playerSelectedElem = "fire";
+            spRend.sprite = newSpriteFire; 
+            
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 1)
+        {
+            playerSelectedElem = "earth";
+            spRend.sprite = newSpriteEarth;
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 2)
+        {
+            playerSelectedElem = "air";
+            spRend.sprite = newSpriteAir;
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
+        {
+            playerSelectedElem = "water";
+            spRend.sprite = newSpriteWater;
+        }
+    }
 
     public void CustomAwake()
     {

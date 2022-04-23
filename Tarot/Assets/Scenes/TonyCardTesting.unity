@@ -8650,6 +8650,10 @@ MonoBehaviour:
   element: 
   iD: 0
   artWork: {fileID: 0}
+  newSpriteFire: {fileID: 315250268274685260, guid: 918e09674f6ac0747b85b4c1deed9275, type: 3}
+  newSpriteEarth: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+  newSpriteAir: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+  newSpriteWater: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
 --- !u!1 &1600094955
 GameObject:
   m_ObjectHideFlags: 0
