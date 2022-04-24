@@ -18,7 +18,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 497
       y: -249
-      width: 920
+      width: 894
       height: 1815
     contents:
     - model: {fileID: 8926484042661614555}
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614601}
-  m_UIPosition: {x: 968, y: 929}
+  m_UIPosition: {x: 942, y: 930}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -1248,7 +1248,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 4294967295
+      m_SerializableObject: 4294901759
     m_Space: 2147483647
   m_Property:
     name: subMeshMask
