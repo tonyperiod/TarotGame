@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     Transform transform;
-    GameObject gameObject; 
+    GameObject gameObject;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        transform = this.gameObject.transform.GetChild(2); 
-        gameObject.SetActive(true);
+       
     }
 
     // Update is called once per frame
@@ -24,6 +23,12 @@ public class Tutorial : MonoBehaviour
 
     public void SkipTutorial()
     {
-        gameObject.SetActive(false); 
+       
+        
+    }
+
+    public void NextScreen()
+    {
+        
     }
 }

@@ -14,12 +14,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameObject = GameObject.Find("Tooltip (Battle Board)");
-
-
-        //cardPrefab = GameObject.Find("CardPrefabA");
-
-        //cardScriptReference = cardPrefab.transform.GetComponent<CardScriptReference>();
+        
     }
 
     // Update is called once per frame
