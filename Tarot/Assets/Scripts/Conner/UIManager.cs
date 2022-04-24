@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
 {
 
     public GameObject gameObject;
-    public GameObject text; 
+    public GameObject text;
+    GameObject element; 
 
 
     // Start is called before the first frame update
@@ -35,7 +36,7 @@ public class UIManager : MonoBehaviour
             gameObject.SetActive(true);
             gameObject.transform.position = this.transform.position + new Vector3(-2f, 2f, 0f);
 
-            gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
+            element = gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
             gameObject.transform.GetChild(5).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().value.ToString();
 
 
@@ -51,6 +52,24 @@ public class UIManager : MonoBehaviour
             { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past-Present Card"; }
 
             text.SetActive(true);
+
+            // positions element effect
+            if (element.Equals("fire"))
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Enemy cannot heal within same phase";
+            }
+            else if (element.Equals("earth"))
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "50% Shields Extra";
+            }
+            else if (element.Equals("air"))
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Ignore Shield";
+            }
+            else
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "50% lifesteal";
+            }
         }
 
     }
