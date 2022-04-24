@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject gameObject;
     public GameObject text;
-    GameObject element; 
+    string element; 
 
 
     // Start is called before the first frame update
@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
             // positions element effect
             if (element.Equals("fire"))
             {
-                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Enemy cannot heal within same phase";
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Enemy cannot heal";      
             }
             else if (element.Equals("earth"))
             {
