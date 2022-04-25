@@ -17,10 +17,35 @@ public class PlayerReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
+    public void Start()
+    {
+        PlayerPrefs.GetInt("selectedCharacter");
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 0)
+        {
+            playerSelectedElem = "fire";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 1)
+        {
+            playerSelectedElem = "earth";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 2)
+        {
+            playerSelectedElem = "air";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
+        {
+            playerSelectedElem = "water";
+        }
+    }
 
 
     public void CustomAwake()
     {
+ 
         playerSelectedElem = InterScene.currentPlayer.Element;
 
         if (playerSelectedElem != null)
@@ -37,7 +62,7 @@ public class PlayerReference : MonoBehaviour
         }
 
         //this is if testing
-        else
+                else
             charRef = charList[4];
 
         //set all references
