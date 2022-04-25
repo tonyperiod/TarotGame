@@ -5,21 +5,22 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
-    Transform transform;
-    GameObject gameObject;
+    public GameObject gameObject;
+    InterScene interScene;
 
 
     // Start is called before the first frame update
     void Start()
     {
-       if (InterScene.currentScene == "TonyCardTesting")
+       if (InterScene.isTutorial == true)
        {
-
+           
        }
        else
        {
-
+          Destroy(gameObject); 
        }
+
     }
 
     // Update is called once per frame
@@ -30,9 +31,8 @@ public class Tutorial : MonoBehaviour
 
     public void SkipTutorial()
     {
-       
-        
-    }
+        InterScene.isTutorial = false;
+    } 
 
     public void NextScreen()
     {
