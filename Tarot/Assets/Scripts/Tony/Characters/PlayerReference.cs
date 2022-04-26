@@ -17,31 +17,6 @@ public class PlayerReference : MonoBehaviour
 
     private SpriteRenderer spRend;
 
-    public void Start()
-    {
-        PlayerPrefs.GetInt("selectedCharacter");
-
-        if (PlayerPrefs.GetInt("selectedCharacter") == 0)
-        {
-            playerSelectedElem = "fire";
-        }
-
-        if (PlayerPrefs.GetInt("selectedCharacter") == 1)
-        {
-            playerSelectedElem = "earth";
-        }
-
-        if (PlayerPrefs.GetInt("selectedCharacter") == 2)
-        {
-            playerSelectedElem = "air";
-        }
-
-        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
-        {
-            playerSelectedElem = "water";
-        }
-    }
-
 
     public void CustomAwake()
     {
