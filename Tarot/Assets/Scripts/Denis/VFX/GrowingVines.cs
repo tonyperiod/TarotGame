@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//for this effect, it just needs to be enabled - it automatiically disables itsel after playing each time.
 public class GrowingVines : MonoBehaviour
 {
 
@@ -36,7 +38,7 @@ public class GrowingVines : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     //  if(Input.GetKeyDown(KeyCode.Space))
+    //if(Input.GetKeyDown(KeyCode.Space))
         {
             for(int i=0; i<growVinesMaterials.Count; i++)
             {
@@ -61,20 +63,27 @@ public class GrowingVines : MonoBehaviour
             }
         }
         else
-           
-        growing = false;
+
+            growing = false;
 
         {
-            
+
             while (growValue > minGrow && growing == false)
             {
                 growValue -= 1 / (timeToGrow / refreshRate);
                 mat.SetFloat("Grow_", growValue);
                 yield return new WaitForSeconds(refreshRate);
                 growing = false;
+
             }
         }
 
+        if (growValue < minGrow)
+        {
+            growValue = 0;
+            growing = true;
+            gameObject.SetActive(false);
+        }
        
 
         if (growValue >= maxGrow)
