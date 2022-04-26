@@ -6,35 +6,35 @@ using UnityEngine.UI;
 public class CharacterSelectedElement : MonoBehaviour
 {
     PlayerReference playerRef;
-    public string playerSelectedElem;
+    public string elementSelect;
     GameObject text;
     GameObject gameObject;
 
     void Start()
-    {
-
-        playerSelectedElem = this.GetComponent<PlayerReference>().playerSelectedElem;
-
+    { 
         PlayerPrefs.GetInt("selectedCharacter");
+
+        elementSelect = this.GetComponent<PlayerReference>().playerSelectedElem;
+
 
         if (PlayerPrefs.GetInt("selectedCharacter") == 0)
         {
-            playerSelectedElem = "fire";
+            elementSelect = "fire";
         }
 
         if (PlayerPrefs.GetInt("selectedCharacter") == 1)
         {
-            playerSelectedElem = "earth";
+            elementSelect = "earth";
         }
 
         if (PlayerPrefs.GetInt("selectedCharacter") == 2)
         {
-            playerSelectedElem = "air";
+            elementSelect = "air";
         }
 
-        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
+        else if (PlayerPrefs.GetInt("selectedCharacter") == 3)
         {
-            playerSelectedElem = "water";
+            elementSelect = "water";
         }
 
     }
