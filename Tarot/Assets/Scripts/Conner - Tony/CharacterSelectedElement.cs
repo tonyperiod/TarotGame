@@ -6,13 +6,37 @@ using UnityEngine.UI;
 public class CharacterSelectedElement : MonoBehaviour
 {
     PlayerReference playerRef;
-    GameObject gameObject;
+    public string playerSelectedElem;
     GameObject text;
+    GameObject gameObject;
 
     void Start()
     {
-        //gameObject.SetActive(true);
-        
+
+        playerSelectedElem = this.GetComponent<PlayerReference>().playerSelectedElem;
+
+        PlayerPrefs.GetInt("selectedCharacter");
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 0)
+        {
+            playerSelectedElem = "fire";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 1)
+        {
+            playerSelectedElem = "earth";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 2)
+        {
+            playerSelectedElem = "air";
+        }
+
+        if (PlayerPrefs.GetInt("selectedCharacter") == 3)
+        {
+            playerSelectedElem = "water";
+        }
+
     }
 
     void Update()
@@ -24,7 +48,7 @@ public class CharacterSelectedElement : MonoBehaviour
      
 
     //in player reference, there is public static string called playerSelectedElem.
-    //Based on that, the element for the enemy is chosen
+    //Based on that, the element for the player is chosen
 
     //if you need to edit that one parameter (playerselected elem) you can, as long as it stays a string in playerreference.
 }

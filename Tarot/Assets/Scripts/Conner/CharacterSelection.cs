@@ -9,6 +9,7 @@ public class CharacterSelection : MonoBehaviour
     public GameObject[] characters;
     public int selectedCharacter = 0;
 
+
     void start()
     {
 
@@ -44,4 +45,6 @@ public class CharacterSelection : MonoBehaviour
     {
         SceneManager.LoadScene("ConnerMainMenu");
     }
+
+
 }

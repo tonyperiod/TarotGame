@@ -18,9 +18,9 @@ public class PlayerReference : MonoBehaviour
     private SpriteRenderer spRend;
 
 
-
     public void CustomAwake()
     {
+ 
         playerSelectedElem = InterScene.currentPlayer.Element;
 
         if (playerSelectedElem != null)
@@ -37,7 +37,7 @@ public class PlayerReference : MonoBehaviour
         }
 
         //this is if testing
-        else
+                else
             charRef = charList[4];
 
         //set all references
