@@ -14,12 +14,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameObject = GameObject.Find("Tooltip (Battle Board)");
-
-
-        //cardPrefab = GameObject.Find("CardPrefabA");
-
-        //cardScriptReference = cardPrefab.transform.GetComponent<CardScriptReference>();
+        
     }
 
     // Update is called once per frame
@@ -36,11 +31,11 @@ public class UIManager : MonoBehaviour
             gameObject.SetActive(true);
             gameObject.transform.position = this.transform.position + new Vector3(-2f, 2f, 0f);
 
-           element = gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
+            element = gameObject.transform.GetChild(4).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().elem;
             gameObject.transform.GetChild(5).transform.GetComponent<TextMesh>().text = this.GetComponent<CardScriptReference>().value.ToString();
 
-
             int slot = this.GetComponent<CardScriptReference>().slot;
+
 
             if (slot == 0)
             { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past Card";   }
@@ -52,25 +47,65 @@ public class UIManager : MonoBehaviour
             { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past-Present Card"; }
 
             text.SetActive(true);
+
+
+
+            // element effects in past slot
+            if (element.Equals("fire") && slot == 0)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Buff Present (value of card)";
+            }
+            if (element.Equals("earth") && slot == 0)
+            {
+            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Shield (value of card)";
+            }
+            if (element.Equals("air") && slot == 0)
+            {
+            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Send back Damage from Future";
+            }
+            if (element.Equals("water") && slot == 0)
+            {
+            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Send back Damage to Present";
+            }
+
+            // element effects in present slot
+            if (element.Equals("fire") && slot == 1)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage (Value of Card)";
+            }
+            if (element.Equals("earth") && slot == 1)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage (Value of Card)";
+            }
+            if (element.Equals("air") && slot == 1)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage (Value of Card)";
+            }
+            if (element.Equals("water") && slot == 1)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage (Value of Card)";
+            }
+
+            // element effects in future/past-future slot
+            if (element.Equals("fire") && slot > 2)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage 2x Next Turn";
+            }
+            if (element.Equals("earth") && slot > 2)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage 2x Next Turn";
+            }
+            if (element.Equals("air") && slot > 2)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Shield Next Turn";
+            }
+            if (element.Equals("water") && slot > 2)
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Heal Next Turn";
+            }
+
         }
 
-        // positions element effect
-        if (element.Equals("fire"))
-        {
-            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Enemy cannot heal";
-        }
-        else if (element.Equals("earth"))
-        {
-            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "50% Shields Extra";
-        }
-        else if (element.Equals("air"))
-        {
-            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Ignore Shield";
-        }
-        else
-        {
-            gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "50% lifesteal";
-        }
     }
     private void OnMouseExit()
     {

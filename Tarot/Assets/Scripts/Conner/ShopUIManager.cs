@@ -9,6 +9,7 @@ public class ShopUIManager : MonoBehaviour
     string element;
     string damage;
     string cardname;
+    string effect;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,8 @@ public class ShopUIManager : MonoBehaviour
             element = gameObject.transform.GetChild(1).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().elem;
             damage = gameObject.transform.GetChild(3).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().value.ToString();
             cardname = gameObject.transform.GetChild(4).transform.GetComponent<Text>().text = this.GetComponent<ShopCardScriptReference>().Cardname;
-            
+            effect = gameObject.transform.GetChild(5).transform.GetComponent<Text>().text; 
+
     }
 
     private void OnMouseExit()
