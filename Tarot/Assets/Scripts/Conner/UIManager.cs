@@ -43,8 +43,8 @@ public class UIManager : MonoBehaviour
             { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Present Card"; }
             else if (slot == 2)
             { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Future Card"; }
-            else
-            { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past-Present Card"; }
+            else 
+            { gameObject.transform.GetChild(0).transform.GetComponent<TextMesh>().text = "Past-Future Card"; }
 
             text.SetActive(true);
 
