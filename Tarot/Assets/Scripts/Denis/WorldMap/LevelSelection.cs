@@ -12,34 +12,43 @@ public class LevelSelection : MonoBehaviour
     public GameObject unlockImage;
     public GameObject footstepsImage;
     public GameObject lights;
-    
 
-   
+
+
     //public GameObject[] stars;
-    private void Update()
+    private void Start()
     {
-        UpdateLevelImage();
         UpdateLevelStatus();
+        UpdateLevelImage();
     }
 
     private void UpdateLevelStatus()
     {
-        int previousLevelNum = int.Parse(gameObject.name) - 1;
-        if (PlayerPrefs.GetInt("Lv" + previousLevelNum.ToString()) > 0)
-        {
+        int previousLock = int.Parse(gameObject.name)-1;
+
+        //old version
+        //if (PlayerPrefs.GetInt("Lv" + thisLock.ToString()) > 0)
+        //{
+        //    unlocked = true;
+        //}
+
+        //with interscene instead
+        Debug.Log(InterScene.defeatedLevels);
+
+        if (previousLock <= InterScene.defeatedLevels)
             unlocked = true;
-        }
+
     }
     public void UpdateLevelImage()
     {
         if (!unlocked)
         {
             unlockImage.gameObject.SetActive(true);
-         //  for (int i = 0; i < stars.Length; i++)
-          //  {
+            //  for (int i = 0; i < stars.Length; i++)
+            //  {
             //    stars[i].gameObject.SetActive(false);
 
-         //   }
+            //   }
 
             footstepsImage.gameObject.SetActive(false);
             //  for (int i = 0; i < stars.Length; i++)
@@ -53,11 +62,11 @@ public class LevelSelection : MonoBehaviour
         else
         {
             unlockImage.gameObject.SetActive(false);
-           // for (int i = 0; i < stars.Length; i++)
-          //  {
-          //      stars[i].gameObject.SetActive(true);
+            // for (int i = 0; i < stars.Length; i++)
+            //  {
+            //      stars[i].gameObject.SetActive(true);
 
-       //     }
+            //     }
 
             footstepsImage.gameObject.SetActive(true);
             //    for (int i = 0; i < stars.Length; i++)
@@ -70,11 +79,11 @@ public class LevelSelection : MonoBehaviour
 
         }
 
-        
+
     }
     public void PressSelection(string _LevelName)
     {
-        if(unlocked)
+        if (unlocked)
         {
             SceneManager.LoadScene(_LevelName);
         }

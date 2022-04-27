@@ -31,7 +31,7 @@ public class OnWin : MonoBehaviour
 
         //SceneWasLoaded = true;
 
-        InterScene.goldPlayer += InterScene.currentEnemy.goldVal;
+        //InterScene.goldPlayer += InterScene.currentEnemy.goldVal;
         //Debug.Log(InterScene.goldPlayer);
         
 
