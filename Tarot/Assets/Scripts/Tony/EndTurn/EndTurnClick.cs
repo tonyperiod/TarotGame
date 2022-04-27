@@ -5,7 +5,6 @@ using UnityEngine;
 public class EndTurnClick : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
-    private float totalWait;
     private bool isCliccked;
 
     private void Start()
@@ -19,11 +18,7 @@ public class EndTurnClick : MonoBehaviour
         if (isCliccked == false)
         {
             isCliccked = true;
-            //do this again for major arcana probs
-            if (manager.gameStart == true)
-                totalWait = manager.dyTot - (manager.dySingle * 2);
-            else
-                totalWait = manager.dyTot;
+
             StartCoroutine("withDelays");
             
         }
@@ -34,8 +29,11 @@ public class EndTurnClick : MonoBehaviour
         manager.cardeffects.get();//for card effects to play in order
         yield return null;
 
+        manager.cardeffects.delayCalculator();//to get the correct dytot
+        yield return null;
+
         manager.cardeffects.activate();//actual activation of card effects
-        yield return new WaitForSeconds(totalWait);
+        yield return new WaitForSeconds(manager.dyTot);
 
         manager.removecardeffects.remove();
         manager.placeCardsScript.place();
