@@ -79,7 +79,7 @@ public class EndTurn : MonoBehaviour
     public CourtBuff courtbuff;
 
     [HideInInspector]
-    public string PElem, EElem, PElemC, EElemC, PElemMaj, EElemMaj;
+    public string PElem, EElem, PElemC, EElemC, PElemMaj, EElemMaj, PElemMajC, EElemMajC;
 
     [Header("delays")]
 

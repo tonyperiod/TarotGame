@@ -6,8 +6,17 @@ public class PastFuture : MonoBehaviour
 {
     public EndTurn manager;
 
+    //court part
+    bool isCourtElem;
+    bool doNotDestroy;
+
     public void pastfuture(GameObject c)
     {
+
+        //do not destroy court first time
+        doNotDestroy = false;
+        isCourtElem = false;
+
         //from card
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
@@ -21,11 +30,9 @@ public class PastFuture : MonoBehaviour
         bool isPonFireFu = manager.isPonFireFu;
 
         //counter element
-        string PElem;
-        string EElem;
-        string PElemC;
-        string EElemC;
-        
+        string PElem, EElem, PElemC, EElemC;
+
+
         //high priestess countering past future removal
         if (manager.isHighP == false)
         {
@@ -110,11 +117,13 @@ public class PastFuture : MonoBehaviour
             case "court":
                 {
                     //Debug.Log("court");
+                    doNotDestroy = true;
                     court(c);
                     break;
                 }
         }
-        GameObject.Destroy(c);
+        if(doNotDestroy == false)
+            GameObject.Destroy(c);
     }
 
     //they activate seperately, for now one of the two will always pass.
@@ -127,16 +136,22 @@ public class PastFuture : MonoBehaviour
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to wlwm
         manager.courtbuff.buff(court);//check for elemental buffing
         pastfuture(court);//activate script as usual
-        manager.courtbuff.debuff(court);//remove elemental buff if it happened
+        manager.courtbuff.debuff(court);//remove buff
+
+        //set is court so that it won't be deactivated by counter, and will get destroyed at end
+        isCourtElem = true;
+        doNotDestroy = false;
 
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
-        manager.courtbuff.buff(court);
-        pastfuture(court);
-        //here no need to run debuff, returning the val to original is more than enough
+        manager.courtbuff.buff(court);//check for elemental buffing
+        pastfuture(court);//activate script as usual
+        //remove elemental buff if it happened
+
 
         //return stuff to original
         court.GetComponent<CardScriptReference>().value = originalValue;
         court.GetComponent<CardScriptReference>().elem = "court";
+
     }
 }

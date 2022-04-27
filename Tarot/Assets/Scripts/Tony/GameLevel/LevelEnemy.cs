@@ -12,7 +12,7 @@ public class LevelEnemy : MonoBehaviour
     {
         //destroy if on list
         if (InterScene.deadEnemies.Contains(this.gameObject.name))
-            {
+        {
             if (this.isMiniboss == true)
                 InterScene.isMinibossDead = true;//just in case
             Destroy(this.gameObject);
@@ -45,6 +45,8 @@ public class LevelEnemy : MonoBehaviour
         //isminibossDead (set it immediatly just in case you win)
         if (InterScene.isMinibossDead == false) //put condition in case player fights minor enemies afterwords
             InterScene.isMinibossDead = isMiniboss;
+
+        InterScene.fightingMiniboss = isMiniboss;//for the levelLoading
 
         SceneManager.LoadScene("TonyCardTesting");
     }

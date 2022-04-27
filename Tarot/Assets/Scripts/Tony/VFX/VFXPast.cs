@@ -46,7 +46,26 @@ public class VFXPast : MonoBehaviour
                 card.transform.GetChild(3).gameObject.SetActive(true);
                 cRef.visualEffects[0].Play();
                 break;
+            case "court":
+                court(card);
+                break;
 
         }
+    }
+
+    private void court(GameObject court)
+    {
+
+        //element 1
+        court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to elem
+        activate(court);//activate script as usual
+                         
+
+        //element 2
+        court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
+        activate(court);//activate script as usual;
+        
+        //return stuff to original     
+        court.GetComponent<CardScriptReference>().elem = "court";
     }
 }

@@ -9,6 +9,7 @@ public class CharacterSelection : MonoBehaviour
     public GameObject[] characters;
     public int selectedCharacter = 0;
 
+    public ScriptableChar[] scriptableCharacterSelection;//tony addon for game functionality
 
     void start()
     {
@@ -37,7 +38,7 @@ public class CharacterSelection : MonoBehaviour
 
     public void PlayGame()
     {
-        PlayerPrefs.SetInt("selectedCharacter", selectedCharacter);
+        InterScene.currentPlayer = scriptableCharacterSelection[selectedCharacter];//tony addon for game functionality
         SceneManager.LoadScene("DenisWorldMap");
     }
 

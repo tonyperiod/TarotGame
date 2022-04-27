@@ -21,9 +21,10 @@ public class InterScene : MonoBehaviour
     public static ScriptableChar currentEnemy;//for enemy scriptable objct  
     public static Vector3 lastLoc;
     public static string currentScene; 
-    public static int currentSceneNumber; //int to make it easiser for the shopRNGManager
+    public static int currentSceneNumber; //int to make it easier for the shopRNGManager
     public static int goldPlayer;
-    public static bool isMinibossDead;
+    public static bool isMinibossDead;//keep constant in level in case of backtracking
+    public static bool fightingMiniboss; //for the scene backdrop loading
 
     //won battle
     public static int defeatedLevels;

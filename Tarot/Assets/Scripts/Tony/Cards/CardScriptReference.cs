@@ -23,6 +23,8 @@ public class CardScriptReference : MonoBehaviour
 
     public SpriteRenderer spRend;
 
+    public bool isCourt;
+
     //vfx
     public VisualEffect[] visualEffects;
     public ParticleSystem[] particleSystems;
@@ -40,7 +42,6 @@ public class CardScriptReference : MonoBehaviour
 
         court1 = cardData.court1;
         court2 = cardData.court2;
-
     }
 
 }
