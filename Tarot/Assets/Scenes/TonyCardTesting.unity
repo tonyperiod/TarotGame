@@ -28485,7 +28485,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7322341639780023109, guid: d28f9f4498207994c8b49c5fec0a2435, type: 3}
       propertyPath: m_text
-      value: 'Major Arcana Text. '
+      value: 'This is the Major Arcana card slots. There are two slots each for the
+        player and the enemy. '
       objectReference: {fileID: 0}
     - target: {fileID: 7322341639780023109, guid: d28f9f4498207994c8b49c5fec0a2435, type: 3}
       propertyPath: m_fontSize
@@ -28610,7 +28611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381315053}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 1.29, z: -0.6}
+  m_LocalPosition: {x: -0.73, y: 1.05, z: -2.658}
   m_LocalScale: {x: 0.2917201, y: 0.29171997, z: 0.2917201}
   m_Children: []
   m_Father: {fileID: 343533112}
@@ -29869,7 +29870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5a75c835550714088991c9c7fee38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSelectedElem: 
+  elementSelect: 
 --- !u!1 &1600094955
 GameObject:
   m_ObjectHideFlags: 0
