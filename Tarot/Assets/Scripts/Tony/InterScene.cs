@@ -25,4 +25,6 @@ public class InterScene : MonoBehaviour
     public static int goldPlayer;
     public static bool isMinibossDead;
 
+    //won battle
+    public static int defeatedLevels;
 }

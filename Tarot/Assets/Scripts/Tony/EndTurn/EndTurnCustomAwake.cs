@@ -24,8 +24,6 @@ public class EndTurnCustomAwake : MonoBehaviour
         //set the lastturncards database, for draggable
         manager.cardeffects.get();
 
-        //EDIT HERE AFTER TAROT CARDS
-        manager.dyTot = manager.dySingle*12;//all delays play twice
 
     }
 }

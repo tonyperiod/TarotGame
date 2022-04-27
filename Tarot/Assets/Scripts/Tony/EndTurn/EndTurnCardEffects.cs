@@ -7,6 +7,20 @@ public class EndTurnCardEffects : MonoBehaviour
     [SerializeField] EndTurn manager;
     GameObject[] lastTurnCards;
 
+    public void delayCalculator()
+    {
+        lastTurnCards = manager.lastTurnCards;
+        int cardsInGame = 0;
+
+        for (int i = 0; i < manager.lastTurnCards.Length; i++)
+        {
+            if (lastTurnCards[i].GetComponent<CardScriptReference>().elem != "dummy")
+                cardsInGame += 1;                
+        }
+        manager.dyTot = cardsInGame * manager.dySingle;
+    }
+
+
     public void get() //just get the cards -> used in draggable now as well
     {
         lastTurnCards = manager.lastTurnCards;
