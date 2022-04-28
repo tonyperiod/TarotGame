@@ -156,8 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteLibraries:
-  - {fileID: 7108339969198208228, guid: 9a63d1b17840f8e479617ece8b3db2fb, type: 3}
-  - {fileID: 7108339969198208228, guid: ef623ffcfa8b91d418d73d92dfcabd7d, type: 3}
+  - {fileID: 7108339969198208228, guid: 925570f0e125b1f4cb2f34f4af2f6d58, type: 3}
+  - {fileID: 7108339969198208228, guid: 9c3e5942f17bc1547b9eb0a5be496483, type: 3}
   - {fileID: 7108339969198208228, guid: 9a63d1b17840f8e479617ece8b3db2fb, type: 3}
   - {fileID: 7108339969198208228, guid: ef623ffcfa8b91d418d73d92dfcabd7d, type: 3}
 --- !u!95 &4531460827052978901

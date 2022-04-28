@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 36
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 2081823275
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_6
+      m_Hash: 1179237540
+      m_Sprite: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -8301858449761111333, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 1
+  - m_Name: Left
+    m_Hash: -631945130
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_3
+      m_Hash: 908281899
+      m_Sprite: {fileID: -8067470232776096962, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -909371255245637023, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_4
+      m_Hash: -1471685240
+      m_Sprite: {fileID: -9082623012440854834, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -3307585443988758885, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_5
+      m_Hash: -549393122
+      m_Sprite: {fileID: -2259898789562082322, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 6402582338109211948, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  - m_Name: Right
+    m_Hash: 1963678224
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_0
+      m_Hash: -1356195439
+      m_Sprite: {fileID: -7626669509767163912, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 188511660075510983, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_1
+      m_Hash: -668129017
+      m_Sprite: {fileID: -8637894831528820883, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1201316799020179221, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_2
+      m_Hash: 1092909245
+      m_Sprite: {fileID: 8798660713443123351, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 2997812700438367198, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  - m_Name: Up
+    m_Hash: -703542574
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_6
+      m_Hash: 1179237540
+      m_Sprite: {fileID: 9134136997509937280, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 4632989399736951752, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_7
+      m_Hash: 827231282
+      m_Sprite: {fileID: -1501406796085106572, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 175173402376928228, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_8
+      m_Hash: -1578004061
+      m_Sprite: {fileID: -4594436118029148907, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -9136949380238323230, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  - m_Name: Down
+    m_Hash: -1127399675
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_6
+      m_Hash: 1179237540
+      m_Sprite: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -8301858449761111333, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_7
+      m_Hash: 827231282
+      m_Sprite: {fileID: 1549435698455299172, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1541619162247798173, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    - m_Name: CHSpritesheet_water_character_sprite_sheet_noBG_8
+      m_Hash: -1578004061
+      m_Sprite: {fileID: -8090584045492579565, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -3739651786681991550, guid: 59405e6544edfd2438bca9b8a47a78af, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
+  m_PrimaryLibraryGUID: ef623ffcfa8b91d418d73d92dfcabd7d
