@@ -77,9 +77,32 @@ public class VFXPresent : MonoBehaviour
                 break;
 
             case "water":
-                card.transform.GetChild(4).gameObject.SetActive(true);
-                card.GetComponent<CardScriptReference>().visualEffects[1].Play();
+                //old water
+                //card.transform.GetChild(4).gameObject.SetActive(true);
+                //card.GetComponent<CardScriptReference>().visualEffects[1].Play();
+
+                //basically doing spawn meteor again
+                Vector3 startPos = new Vector3(0,0,0);
+                Vector3 endPos = new Vector3(0, 0, 0);
+
+                if (card.GetComponent<CardScriptReference>().isplayer == true)
+                {
+                    startPos = manager.playerEndTransf.position;
+                    endPos = manager.enemyEndTransf.position;
+                }
+                else
+                {
+                    startPos = manager.enemyEndTransf.position;
+                    endPos = manager.playerEndTransf.position;
+                }
+
+                GameObject objVFX = Instantiate(manager.presentVFX[3], startPos, Quaternion.identity) as GameObject;
+
+                var direction = endPos - objVFX.transform.position;
+                var rotation = Quaternion.LookRotation(direction);
+                objVFX.transform.localRotation = Quaternion.Lerp(objVFX.transform.rotation, rotation, 1);
                 break;
+
             case "court":
                 court(card);
                 break;
