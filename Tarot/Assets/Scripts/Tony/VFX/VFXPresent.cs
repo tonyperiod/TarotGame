@@ -8,7 +8,6 @@ public class VFXPresent : MonoBehaviour
 
     string cardElement;
     int cardValue;
-    bool cardIsPlayer;
 
 
     //card = the currently played card
@@ -17,7 +16,6 @@ public class VFXPresent : MonoBehaviour
         //getting the references that are necessary per every card played
         cardElement = card.GetComponent<CardScriptReference>().elem;
         //cardValue = card.GetComponent<CardScriptReference>().value;
-        //cardIsPlayer = card.GetComponent<CardScriptReference>().isplayer;
 
        
         //activating the script for the actual vfx
@@ -82,8 +80,25 @@ public class VFXPresent : MonoBehaviour
                 card.transform.GetChild(4).gameObject.SetActive(true);
                 card.GetComponent<CardScriptReference>().visualEffects[1].Play();
                 break;
+            case "court":
+                court(card);
+                break;
         }
     }
 
+    private void court(GameObject court)
+    {
 
+        //element 1
+        court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to elem
+        activate(court);//activate script as usual
+
+
+        //element 2
+        court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
+        activate(court);//activate script as usual;
+
+        //return stuff to original     
+        court.GetComponent<CardScriptReference>().elem = "court";
+    }
 }

@@ -41,7 +41,7 @@ public class EndTurnCardEffects : MonoBehaviour
         BuffElement(lastTurnCards);
         CounterElement(lastTurnCards);
 
-        //MAJOR ARCANA---------------
+        //MAJOR ARCANA--------------- ///DO IN FUTURE THE COUNTER
         if (manager.lastTurnCards[9].GetComponent<CardScriptReference>().court1 == "major") //check if there is a major arcana in play
         {
             //manager.vfxManager.Activate(lastTurnCards[9], 9);
@@ -300,6 +300,18 @@ public class EndTurnCardEffects : MonoBehaviour
         //set major counter
         manager.PElemMaj = list[1].GetComponent<CardScriptReference>().elem;
         manager.EElemMaj = list[4].GetComponent<CardScriptReference>().elem;
+
+        if (manager.PElemMaj == "court")
+        {
+            manager.PElemMaj = manager.lastTurnCards[1].GetComponent<CardScriptReference>().court1;
+            manager.PElemMajC = manager.lastTurnCards[1].GetComponent<CardScriptReference>().court2;
+        }
+
+        if (manager.PElemMaj == "court")
+        {
+            manager.EElem = manager.lastTurnCards[4].GetComponent<CardScriptReference>().court1;
+            manager.EElemC = manager.lastTurnCards[4].GetComponent<CardScriptReference>().court2;
+        }
     }
 
     //this is for testing purposes

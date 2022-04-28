@@ -7,7 +7,6 @@ public class PlayerReference : MonoBehaviour
     public ScriptableChar[] charList;
     public string playerSelectedElem;
     private ScriptableChar charRef;
-    GameObject gameObject;
 
     public string _name;
     public int maxHP;
@@ -21,15 +20,15 @@ public class PlayerReference : MonoBehaviour
 
     public void CustomAwake()
     {
-
-        playerSelectedElem = InterScene.currentPlayer.Element;
-
-        if (playerSelectedElem != null)
+        //testing
+        charRef = charList[4];
+        
+        if (InterScene.currentPlayer != null)
         {
             //select character using what we got
             for (int i = 0; i < charList.Length; i++)
             {
-                if (charList[i].Element == playerSelectedElem)
+                if (charList[i].Element == InterScene.currentPlayer.Element)
                 {
                     charRef = charList[i];
                     break;
@@ -37,9 +36,6 @@ public class PlayerReference : MonoBehaviour
             }
         }
 
-        //this is if testing
-                else
-            charRef = charList[4];
 
         //set all references
         _name = charRef.Name;

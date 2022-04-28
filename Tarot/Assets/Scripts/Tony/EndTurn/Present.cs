@@ -6,9 +6,16 @@ public class Present : MonoBehaviour
 {
     public EndTurn manager;
 
+    //court part
+    bool isCourtElem;
+    bool doNotDestroy;
 
     public void present(GameObject c)
     {
+        //do not destroy court first time
+        doNotDestroy = false;
+        isCourtElem = false;
+
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
 
@@ -79,12 +86,13 @@ public class Present : MonoBehaviour
                 break;
             case "court":
                 {
-                    //Debug.Log("court");
+                    doNotDestroy = true;
                     court(c);
                     break;
                 }
         }
-        GameObject.Destroy(c);
+        if (doNotDestroy == false)
+            GameObject.Destroy(c);
     }
 
 
@@ -99,6 +107,10 @@ public class Present : MonoBehaviour
         manager.courtbuff.buff(court);//check for elemental buffing
         present(court);//activate script as usual
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
+
+        //set is court so that it won't be deactivated by counter, and will get destroyed at end
+        isCourtElem = true;
+        doNotDestroy = false;
 
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
