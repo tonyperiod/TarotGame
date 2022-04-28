@@ -18,7 +18,7 @@ MonoBehaviour:
   MaxSH: 30
   Element: earth
   ID: 0
-  ArtworkPortrait: {fileID: 21300000, guid: bffe6096c35e74f488b928368451f924, type: 3}
+  ArtworkPortrait: {fileID: 21300000, guid: bc53806666afa284a8901f978f3d1e9c, type: 3}
   ArtworkChibi: {fileID: 21300000, guid: bffe6096c35e74f488b928368451f924, type: 3}
   goldVal: 100
   deck: {fileID: 11400000, guid: 5a6b5fb3b06c6514b9815cde60945b89, type: 2}

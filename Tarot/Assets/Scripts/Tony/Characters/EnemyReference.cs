@@ -36,9 +36,6 @@ public class EnemyReference : MonoBehaviour
         if (InterScene.currentEnemy != null)
             chosenEnemy = InterScene.currentEnemy;
 
-        transform.localScale = new Vector3(4.3f, 4.3f, 4.3f);
-
-        transform.position = new Vector3(-8, -7, 5);
 
         //get all stats
         _name = chosenEnemy.Name;
@@ -56,6 +53,8 @@ public class EnemyReference : MonoBehaviour
         {
             artWork = chosenEnemy.ArtworkChibi;
         }
+        
+
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;
     }
