@@ -87,19 +87,19 @@ public class UIManager : MonoBehaviour
             }
 
             // element effects in future/past-future slot
-            if (element.Equals("fire") && slot > 2)
+            if (element.Equals("fire") && slot == 2)
             {
                 gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage 2x Next Turn";
             }
-            if (element.Equals("earth") && slot > 2)
+            if (element.Equals("earth") && slot == 2)
             {
                 gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage 2x Next Turn";
             }
-            if (element.Equals("air") && slot > 2)
+            if (element.Equals("air") && slot == 2)
             {
                 gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Shield Next Turn";
             }
-            if (element.Equals("water") && slot > 2)
+            if (element.Equals("water") && slot == 2)
             {
                 gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Heal Next Turn";
             }
