@@ -121,15 +121,27 @@ public class EndTurnCardEffects : MonoBehaviour
         {
             if (manager.gameStart == false)
             {
-                manager.vfxManager.Activate(lastTurnCards[6], 2);
-                yield return new WaitForSeconds(manager.dySingle);
-                manager.PastFuture.pastfuture(lastTurnCards[6]);
+                //needs to check if countered before activating vfx
+                if (manager.vfxCounter.check(lastTurnCards[6]) == false)
+                {
+                    manager.vfxManager.Activate(lastTurnCards[6], 2);
+                    yield return new WaitForSeconds(manager.dySingle);
+                    manager.PastFuture.pastfuture(lastTurnCards[6], false);
+                    GameObject.Destroy(lastTurnCards[6]); //just to make sure
+                }
+
+                else
+                {
+                    manager.vfxCounter.counter(lastTurnCards[6]);
+                    yield return new WaitForSeconds(manager.dySingle);
+                    GameObject.Destroy(lastTurnCards[6]); //it won't destroy by itself
+                }
             }
 
         }
         else
         {
-            manager.gameStart = true;//doesn't matter if it repeats
+            manager.gameStart = false;//doesn't matter if it repeats
             GameObject.Destroy(lastTurnCards[6]);
         }
 
@@ -141,14 +153,25 @@ public class EndTurnCardEffects : MonoBehaviour
             if (manager.gameStart == false)
             {
                 manager.cardToCentre.centre(manager.lastTurnCards[7]);
-                manager.vfxManager.Activate(lastTurnCards[7], 2);
-                yield return new WaitForSeconds(manager.dySingle);
-                manager.PastFuture.pastfuture(lastTurnCards[7]);
+                //needs to check if countered before activating vfx
+                if (manager.vfxCounter.check(lastTurnCards[7]) == false)
+                {
+                    manager.vfxManager.Activate(lastTurnCards[7], 2);
+                    yield return new WaitForSeconds(manager.dySingle);
+                    manager.PastFuture.pastfuture(lastTurnCards[7], false);
+                    GameObject.Destroy(lastTurnCards[7]); //just to make sure
+                }
+                else
+                {
+                    manager.vfxCounter.counter(lastTurnCards[7]);
+                    yield return new WaitForSeconds(manager.dySingle);
+                    GameObject.Destroy(lastTurnCards[7]);
+                }
             }
         }
         else
         {
-            manager.gameStart = true;//doesn't matter if it repeats
+            manager.gameStart = false;//doesn't matter if it repeats
             GameObject.Destroy(lastTurnCards[7]);
         }
 
@@ -169,7 +192,8 @@ public class EndTurnCardEffects : MonoBehaviour
 
                 manager.vfxManager.Activate(lastTurnCards[2], 2);
                 yield return new WaitForSeconds(manager.dySingle);
-                manager.PastFuture.pastfuture(lastTurnCards[2]);
+                manager.PastFuture.pastfuture(lastTurnCards[2], false);
+                GameObject.Destroy(lastTurnCards[2]); //just to make sure
 
                 //need to create dummy to not have less cards in game
                 manager.MajorDummy.Create(6);
@@ -193,7 +217,8 @@ public class EndTurnCardEffects : MonoBehaviour
             {
                 manager.vfxManager.Activate(lastTurnCards[5], 2);
                 yield return new WaitForSeconds(manager.dySingle);
-                manager.PastFuture.pastfuture(lastTurnCards[5]);
+                manager.PastFuture.pastfuture(lastTurnCards[5], false);
+                GameObject.Destroy(lastTurnCards[5]); //just to make sure
 
                 manager.MajorDummy.Create(7);
             }

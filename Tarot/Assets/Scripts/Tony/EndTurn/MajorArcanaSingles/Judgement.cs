@@ -85,7 +85,7 @@ public class Judgement : MonoBehaviour
 
         manager.vfxManager.Activate(judgementCards[2], 2);
         yield return new WaitForSeconds(manager.dySingle);
-        manager.PastFuture.pastfuture(judgementCards[2]);
+        manager.PastFuture.pastfuture(judgementCards[2], false);
         destroyCard();
 
     }

@@ -104,7 +104,7 @@ public class Chariot : MonoBehaviour
     {
         manager.vfxManager.Activate(chariotCard[0], 2);
         yield return new WaitForSeconds(manager.dySingle);
-        manager.PastFuture.pastfuture(chariotCard[0]);
+        manager.PastFuture.pastfuture(chariotCard[0], false);
     }
 
     public void Destroyed()

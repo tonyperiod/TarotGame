@@ -80,6 +80,6 @@ public class Star : MonoBehaviour
 
         manager.vfxManager.Activate(starCards[2], 2);
         yield return new WaitForSeconds(manager.dySingle);
-        manager.PastFuture.pastfuture(starCards[2]);
+        manager.PastFuture.pastfuture(starCards[2], false);
     }
 }
