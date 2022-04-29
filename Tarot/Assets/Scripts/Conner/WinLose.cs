@@ -26,15 +26,14 @@ public class WinLose : MonoBehaviour
 
     void Update()
     {
-
-        if (InterScene.defeatedLevels == 0)
+        if (InterScene.isMinibossDead = true)
         {
-            winText.SetActive(true);
+            loseText.SetActive(true);
         }
 
         else
         {
-            loseText.SetActive(true);
+            winText.SetActive(true);
         }   
     }
 
