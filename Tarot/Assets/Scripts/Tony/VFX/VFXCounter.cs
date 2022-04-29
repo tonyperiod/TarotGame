@@ -81,7 +81,7 @@ public class VFXCounter : MonoBehaviour
         if (card.GetComponent<CardScriptReference>().isplayer == true)
         {
             orientation = new Vector3(-30, -5, 5);
-            rotation = 0;
+            rotation = 180;
         }
 
         else
