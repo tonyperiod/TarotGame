@@ -8,6 +8,10 @@ public class VFXPastFuture : MonoBehaviour
     int cardValue;
     bool cardIsPlayer;
 
+    [SerializeField] VFXManager manager;
+
+    public Transform airP;
+    public Transform airE;
 
     //card = the currently played card
     public void activate(GameObject card)
@@ -18,14 +22,58 @@ public class VFXPastFuture : MonoBehaviour
         //cardIsPlayer = card.GetComponent<CardScriptReference>().isplayer;
 
         //activating the script for the actual vfx
-        actualEffectActivation();
+        actualEffectActivation(card);
 
     }
 
 
-    private void actualEffectActivation()
+    private void actualEffectActivation(GameObject card)
     {
-        
+        Vector3 spawnLoc;
+        GameObject objVFX;
+        switch (cardElement)
+        {
+           
+            case "air":
+                //shoot to and from correct spot
+                if (card.GetComponent<CardScriptReference>().isplayer == true)
+                {
+                    spawnLoc = airE.position;
+                }
+                else
+                {
+                    spawnLoc = airP.position;
+                }
+                objVFX = Instantiate(manager.pastFutureVFX[0], spawnLoc, Quaternion.identity) as GameObject;
+
+                break;
+
+            case "earth":
+
+                card.transform.GetChild(6).gameObject.SetActive(true);
+                break;
+
+            case "fire":
+                if (card.GetComponent<CardScriptReference>().isplayer == true)
+                {
+                    spawnLoc = manager.enemyEndTransf.position;
+                }
+                else
+                {
+                    spawnLoc = manager.playerEndTransf.position;
+                }
+
+                objVFX = Instantiate(manager.pastFutureVFX[1], spawnLoc, Quaternion.identity) as GameObject;
+                break;
+
+            case "water":
+                card.transform.GetChild(7).gameObject.SetActive(true);
+                break;    
+
+            case "court":
+                court(card);
+                break;
+        }
     }
 
     private void court(GameObject court)

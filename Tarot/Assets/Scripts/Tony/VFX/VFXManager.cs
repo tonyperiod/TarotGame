@@ -25,11 +25,14 @@ public class VFXManager : MonoBehaviour
 
     [Header("COMPLEX VFX")]
     public GameObject[] presentVFX;
+    public GameObject[] pastFutureVFX;
     public float addHeight;
     public Transform playerStTransf;
     public Transform enemyStTransf;
     public Transform playerEndTransf;
     public Transform enemyEndTransf;
+
+
   
 
     public void Activate(GameObject card, int time) // time is to see if past, pre, fut
