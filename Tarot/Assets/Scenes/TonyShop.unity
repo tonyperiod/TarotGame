@@ -8413,7 +8413,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 25
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -8637,6 +8637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 965379215}
   loseText: {fileID: 1363701203}
+  winLoseScreen: {fileID: 1630527603}
 --- !u!1 &1685940892
 GameObject:
   m_ObjectHideFlags: 0

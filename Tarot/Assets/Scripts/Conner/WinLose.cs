@@ -10,31 +10,34 @@ public class WinLose : MonoBehaviour
     GameObject player;
     GameObject enemy;
 
-    GameObject playerCurrentHP;
-    GameObject enemyCurrentHP;
+    GameObject curr_hp;
+    GameObject enemy_curr_hp;
 
     public GameObject winText;
     public GameObject loseText;
 
+    public GameObject winLoseScreen;
+
     // Start is called before the first frame update
     void Start()
     {
-     
-
+        winText.SetActive(true);
     }
 
 
     void Update()
     {
-        if (InterScene.isMinibossDead = true)
+        // If the current hp = 0 then the enemy wins the game and the players loses.
+        if (curr_hp.Equals("0"))
         {
             loseText.SetActive(true);
+            Debug.Log("if runs");
         }
-
         else
         {
             winText.SetActive(true);
-        }   
+            Debug.Log("else runs");
+        }
     }
 
 
