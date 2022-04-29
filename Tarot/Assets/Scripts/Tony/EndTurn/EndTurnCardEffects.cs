@@ -116,7 +116,7 @@ public class EndTurnCardEffects : MonoBehaviour
         else
             GameObject.Destroy(lastTurnCards[4]);
 
-
+        //touch this for major arcanas later
         if (lastTurnCards[6].GetComponent<CardScriptReference>().elem != "dummy")
         {
             if (manager.gameStart == false)
@@ -125,14 +125,14 @@ public class EndTurnCardEffects : MonoBehaviour
                 yield return new WaitForSeconds(manager.dySingle);
                 manager.PastFuture.pastfuture(lastTurnCards[6]);
             }
-            //destroy placeholders if turn one
-            else
-            {
-                GameObject.Destroy(lastTurnCards[6]);
-            }
+
         }
         else
+        {
+            manager.gameStart = true;//doesn't matter if it repeats
             GameObject.Destroy(lastTurnCards[6]);
+        }
+
 
 
         if (lastTurnCards[7].GetComponent<CardScriptReference>().elem != "dummy")
@@ -145,14 +145,12 @@ public class EndTurnCardEffects : MonoBehaviour
                 yield return new WaitForSeconds(manager.dySingle);
                 manager.PastFuture.pastfuture(lastTurnCards[7]);
             }
-            else
-            {
-                GameObject.Destroy(lastTurnCards[7]);
-                manager.gameStart = false;
-            }
         }
         else
+        {
+            manager.gameStart = true;//doesn't matter if it repeats
             GameObject.Destroy(lastTurnCards[7]);
+        }
 
 
         if (lastTurnCards[2].GetComponent<CardScriptReference>().elem != "dummy")

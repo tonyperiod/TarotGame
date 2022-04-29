@@ -11,22 +11,19 @@ public class StartGame : MonoBehaviour
     private void Start()
     {
         //get all cards and put into deck
-        if (InterScene.isNotNewGame == false)
-        {
-            if (shopAllDataInGame != null)
-                shopAllDataInGame.allCards.Clear();
-            shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
 
-            if (playerInGame != null)
-                playerInGame.allCards.Clear();
-            playerInGame.allCards = new List<ScriptableCard>(playerStarter.allCards);
+        shopAllDataInGame.allCards.Clear();
+        shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
 
-            InterScene.defeatedLevels = 0; //reset defeated lvls
+        playerInGame.allCards.Clear();
+        playerInGame.allCards = new List<ScriptableCard>(playerStarter.allCards);
 
-            InterScene.isTutorial = true;
+        InterScene.defeatedLevels = 0; //reset defeated lvls
 
-            Debug.Log(InterScene.isNotNewGame + " is notnew");
-            InterScene.isNotNewGame = true;
-        }
+        InterScene.isTutorial = true;
+
+        Debug.Log(InterScene.isNotNewGame + " is notnew");
+        InterScene.isNotNewGame = true;
     }
 }
+

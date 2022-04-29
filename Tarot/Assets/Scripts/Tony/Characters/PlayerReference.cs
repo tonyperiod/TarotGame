@@ -45,14 +45,6 @@ public class PlayerReference : MonoBehaviour
         iD = charRef.ID;
 
         //implement the correct artwork
-        if (InterScene.currentScene == "TonyCardTesting")
-        {
-            artWork = charRef.ArtworkPortrait;
-        }
-        else
-        {
-            artWork = charRef.ArtworkChibi;
-        }
 
         artWork = charRef.ArtworkPortrait;
 
