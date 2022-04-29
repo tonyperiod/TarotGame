@@ -21,4 +21,4 @@ MonoBehaviour:
   ArtworkPortrait: {fileID: 1549435698455299172, guid: 7a77d553251368b438098b617034e0bd, type: 3}
   ArtworkChibi: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
   goldVal: 0
-  deck: {fileID: 0}
+  deck: {fileID: 11400000, guid: 6936a3e4a453c67438812ee07226af65, type: 2}

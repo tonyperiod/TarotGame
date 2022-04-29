@@ -7,11 +7,13 @@ public class VFXCounter : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
 
+
+
     public bool check(GameObject c)
     {
         bool isCountered = false; //if not proven otherwise, it is false
 
-        //isCountered = true; //TESTIIIIIIIIIIIIIIIING
+        isCountered = true; //TESTIIIIIIIIIIIIIIIING
         string counterElem, counterElemC;
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
 
@@ -71,10 +73,29 @@ public class VFXCounter : MonoBehaviour
     }
     public void counter(GameObject card)
     {
+        Vector3 orientation;
+        int rotation;
+
         Debug.Log("counter activate");
         Texture cardText = card.GetComponent<CardScriptReference>().artWork.texture;
+        if (card.GetComponent<CardScriptReference>().isplayer == true)
+        {
+            orientation = new Vector3(-30, -5, 5);
+            rotation = 0;
+        }
+
+        else
+        {
+            orientation = new Vector3(30, -5, 5);
+            rotation = 180;
+        }
+
         card.transform.GetChild(5).gameObject.SetActive(true);
+
         card.transform.GetChild(5).gameObject.GetComponent<VisualEffect>().SetTexture("CardTexture", cardText);
+        card.transform.GetChild(5).gameObject.GetComponent<VisualEffect>().SetVector3("Orientation", orientation);
+        card.transform.GetChild(5).gameObject.GetComponent<VisualEffect>().transform.Rotate(0, rotation, 0);
+
         card.GetComponent<SpriteRenderer>().enabled = false;
 
         card.transform.GetChild(5).gameObject.GetComponent<VisualEffect>().enabled = true ;
