@@ -21,7 +21,7 @@ public class PlayerReference : MonoBehaviour
     public void CustomAwake()
     {
         //testing
-        charRef = charList[4];
+        charRef = charList[2];
         
         if (InterScene.currentPlayer != null)
         {
@@ -45,15 +45,8 @@ public class PlayerReference : MonoBehaviour
         iD = charRef.ID;
 
         //implement the correct artwork
-        if (InterScene.currentScene == "TonyCardTesting")
-        {
-            artWork = charRef.ArtworkPortrait;
-        }
-        else
-        {
-            artWork = charRef.ArtworkChibi;
-        }
 
+        artWork = charRef.ArtworkPortrait;
 
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;

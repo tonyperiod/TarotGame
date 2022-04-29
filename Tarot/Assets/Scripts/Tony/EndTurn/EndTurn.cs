@@ -20,6 +20,7 @@ public class EndTurn : MonoBehaviour
     public PastFuture PastFuture;
     public Draggable draggable;
     public VFXManager vfxManager;
+    public VFXCounter vfxCounter;
  
     [Header ("card functioning")]
 

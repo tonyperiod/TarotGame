@@ -42,6 +42,8 @@ public class CardScriptReference : MonoBehaviour
 
         court1 = cardData.court1;
         court2 = cardData.court2;
+
+        artWork = cardData.artWork;
     }
 
 }

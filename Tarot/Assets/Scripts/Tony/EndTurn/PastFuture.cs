@@ -7,16 +7,10 @@ public class PastFuture : MonoBehaviour
     public EndTurn manager;
 
     //court part
-    bool isCourtElem;
-    bool doNotDestroy;
 
-    public void pastfuture(GameObject c)
+    public void pastfuture(GameObject c, bool isCourt)
     {
-
-        //do not destroy court first time
-        doNotDestroy = false;
-        isCourtElem = false;
-
+        Debug.Log("playing past future");
         //from card
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
@@ -117,12 +111,11 @@ public class PastFuture : MonoBehaviour
             case "court":
                 {
                     //Debug.Log("court");
-                    doNotDestroy = true;
                     court(c);
                     break;
                 }
         }
-        if(doNotDestroy == false)
+        //if(isCourt == false)
             GameObject.Destroy(c);
     }
 
@@ -135,23 +128,20 @@ public class PastFuture : MonoBehaviour
         //element 1
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to wlwm
         manager.courtbuff.buff(court);//check for elemental buffing
-        pastfuture(court);//activate script as usual
+        pastfuture(court, true);//activate script as usual
         manager.courtbuff.debuff(court);//remove buff
 
-        //set is court so that it won't be deactivated by counter, and will get destroyed at end
-        isCourtElem = true;
-        doNotDestroy = false;
 
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
         manager.courtbuff.buff(court);//check for elemental buffing
-        pastfuture(court);//activate script as usual
+        pastfuture(court, true);//activate script as usual
         //remove elemental buff if it happened
 
 
         //return stuff to original
         court.GetComponent<CardScriptReference>().value = originalValue;
         court.GetComponent<CardScriptReference>().elem = "court";
-
+        GameObject.Destroy(court);
     }
 }
