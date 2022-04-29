@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HPChange : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class HPChange : MonoBehaviour
         enemy_curr_hp.GetComponent<Text>().text = enemy.GetComponent<BarsEnemy>().hpsystem.getHP().ToString();
         enemy_curr_sh.GetComponent<Text>().text = enemy.GetComponent<BarsEnemy>().shsystem.getSH().ToString();
 
+        DontDestroyOnLoad(curr_hp);
+        DontDestroyOnLoad(enemy_curr_hp);
     }
 
 }
