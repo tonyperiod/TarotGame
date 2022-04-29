@@ -13,7 +13,7 @@ public class VFXCounter : MonoBehaviour
     {
         bool isCountered = false; //if not proven otherwise, it is false
 
-        isCountered = true; //TESTIIIIIIIIIIIIIIIING
+        //isCountered = true; //TESTIIIIIIIIIIIIIIIING
         string counterElem, counterElemC;
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
 

@@ -81,20 +81,30 @@ public class EndTurnCardEffects : MonoBehaviour
         if (lastTurnCards[0].GetComponent<CardScriptReference>().elem != "dummy")
         {
             manager.vfxManager.Activate(lastTurnCards[0], 0);
+            //check if counter
+            if (manager.vfxCounter.check(lastTurnCards[7]) == true)
+                manager.vfxCounter.counter(lastTurnCards[7]);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Past.past(lastTurnCards[0]);
         }
         else
             GameObject.Destroy(lastTurnCards[0]);//if there are dummies they can't stay
+
+
+
         if (lastTurnCards[3].GetComponent<CardScriptReference>().elem != "dummy")
         {
             manager.cardToCentre.centre(manager.lastTurnCards[3]);
             manager.vfxManager.Activate(lastTurnCards[3], 0);
+            //check if counter
+            if (manager.vfxCounter.check(lastTurnCards[6]) == true)
+                manager.vfxCounter.counter(lastTurnCards[6]);
             yield return new WaitForSeconds(manager.dySingle);
             manager.Past.past(lastTurnCards[3]);
         }
         else
             GameObject.Destroy(lastTurnCards[3]);
+
 
 
         if (lastTurnCards[1].GetComponent<CardScriptReference>().elem != "dummy")
@@ -132,7 +142,7 @@ public class EndTurnCardEffects : MonoBehaviour
 
                 else
                 {
-                    manager.vfxCounter.counter(lastTurnCards[6]);
+                    //manager.vfxCounter.counter(lastTurnCards[6]);
                     yield return new WaitForSeconds(manager.dySingle);
                     GameObject.Destroy(lastTurnCards[6]); //it won't destroy by itself
                 }
@@ -163,7 +173,7 @@ public class EndTurnCardEffects : MonoBehaviour
                 }
                 else
                 {
-                    manager.vfxCounter.counter(lastTurnCards[7]);
+                    //manager.vfxCounter.counter(lastTurnCards[7]);
                     yield return new WaitForSeconds(manager.dySingle);
                     GameObject.Destroy(lastTurnCards[7]);
                 }

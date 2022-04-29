@@ -44,16 +44,16 @@ public class EnemyReference : MonoBehaviour
         element = chosenEnemy.Element;
         iD = chosenEnemy.ID;
 
-//implement the correct artwork
-        if (InterScene.currentScene == "TonyCardTesting")
-        {
-            artWork = chosenEnemy.ArtworkPortrait;
-        }
-        else
-        {
-            artWork = chosenEnemy.ArtworkChibi;
-        }
-        
+        //implement the correct artwork
+        //if (InterScene.currentScene == "TonyCardTesting")
+        //{
+        //    artWork = chosenEnemy.ArtworkPortrait;
+        //}
+        //else
+        //{
+        //    artWork = chosenEnemy.ArtworkChibi;
+        //}
+        artWork = chosenEnemy.ArtworkPortrait;
 
         spRend = GetComponent<SpriteRenderer>();
         spRend.sprite = artWork;
