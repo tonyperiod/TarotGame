@@ -104,6 +104,10 @@ public class UIManager : MonoBehaviour
                 gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Heal Next Turn";
             }
 
+            if (element.Equals("court"))
+            {
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "";
+            }
         }
 
     }
