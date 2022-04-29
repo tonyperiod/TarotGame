@@ -152,7 +152,7 @@ public class EndTurnCardEffects : MonoBehaviour
             
             if (manager.gameStart == false)
             {
-                manager.cardToCentre.centre(manager.lastTurnCards[7]);
+                //manager.cardToCentre.centre(manager.lastTurnCards[7]); //not this, can see in game anyway
                 //needs to check if countered before activating vfx
                 if (manager.vfxCounter.check(lastTurnCards[7]) == false)
                 {

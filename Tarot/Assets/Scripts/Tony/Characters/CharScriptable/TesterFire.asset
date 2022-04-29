@@ -14,9 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: tester
   Strength: weak
-  MaxHP: 5
-  MaxSH: 5
+  MaxHP: 500
+  MaxSH: 500
   Element: fire
   ID: 0
-  Artwork: {fileID: 21300000, guid: b9d96f313ed22c74f89bc9ce2f82029a, type: 3}
+  ArtworkPortrait: {fileID: 0}
+  ArtworkChibi: {fileID: 0}
   goldVal: 1
+  deck: {fileID: 11400000, guid: 09233426f0ef1b3459fec73c46213307, type: 2}
