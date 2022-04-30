@@ -52,6 +52,7 @@ public class Draggable : MonoBehaviour
         {
             movedSlot = cardScriptReference.slot;
             slotsTaken.snapPointTaken[movedSlot] = false;
+            manager.audioManager.Play("card picked");//sound of card up
         }
     }
 
@@ -106,7 +107,7 @@ public class Draggable : MonoBehaviour
             cardScriptReference.slot = closestSnap;
 
             doubleCheck();
-
+            manager.audioManager.Play("card placed");
             manager.cardeffects.get(); //reorganize the array
 
 

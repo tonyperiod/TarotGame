@@ -12,6 +12,7 @@ public class EndTurnPlaceCards : MonoBehaviour
         CardScriptReference cardReference = manager.cardPrefab.GetComponent<CardScriptReference>();
 
         manager.cardPrefab.tag = "Card"; // set to card so that the instances get this tag
+        manager.audioManager.Play("three cards placed");//playing at start, better game feel
 
         for (int i = 0; i < 6; i++)
         {
@@ -49,6 +50,7 @@ public class EndTurnPlaceCards : MonoBehaviour
         }
 
         manager.cardPrefab.tag = "Untagged";
+
     }
 
 

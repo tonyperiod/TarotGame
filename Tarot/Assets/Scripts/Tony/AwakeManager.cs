@@ -14,7 +14,9 @@ public class AwakeManager : MonoBehaviour
 
     public SlotsTaken slotstaken;
 
+    public AudioManager aMan;
     public GameObject[] backDrops;
+
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class AwakeManager : MonoBehaviour
         enemyingamedeck.CustomAwake();
 
         slotstaken.CustomAwake();
-
+        aMan.CustomAwake();
         endturn.CustomAwake();        
     }
 

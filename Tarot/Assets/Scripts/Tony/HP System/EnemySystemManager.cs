@@ -89,6 +89,6 @@ public class EnemySystemManager : MonoBehaviour
     public void checkIfDead()
     {
         if (hpsyst.getHP() == 0)
-            win.win();
+            win.win();//note for self: win audio will run in the next scene
     }
 }

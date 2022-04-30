@@ -26,5 +26,6 @@ public class Future : MonoBehaviour
                 c.GetComponent<CardScriptReference>().slot = 7;
                 break;
         }
+        manager.audioManager.Play("card placed");
     }
 }

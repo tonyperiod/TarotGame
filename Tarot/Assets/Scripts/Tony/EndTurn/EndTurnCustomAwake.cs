@@ -24,6 +24,5 @@ public class EndTurnCustomAwake : MonoBehaviour
         //set the lastturncards database, for draggable
         manager.cardeffects.get();
 
-
     }
 }

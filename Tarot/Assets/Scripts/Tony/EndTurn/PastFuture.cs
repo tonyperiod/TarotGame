@@ -66,6 +66,7 @@ public class PastFuture : MonoBehaviour
                     isEonFireFu = true;
                 }
 
+                manager.audioManager.Play("fire");
                 break;
 
 
@@ -80,6 +81,9 @@ public class PastFuture : MonoBehaviour
                 {
                     PSysMng.TakeAirDmg(2 * value);
                 }
+
+                manager.audioManager.Play("wind");
+                manager.audioManager.Play("sword");
                 break;
 
 
@@ -94,6 +98,8 @@ public class PastFuture : MonoBehaviour
                     EsysMng.HealSH(2 * value);
                 }
 
+                manager.audioManager.Play("shielding");
+                manager.audioManager.Play("water two");
                 break;
 
 
@@ -115,8 +121,9 @@ public class PastFuture : MonoBehaviour
                     break;
                 }
         }
-        //if(isCourt == false)
-            GameObject.Destroy(c);
+        //destroy in endturneffects instead
+        //if (isCourt == false)
+        //    GameObject.Destroy(c);
     }
 
     //they activate seperately, for now one of the two will always pass.

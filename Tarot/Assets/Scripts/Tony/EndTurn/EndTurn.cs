@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//this is the parameter manager for the card game, where all the parameters and scripts are saved
 public class EndTurn : MonoBehaviour
 {
     //ref to secondary scripts
@@ -21,6 +22,7 @@ public class EndTurn : MonoBehaviour
     public Draggable draggable;
     public VFXManager vfxManager;
     public VFXCounter vfxCounter;
+    public AudioManager audioManager;
  
     [Header ("card functioning")]
 

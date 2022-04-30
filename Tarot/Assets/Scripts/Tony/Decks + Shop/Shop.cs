@@ -5,7 +5,8 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     [Header("parameters")]
-
+    //audio manager
+    public AudioManager audioManager;
     //spawning in correct location
     public GameObject[] pos;
 
