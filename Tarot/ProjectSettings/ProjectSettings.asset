@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: Tarot
-  defaultCursor: {fileID: 2800000, guid: a8b86afc7736e0648974abb313081ade, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 42d3fb1d1ae6d8e48be3318fb0ca84a7, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
