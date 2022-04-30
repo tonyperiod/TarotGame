@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//from tutorial
 public class BarsEnemy : MonoBehaviour
 {
     public HPSystem hpsystem;

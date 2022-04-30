@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//from tutorial with some edits
 public class EnemySystemManager : MonoBehaviour
 {
     //getting all the data

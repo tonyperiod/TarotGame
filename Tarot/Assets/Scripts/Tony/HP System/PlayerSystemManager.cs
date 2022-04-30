@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//from tutorial
+//some edits for major arcana and getting references from in game
 public class PlayerSystemManager : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
