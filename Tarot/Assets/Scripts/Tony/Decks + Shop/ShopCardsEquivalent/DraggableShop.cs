@@ -44,8 +44,6 @@ public class DraggableShop : MonoBehaviour
         snapPoints = manager.pos;
 
 
-        //DO IN ANOTHER FUNCTION FFS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
         //////define buyable
         //GameObject[] helper = GameObject.FindGameObjectsWithTag("Card");
@@ -58,6 +56,7 @@ public class DraggableShop : MonoBehaviour
     {
         movedSlot = cardScriptReference.slot;
         slotsTaken.snapPointTaken[movedSlot] = false;
+        manager.audioManager.Play("card picked");//sound of card up
 
 
     }
@@ -70,7 +69,7 @@ public class DraggableShop : MonoBehaviour
         _rigidbody.velocity = 10 * difference;
 
         //floaty effect 
-        _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 0, 90 - _rigidbody.velocity.x));
+        _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 180, 90 - _rigidbody.velocity.x));
 
     }
 
@@ -106,6 +105,8 @@ public class DraggableShop : MonoBehaviour
         cardScriptReference.slot = closestSnap;
 
         doubleCheck();
+
+        manager.audioManager.Play("card placed");
     }
 
 

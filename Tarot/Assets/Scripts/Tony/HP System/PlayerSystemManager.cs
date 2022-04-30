@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerSystemManager : MonoBehaviour
 {
+    [SerializeField] EndTurn manager;
+
     //getting all the data
     public GameObject reference;
     public int refHpMax;
@@ -87,6 +89,9 @@ public class PlayerSystemManager : MonoBehaviour
     public void checkIfDead()
     {
         if (hpsyst.getHP() == 0)
+        {
+            manager.audioManager.Play("lose");
             dead.dead();
+        }
     }
 }

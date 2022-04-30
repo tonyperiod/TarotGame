@@ -7,15 +7,10 @@ public class Present : MonoBehaviour
     public EndTurn manager;
 
     //court part
-    bool isCourtElem;
-    bool doNotDestroy;
+    bool isCourt;
 
     public void present(GameObject c)
     {
-        //do not destroy court first time
-        doNotDestroy = false;
-        isCourtElem = false;
-
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
 
@@ -41,6 +36,8 @@ public class Present : MonoBehaviour
                     isPonFirePr = true;
                 }
 
+                manager.audioManager.Play("meteor");
+                manager.audioManager.Play("fire");
                 break;
 
 
@@ -51,6 +48,7 @@ public class Present : MonoBehaviour
                 else
                     PSysMng.TakeAirDmg(value);
 
+                manager.audioManager.Play("sword");
                 break;
 
 
@@ -66,6 +64,9 @@ public class Present : MonoBehaviour
                     EsysMng.HealSH(value / 2);
                 }
 
+                //playing both to make it sound different from fire
+                manager.audioManager.Play("meteor");
+                manager.audioManager.Play("shielding");
                 break;
 
 
@@ -83,16 +84,21 @@ public class Present : MonoBehaviour
                     if (isEonFirePr == false)
                         EsysMng.HealHP(value / 2);
                 }
+
+                manager.audioManager.Play("ice");
                 break;
+
+
             case "court":
                 {
-                    doNotDestroy = true;
+                    isCourt = true;
                     court(c);
                     break;
                 }
         }
-        if (doNotDestroy == false)
-            GameObject.Destroy(c);
+        //destroy in endturneffects instead
+        //if (isCourt == false)
+        //    GameObject.Destroy(c);
     }
 
 
@@ -109,8 +115,7 @@ public class Present : MonoBehaviour
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
 
         //set is court so that it won't be deactivated by counter, and will get destroyed at end
-        isCourtElem = true;
-        doNotDestroy = false;
+        isCourt = false;
 
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;

@@ -20,7 +20,7 @@ public class OnDeath : MonoBehaviour
 
 
         
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("ConnerMainMenu");
         SceneWasLoaded = true;
         //OnWin.enemyDead = false;
 

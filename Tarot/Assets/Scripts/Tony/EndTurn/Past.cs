@@ -7,15 +7,10 @@ public class Past : MonoBehaviour
     public EndTurn manager;
     
     //court part
-    bool isCourtElem;
-    bool doNotDestroy;
+    bool isCourt;
 
     public void past(GameObject c)
     {
-        //do not destroy court first time
-        doNotDestroy = false;
-        isCourtElem = false;
-
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;
 
@@ -41,6 +36,8 @@ public class Past : MonoBehaviour
                     isPonFirePa = true;
                 }
 
+                //audio
+                manager.audioManager.Play("fire");
                 break;
 
 
@@ -94,7 +91,7 @@ public class Past : MonoBehaviour
                         PSysMng.TakeAirDmg(-passingDmg);
                     }
                 }
-
+                manager.audioManager.Play("wind");
                 break;
 
 
@@ -107,7 +104,7 @@ public class Past : MonoBehaviour
                 {
                     EsysMng.HealSH(value);
                 }
-
+                manager.audioManager.Play("shielding");
                 break;
 
 
@@ -145,6 +142,7 @@ public class Past : MonoBehaviour
 
                 else
                 {
+
                     int predmg = lastTurnCards[1].GetComponent<CardScriptReference>().value;
                     int passingDmg = predmg - value;
                     int finalDmg = value; // this is for the heal to happen even on passingdmg <0
@@ -172,19 +170,24 @@ public class Past : MonoBehaviour
                     if (isEonFirePa == false)
                         EsysMng.HealHP(finalDmg / 2);
                 }
+                manager.audioManager.Play("water");
                 break;
 
             case "court":
                 {
-                    doNotDestroy = true;
+                    isCourt = true;
                     court(c);
                     break;
                 }
         }
-        if (doNotDestroy == false)
-            GameObject.Destroy(c);
+
+        //court cards not destroyed first round
+        //destroy in endturneffects instead
+        //if (isCourt == false)
+        //    GameObject.Destroy(c);
     }
 
+    //this gets used by air cards 
     public int FutureDamage(GameObject c)
     {
         int damage;
@@ -221,9 +224,8 @@ public class Past : MonoBehaviour
         past(court);//activate script as usual
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
         
-        //set is court so that it won't be deactivated by counter, and will get destroyed at end
-        isCourtElem = true;
-        doNotDestroy = false;
+        //set isCourt so it will be destroyed
+        isCourt = false;
 
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
