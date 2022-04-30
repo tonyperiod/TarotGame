@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//gives the player the cards they need
 public class Magician : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -26,6 +28,7 @@ public class Magician : MonoBehaviour
         magicianCards = new GameObject[2];
         
         //set the vs elements, and delays
+        //calculations here to lighten the switch statements the most possible
         if(isPlayer == true)
         {
             vsElemPast = manager.lastTurnCards[3].GetComponent<CardScriptReference>().elem;
@@ -179,6 +182,7 @@ public class Magician : MonoBehaviour
         StartCoroutine("fauxPlay");
     }
 
+    //faux play like endturncardeffects
     IEnumerator fauxPlay()
     {
         manager.vfxManager.Activate(magicianCards[0], 0);

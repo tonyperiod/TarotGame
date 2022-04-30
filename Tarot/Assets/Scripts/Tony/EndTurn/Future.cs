@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//most straightforward effect -> only responsible for moving stuff
+//custom script
+//most straightforward effect -> only responsible for moving cards from the future to the past future slot
 public class Future : MonoBehaviour
 {
     public EndTurn manager;

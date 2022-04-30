@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//because of interscript, it is necessary to organize the order for scripts awake functions
 public class AwakeManager : MonoBehaviour
 {
     public PlayerInGameDeck playeringamedeck;
@@ -14,10 +16,10 @@ public class AwakeManager : MonoBehaviour
 
     public SlotsTaken slotstaken;
 
-    public AudioManager aMan;
+    public AudioManager audioManager;
     public GameObject[] backDrops;
 
-
+    //functionality
     private void Awake()
     {
         loadBackdrop();
@@ -29,10 +31,12 @@ public class AwakeManager : MonoBehaviour
         enemyingamedeck.CustomAwake();
 
         slotstaken.CustomAwake();
-        aMan.CustomAwake();
+        audioManager.CustomAwake();
         endturn.CustomAwake();        
     }
 
+    //put separate to have cleaner code
+    //loads a different 3d backdrop prefab based off scene and if it is a miniboss
     private void loadBackdrop()
     {
         int sn = InterScene.currentSceneNumber - 3;//0 both on lvl 1 against normal enemy and as a default

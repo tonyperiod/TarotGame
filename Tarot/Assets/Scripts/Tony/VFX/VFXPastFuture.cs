@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//gets triggered from vfx manager
 public class VFXPastFuture : MonoBehaviour
 {
     string cardElement;
@@ -14,6 +16,7 @@ public class VFXPastFuture : MonoBehaviour
     public Transform airE;
 
     //card = the currently played card
+    //split into two to be able to have court cards activate twice
     public void activate(GameObject card)
     {
         //getting the references that are necessary per every card played
@@ -35,7 +38,7 @@ public class VFXPastFuture : MonoBehaviour
         {
            
             case "air":
-                //shoot to and from correct spot
+                //shoot to and from correct spot. custom spots for air different from meteors
                 if (card.GetComponent<CardScriptReference>().isplayer == true)
                 {
                     spawnLoc = airE.position;
@@ -49,7 +52,7 @@ public class VFXPastFuture : MonoBehaviour
                 break;
 
             case "earth":
-
+                //effect on the prefab
                 card.transform.GetChild(6).gameObject.SetActive(true);
                 break;
 
@@ -62,11 +65,12 @@ public class VFXPastFuture : MonoBehaviour
                 {
                     spawnLoc = manager.playerEndTransf.position;
                 }
-
+                //effect prefab on the script
                 objVFX = Instantiate(manager.pastFutureVFX[1], spawnLoc, Quaternion.identity) as GameObject;
                 break;
 
             case "water":
+                //effect on the card prefab
                 card.transform.GetChild(7).gameObject.SetActive(true);
                 break;    
 
@@ -78,7 +82,6 @@ public class VFXPastFuture : MonoBehaviour
 
     private void court(GameObject court)
     {
-
         //element 1
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court1;//temp edit to elem
         activate(court);//activate script as usual

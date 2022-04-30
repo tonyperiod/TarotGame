@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//straightforward custom script, copied in from the end turn scripts and modified
 public class ShopPlaceCards : MonoBehaviour
 {
-
     [SerializeField] Shop manager;
 
     public void CustomStart()
@@ -18,7 +18,6 @@ public class ShopPlaceCards : MonoBehaviour
             manager.cardPrefab.GetComponent<ShopCardScriptReference>().cardData = manager.buyableCardsScriptableCards[i];
             manager.cardPrefab.GetComponent<ShopCardScriptReference>().slot = i;
 
-
             ////finally instantiate
             Instantiate(manager.cardPrefab, manager.pos[i].transform.position, manager.pos[i].transform.rotation);
         }
@@ -28,5 +27,4 @@ public class ShopPlaceCards : MonoBehaviour
         //set manager deck 
         manager.buyableCards = GameObject.FindGameObjectsWithTag("Card");
     }
-
 }

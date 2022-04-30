@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//custom script
+//some major arcana have effects that play when they are destroyed (mainly terminating their effects), so this script exists to activate them
+// I left all the cases, to have more flexibility with development also in the future
 public class MajorDestroyedSwitch : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

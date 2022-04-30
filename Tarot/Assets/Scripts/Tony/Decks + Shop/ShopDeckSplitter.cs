@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script that the ShopRNGManager needs to pick cards of different types based off parameters
+//this just splits the cards within smaller databases that are then used by the rngManager
 public class ShopDeckSplitter : MonoBehaviour
 {
     [SerializeField] Shop manager;

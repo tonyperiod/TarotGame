@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//places enemy cards at the centre of the screen so that the player is able to view them better
 public class EndTurnCardToCentre : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

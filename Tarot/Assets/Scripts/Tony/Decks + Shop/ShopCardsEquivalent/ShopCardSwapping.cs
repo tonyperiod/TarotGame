@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script copied over and edited from the battle scene
 public class ShopCardSwapping : MonoBehaviour
 {    
     public ShopSlotsTaken slotstaken;
     public Transform[] snapPoints;
-
-
+    
 
     //doing this externally so each instance doesn't run the code randomly, and all values stay fixed
     public void moveCard(GameObject card)

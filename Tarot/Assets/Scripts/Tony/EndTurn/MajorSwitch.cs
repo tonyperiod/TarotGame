@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
 //this script is just to move the major arcana from inactive to active
 public class MajorSwitch : MonoBehaviour
 {

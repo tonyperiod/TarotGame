@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//every turn, it will move slot (from past, to present, to pastfuture and back) and activate a water 10 card
 public class Chariot : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -16,7 +18,7 @@ public class Chariot : MonoBehaviour
     public void Activate(GameObject c, bool isPlayer)
     {
         chariotCard = new GameObject[1];
-        int posInstance = 0;
+        int posInstance = 0;//temp value, doesn't get saved
         isBuffed = false;
         if (isPlayer)
         {
@@ -87,7 +89,7 @@ public class Chariot : MonoBehaviour
                 break;
         }
     }
-
+    //faux endturnmanagers
     IEnumerator past()
     {
         manager.vfxManager.Activate(chariotCard[0], 0);

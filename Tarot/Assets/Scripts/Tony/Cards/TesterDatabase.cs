@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//small custom script to debug lists
 public class TesterDatabase : MonoBehaviour
 {
     //public void FixedUpdate()

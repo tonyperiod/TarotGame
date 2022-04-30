@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//shuffles activated cards
 public class Fool : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -53,7 +55,7 @@ public void Activate(GameObject c, bool isPlayer)
             //remove chosen slot
             listPos.Remove(chosenSlot);
         }
-        //redifine the order
+        //redifine the order, bugfix
         manager.cardeffects.get();
 
         //destroy the card

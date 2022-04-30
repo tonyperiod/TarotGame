@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//custom script
+//substitutes all other players cards with dummies
 public class Emperor : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -14,7 +17,7 @@ public class Emperor : MonoBehaviour
         if (isPlayer == true)
         {
             //set array of pos
-            int[] posTemp = { 3, 4, 5, 7 };
+            int[] posTemp = { 3, 4, 5, 7 };//different between player and enemy activations, so that the for loop is lighter
             listPos.AddRange(posTemp);
 
             slot = 9;//for destroy

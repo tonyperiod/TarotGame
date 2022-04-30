@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+//custom script
+//to simplify endturncardeffects, trigger only this script to then start the vfx
 public class VFXManager : MonoBehaviour
 {
     //from manager
@@ -31,9 +33,7 @@ public class VFXManager : MonoBehaviour
     public Transform enemyStTransf;
     public Transform playerEndTransf;
     public Transform enemyEndTransf;
-
-
-  
+         
 
     public void Activate(GameObject card, int time) // time is to see if past, pre, fut
     {
@@ -53,5 +53,4 @@ public class VFXManager : MonoBehaviour
                 break;
         }
     }
-
 }

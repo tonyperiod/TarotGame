@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//edited version of cardscriptreference
 public class ShopCardScriptReference : MonoBehaviour
 {
     [SerializeField] Shop manager;
@@ -28,8 +28,7 @@ public class ShopCardScriptReference : MonoBehaviour
 
     private void Start()
     {
-        FirstCard(); // gives variables and instances, this will then reference
-                                        //to remove card in the single elemdata thing       
+        FirstCard(); // gives variables and instances, this will then reference                                        
     }
 
 
@@ -50,15 +49,5 @@ public class ShopCardScriptReference : MonoBehaviour
         court2 = s.court2;
 
         goldVal = s.goldVal;
-
-
-        //removecard
-        //manager.byElemData[s.databaseId].allCards.Remove(s);
-
-       
-
-        //manager.SplitterActivate();
     }
-
-
 }

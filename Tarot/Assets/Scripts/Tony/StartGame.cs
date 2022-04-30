@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//resets necessary parameters in the main menu, so that if a player looses they won't be carried over
 public class StartGame : MonoBehaviour
 {
     public ScriptableCardDatabase playerStarter;
@@ -10,19 +12,18 @@ public class StartGame : MonoBehaviour
     public ScriptableCardDatabase shopAllData;
     private void Start()
     {
-        //get all cards and put into deck
-
+      
+        //reset shop deck
         shopAllDataInGame.allCards.Clear();
         shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
 
+        //reset player deck
         playerInGame.allCards.Clear();
         playerInGame.allCards = new List<ScriptableCard>(playerStarter.allCards);
 
         InterScene.defeatedLevels = 0; //reset defeated lvls
-
+        InterScene.deadEnemies.Clear();//reset defeated enemies
         InterScene.isTutorial = true;
-
-        Debug.Log(InterScene.isNotNewGame + " is notnew");
         InterScene.isNotNewGame = true;
     }
 }

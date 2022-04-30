@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+//custom script
+//gets triggered from vfx manager
 public class VFXPast : MonoBehaviour
 {
     string cardElement;
@@ -12,14 +14,15 @@ public class VFXPast : MonoBehaviour
 
     CardScriptReference cRef;
 
-    
+    //card = the currently played card
+    //split into two to be able to have court cards activate twice    
     public void activate(GameObject card)
     {
         //getting the references that are necessary per every card played
         cRef = card.GetComponent<CardScriptReference>();
         cardElement = cRef.elem;
-        //cardValue = card.GetComponent<CardScriptReference>().value;
-        //cardIsPlayer = card.GetComponent<CardScriptReference>().isplayer;
+        //cardValue = card.GetComponent<CardScriptReference>().value; //in case we need it
+
         //activating the script for the actual vfx
         actualEffectActivation(card);
 
@@ -30,6 +33,7 @@ public class VFXPast : MonoBehaviour
     {
         switch (cardElement)
         {
+            //all effects are already placed on the card prefab
             case "air":
                 card.transform.GetChild(0).gameObject.SetActive(true);
                 cRef.particleSystems[0].Play();
@@ -53,6 +57,7 @@ public class VFXPast : MonoBehaviour
         }
     }
 
+    //both effects play at once
     private void court(GameObject court)
     {
 

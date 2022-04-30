@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-
-//this script is to create the database in game, and have only 1 of it. This is basically the Deck
+//custom script
+//this script is to create the database in game, and have only 1 of it. This is basically the Deck. Slight differences from player deck
+//the game interfaces a lot with this script, as all card picking happens within this
 
 public class EnemyInGameDeck : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
-
-
+    
     public ScriptableCardDatabase enemyDatabaseInGame; //to slot in enemy database
     public EnemyReference enemyRef; //get the deck from here
     private static EnemyInGameDeck instance; //this database 
@@ -31,9 +31,20 @@ public class EnemyInGameDeck : MonoBehaviour
         ReorderDeck();
         NewDeck();
     }
-    //TODO add in procedural deck building-----------------
 
-    public void NewDeck() //this pure jank is to load in all the cards to the in game deck
+
+    //this is to re-assign all id values
+    private void ReorderDeck()
+    {
+        for (int i = 0; i < instance.enemyDatabaseInGame.allCards.Count; i++)
+        {
+            instance.enemyDatabaseInGame.allCards[i].id = i;
+        }
+    }
+
+
+    //this  is to load in all the cards to the in game deck
+    public void NewDeck() 
     {
         instance.currentDeckList.Clear(); //empty out deck
 
@@ -43,17 +54,7 @@ public class EnemyInGameDeck : MonoBehaviour
         }
 
         cardCur = cardTot;
-    }
-
-    //this is to re-assign all id values
-    private void ReorderDeck()
-    {
-        for (int i = 0; i < instance.enemyDatabaseInGame.allCards.Count; i++)
-        {
-            instance.enemyDatabaseInGame.allCards[i].id = i;
-        }      
-    }
-
+    }       
     
 
     public static ScriptableCard GetCardByID(int ID) // get in all the cards
@@ -74,6 +75,7 @@ public class EnemyInGameDeck : MonoBehaviour
             //check for major arcana when needed, and try to get another card in that case
             if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
             {
+                //do while so it will play at least once, and check after
                 do
                 {
                     pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];

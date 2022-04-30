@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//this deck works in a similar way as the battle one
 public class ShopDeck : MonoBehaviour
 {
     [SerializeField] Shop manager;
@@ -18,7 +19,6 @@ public class ShopDeck : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
         }
         else
         {
@@ -33,23 +33,24 @@ public class ShopDeck : MonoBehaviour
     public static ScriptableCard PickCard()
     {
         int chosenDatabase;
-        chosenDatabase = ShopRNGManager.chooseData();
+        chosenDatabase = ShopRNGManager.chooseData();//Choose of what type of card the player will get
 
         //this is in case that the list runs out
         while (instance.manager.byElemData[chosenDatabase].allCards.Count == 0)
         {
-            Debug.Log("iz out");
             chosenDatabase = ShopRNGManager.chooseData();            
         }
 
         ScriptableCard pickedCard = instance.manager.byElemData[chosenDatabase].allCards[Random.Range(0, instance.manager.byElemData[chosenDatabase].allCards.Count)];
 
-        //this is jank to pass to cardscriptreference
+        //this is to pass to cardscriptreference
         pickedCard.databaseId = chosenDatabase;
         return pickedCard;
     }
 
-    //get what database to use, repeat until get something with a value
+
+    ////DEBUG
+    ////get what database to use, repeat until get something with a value
     //public int Checker(int db)
     //{
     //    if (db == 0)

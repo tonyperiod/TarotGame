@@ -1,5 +1,6 @@
 using System;
 
+//from tutorial
 public class HPSystem
 {
     private int hp;

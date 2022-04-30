@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script, to trigger the awake functions
+//this became immediatly necessary as the amount of interscript communication is so large.
 public class EndTurnCustomAwake : MonoBehaviour
 {
     public EndTurn manager;

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//custom script
+//I created this script mainly to prevent the lastturncards from breaking, and maintaining always 12 cards in game at all times. 
+//Using the "dummy" word I'm also able to disable cards at will
 public class MajorDummy : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -25,6 +29,7 @@ public class MajorDummy : MonoBehaviour
         manager.cardPrefab.tag = "Untagged";
     }
 
+    //there was a lot of deleting dummies, so I created this to simplify other scripts
     public void Delete(int slot)
     {
         GameObject.Destroy(manager.lastTurnCards[slot]);

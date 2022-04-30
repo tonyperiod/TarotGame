@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom code to simplify buffing/debuffing code within other scripts
 public class CourtBuff : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

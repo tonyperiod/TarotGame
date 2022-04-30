@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//increasing damage per turn
 public class Temperance : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -31,6 +33,7 @@ public class Temperance : MonoBehaviour
         }
     }
 
+    //resets parameters so that if played again starts over
     public void Destroyed(GameObject c, bool isPlayer)
     {
         //to make sure it works with 2 of same in scene

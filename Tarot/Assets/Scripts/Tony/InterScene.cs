@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//custom script
+//this saves all parameters used battle/walking parts
 public class InterScene : MonoBehaviour
 {
     //constant-----------------

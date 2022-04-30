@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//similar to past and present. The effects here are all straightforward, in past I have more comments explaining everything
+//one major difference is the presence of more conditions in the switch statement, to make sure that the counter goes through. With more time I could optimize this script, but it would be unnessessary seeing that it runs very little
 public class PastFuture : MonoBehaviour
 {
     public EndTurn manager;
-
-    //court part
 
     public void pastfuture(GameObject c, bool isCourt)
     {
@@ -54,7 +55,7 @@ public class PastFuture : MonoBehaviour
         {
             case "fire":
 
-                if (isplayer == true && EElem != "water" && EElemC != "water")
+                if (isplayer == true && EElem != "water" && EElemC != "water")//check for counters
                 {
                     EsysMng.TakeDamage(2 * value);
                     isEonFireFu = true;
@@ -116,14 +117,10 @@ public class PastFuture : MonoBehaviour
 
             case "court":
                 {
-                    //Debug.Log("court");
                     court(c);
                     break;
                 }
         }
-        //destroy in endturneffects instead
-        //if (isCourt == false)
-        //    GameObject.Destroy(c);
     }
 
     //they activate seperately, for now one of the two will always pass.

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 
-
+//modified tutorial script
+//to load in the correct animation within the world map
 public class StartPlayer : MonoBehaviour
 {
     //this should work
@@ -15,7 +16,7 @@ public class StartPlayer : MonoBehaviour
     void Start()
     {
         if (InterScene.currentPlayer == null)
-            elemNumber = 1;
+            elemNumber = 1;//for teseting
         else
         {
             //get player element
@@ -39,5 +40,4 @@ public class StartPlayer : MonoBehaviour
         //swap with the sprite library of player
         this.GetComponent<SpriteLibrary>().spriteLibraryAsset = spriteLibraries[elemNumber];
     }
-
 }

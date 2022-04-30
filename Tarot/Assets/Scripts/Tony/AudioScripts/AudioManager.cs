@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using UnityEngine;
 
+//from brackeys tutorial
 public class AudioManager : MonoBehaviour
 {
     public Sound[] soundsAll;
@@ -25,7 +26,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    //for tonycardtesting
+    //for tonycardtesting, added to fix a bug
     public void CustomAwake()
     {//attach sound to source
         isBattle = true;

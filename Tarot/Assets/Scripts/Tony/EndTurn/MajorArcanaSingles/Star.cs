@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//custom script
+//generates 3 cards that activate
 public class Star : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -68,10 +71,11 @@ public class Star : MonoBehaviour
         StartCoroutine("fauxPlay");
     }
 
+    //faux play similar to EndTurnCardEffect
     IEnumerator fauxPlay()
     {
         manager.vfxManager.Activate(starCards[0], 0);        
-        yield return new WaitForSeconds(manager.dySingle); // /6 because gave myself /2 after activation
+        yield return new WaitForSeconds(manager.dySingle);
         manager.Past.past(starCards[0]);
 
         manager.vfxManager.Activate(starCards[1], 1);
