@@ -62,6 +62,7 @@ public class Draggable : MonoBehaviour
         //make moving feel/look better
         if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
         {
+            //current mouse position from drag table projection
             Vector3 newWorldPostion = new Vector3(dragTableProjection.currentMousePosition.x, startYpos + 1, dragTableProjection.currentMousePosition.z);
             var difference = newWorldPostion - transform.position;
             _rigidbody.velocity = 10 * difference;
@@ -72,7 +73,7 @@ public class Draggable : MonoBehaviour
     }
 
 
-    void OnMouseUp() //snappoints
+    void OnMouseUp() // teleport to snappoints
     {
         if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)//just to make sure past future doesn't get interacted with
 
@@ -92,7 +93,6 @@ public class Draggable : MonoBehaviour
                     closestTemp = cardDistance;
                 }
             }
-            //manager.cardeffects.get(); //reorganize the array
             //move other card to other slot
             moveCard(closestSnap);
 
