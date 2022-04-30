@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script to connect a character scriptable object to the game world, and render the correct sprite
 public class PlayerReference : MonoBehaviour
 {
     public ScriptableChar[] charList;
@@ -25,10 +26,10 @@ public class PlayerReference : MonoBehaviour
         
         if (InterScene.currentPlayer != null)
         {
-            //select character using what we got
+            //select character using what we got. This is one way to do it, within the enemyreference I used a different method.
             for (int i = 0; i < charList.Length; i++)
             {
-                if (charList[i].Element == InterScene.currentPlayer.Element)
+                if (charList[i].Element == InterScene.currentPlayer.Element)//select the correct character scriptable object based off element
                 {
                     charRef = charList[i];
                     break;

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//equalizes player and enemy health based on the lower value
 public class Justice : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

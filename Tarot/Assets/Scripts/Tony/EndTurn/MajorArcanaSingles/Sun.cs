@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//heals whoever plays it fully
 public class Sun : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

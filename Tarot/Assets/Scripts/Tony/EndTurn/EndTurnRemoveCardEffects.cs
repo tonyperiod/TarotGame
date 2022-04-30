@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//small custom script to make sure that all the effects of cards are removed/reduced
 public class EndTurnRemoveCardEffects : MonoBehaviour
 {
     public EndTurn manager;

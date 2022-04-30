@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//prevents health damage
 public class Hermit : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

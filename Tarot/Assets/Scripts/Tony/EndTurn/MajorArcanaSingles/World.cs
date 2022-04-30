@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//activates future cards as pastfutures
 public class World : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -12,10 +14,10 @@ public class World : MonoBehaviour
         if (isPlayer == true)
             manager.isWorldP = true;
         else
-            manager.isWorldE = true;
-        
+            manager.isWorldE = true;        
     }
 
+    //remove effect
     public void Destroyed(GameObject c, bool isPlayer)
     {
         if (isPlayer == true)

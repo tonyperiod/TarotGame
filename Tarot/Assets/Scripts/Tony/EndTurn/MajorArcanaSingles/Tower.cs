@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//custom script
+
 public class Tower : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -11,7 +14,7 @@ public class Tower : MonoBehaviour
         PlayerSystemManager PSysMng = manager.PSysMng;
         EnemySystemManager ESysMng = manager.EsysMng;
 
-        //get to 10hp 0 shields
+        //get to 10hp 0 shields, take air damage deals damage only to hp
         PSysMng.TakeAirDmg(PSysMng.hpsyst.getHP() - 10);
         ESysMng.TakeAirDmg(ESysMng.hpsyst.getHP() - 10);
         PSysMng.TakeDamage(PSysMng.shsystem.getSH());

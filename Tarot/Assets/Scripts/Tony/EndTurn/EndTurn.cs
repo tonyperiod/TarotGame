@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
 //this is the parameter manager for the card game, where all the parameters and scripts are saved
 public class EndTurn : MonoBehaviour
 {
@@ -86,12 +87,10 @@ public class EndTurn : MonoBehaviour
 
     [Header("delays")]
 
-    //everything to control the delays (delays done in endturnclick and endturncard effects
+    //everything to control the delays (delays done in endturnclick and endturncard effects)
 
     public float dySingle;
     public float dyTot;
     public float dyMajP;
-    public float dyMajE;
-
-  
+    public float dyMajE;  
 }

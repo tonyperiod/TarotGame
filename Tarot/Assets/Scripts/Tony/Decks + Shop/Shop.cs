@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom parent script for the shop, copied over from endturn and modified
 public class Shop : MonoBehaviour
 {
     [Header("parameters")]
@@ -34,10 +35,10 @@ public class Shop : MonoBehaviour
     [SerializeField] ScriptableChar defChar;
     [SerializeField] int defSceneNumber;
 
-
+    //called on awake by the AwakeManager
     public void CustomAwake()
     {
-        //nulls for testing
+        //nulls for testing, def = default
         if (InterScene.currentEnemy == null)
             InterScene.currentEnemy = defChar;
         if (InterScene.currentSceneNumber == 0)
@@ -48,29 +49,10 @@ public class Shop : MonoBehaviour
 
         buyableCards = new GameObject[5];
 
-        splitter.setoff(); //NEED TO DO ONLY ONCE             
-               
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //    DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
-        //}
-        //else
-        //{
-        //    Destroy(gameObject); //if there is already a playerdatabase in game
-        //}
-
-        //I set ALL parameters in this script, only have to reference
-
-        //TESTING ONLY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-        //if (shopAllDataInGame != null)
-        //    shopAllDataInGame.allCards.Clear();
-        //shopAllDataInGame.allCards = new List<ScriptableCard>(shopAllData.allCards);
-        //enemyStre = "mid";
-        //currentArea = 7;
+        splitter.setoff(); //NEED TO DO ONLY ONCE
     }
 
+    //activate shop splitter, needs to be separate from the custom awake as I call it from shopBuy as well
     public void SplitterActivate()
     {
         splitter.setoff();
@@ -86,13 +68,14 @@ public class Shop : MonoBehaviour
             {
                 chosen = ShopDeck.PickCard();
             }
-            while (buyableCardsScriptableCards.Contains(chosen));
+            while (buyableCardsScriptableCards.Contains(chosen));//to not get repeating cards when the shop selection starts to be smaller
 
-            buyableCardsScriptableCards.Add(chosen);
+            buyableCardsScriptableCards.Add(chosen);//this list is then is used to place the cards
 
             Debug.Log(chosen.name);
         }
     }
+
     ////TESTING ONLY
     //private void Update()
     //{
@@ -104,6 +87,7 @@ public class Shop : MonoBehaviour
     //    }
     //}
 
+    ////DEBUG SCRIPT
     //private void testerPicker()
     //{
     //    ScriptableCard chosen;
@@ -117,5 +101,4 @@ public class Shop : MonoBehaviour
     //    }
     //    Debug.Log(ShopDeck.PickCard());
     //}
-
 }

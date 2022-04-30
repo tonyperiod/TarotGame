@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script to take advantage of Beaus 4 sprites for the shopkeep
 public class ShopKeep : MonoBehaviour
 {
     public Sprite[] shopKeeps;

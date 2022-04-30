@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom code for past card activation
 public class Past : MonoBehaviour
 {
-    public EndTurn manager;
-    
-    //court part
-    bool isCourt;
+    public EndTurn manager;    
 
     public void past(GameObject c)
     {
@@ -22,8 +20,10 @@ public class Past : MonoBehaviour
         bool isEonFirePa = manager.isEonFirePa;
         bool isPonFirePa = manager.isPonFirePa;
 
+        //switch statement for the different effects based off element
         switch (c.GetComponent<CardScriptReference>().elem)
         {
+            //increases value of present card
             case "fire":
                 if (isplayer == true)
                 {
@@ -40,30 +40,32 @@ public class Past : MonoBehaviour
                 manager.audioManager.Play("fire");
                 break;
 
-
+                //reduces value of future card for enemy and deals damage = to the reduced amount. most of the code is on FutureDamage to not over-crowd the switch statement
             case "air":
                 if (isplayer == true)
-                {//comparing
+                {
                     int futdmg = FutureDamage(lastTurnCards[7]);
-                    int passingDmg = futdmg - value;
+                    int passingVal = futdmg - value;
 
-                    //dmg bigger than value, most common one. here just using value works fine
-                    if (passingDmg > 0)
+                    //passingVal bigger than value, most common one.
+                    if (passingVal > 0)
                     {
-                        lastTurnCards[7].GetComponent<CardScriptReference>().value -= value / 2;
+                        lastTurnCards[7].GetComponent<CardScriptReference>().value -= value / 2;//all future cards are value*2
                         EsysMng.TakeAirDmg(value);
                     }
 
-                    if (passingDmg == 0)
+                    //the two values are =, for example air 6 in the past against a fire 3
+                    if (passingVal == 0)
                     {
                         lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
                         EsysMng.TakeAirDmg(value);
                     }
 
-                    if (passingDmg < 0)
+                    //the air value is > that 2x the enemies future value. for example an air 10 against a fire 2. The damage it will deal will be 4
+                    if (passingVal < 0)
                     {
                         lastTurnCards[7].GetComponent<CardScriptReference>().value = 0;
-                        EsysMng.TakeAirDmg(-passingDmg);
+                        EsysMng.TakeAirDmg(-passingVal);
                     }
                 }
 
@@ -94,7 +96,7 @@ public class Past : MonoBehaviour
                 manager.audioManager.Play("wind");
                 break;
 
-
+                //gives shields = to the value
             case "earth":
                 if (isplayer == true)
                 {
@@ -107,7 +109,7 @@ public class Past : MonoBehaviour
                 manager.audioManager.Play("shielding");
                 break;
 
-
+                //same as air, but for the enemy present card instead of future, simplifying the code
             case "water":
                 if (isplayer == true)
                 {
@@ -135,14 +137,13 @@ public class Past : MonoBehaviour
                         EsysMng.TakeDamage(finalDmg);
                     }
 
-                    if (isPonFirePa == false)
-                        PSysMng.HealHP(finalDmg / 2);
+                    if (isPonFirePa == false)//fire prevents heals in the same moment (fire in past prevents water from healing in the past)
+                        PSysMng.HealHP(finalDmg / 2);//all water cards heal for half the damage they deal
 
                 }
 
                 else
                 {
-
                     int predmg = lastTurnCards[1].GetComponent<CardScriptReference>().value;
                     int passingDmg = predmg - value;
                     int finalDmg = value; // this is for the heal to happen even on passingdmg <0
@@ -172,19 +173,13 @@ public class Past : MonoBehaviour
                 }
                 manager.audioManager.Play("water");
                 break;
-
+                //plays a court card
             case "court":
                 {
-                    isCourt = true;
                     court(c);
                     break;
                 }
         }
-
-        //court cards not destroyed first round
-        //destroy in endturneffects instead
-        //if (isCourt == false)
-        //    GameObject.Destroy(c);
     }
 
     //this gets used by air cards 
@@ -193,26 +188,15 @@ public class Past : MonoBehaviour
         int damage;
         int value = c.GetComponent<CardScriptReference>().value;
 
-        switch (c.GetComponent<CardScriptReference>().elem)
-        {
-            case "fire":
-                damage = 2 * value;
-                break;
-
-
-            case "air":
-                damage = 2 * value;
-                break;
-
-            default:
-                damage = 0;
-                break;
-        }
+        if (c.GetComponent<CardScriptReference>().elem == "earth")
+            damage = 0;//if it's earth it will get countered, and the full damage of the air card will pass through
+        else
+            damage = 2 * value;
 
         return damage;
     }
 
-    //if court card play this, runs through past function twice. Will call double counter later.
+    //if court card play this, runs through past function twice.
     private void court(GameObject court)
     {
         int originalValue = court.GetComponent<CardScriptReference>().value;
@@ -224,9 +208,6 @@ public class Past : MonoBehaviour
         past(court);//activate script as usual
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
         
-        //set isCourt so it will be destroyed
-        isCourt = false;
-
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;
         manager.courtbuff.buff(court);

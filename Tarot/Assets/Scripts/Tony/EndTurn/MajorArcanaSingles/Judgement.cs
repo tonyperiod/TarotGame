@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+
 public class Judgement : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -17,12 +19,12 @@ public class Judgement : MonoBehaviour
         judgementCards = new GameObject[3];
         if (isPlayer == true)
         {
-            //have to do them separately for lasturncards, instantiate new copies of player cards
+            //have to do them separately for lasturncards, instantiate new copies of player cards in 3 different positions (left right and centre)
             judgementCards[0] = Instantiate(manager.lastTurnCards[0], manager.centrePos[0].transform.position, manager.centrePos[0].transform.rotation);
             judgementCards[1] = Instantiate(manager.lastTurnCards[1], manager.centrePos[1].transform.position, manager.centrePos[1].transform.rotation);
             judgementCards[2] = Instantiate(manager.lastTurnCards[6], manager.centrePos[2].transform.position, manager.centrePos[2].transform.rotation);
 
-            //scale fix
+            //scale fix (there was a bug)
             for (int i = 0; i < 3; i++)
             {
                 judgementCards[i].transform.localScale = manager.centrePos[0].transform.localScale;
@@ -35,12 +37,11 @@ public class Judgement : MonoBehaviour
                     judgementCards[i].GetComponent<CardScriptReference>().value += manager.elemBuff;
             }
 
-            //set delay
+            //set delay so they have time to activate
             manager.dyMajP = manager.dySingle * 3;
 
             //for destroy
             slot = 9;
-
         }
         else
         {
@@ -72,11 +73,11 @@ public class Judgement : MonoBehaviour
         StartCoroutine("fauxPlay");
         destroyCard();
     }
-
+    //it plays as if it were a part of EndTurnCardEffects
     IEnumerator fauxPlay()
     {
         manager.vfxManager.Activate(judgementCards[0], 0);
-        yield return new WaitForSeconds(manager.dySingle); // /6 because gave myself /2 after activation
+        yield return new WaitForSeconds(manager.dySingle); 
         manager.Past.past(judgementCards[0]);
 
         manager.vfxManager.Activate(judgementCards[1], 1);
@@ -95,7 +96,7 @@ public class Judgement : MonoBehaviour
         //destroy the card
         GameObject.Destroy(card);
 
-        //create new dummy
+        //create new dummy (for last turn cards)
         manager.MajorDummy.Create(slot);
     }
 }

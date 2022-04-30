@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//custom script
 public class MajorArcana : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -28,7 +30,7 @@ public class MajorArcana : MonoBehaviour
     public Judgement judgement;
     public World world;
 
-
+    //this is just a large switch statement to manage major arcana activation without confusing the effect manager with 22 custom interactions
     public void major(GameObject c, bool isPlayer)
     {
         //delete dummy is in switch

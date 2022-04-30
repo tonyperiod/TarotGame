@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//comments on single lines in "Past", the code here is pretty straightforward
 public class Present : MonoBehaviour
 {
     public EndTurn manager;
-
-    //court part
-    bool isCourt;
-
+    
     public void present(GameObject c)
     {
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
@@ -18,6 +17,7 @@ public class Present : MonoBehaviour
         PlayerSystemManager PSysMng = manager.PSysMng;
         EnemySystemManager EsysMng = manager.EsysMng;
 
+        //to prevent heals (fire-water cards use this)
         bool isEonFirePr = manager.isEonFirePr;
         bool isPonFirePr = manager.isPonFirePr;
 
@@ -36,6 +36,7 @@ public class Present : MonoBehaviour
                     isPonFirePr = true;
                 }
 
+                //play both to make it sound different from earth
                 manager.audioManager.Play("meteor");
                 manager.audioManager.Play("fire");
                 break;
@@ -91,20 +92,15 @@ public class Present : MonoBehaviour
 
             case "court":
                 {
-                    isCourt = true;
                     court(c);
                     break;
                 }
         }
-        //destroy in endturneffects instead
-        //if (isCourt == false)
-        //    GameObject.Destroy(c);
     }
 
-
+    
     private void court(GameObject court)
     {
-
         int originalValue = court.GetComponent<CardScriptReference>().value;
         court.GetComponent<CardScriptReference>().value = court.GetComponent<CardScriptReference>().value / 2; //only need to change once
 
@@ -113,9 +109,6 @@ public class Present : MonoBehaviour
         manager.courtbuff.buff(court);//check for elemental buffing
         present(court);//activate script as usual
         manager.courtbuff.debuff(court);//remove elemental buff if it happened
-
-        //set is court so that it won't be deactivated by counter, and will get destroyed at end
-        isCourt = false;
 
         //element 2
         court.GetComponent<CardScriptReference>().elem = court.GetComponent<CardScriptReference>().court2;

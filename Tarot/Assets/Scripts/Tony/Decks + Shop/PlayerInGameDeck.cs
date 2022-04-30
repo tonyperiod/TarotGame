@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-
-//this script is to create the database in game, and have only 1 of it. This is basically the Deck
+//custom script
+//this script is to create the database in game, and have only 1 of it. This is basically the Deck. Slight differences from enemy deck
+//the game interfaces a lot with this script, as all card picking happens within this
 
 public class PlayerInGameDeck : MonoBehaviour
 {
@@ -22,8 +23,7 @@ public class PlayerInGameDeck : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = this;
-            //    DontDestroyOnLoad(gameObject);//to make sure that it never gets destroyed from game start
+            instance = this;            
         }
         else
         {
@@ -35,6 +35,7 @@ public class PlayerInGameDeck : MonoBehaviour
         NewDeck();
     }
 
+
     //to make sure everything works after buying and all
     private void ReorderDeck()
     {
@@ -44,7 +45,9 @@ public class PlayerInGameDeck : MonoBehaviour
         }
     }
 
-    public void NewDeck() //this pure jank is to load in all the cards to the in game deck
+
+    //this is to load in all the cards to the in game deck
+    public void NewDeck() 
     {
         instance.currentDeckList.Clear(); //empty out deck
 
@@ -76,6 +79,7 @@ public class PlayerInGameDeck : MonoBehaviour
             //check for major arcana when needed, and try to get another card in that case
             if (instance.manager.playerMajorActivation != 0 && pickedCard.court1 == "major")
             {
+                //do while so it will play at least once, and check after
                 do
                 {
                     pickedCard = instance.currentDeckList[Random.Range(0, instance.currentDeckList.Count())];

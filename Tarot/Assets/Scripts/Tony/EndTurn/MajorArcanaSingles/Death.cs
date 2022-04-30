@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//sets other's hp to 1
 public class Death : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -12,7 +14,7 @@ public class Death : MonoBehaviour
         EnemySystemManager ESysMng = manager.EsysMng;
 
         if (isPlayer == true)
-            ESysMng.TakeAirDmg(ESysMng.hpsyst.getHP() - 1);
+            ESysMng.TakeAirDmg(ESysMng.hpsyst.getHP() - 1);//using because it ignores shields
         else
             PSysMng.TakeAirDmg(PSysMng.hpsyst.getHP() - 1);
 

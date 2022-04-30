@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//simply doubles value of cards in play
 public class Strength : MonoBehaviour
 {
     [SerializeField] EndTurn manager;

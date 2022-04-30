@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//tutorial script
+//interfaces with draggable to allow the cards to move more naturally
 public class DragTableProjection : MonoBehaviour
 {
     public Vector3 currentMousePosition;

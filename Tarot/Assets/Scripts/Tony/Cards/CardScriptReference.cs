@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-//custom script to interface with the game world, sending data from the scriptable card to the mesh and other scripts
+//edited script from brackeys tutorial to interface with the game world, sending data from the scriptable card to the mesh and other scripts
 public class CardScriptReference : MonoBehaviour
 {
     public ScriptableCard cardData;

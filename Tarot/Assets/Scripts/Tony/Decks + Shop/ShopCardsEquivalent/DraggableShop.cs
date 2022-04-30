@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//VERY similar to the Draggable for the cards, with slight edits and bugfixes.
 public class DraggableShop : MonoBehaviour
 {
     [SerializeField] Shop manager; //define buyable -> on moving cards
@@ -42,14 +42,6 @@ public class DraggableShop : MonoBehaviour
 
         //going to put slots on shop instead
         snapPoints = manager.pos;
-
-
-
-        //////define buyable
-        //GameObject[] helper = GameObject.FindGameObjectsWithTag("Card");
-        //buyable = helper;
-        //manager.buyableCards = buyable; //to set in the manager
-        ////Debug.Log(buyable.Length + " buyable");
     }
 
     void OnMouseDown()
@@ -57,8 +49,6 @@ public class DraggableShop : MonoBehaviour
         movedSlot = cardScriptReference.slot;
         slotsTaken.snapPointTaken[movedSlot] = false;
         manager.audioManager.Play("card picked");//sound of card up
-
-
     }
 
 
@@ -70,7 +60,6 @@ public class DraggableShop : MonoBehaviour
 
         //floaty effect 
         _rigidbody.rotation = Quaternion.Euler(new Vector3(90 + _rigidbody.velocity.z, 180, 90 - _rigidbody.velocity.x));
-
     }
 
 

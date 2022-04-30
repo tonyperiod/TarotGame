@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//set's all activator cards to have the same value as the max value card
 public class Hierophant : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -16,14 +18,11 @@ public class Hierophant : MonoBehaviour
             //set array of pos of playercards
             int[] posTemp = { 0, 1, 2 };//only future, not pastfuture
             listPos.AddRange(posTemp);
-
-
         }
         else
         {
             int[] posTemp = { 3, 4, 5 };
             listPos.AddRange(posTemp);
-
         }
 
         //get the highest value

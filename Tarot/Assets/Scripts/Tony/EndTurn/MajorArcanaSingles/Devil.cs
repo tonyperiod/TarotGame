@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//steals the highest value card from the other's deck using cards gold value (not used in game in the end, but useful for this)
 public class Devil : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -45,7 +47,7 @@ public class Devil : MonoBehaviour
                     possibleCards[i].goldVal = maxValTemp;
             }
 
-            //remove low value cards
+            //remove lower value cards
             for (int i = 0; i < possibleCards.Count; i++)
             {
                 if (possibleCards[i].goldVal == maxValTemp)
@@ -64,7 +66,7 @@ public class Devil : MonoBehaviour
         {
             //enemy version of code
 
-            //get all cards that aren't in player deck
+            //get all cards that aren't in enemy deck
             for (int i = 0; i < pCards.Count; i++)
             {
                 if (eCards.Contains(pCards[i]) != false)
@@ -88,7 +90,7 @@ public class Devil : MonoBehaviour
                     maxValCards.Add(possibleCards[i]);
             }
 
-            //get a random card of the list, and add without removing from decks
+            //get a random card of the list, and add WITHOUT removing from player deck
             int chosenCardInt = Random.Range(0, maxValCards.Count);
             eDeck.enemyDatabaseInGame.allCards.Add(maxValCards[chosenCardInt]);
 
@@ -103,4 +105,3 @@ public class Devil : MonoBehaviour
         manager.MajorDummy.Create(slot);
     }
 }
-

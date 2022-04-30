@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//with more time, I was planning on randomizing the enemy. I left the code commented out here
 public class EnemyReference : MonoBehaviour
 {
     //these only for random enemies
@@ -9,11 +11,10 @@ public class EnemyReference : MonoBehaviour
     //public ScriptableChar[] charRef;
     //private List<ScriptableChar> potentialEnemies;
 
-
-    public ScriptableChar chosenEnemy;
-
     ////for external generation
     //public static string wantEnemyElement;
+
+    public ScriptableChar chosenEnemy;     
 
     //references
     public string _name;
@@ -24,6 +25,7 @@ public class EnemyReference : MonoBehaviour
     public Sprite artWork;
     public Sprite artWorkChibi;
 
+    //component on gameobject
     private SpriteRenderer spRend;
 
     //for now only random opponent, here can add logic for modifying the parameters randomly, and a lot will depend on Dennis for this
@@ -44,15 +46,6 @@ public class EnemyReference : MonoBehaviour
         element = chosenEnemy.Element;
         iD = chosenEnemy.ID;
 
-        //implement the correct artwork
-        //if (InterScene.currentScene == "TonyCardTesting")
-        //{
-        //    artWork = chosenEnemy.ArtworkPortrait;
-        //}
-        //else
-        //{
-        //    artWork = chosenEnemy.ArtworkChibi;
-        //}
         artWork = chosenEnemy.ArtworkPortrait;
 
         spRend = GetComponent<SpriteRenderer>();

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//cutom from general knowledge from youtube videos on the subject
+//custom from general knowledge from youtube videos on the subject
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
 public class ScriptableCard : ScriptableObject
 {

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom awake manager
+//with the amount of interscript communication I use, this is necessary to not have bugs by playing scripts in the correct order
 public class ShopAwakeManager : MonoBehaviour
 {
     [SerializeField] Shop shop;
@@ -15,7 +17,6 @@ public class ShopAwakeManager : MonoBehaviour
         deck.CustomAwake();
         rNGManager.CustomAwake();
         rNGManager.GetCardRNG(); 
-
     }
 
     private void Start()
@@ -23,5 +24,4 @@ public class ShopAwakeManager : MonoBehaviour
         shop.chooseCards();
         placeCards.CustomStart();
     }
-
 }

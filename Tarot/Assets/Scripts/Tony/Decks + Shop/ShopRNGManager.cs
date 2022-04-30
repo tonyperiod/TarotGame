@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable] //so card to spawn appears
 
+//this class is from a tutorial
 public class CardToSpawn
 {
-    //will later hide everything in inspector
-    /*[HideInInspector]*/
+    [HideInInspector]
     public int databaseNumber;
-    /*[HideInInspector]*/
+    [HideInInspector]
     public float spawnRate; //different per enemy, in defineprobs()
     [HideInInspector] public float minSpawnProb, maxSpawnProb; //for the equation
 }
 
-
+//most of this is custom, I will specify what parts are from random generation tutorials
+//this script is responsible for choosing what cards are present in the shop
 public class ShopRNGManager : MonoBehaviour
 {
     [SerializeField] Shop manager;
@@ -70,10 +71,7 @@ public class ShopRNGManager : MonoBehaviour
     //        chooseData();
     //    }
     //}
-
-
-
-    //NEED TO REMOVE THINGS FROM THE SLOT ONCE THEY FINISHEEEEED ***************************************************************************************************
+    
 
     //CALL ONCE PER ENEMY
     public void GetCardRNG()
@@ -216,6 +214,7 @@ public class ShopRNGManager : MonoBehaviour
     }
 
     //some math, basically gives more values between minspawnprob and maxspawnprob to items that are found more often, until all 360 numbers have a corrispondence
+    //this is NOT a custom script
     private void defineMinMaxSpawnRate()
     {
         for (int i = 0; i < cardToSpawnArray.Length; i++)
@@ -234,6 +233,7 @@ public class ShopRNGManager : MonoBehaviour
     }
 
     //here I define what database to use, CALL SEPERATELY PER CARD
+    //edited script found online, NOT CUSTOM
     public static int chooseData()
     {
         int dataBaseNumber = 0;

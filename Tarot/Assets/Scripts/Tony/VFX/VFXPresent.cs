@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//gets triggered from vfx manager
 public class VFXPresent : MonoBehaviour
 {
     [SerializeField] VFXManager manager;
@@ -9,18 +11,16 @@ public class VFXPresent : MonoBehaviour
     string cardElement;
     int cardValue;
 
-
     //card = the currently played card
-    public void activate(GameObject card) //don't touch the starting line, the rest do what ya want
+    //split into two to be able to have court cards activate twice
+    public void activate(GameObject card)
     {
         //getting the references that are necessary per every card played
         cardElement = card.GetComponent<CardScriptReference>().elem;
-        //cardValue = card.GetComponent<CardScriptReference>().value;
-
-       
+        //cardValue = card.GetComponent<CardScriptReference>().value; //in case we want to have the vfx adapt based on value
+               
         //activating the script for the actual vfx
         actualEffectActivation(card);
-
     }
 
 
@@ -28,6 +28,7 @@ public class VFXPresent : MonoBehaviour
     {
         switch (cardElement)
         {
+            //the first 3 are present within the manager
             case "air":
 
                 //shoot to and from correct spot
@@ -77,11 +78,8 @@ public class VFXPresent : MonoBehaviour
                 break;
 
             case "water":
-                //old water
-                //card.transform.GetChild(4).gameObject.SetActive(true);
-                //card.GetComponent<CardScriptReference>().visualEffects[1].Play();
 
-                //basically doing spawn meteor again
+                //basically doing spawn meteor again custom, as the water vfx works differently from all other vfx
                 Vector3 startPos = new Vector3(0,0,0);
                 Vector3 endPos = new Vector3(0, 0, 0);
 
@@ -109,6 +107,7 @@ public class VFXPresent : MonoBehaviour
         }
     }
 
+    //have both elements overlap
     private void court(GameObject court)
     {
 

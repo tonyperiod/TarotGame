@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+//custom script
+//manages counter elements
 public class VFXCounter : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -68,30 +70,24 @@ public class VFXCounter : MonoBehaviour
                 break;
 
         }
-
         return isCountered;
     }
 
 
-    //actually counter the card
+    //trigger counter vfx correctly
     public void counter(GameObject card)
     {
         //properties for the vfx
         Vector3 orientation;
-        int rotation;
+        int rotation = 180;
         Texture cardText = card.GetComponent<CardScriptReference>().artWork.texture;
 
-        if (card.GetComponent<CardScriptReference>().isplayer == true)
-        {
+        if (card.GetComponent<CardScriptReference>().isplayer == true)       
             orientation = new Vector3(-30, -5, 5);
-            rotation = 180;
-        }
+       
 
-        else
-        {
-            orientation = new Vector3(30, -5, 5);
-            rotation = 180;
-        }
+        else        
+            orientation = new Vector3(30, -5, 5);       
 
         //set the vfx child to active
         card.transform.GetChild(5).gameObject.SetActive(true);

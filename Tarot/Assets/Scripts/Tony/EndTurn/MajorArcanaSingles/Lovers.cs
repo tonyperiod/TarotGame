@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//prevents shields from functioning
 public class Lovers : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -32,6 +34,7 @@ public class Lovers : MonoBehaviour
         }
     }
 
+    //remove it's effect, allowing for shields to be generated again
     public void Destroyed(GameObject c, bool isPlayer)
     {
         PlayerSystemManager PSysMng = manager.PSysMng;

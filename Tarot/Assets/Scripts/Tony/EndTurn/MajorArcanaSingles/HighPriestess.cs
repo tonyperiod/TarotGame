@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//custom script
+//prevents counters to pastfuture
 public class HighPriestess : MonoBehaviour
 {
     [SerializeField] EndTurn manager;
@@ -15,12 +17,13 @@ public class HighPriestess : MonoBehaviour
             manager.isHighE = true;
     }
 
+    //allows counters to happen again
     public void Destroyed(GameObject c, bool isPlayer)
     {
         //remove bool of player
         if (isPlayer == true)
-            manager.isHighP = true;
+            manager.isHighP = false;
         else
-            manager.isHighE = true;
+            manager.isHighE = false;
     }
 }

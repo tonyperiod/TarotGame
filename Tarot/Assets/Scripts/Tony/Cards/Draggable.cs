@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//this script is a mix of online learning and custom scripts.
 public class Draggable : MonoBehaviour
 {
     [SerializeField] EndTurn manager; //define lastturncards -> on moving cards
@@ -33,6 +33,7 @@ public class Draggable : MonoBehaviour
 
     private void Start()
     {
+        //to simplify code a bit I made custom names for the get components
         dragTableProjection = Table.GetComponent<DragTableProjection>();
         _rigidbody = GetComponent<Rigidbody>();
         cardScriptReference = GetComponent<CardScriptReference>();
@@ -40,23 +41,23 @@ public class Draggable : MonoBehaviour
 
         //to reset to inital rotation every mousedown
         standardRot = _rigidbody.rotation;
-
     }
 
 
-    // the whole && cardScriptReference.slot != 6 is so that past future things don't activate
-    void OnMouseDown()
-    {
 
+    void OnMouseDown()
+    {   
+        // the whole if statement is so that past future things don't activate
         if (cardScriptReference.isplayer == true && cardScriptReference.slot != 6)
         {
+            //this is needed later for the movecard function
             movedSlot = cardScriptReference.slot;
             slotsTaken.snapPointTaken[movedSlot] = false;
             manager.audioManager.Play("card picked");//sound of card up
         }
     }
 
-
+    //this function is a modified version of a tutorial
     void OnMouseDrag()
     {
         //make moving feel/look better
@@ -82,7 +83,7 @@ public class Draggable : MonoBehaviour
             closestSnap = 100;
             closestTemp = 1000;
 
-            //find closest
+            //find closest, from tutorial
             for (int i = 0; i < snapPoints.Length; i++)
             {
                 float cardDistance;
@@ -93,6 +94,7 @@ public class Draggable : MonoBehaviour
                     closestTemp = cardDistance;
                 }
             }
+            //the rest here is custom
             //move other card to other slot
             moveCard(closestSnap);
 
@@ -114,25 +116,25 @@ public class Draggable : MonoBehaviour
         }
     }
 
-
+    //custom script to move the overlapped card to the free slot
     private void moveCard(int slotMoving)
     {
         lastTurnCards = manager.lastTurnCards;
         //this changed from lasturncards.lenght to 3, do not care about the others cause they can't move
         for (int i = 0; i < 3; i++)
         {
-            //see what card was in the position the new card is going to
+            //see what card was in the position the new card is going to, so that card can move
             if (lastTurnCards[i].GetComponent<CardScriptReference>().slot == slotMoving)
             {
                 chosenCard = lastTurnCards[i];
             }
         }
-        cardSwap.moveCard(chosenCard);
+        cardSwap.moveCard(chosenCard);//this runs off another script, cardSwapping
     }
 
 
 
-    //to fix draggable bug, and have duplicate cards just move to separate slots
+    //to fix draggable bug, and have duplicate cards just move to separate slots. This is a custom script
     private void doubleCheck()
     {
         List<int> slotsUsed = new List<int>();
@@ -155,7 +157,7 @@ public class Draggable : MonoBehaviour
         slotsUsed.Clear();
     }
 
-    //this runs if the draggable script is broken
+    //custom script that runs if the draggable script is broken, 
     private void dragBroke(int cardWithSlotBroken)
     {
         List<int> slotsUsed = new List<int>();  //this is used differently from doubleCheck;
@@ -179,7 +181,7 @@ public class Draggable : MonoBehaviour
         }
         emptySlot = allSlots[0]; //the only value left in the list
 
-        //here I run smth similar to CardSwapping
+        //here I run something similar to CardSwapping
         lastTurnCards[cardWithSlotBroken].transform.position = cardSwap.snapPoints[emptySlot].transform.position;
         lastTurnCards[cardWithSlotBroken].GetComponent<CardScriptReference>().slot = emptySlot;
 
