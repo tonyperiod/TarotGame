@@ -12216,7 +12216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5731891528347611474, guid: 1db799d7291be5d4c95ac8d824cc4e79, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8996040132188448257, guid: 1db799d7291be5d4c95ac8d824cc4e79, type: 3}
       propertyPath: m_PolyMesh.m_Mesh
