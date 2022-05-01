@@ -22,7 +22,8 @@ public class StartGame : MonoBehaviour
         playerInGame.allCards = new List<ScriptableCard>(playerStarter.allCards);
 
         InterScene.defeatedLevels = 0; //reset defeated lvls
-        InterScene.deadEnemies.Clear();//reset defeated enemies
+        if (InterScene.deadEnemies != null)
+            InterScene.deadEnemies.Clear();//reset defeated enemies
         InterScene.isTutorial = true;
         InterScene.isNotNewGame = true;
     }
