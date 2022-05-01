@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TonyShop.unity
     guid: 7c9c0cfa7e1930c44893933f8fff325f
+  - enabled: 1
+    path: Assets/Scenes/EndOfDemo.unity
+    guid: 73b0b4ba91b19904ca4c67f52e8e7b4d
   m_configObjects: {}
