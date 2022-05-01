@@ -11030,7 +11030,7 @@ MonoBehaviour:
   enemyreference: {fileID: 1253074338}
   playerreference: {fileID: 1587274736}
   slotstaken: {fileID: 8111532661990339502}
-  aMan: {fileID: 1808727104}
+  audioManager: {fileID: 1808727104}
   backDrops:
   - {fileID: 1838536366}
   - {fileID: 2108594281}
