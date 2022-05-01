@@ -785,7 +785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316936393}
   m_LocalRotation: {x: 0.20964527, y: 0.6753139, z: -0.20964527, w: 0.6753139}
-  m_LocalPosition: {x: 0.93799996, y: -2.01, z: -1.909}
+  m_LocalPosition: {x: 0.93799996, y: -1.82, z: -1.909}
   m_LocalScale: {x: 0.23757909, y: 0.23757909, z: 0.23757909}
   m_Children: []
   m_Father: {fileID: 1688607322}
@@ -809,7 +809,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -833,7 +833,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1067,7 +1067,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390320628}
   m_LocalRotation: {x: 0.20964785, y: 0.6753131, z: -0.20964785, w: 0.6753131}
-  m_LocalPosition: {x: 1.0599997, y: 2.376, z: -1.58}
+  m_LocalPosition: {x: 1.0599997, y: 2.566, z: -1.58}
   m_LocalScale: {x: 0.23757909, y: 0.23757909, z: 0.23757909}
   m_Children: []
   m_Father: {fileID: 1688607322}
@@ -1091,7 +1091,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -1115,7 +1115,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6699,7 +6699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834757288}
   m_LocalRotation: {x: 0.252422, y: 0.66051733, z: -0.252422, w: 0.66051733}
-  m_LocalPosition: {x: 1.0599997, y: 0.4710002, z: -1.7100003}
+  m_LocalPosition: {x: 1.0599997, y: 0.66100013, z: -1.7100003}
   m_LocalScale: {x: 0.23757909, y: 0.23757909, z: 0.23757909}
   m_Children: []
   m_Father: {fileID: 1688607322}
@@ -6723,7 +6723,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -6747,7 +6747,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7110,7 +7110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7a95e68cfc0afa24186832e5b4a54db7, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
@@ -8257,87 +8257,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 270, z: 0}
---- !u!1 &1363701203
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1363701204}
-  - component: {fileID: 1363701206}
-  - component: {fileID: 1363701205}
-  m_Layer: 5
-  m_Name: LoseText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1363701204
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363701203}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1552253082}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 131}
-  m_SizeDelta: {x: 504.99, y: 106.7373}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1363701205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363701203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.027406305, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'YOU LOSE!
-
-    BETTER LUCK NEXT TIME!'
---- !u!222 &1363701206
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363701203}
-  m_CullTransparentMesh: 1
 --- !u!1 &1404231981
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,7 +8288,7 @@ RectTransform:
   m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
   m_Children: []
   m_Father: {fileID: 1552253082}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8692,7 +8611,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 965379216}
-  - {fileID: 1363701204}
   - {fileID: 1404231982}
   m_Father: {fileID: 1630527604}
   m_RootOrder: 0
@@ -8866,7 +8784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winText: {fileID: 965379215}
-  loseText: {fileID: 1363701203}
+  loseText: {fileID: 0}
   winLoseScreen: {fileID: 1630527603}
 --- !u!1 &1685940892
 GameObject:
