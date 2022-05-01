@@ -3,28 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//custom script
+//plays when player dies
 public class OnDeath : MonoBehaviour
 {
-
-
-    //general rules:
-    //do what ya want here, literally just triggering it
-    //if you're curious, this script is in the HPHandler
-
-    //public GameObject player;
-   // public bool posSaved;
     public static bool SceneWasLoaded;
 
-    public void dead() //just don't change this name of the public void
+    public void dead()
     {
-
-
-        
-        SceneManager.LoadScene("ConnerMainMenu");
         SceneWasLoaded = true;
-        //OnWin.enemyDead = false;
+        StopAllCoroutines();//there was a bug on death
 
-        StopAllCoroutines();//there was a bug on death (from tony)
-    }
-   
+
+        SceneManager.LoadScene("ConnerMainMenu");//load main menu, there is a script in that scene that resets all parameters 
+    }   
 }
