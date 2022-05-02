@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Strength: boss
-  MaxHP: 40
-  MaxSH: 30
+  MaxHP: 60
+  MaxSH: 40
   Element: earth
   ID: 0
   ArtworkPortrait: {fileID: 21300000, guid: bc53806666afa284a8901f978f3d1e9c, type: 3}

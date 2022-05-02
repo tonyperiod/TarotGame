@@ -2914,7 +2914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86a81948ac6f5e41badec0bcd18aa71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
+  manager: {fileID: 1920384259}
   reference: {fileID: 1587274733}
   refHpMax: 0
   refShMax: 0
