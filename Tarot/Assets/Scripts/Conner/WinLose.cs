@@ -21,6 +21,7 @@ public class WinLose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set win text automatically if the scene loads
         winText.SetActive(true);
     }
 
@@ -45,6 +46,7 @@ public class WinLose : MonoBehaviour
     // Update is called once per frame
     public void LoadShop()
     {
+        // If the "To The Shop" button is selected, the shop scene will be loaded.
         SceneManager.LoadScene("TonyShop");
     }
     
