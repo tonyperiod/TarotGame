@@ -11,7 +11,6 @@ public class PastFuture : MonoBehaviour
 
     public void pastfuture(GameObject c, bool isCourt)
     {
-        Debug.Log("playing past future");
         //from card
         bool isplayer = c.GetComponent<CardScriptReference>().isplayer;
         int value = c.GetComponent<CardScriptReference>().value;

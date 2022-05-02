@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Strength: weak
-  MaxHP: 60
-  MaxSH: 60
+  MaxHP: 1000
+  MaxSH: 1000
   Element: fire
   ID: 0
-  ArtworkPortrait: {fileID: 1549435698455299172, guid: 7a77d553251368b438098b617034e0bd, type: 3}
+  ArtworkPortrait: {fileID: 21300000, guid: dff5647378701db45a62ab4d5eeaff45, type: 3}
   ArtworkChibi: {fileID: -5457007265096426327, guid: 7a77d553251368b438098b617034e0bd, type: 3}
   goldVal: 0
   deck: {fileID: 11400000, guid: 6936a3e4a453c67438812ee07226af65, type: 2}

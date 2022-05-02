@@ -39,34 +39,31 @@ public class VFXCounter : MonoBehaviour
             counterElemC = "nope";
         }
 
-
         switch (c.GetComponent<CardScriptReference>().elem)
         {
             case "fire":
                
-                    if (counterElem == "water"|| counterElemC == "water")
-                    {
+                    if (counterElem == "water"|| counterElemC == "water")                 
                         isCountered = true;
-                    }
+                 
                 break;
           
             case "air":
-                if (counterElem == "earth" || counterElemC == "earth")
-                {
+                if (counterElem == "earth" || counterElemC == "earth")              
                     isCountered = true;
-                }
+                
                 break;
+
             case "earth":
-                if (counterElem == "air" || counterElemC == "air")
-                {
+                if (counterElem == "air" || counterElemC == "air")               
                     isCountered = true;
-                }
+               
                 break;
+
             case "water":
-                if (counterElem == "fire" || counterElemC == "fire")
-                {
+                if (counterElem == "fire" || counterElemC == "fire")               
                     isCountered = true;
-                }
+            
                 break;
 
         }

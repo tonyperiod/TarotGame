@@ -9,25 +9,7 @@ public class EndTurnCardEffects : MonoBehaviour
     GameObject[] lastTurnCards;//main array, this defines all the cards on the board in the moment that the player clicks the "endturn" button
 
     //to have dyTot be based off how many cards are in game/not countered. This is for the gameplay to proceed seamlessly with the least unwanted delay possible
-    public void delayCalculator()
-    {
-        lastTurnCards = manager.lastTurnCards;
-        int cardsInGame = 0;
-
-        for (int i = 0; i < manager.lastTurnCards.Length; i++)
-        {
-            if (lastTurnCards[i].GetComponent<CardScriptReference>().elem != "dummy")
-                cardsInGame += 1;                
-        }
-
-        //reduce dytot if the pastFuture cards won't activate
-        if (manager.vfxCounter.check(lastTurnCards[6]) == true)
-            cardsInGame -= 1;
-        if (manager.vfxCounter.check(lastTurnCards[7]) == true)
-            cardsInGame -= 1;
-
-        manager.dyTot = cardsInGame * manager.dySingle;
-    }
+    
 
 
     public void get() //get the cards in game-> used in draggable as well
@@ -35,10 +17,38 @@ public class EndTurnCardEffects : MonoBehaviour
         lastTurnCards = manager.lastTurnCards;
         GameObject[] totalCards = GameObject.FindGameObjectsWithTag("Card"); //all cards
         lastTurnCards = totalCards;
-        SelectionSort(lastTurnCards);
+        SelectionSort(lastTurnCards); //delaycalculator plays after this
         manager.lastTurnCards = lastTurnCards;
     }
 
+    //calculates dytot, to not have large delays
+    public void delayCalculator()
+    {
+        CounterElement(lastTurnCards); //to get the updated parameters for vfxCounter
+
+        float cardsInGame = 0; //temp float
+
+        //all cards in game that aren't dummy (both for turn 1, and for future major arcana)
+        for (int i = 0; i < manager.lastTurnCards.Length; i++)
+        {
+            if (lastTurnCards[i].GetComponent<CardScriptReference>().elem != "dummy")
+                cardsInGame += 1;
+        }
+
+
+        //reduce dytot if the pastFuture cards won't activate
+        if (manager.vfxCounter.check(lastTurnCards[6]) == true)
+        {
+            cardsInGame -= 1;
+        }
+        if (manager.vfxCounter.check(lastTurnCards[7]) == true)
+        {
+            cardsInGame -= 1;
+        }
+
+        //set dytot = to the amount of single delays the activations will take
+        manager.dyTot = cardsInGame * manager.dySingle;
+    }
 
     public void activate()
     {
@@ -49,7 +59,6 @@ public class EndTurnCardEffects : MonoBehaviour
     IEnumerator playEffects()//to give delays between functions
     {
         BuffElement(lastTurnCards);
-        CounterElement(lastTurnCards);
 
         //MAJOR ARCANA--------------- //checks court 1 to see if there is a dummy in place. Also deactivated the vfx manager as there are currently no vfx. Will update in future when the game is finalized
         if (manager.lastTurnCards[9].GetComponent<CardScriptReference>().court1 == "major") //check if there is a major arcana in play
@@ -280,6 +289,7 @@ public class EndTurnCardEffects : MonoBehaviour
             unsortedList[i] = unsortedList[min];
             unsortedList[min] = temp;
         }
+        
     }
 
 
