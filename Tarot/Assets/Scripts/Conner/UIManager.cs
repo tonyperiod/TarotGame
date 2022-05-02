@@ -106,7 +106,7 @@ public class UIManager : MonoBehaviour
             }
             if (element.Equals("earth") && slot == 2)
             {
-                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage 2x Next Turn";
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "2x Shield Next Turn";
             }
             if (element.Equals("air") && slot == 2)
             {
