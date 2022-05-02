@@ -110,11 +110,11 @@ public class UIManager : MonoBehaviour
             }
             if (element.Equals("air") && slot == 2)
             {
-                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Shield Next Turn";
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Damage 2x Next Turn";
             }
             if (element.Equals("water") && slot == 2)
             {
-                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "Double Heal Next Turn";
+                gameObject.transform.GetChild(6).transform.GetComponent<TextMesh>().text = "2x Heal Next Turn";
             }
 
             if (element.Equals("court"))
