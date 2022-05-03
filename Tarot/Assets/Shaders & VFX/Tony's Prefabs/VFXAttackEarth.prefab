@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VFX_Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 2012891514541224917, guid: 807703be2e5583340b70e7bc796dd5c8, type: 3}
+      propertyPath: m_TagString
+      value: met
+      objectReference: {fileID: 0}
     - target: {fileID: 2801776433917948660, guid: 807703be2e5583340b70e7bc796dd5c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -382,6 +386,14 @@ PrefabInstance:
     - target: {fileID: 6477679632999807485, guid: 90c7da24ca82c5447ba60c4802fbae53, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.a
       value: 0.32941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 6526544830238178371, guid: 90c7da24ca82c5447ba60c4802fbae53, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6526544830238178371, guid: 90c7da24ca82c5447ba60c4802fbae53, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c7da24ca82c5447ba60c4802fbae53, type: 3}

@@ -109,6 +109,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1442198483479005595}
     m_Modifications:
+    - target: {fileID: 69849549, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: lengthInSec
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 69849549, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 69849549, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 525613670, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 525613670, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955301143, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055464099, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 675678019026087047, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: lengthInSec
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 675678019026087047, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 675678019026087047, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4279003964974287660, guid: 9a26ac7009f69fd4b9233bb16da2bdf5, type: 3}
       propertyPath: m_Name
       value: MeteorImpact
@@ -203,6 +243,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 929713087362064258, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
+      propertyPath: m_TagString
+      value: met
+      objectReference: {fileID: 0}
     - target: {fileID: 2727397598481335204, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -234,6 +278,10 @@ PrefabInstance:
     - target: {fileID: 6696046028403475090, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696046028403475090, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
+      propertyPath: m_TagString
+      value: met
       objectReference: {fileID: 0}
     - target: {fileID: 7664608435668951689, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
       propertyPath: m_RootOrder
@@ -290,6 +338,18 @@ PrefabInstance:
     - target: {fileID: 7664608435668951689, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187764001679969855, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187764001679969855, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187764001679969855, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
+      propertyPath: m_Size.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 9187764001679969855, guid: cd1b1d70d24e81348b822e0f5f4b5371, type: 3}
       propertyPath: m_Center.y

@@ -2456,14 +2456,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1160716295690903599, guid: 579b953a79a778149875df6e790812c3, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1160716295690903599, guid: 579b953a79a778149875df6e790812c3, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6462162060167072608, guid: 579b953a79a778149875df6e790812c3, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -12057,46 +12049,6 @@ PrefabInstance:
     - target: {fileID: 1442198483479005595, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738708754415276794, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: lengthInSec
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738708754415276794, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738708754415276794, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190922392661936, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: lengthInSec
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190922392661936, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190922392661936, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190922851550235, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190922851550235, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190923260265322, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3414190924366469854, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034700eae96faa64a9aea4f760ff284c, type: 3}
